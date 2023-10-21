@@ -118,6 +118,7 @@ nav {
 
 .nav-element:hover {
     color: #ddd;
+    text-shadow: 2px 2px 7px black;
 }
 
 .important {
@@ -127,6 +128,26 @@ nav {
 
 .important:hover {
     background: #dddddd33;
+    color: #ddd;
+    text-shadow: none;
+    box-shadow: 0px 0px 13px #555;
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    height: 30pt;
+    padding: 15px;
+    text-align: center;
+    line-height: 30pt;
+    margin: 15px;
+    backdrop-filter: blur(2px);
+}
+
+.button:hover {
+    color: #ddd;
+    box-shadow: 0px 0px 13px #eeeeee33;
 }
 
 .jumbotron {
@@ -136,6 +157,7 @@ nav {
     background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(assets/map.jpg);
     background-attachment: fixed;
     background-position: 0% 0%;
+    background-size: cover;
     color: var(--gray);
 }
 
@@ -146,25 +168,22 @@ nav {
 }
 
 .jumbotron > p {
-    width: 66%;
+    max-width: 75ch;
     text-align: center;
     margin: auto auto;
-    background-color: var(--overlay);
     padding: 25px;
-    border-radius: 15px;
     text-shadow: 2px 2px 7px black;
     font-size: 18pt;
-    backdrop-filter: blur(2px);
 }
 
-.features {
+.columns {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
 }
 
-.features > li {
+.columns > li {
     display: flex;
     flex-shrink: 5;
     flex-direction: column;
@@ -174,7 +193,7 @@ nav {
     padding: 15px;
 }
 
-.features > li:not(:last-child) {
+.columns > li:not(:last-child) {
     margin-right: 15px;
 }
 
@@ -205,11 +224,12 @@ nav {
 }
 
 .container {
+    margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 15px;
-    background: #eee;
     padding-bottom: 15px;
+    max-width: 65ch;
 }
 
 h1, h2 {
@@ -300,6 +320,11 @@ section#showcase {
 }
 
 @media (max-width: 700px) {
+    body {
+        font-size: 14pt;
+    }
+    .container {
+    }
     .jumbotron {
         background-position: 45% -100%;
     }
@@ -357,4 +382,14 @@ section#showcase {
     }
 }
 
+.icon {
+    filter: invert(100%);
+    width: 20pt;
+    height: 20pt;
+    vertical-align: middle;
+}
 
+#what-interp, #what-comp, #what-ed {
+    color: rgba(var(--purple));
+    filter: brightness(600%);
+}
