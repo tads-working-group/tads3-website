@@ -7,14 +7,14 @@
 
         <title>TADS 3 - The Text Adventure Development System</title>
         <meta name="description" content="The most powerful and flexible
-                                interactive fiction authoring tool, built for programmers.">
+                                          interactive fiction authoring tool, built for programmers.">
         <meta name="author" content="TADS 3.org">
 
         <meta property="og:title" content="TADS 3 | The Text Adventure Development System">
         <meta property="og:type" content="website">
         <meta property="og:url" content="tads3.org">
         <meta property="og:description" content="The most powerful and flexible
-                                       interactive fiction authoring tool, built for programmers.">
+                                                 interactive fiction authoring tool, built for programmers.">
         <meta property="og:image" content="assets/topbarl.jpg">
 
         <link rel="icon" href="assets/tads-favicon.png" type="image/png">
@@ -40,11 +40,12 @@
                     <a class="nav-element" href="#faq">FAQ</a>
                     <a class="nav-element" href="#showcase">Game Showcase</a>
                 </nav>
+                <div id="spacer"></div>
             </header>
             <h1>TADS 3 &mdash; The Text Adventure Development System</h1>
             <p>TADS 3 is the most powerful and flexible interactive fiction authoring system ever created, designed and built with those who are already comfortable with the conciseness, specificity, and clarity of programming in mind. Step into a world of awe-inspiring simulation, dynamic runtime capabilities, and audiovisual splendour to rival Vorple!</p>
         </section>
-        <main class="container">
+        <div class="container">
             <section>
                 <p>TADS 3 comprises an object-oriented programming language, the TADS compiler, a virtual machine called T3 for playing compiled games, and adv3, a rich library for developing IF and building a game world.</p>
                 <h2>Core <em>philosophy</em></h2>
@@ -92,22 +93,30 @@
                     </li>
                 </ul>
             </section>
-        </main>
-        <section id="install">
-            <h2>Getting an <em>interpreter</em></h2>
-            <h2>Getting a <em>compiler</em></h2>
-            <h2>Setting up your <em>development environment</em></h2>
-        </section>
-        <section id="learn">
-            <h2>Learning resources for <em>adv3Lite</em></h2>
-            <h2>Learning resources for <em>adv3</em></h2>
-        </section>
-        <section id="faq">
-            <h2>1. The language hasn't been updated since 2013 &mdash; doesn't
-                that mean TADS is <em>dead</em>?</h2>
-        </section>
-        <section id="showcase">
-            <h2>Some <em>noteworthy games</em> made with TADS 3</h2>
-        </section>
+            <section id="install">
+                <h2>Getting an <em>interpreter</em></h2>
+                <h2>Getting a <em>compiler</em></h2>
+                <h2>Setting up your <em>development environment</em></h2>
+            </section>
+            <section id="learn">
+                <h2>Learning resources for <em>adv3Lite</em></h2>
+                <h2>Learning resources for <em>adv3</em></h2>
+            </section>
+            <section id="faq">
+                <h2>1. The language hasn't been updated since 2013 &mdash; doesn't
+                    that mean TADS is <em>dead</em>?</h2>
+            </section>
+            <section id="showcase">
+                <h2>Some <em>noteworthy games</em> made with TADS 3</h2>
+            </section>
+        </div>
+
+        <script>
+            window.onscrollend = () => {
+                if ( window.scrollY == 0 ) {
+                    window.history.pushState(null, null, window.location.pathname);
+                }
+            }
+        </script>
     </body>
 </html>
