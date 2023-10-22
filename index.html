@@ -487,91 +487,133 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
         <section id="learn">
             <h2>Which standard library should I choose, <em>adv3</em> or <em>adv3Lite</em>?</h2>
 
-            <p>Yes, that's right, TADS 3 has <i>two</i> standard libraries!
-            Here's the breakdown:</p>
-            <p>First we have <em><a
-            href="http://www.tads.org/t3doc/doc/index.htm">adv3</a></em>. It is
-            the default standard library distributed with TADS 3, and is much
-            older, and hasn't been updated since 2013, which comes with some
-            benefit and some downsides. The benefit is that it has a lot more
-            features built into it already, a lot more simulation logic and
-            different types of objects for all different types of occasions.
-            But, on the other hand, it has a very deep and complex class
-            hierarchy, requires using a lot of multiple inheritance to get
-            things done, and can be confusing and archaic. It also doesn't have
-            a few features that other more modern interactive fiction authoring
-            suites have, such as scenes, rules, relations, and so on. What it
-            does have, however, are:</p>
+            <p>Yes, that's right, TADS 3 has <i>two</i> standard libraries! Here's the breakdown:</p>
 
-            <ul>
-                <li><em>Postures</em></li>
-                <li><em>Room parts</em></li>
-                <li><em>Multiple lighting levels</em></li>
-                <li>A gigantic and impressive array of already created objects
-                and behaviors (there are 150 subclasses of the Thing category
-                alone, including things like Chairs, Beds, Platforms, Booths,
-                Nested Rooms, Vehicles, Floorless Rooms, Dispenser, Matchbook,
-                StretchyContainer, Distant, Enterable, Stairway, and more)</li>
-                <li>Real time processing</li>
-                <li>Sense passing and <em>attenuation</em>, different <em>sensory media</em>, and
-                    provisions for <em>entirely new senses</em></li>
-            </ul>
+            <div class="side-by-side">
+                <div id="adv3">
+                    <!-- extend this to be more fair! -->
+                    <img class="marketing-icon" src="assets/beard-svgrepo-com.svg"/>
+                    <h3>The big, complex, full-featured graybeard: <em>adv3</em></h3>
+                    <p><em><a href="http://www.tads.org/t3doc/doc/index.htm">Adv3</a></em>
+                        is the default standard library distributed with TADS 3.
+                        It is quite old, having been created along with TADS in
+                        2006 and last having been updated in 2013, but that
+                        comes along with some benefits as well as some
+                        downsides. The main benefit of using adv3 is that it is
+                        <i>incredibly</i> complete. It comes packed with every
+                        concievable object type, class, or feature you could
+                        possibly need, and an incredibly complex world model
+                        already wired up and integrated into the whole, so that
+                        any game you create with it will automatically be
+                        running with a world model more complex than almost any
+                        parser interactive fiction game.</p>
 
-            <p>Next we have <em><a
-                href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">adv3Lite</a></em>.
-                Adv3Lite is a newer standard library created by Eric Eve, and
-                has been updated as recently as 2023. The main benefit of
-                adv3Lite is that the class hierarchy is much simpler, since most
-                customization for objects has been relocated to properties on a
-                single class representing that kind of thing, instead of through
-                a main base class and several mix-in classes to modify its
-                behavior. Additionally, the library has been made extremely
-                modular and more easy to extend and modify than adv3, so if you
-                need really obscure or strange capabilities but adv3's existing
-                world model doesn't fit your needs, adv3lite is for you. In the
-                process of this redesign, a few features have been streamlined
-                out in comparison to adv3. Most of those features, such as room
-                parts, postures, library classes as a shorthand for properties,
-                and a few other things can be added back via extensions, but
-                some, such as custom senses and real time processing and
-                lighting levels, are still only available in adv3. However, as
-                the adv3Lite website says, you get several crucial new features
-                with adv3Lite that have become popular in the modern interactive
-                fiction authoring space and which adv3 does not offer:</p>
+                    <p> The downside, however, is that adv3 relies on an
+                        incredibly deep and complex multiple inheritence class
+                        hierarchy and a huge number of highly specific classes,
+                        which it relies heavily on as mix-ins to customize the
+                        behavior of objects. Moreover, it is not particularly
+                        modular, so every game you write with it will have to
+                        bring in that whole gigantic world model. Furthermore,
+                        it is not as explicitly designed for extensibility or
+                        customizability as adv3Lite is. Thus, if you want a very
+                        complex and simulation-heavy parser game, and what you
+                        want to do fits with the existing carefully crafted
+                        complex world model of adv3, then it might be for you.
+                        If not, you might want to look at adv3Lite.</p>
 
-            <ul>
-                <li><em>Doers</em> which work like <em>instead rules</em> in Inform 7,
-                allowing you to specify command queries that apply under certain
-                conditions and override the default action;</li>
+                    <p>Another downside is that adv3 lacks many of the features popular
+                        in modern interactive fiction authoring systems, such as
+                        scenes, regions, rules, relations, and more.</p>
+                    <ul>
+                        <li><em>Room parts</em> and <em>postures</em> included as default</li>
+                        <li>A large assortment of already premade objects
+                            and behaviors (there are 150 subclasses of the Thing category
+                            alone, including things like Chairs, Beds, Platforms, Booths,
+                            Nested Rooms, Vehicles, Floorless Rooms, Dispenser, Matchbook,
+                            StretchyContainer, Distant, Enterable, Stairway, and more)</li>
+                        <li><em>Multiple lighting levels</em></li>
+                        <li>Real time processing</li>
+                        <li>Sense passing</li>
+                        <li>Sensory <em>attenuation</em></li>
+                        <li>Different <em>sensory media</em></li>
+                        <li>Built-in provisions for <em>entirely new senses</em></li>
+                    </ul>
+                </div>
 
-                <li><em>the vocab property</em>, which allows you to define
-                several vocabulary-related properties of an object all at once
-                in a concinse and convenient manner more akin to how it works in
-                Inform;</li>
+                <div id="adv3lite">
+                    <img class="marketing-icon" src="assets/feather-svgrepo-com.svg"/>
+                    <h3>The lightweight, modular, and modern newcomer: <em>adv3Lite</em></h3>
+                    <p><em><a href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">Adv3Lite</a></em>
+                        is a newer standard library created by Eric Eve, and
+                        has been updated as recently as 2023. The main benefit of
+                        adv3Lite is that the class hierarchy is much simpler, since most
+                        customization for objects has been relocated to properties on a
+                        single class representing that kind of thing, instead of
+                        in a main base class and several mix-in classes.
+                        Additionally, the library has been made more modular and
+                        extensible compared to adv3, so if you
+                        want to write very obscure or strange game mechanics or
+                        world models that don't slot neatly into adv3's existing
+                        world model, adv3lite is for you. Some features have
+                        been streamlined out in comparison to adv3, but the some
+                        of the common ones, such as room parts, postures, and
+                        library classes as a shorthand for properties, can be
+                        added back via extensions.</p>
 
-                <li>a <em>world-model query system</em> for making queries about
-                the general state of the world;</li>
+                    <p>However, as the adv3Lite website says, you get several
+                        crucial new features with adv3Lite that have become
+                        popular in the modern interactive fiction authoring
+                        space and which adv3 does not offer:</p>
 
-                <li>the introduction of <em>message parameter substitutions</em>
-                to automatically choose words based on person, number, and
-                tense, including working for over <em>200 irregular verbs</em> and plurals;</li>
+                    <ul>
+                        <li><em>Doers</em> which work like <em>instead rules</em> in Inform 7,
+                            allowing you to specify command queries that apply under certain
+                            conditions and override the default action;</li>
 
-                <li>built in <em>pathfinding</em> for players and AIs;</li>
+                        <li><em>the vocab property</em>, which allows you to define
+                            several vocabulary-related properties of an object all at once
+                            in a concinse and convenient manner more akin to how it works in
+                            Inform;</li>
 
-                <li>built in debugging commands;</li>
+                        <li>a <em>world-model query system</em> for making queries about
+                            the general state of the world;</li>
 
-                <li><em>regions</em> and region-located backdrops, scenery, events,
-                actions, senses, and so on;</li>
+                        <li>the introduction of <em>message parameter substitutions</em>
+                            to automatically choose words based on person, number, and
+                            tense, including working for over <em>200 irregular verbs</em> and plurals;</li>
 
-                <li>scenes;</li>
+                        <li>built in <em>pathfinding</em> for players and AIs;</li>
 
-                <li>automatic grouping of objects;</li>
+                        <li>built in debugging commands;</li>
 
-                <li>built in help for new players;</li>
+                        <li><em>regions</em> and region-located backdrops, scenery, events,
+                            actions, senses, and so on;</li>
 
-                <li>and a significantly enhanced conversation and NPC AI
-                system.</li>
-            </ul>
+                        <li>scenes;</li>
+
+                        <li>automatic grouping of objects;</li>
+
+                        <li>built in help for new players;</li>
+
+                        <li>and a significantly enhanced conversation and NPC AI
+                            system.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>There is also an <em><a href="https://www.ifarchive.org/indexes/if-archiveXprogrammingXtads3XlibraryXcontributions">extensive
+            list</a></em> of other community-contributed extensions and
+            libraries on the IF Archive, should you need features not available
+            even in the existing standard libraries. All of these are compatible
+            with adv3 and most can probably be trivially made compatible with
+            adv3Lite, in our experience. Just a few of the delightful things you'll
+            find there include qtalk, a suprisingly feature-complete plugin for
+            Fallout-style menu based conversation, Achievement, a library for
+            creating and persistantly storing Steam-style achievements,
+            and ConSpace, an extension that enhances the modelling of spatial
+            relations and allows several rooms to act as one large subdivided
+            location!</p>
 
             <h2>Learning resources for <em>adv3Lite</em></h2>
             <h2>Learning resources for <em>adv3</em></h2>

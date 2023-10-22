@@ -221,6 +221,12 @@ nav {
     transition: all 0.2s;
 }
 
+@media (max-width: 700px) {
+    .card {
+        flex: 0 0 80%;
+    }
+}
+
 .card:not(:last-child) {
     margin-right: 10px;
 }
@@ -399,6 +405,7 @@ section#showcase {
 }
 
 .marketing-icon {
+    display: block;
     height: 45pt;
     width: 45pt;
     margin: 0 auto;
@@ -546,7 +553,7 @@ pre {
     margin: 0 0;
     overflow: scroll;
     max-height: 65ch;
-    width: 65ch;
+    max-width: 65ch;
     white-space: pre-wrap;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
@@ -576,4 +583,24 @@ em > a {
 
 .download-button:hover {
     box-shadow: 0px 0px 13px #555;
+}
+
+.side-by-side {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+}
+
+@media (max-width: 700px) {
+    .side-by-side {
+        flex-direction: column;
+    }
+}
+.side-by-side > div {
+    flex: 1;
+}
+.side-by-side > div:not(:last-child) {
+    margin-right: 5px;
 }
