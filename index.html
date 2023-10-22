@@ -107,57 +107,183 @@
             </ul>
 
             <h2>Show me the <em>code</em></h2>
+
+            <h3>Defining rooms</h3>
+
             <div class="code-pen">
 <pre>
- <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;display:block;">vestibule: Room, RandomEventList <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;The Church Vestibule&#x27;</span>
-    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;This is the dilapitated vestibule of a long-abandoned Church. The white paint on the walls peels to reveal the dark, rotting wood underneath, and the purple carpet that covers the floor is infected with black mold. &quot;</span>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">exampleRoom: Room <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;Room Name&#x27;</span>
+     <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Room description&quot;</span>
 
     isLit = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">nil</span>
+    south = <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">southRoom
+    <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">in</span> <span style="color:rgb(0, 127, 170); font-weight:400;background:rgba(0, 0, 0, 0);">asExit</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">south</span>)</span>
+;</code></pre>
+            </div>
 
-    eventPercent = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">30</span>
-    eventList =
-        [ <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Your lungs burn from the dust and mold.&quot;</span>,
-          <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You cough and hack.&quot;</span>,
-          <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;The wind howls through the hollow halls of the Church&quot;</span> ]
+            <h3>Adding objects to rooms and other objects</h3>
 
-    south = ruinedDoubleDoors
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">// below <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">a</span> room
+
++ <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">table</span>: Surface <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;a simple table&#x27;</span>
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Table description&quot;</span>
 ;
 
-+ me: Thing <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;you&#x27;</span>
-    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;It&#x27;s you, just like you always were.&quot;</span>
+++ cup: Container <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;cup&#x27;</span> ;
 
-    isFixed = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>
-    person = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">2</span>
-    contType = Carrier
++++ water: Thing <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;water&#x27;</span>
+    massNoun = true
+    ambiguouslyPlural = true
+    isFixed = true
+    cannotTakeMsg = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to scoop the water out of the cup, but it slips through your fingers.&quot;</span>
+;</code></pre>
+            </div>
+
+            <h3>Dynamically creating objects at runtime</h3>
+
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">+ <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">cokeDispenser</span>: <span class="hljs-title class_">Thing</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;refrigerator thing&#x27;</span>
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;There is a big red button on the front.&quot;</span>
+    specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;There is a large refrigerator-sized box humming away in the corner.&quot;</span>
 ;
 
-++ flashlight: Flashlight <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;aluminum flashlight&#x27;</span> ;
+++ <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">button</span>: <span class="hljs-title class_">Button</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;big red button&#x27;</span>
+    <span class="hljs-title function_">makePushed</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+        cokeDispenser.<span class="hljs-title function_">addVocab</span>(<span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;Coke dispenser&#x27;</span>);
+        local newCoke = coke.<span class="hljs-title function_">createClone</span>();
+        coke.<span class="hljs-title function_">moveInto</span>(gPlayerChar);
+    }
+;
 
-+ ruinedDoubleDoors: Passage <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;ruined double doors&#x27;</span>
-    specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;&lt;&lt;if !isKicked&gt;&gt;Ruined double doors, cracked and hanging on their hinges, bar your way south and deeper into the church.&lt;&lt;else&gt;&gt;An empty doorframe leading to the rest of the church stands to the south. The wreckage of its doors lies on the floor in the opening.&lt;&lt;end&gt;&gt;.&quot;</span>
-    travelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;&lt;&lt;if isKicked&gt;&gt;After taking a moment to kick the wreckage of the ruined double doors off their hinges and out of the way, you stride past.&lt;&lt;else&gt;&gt;You duck through the archway.&lt;&lt;end&gt;&gt;&quot;</span>
+++ <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">coke</span>: <span class="hljs-title class_">Thing</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;coka-cola bottle&#x27;</span>
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;A cold bottle of coke.&quot;</span>
+    feelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;It feels cold.&quot;</span>
+    specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You see bottle of coke lying on the floor.&quot;</span>
+;
+    </code></pre>
+            </div>
 
-    isKicked = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">nil</span>
-    travelExec(actor, traveler, conn) {
-        inherited(actor, traveler, conn);
-        isKicked = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>;
+            <h3>Rules</h3>
+
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;"><span class="hljs-title class_">Doer</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;think about ResolvedTopic&#x27;</span>
+    <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">c</span>)
+    {
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;That&#x27;s quite beyond you. &quot;</span>;
+    }
+    when = gCommand.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">dobj</span>.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">name</span> == <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;relativity&#x27;</span>
+;</code></pre>
+            </div>
+
+            <h3>Embedded objects</h3>
+
+            <div class="code-pen">
+<pre>
+    <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">room: Room <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;room&#x27;</span>
+    south: TravelConnector {
+        travelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to move south, but nothing happens.&quot;</span>
+    }
+;</code></pre>
+            </div>
+
+            <h3>Respond to actions</h3>
+
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;"><span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);"><span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);">// Arbitrary</span>
+<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">cup</span>: <span class="hljs-title class_">Container</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;a cup&#x27;</span>
+    taken = nil
+    <span class="hljs-title function_">dobjFor</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Take</span>) {
+        <span class="hljs-title function_">action</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+            taken = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>;
+        }
+
+        <span class="hljs-title function_">report</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+            <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span> (!taken)
+            <span class="hljs-title class_">DMsg</span>(taken, <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Taking {the obj}, {I} notice that it is still hot.&quot;</span>)
+        }
+    }
+;
+
+<span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);">// On a room</span>
+
+<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">room</span>: <span class="hljs-title class_">Room</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;room&#x27;</span>
+    <span class="hljs-title function_">roomAfterAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+        <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span> (<span class="hljs-title function_">gActionIs</span>(<span class="hljs-title class_">Jump</span>))
+            <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to jump, but the roof is too low and you end up bumping your head without going much of anywhere.&quot;</span>;
+    }
+;</code></pre>
+            </div>
+
+            <h3>Modifying and replacing objects and classes</h3>
+
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">modify <span class="hljs-title class_">Jump</span>
+    <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">cmd</span>) {
+        <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span>(gActor.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">bulk</span> &gt; <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">1500</span>)
+            <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You&#x27;re too big to jump. &quot;</span>;
+        <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">else</span>
+        <span class="hljs-title function_">inherited</span>();
+    }
+;
+
+replace <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">class</span> <span class="hljs-title class_">LibClass</span>: <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">object</span>
+   prop1 = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">10</span>
+;</code></pre>
+            </div>
+
+            <h3>Defining new verbs and actions</h3>
+
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">VerbRule(Repair)
+   (<span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;repair&#x27;</span> | <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;mend&#x27;</span> | <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;fix&#x27;</span>) singleDobj
+   : <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">VerbProduction</span>
+   <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">action</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Repair</span>
+   <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">verbPhrase</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;repair/ repairing (what)&#x27;</span>
+   missingQ = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;what do you want to repair&#x27;</span>
+;
+
+DefineTAction(Repair) ;
+
+modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Thing</span>
+    <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">isRepairable</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> nil
+
+    <span class="hljs-title function_">dobjFor</span><span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">(Repair)</span> {
+        preCond = [touchObj]
+
+        verify() {
+            <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span>(!isRepairable)
+                illogical(cannotRepairMsg);
+        }
     }
 
-    destination = church
-;
-</code></pre>
+    cannotRepairMsg = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;{The subj dobj} {doesn\&#x27;t need} mending. &#x27;</span>
+;</code></pre>
             </div>
 
             <h2>Ready to <em>learn more</em>?</h2>
 
             <p>TADS 3 is comprised of several core components:</p>
             <ol>
-                <li>A <em><a href="http://www.tads.org/t3doc/doc/sysman/langsec.htm">special-purpose object-oriented programming language</a></em> designed
-                with concise yet readable syntax and a focus on <em>extensibility</em>, <em>dynamic typing</em>, and <em>ease of defining new objects</em> (and
-                sub-objects including contained and component objects) with
-                custom properties and methods without having to declare a new
-                class. The TADS 3 language makes growing and modifying your game &mdash; and the standard library! &mdash; fast,
-                fun, and easy.</li>
+                <li>A <em><a
+                href="http://www.tads.org/t3doc/doc/sysman/langsec.htm">special-purpose
+                object-oriented programming language</a></em> designed with
+                concise yet readable syntax and a focus on
+                <em>extensibility</em>, <em>dynamic typing</em>, and <em>ease of
+                defining objects and the relations between them</em>. It has
+                features like advanced multiple inheritance, multimethods,
+                operator overloading, a garbage collector, anonymous functions,
+                Smalltalk-style catch-all methods, runtime reflection, and more.
+                The TADS 3 language makes growing and modifying your game
+                &mdash; and the standard library! &mdash; faster, more fun, and
+                easier than a general purpose language by being a language custom-designed for the use case of
+                authoring semantic simulations like interactive fiction games.</li>
 
                 <li>Two powerful <em>text-adventure-specific <a href="https://www.tads.org/t3doc/doc/index.htm">standard</a> <a href="https://faroutscience.com/adv3lite_docs/">libraries</a></em> containing <em>advanced world models</em> that have things
                     like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of
@@ -195,44 +321,69 @@
             <h2>Other <em>unique features</em></h2>
             <ul class="cards">
                 <li class="card">
-                    <h3>Did you know that TADS games can have images?</h3>
-                    <p>Ornare aenean euismod elementum nisi. Nibh
-                    nisl condimentum id venenatis a condimentum.
-                    Sit amet facilisis magna etiam tempor. Sed
-                    blandit libero volutpat sed cras ornare arcu
-                    dui. Egestas sed tempus urna et.</p>
+                    <h3>Advanced multimedia capabilities</h3>
+                    <p>Did you know that TADS 3 games can have embedded images,
+                    colorful text with script and monospaced fonts (as well as
+                    the usual bold, italic, underline, and strighthrough),
+                    centered text, and simultaneous music and sound effects (with
+                    channels for foreground, looping background, and sporadic
+                    background sounds)? They can! They can also have clickable
+                    hyperlinks, as well as clickable text that functions as
+                    buttons for in-game actions. TADS 3 games can embed
+                    multimedia files as well, allowing you to ship one single
+                    file with everything your game needs to run.</p>
                 </li>
                 <li class="card">
-                    <h3></h3>
-                    <p>Ornare aenean euismod elementum nisi. Nibh
-                    nisl condimentum id venenatis a condimentum.
-                    Sit amet facilisis magna etiam tempor. Sed
-                    blandit libero volutpat sed cras ornare arcu
-                    dui. Egestas sed tempus urna et.</p>
+                    <h3>Advanced user interface capabilities</h3>
+                    <p>In addition to clickable hyperlinks and embedded buttons,
+                    TADS 3 games can also use multiple fully-customizable UI
+                    panes that can animate, as well as add stylized custom
+                    borders to the game play window.</p>
                 </li>
                 <li class="card">
-                    <h3>Did you know that TADS games can have basic animation within a UI pane?</h3>
-                    <p>Ornare aenean euismod elementum nisi. Nibh
-                    nisl condimentum id venenatis a condimentum.
-                    Sit amet facilisis magna etiam tempor. Sed
-                    blandit libero volutpat sed cras ornare arcu
-                    dui. Egestas sed tempus urna et.</p>
+                    <h3>A customizable standard library</h3>
+                    <p>Any object or class, including intrinsic ones built into
+                    the language and standard library ones, can be modified
+                    <i>or replaced</i> in TADS 3 code. This gives authors the
+                    ability to confidently tinker with things, even including
+                    basic features like TADS 3's autocorrect and command
+                    clarification system, or what commands like undo, redo,
+                    save, and restore do! Even the main game loop and the
+                    <b>parser itself</b> are customizable components of the TADS
+                    standard library. In fact, although TADS games typically use
+                    a traditional world model of objects, rooms, and directional
+                    connections, this could be replaced with any
+                    world model while still taking advantage of the fact that
+                    TADS 3 offers a language designed specifically to make
+                    representing complex objects and relationships and mechanics
+                    between them easy and clear.</p>
                 </li>
                 <li class="card">
-                    <h3>Text with custom colors, fonts, and justifications</h3>
-                    <p>Ornare aenean euismod elementum nisi. Nibh
-                    nisl condimentum id venenatis a condimentum.
-                    Sit amet facilisis magna etiam tempor. Sed
-                    blandit libero volutpat sed cras ornare arcu
-                    dui. Egestas sed tempus urna et.</p>
+                    <h3>Dynamic during play as well as during development</h3>
+                    <p>TADS 3 has the powerful ability to create new objects or
+                    clone existing ones dynamically during play, thanks to its
+                    built in garbage collector. Moreover, TADS games can perform
+                    full procedural generation of everything from maps to
+                    properties, as well as "bake" games, allowing you to run
+                    instructions in your game before the final game image is
+                    created! TADS 3 games can also read and write files within
+                    the game file's current directory using a wide
+                    array of file types including custom binary formats, as well
+                    as perform network requests and even act as a server! TADS 3
+                    can even procedurally generate and run code during play,
+                    even code entered by the player, and use runtime reflection
+                    capabilities.</p>
                 </li>
                 <li class="card">
-                    <h3>Five</h3>
-                    <p>Ornare aenean euismod elementum nisi. Nibh
-                    nisl condimentum id venenatis a condimentum.
-                    Sit amet facilisis magna etiam tempor. Sed
-                    blandit libero volutpat sed cras ornare arcu
-                    dui. Egestas sed tempus urna et.</p>
+                    <h3>Advanced online multimedia and play capabilities</h3>
+                    <p>With Web UI, TADS 3 games can include online multiplayer,
+                    as well as arbitary HTML, CSS, and JavaScript in their
+                    games, and TADS has a special library that allows the TADS 3
+                    game to talk directly to the JavaScript, allowing you to add
+                    custom user interface elements such as directional arrow
+                    buttons or action buttons or a tile map constructed from
+                    TADS's own internal map that pathfinds a character to any
+                    location they click on.</p>
                 </li>
             </ul>
         </section>

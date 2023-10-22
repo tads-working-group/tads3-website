@@ -532,18 +532,15 @@ footer {
 
 .code-pen {
     width: fit-content;
-    font-size: 13pt;
     margin: 0 auto;
-    background: #eee;
-    border-radius: 15px;
-    line-height: 15pt;
-    padding: 0px 25px;
 }
 
 pre {
+    line-height: 15pt;
+    font-size: 13pt;
     margin: 0 0;
     overflow: scroll;
-    height: 65ch;
+    max-height: 65ch;
     width: 65ch;
     white-space: pre-wrap;
     -ms-overflow-style: none;  /* IE and Edge */
