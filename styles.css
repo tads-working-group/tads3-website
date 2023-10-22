@@ -227,10 +227,7 @@ nav {
 
 .container {
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 15px;
     max-width: 65ch;
 }
 
@@ -393,6 +390,7 @@ section#showcase {
     width: 20pt;
     height: 20pt;
     vertical-align: middle;
+    margin: 0px 10px;
 }
 
 #what-interp, #what-comp, #what-ed {
@@ -415,6 +413,13 @@ section#showcase {
     background: var(--primary-color);
     margin: 20px auto;
     padding: 20px;
+}
+
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Timeline-Card container */
@@ -528,4 +533,47 @@ section#showcase {
 footer {
     background: #eee;
     padding: 15px;
+}
+
+.code-pen {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+pre {
+    line-height: 15pt;
+    font-size: 13pt;
+    margin: 0 0;
+    overflow: scroll;
+    max-height: 65ch;
+    width: 65ch;
+    white-space: pre-wrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding: 5px 0px;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+em > a {
+    color: inherit;
+}
+
+.download-button {
+    display: block;
+    width: fit-content;
+    border-radius: 15px;
+    background: #400040;
+    padding: 25px;
+    padding-left: 15px;
+    margin: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.download-button:hover {
+    box-shadow: 0px 0px 13px #555;
 }
