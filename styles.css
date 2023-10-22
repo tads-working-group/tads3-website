@@ -235,6 +235,10 @@ h1, h2, h3 {
     text-align: center;
 }
 
+li {
+    margin: 1em 0;
+}
+
 em {
     font-weight: normal;
     font-style: normal;
