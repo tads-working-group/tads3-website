@@ -1,122 +1,293 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1">
+    <title>TADS 3 - The Text Adventure Development System</title>
+    <meta name="description" content=
+    "The most powerful and flexible interactive fiction authoring tool, built for programmers.">
+    <meta name="author" content="TADS 3.org">
+    <meta property="og:title" content=
+    "TADS 3 | The Text Adventure Development System">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="tads3.org">
+    <meta property="og:description" content=
+    "The most powerful and flexible interactive fiction authoring tool, built for programmers.">
+    <meta property="og:image" content="assets/topbarl.jpg">
+    <link rel="icon" href="assets/tads-favicon.png" type=
+    "image/png">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <section class="jumbotron">
+        <header>
+            <span>
+                <a href="index.html">TADS 3</a>
+            </span>
 
-        <title>TADS 3 - The Text Adventure Development System</title>
-        <meta name="description" content="The most powerful and flexible
-                                          interactive fiction authoring tool, built for programmers.">
-        <meta name="author" content="TADS 3.org">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <div class='menu-button'></div>
+            </label>
 
-        <meta property="og:title" content="TADS 3 | The Text Adventure Development System">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="tads3.org">
-        <meta property="og:description" content="The most powerful and flexible
-                                                 interactive fiction authoring tool, built for programmers.">
-        <meta property="og:image" content="assets/topbarl.jpg">
+            <nav class="menu">
+                <a class="nav-element important" href="#install">Download</a>
+                <a class="nav-element" href="#learn">Learn</a>
+                <a class="nav-element" href="#faq">FAQ</a>
+                <a class="nav-element" href="#showcase">Game Showcase</a>
+                <a class="nav-element" href="#timeline">History</a>
+            </nav>
+            <div id="spacer"></div>
+        </header>
+        <h1>Empowering Ambitious Authors</h1>
+        <p>TADS 3 is a <em>powerful and flexible interactive fiction
+            authoring system</em> designed and built for <em>ambitious authors</em>.
+            It brings to the table a <em>powerful and dynamic</em> yet <em>fun to use</em> object-oriented
+        language purpose built for writing interactive fiction, two advanced
+        standard libraries that push the boundaries of what interactive fiction
+            is capable of both in <em>simulation</em> and in <em>customizability</em>, as well as
+            <em>unparalleled multimedia capabilities</em>.<br/><br/> </p>
+    </section>
+    <div class="container">
+        <section id="info">
+            <h2>Core <em>benefits</em></h2>
+            <ul class="columns">
+                <li>
+                    <div class="feature-top">
+                        <img class="marketing-icon" src="assets/rocket-rocket-launch-svgrepo-com.svg"/>
+                        <h3>Powerful</h3>
+                    </div>
+                    <p>Want to write a story with incredible simulational
+                    sophistication, dynamic runtime capabilities, advanced
+                    programming constructs, wild new game mechanics, or
+                    something else? TADS is capable of entire categories of
+                    feats impossible for other interactive fiction authoring
+                    systems. Authors switching to TADS will find
+                    new fields of imagination opened to them!</p>
+                </li>
+                <li>
+                    <div class="feature-top">
+                        <img class="marketing-icon" src="assets/mechanical-arm-svgrepo-com.svg"/>
+                        <h3>Simulation-Oriented</h3>
+                    </div>
+                    <p>Interested in simulation? Both of TADS 3's standard
+                    libraries come with rich and fully-featured world models
+                    with all of the features you could possibly need for even
+                    the most complex and simulation-heavy parser game. Nevertheless, if you don't need these
+                    features, they fade into the background cleanly.</p>
+                </li>
+                <li>
+                    <div class="feature-top">
+                        <img class="marketing-icon" src="assets/cloud-computing-ai-svgrepo-com.svg"/>
+                        <h3>Flexible</h3>
+                    </div>
+                    <p>Want to use new senses, or navigate in non-Euclidian
+                        directions? Although TADS 3's standard libraries come with
+                        highly complex world models already, those assumptions are
+                        just your starting point! TADS 3 is designed to make your
+                        own code, the standard library code, and even the langauge
+                        itself, flexible and extensible in a way that makes games
+                        fun to write and easy to iterate on.</p>
+                </li>
+                <li>
+                    <div class="feature-top">
+                        <img class="marketing-icon" src="assets/power-user-svgrepo-com.svg"/>
+                        <h3>Power-User Friendly</h3>
+                    </div>
+                    <p>Already comfortable with programming? TADS 3 is designed
+                    with advanced interactive fiction authors in mind, offering
+                    the clarity, conciseness, and specificity of a fully-fledged
+                    programming language with all the capabilities you would
+                    expect and much more. TADS is confident in its authors'
+                    ability to use complex, powerful, and advanced feature sets,
+                    which enables it to do a lot more without worrying about
+                    whether its users can keep up.</p>
+                </li>
+            </ul>
 
-        <link rel="icon" href="assets/tads-favicon.png" type="image/png">
+            <h2>Ready to <em>learn more</em>?</h2>
 
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
+            <p>TADS 3 is comprised of several core components:</p>
+            <ol>
+                <li>A special-purpose object-oriented <em>programming language</em> designed
+                with concise yet readable syntax and a focus on <em>extensibility</em>, <em>dynamic typing</em>, and <em>ease of defining new objects</em> (and
+                sub-objects including contained and component objects) with
+                custom properties and methods without having to declare a new
+                class. The TADS 3 language makes growing and modifying your game &mdash; and the standard library! &mdash; fast,
+                fun, and easy.</li>
 
-    </head>
+                <li>A <em>text-adventure-specific standard library</em> (two, in
+                    fact) containing an <em>advanced world model</em> that includes things
+                    like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of
+                <em>attachable and detachable sub components and object
+                    relationships</em>, and <em>hundreds of different powerful properties</em> to customize the precise
+                behavior of each object, an advanced and extremely customizable
+                parser that can understand arbitrary custom sentences, and
+                perform user-customizable spell check &mdash; and more.</li>
 
-    <body>
-        <section class="jumbotron">
-            <header>
-                <span>
-                    <a href="index.html">TADS 3</a>
-                </span>
+                <li>A performant <em>compiler</em> to compile those programs,</li>
 
-                <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
-                    <div class='menu-button'></div>
-                </label>
-                <nav class="menu">
-                    <a class="nav-element important" href="#install">Download</a>
-                    <a class="nav-element" href="#learn">Learn</a>
-                    <a class="nav-element" href="#faq">FAQ</a>
-                    <a class="nav-element" href="#showcase">Game Showcase</a>
-                </nav>
-                <div id="spacer"></div>
-            </header>
-            <h1>TADS 3 &mdash; The Text Adventure Development System</h1>
-            <p>TADS 3 is the most powerful and flexible interactive fiction authoring system ever created, designed and built with those who are already comfortable with the conciseness, specificity, and clarity of programming in mind. Step into a world of awe-inspiring simulation, dynamic runtime capabilities, and audiovisual splendour to rival Vorple!</p>
+                <li>and an advanced <em>virtual machine</em> to run TADS programs and produce output.</li>
+            </ol>
+
+            <p>In addition, there are also different kinds of <em>interpreters</em> that
+            use the virtual machine to run your TADS games and then interpret
+            the output produced by the games into the multimedia output and
+            graphical user interface players see.</p>
+
+            <p>To learn more about, and download, these components, see <a href="#install">below</a></p>
+
+            <p>TADS 3 also has an <i>extensive</i> set of learning resources,
+                <a href="https://www.tads.org/t3doc/doc/tourguide/index.html">including</a> <a href="https://faroutscience.com/adv3lite_docs/learning/LearningT3Lite.pdf">four</a> <a href="https://faroutscience.com/adv3lite_docs/tutorial/toc.htm">introductory</a> <a href="https://www.tads.org/t3doc/doc/learning/Learning%20T3.pdf">books</a>, a <a href="http://www.tads.org/t3doc/doc/sysman/toc.htm">System Manual</a>, a <a href="http://www.tads.org/t3doc/doc/techman/toc.htm">Technical
+                    Manual</a>, a <a href="https://faroutscience.com/adv3lite_docs/manual/index.htm">Library Manual</a>, and two <a href="https://www.tads.org/t3doc/doc/libref/index.html">Reference</a> <a href="https://faroutscience.com/adv3lite_docs/libref/index.html">Manuals</a>,
+            all of which are many hundreds of detailed, orderly, and clear pages
+            long. If you've struggled with the documentation of other
+            interactive fiction authoring systems in the past, or are concerned
+            that using such a niche piece of software will make answers hard to
+            find, fear not! Michael J. Roberts and Eric Eve have ensured that no
+            TADS programmer will ever stay confused for long. For more
+            information on which manuals to read and where to find a full list
+            of TADS documentation for each of the respective standard libraries,
+            please consult the relevant section <a href="#learn">below</a></p>
         </section>
-        <div class="container">
-            <section id="info">
-                <p>TADS 3 comprises an object-oriented programming language, the TADS compiler, a virtual machine called T3 for playing compiled games, and adv3, a rich library for developing IF and building a game world.</p>
-                <h2>Core <em>philosophy</em></h2>
-                <ul class="columns">
-                    <li>
-                        <h3>One.</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis ullamcorper velit sed ullamcorper. Tellus pellentesque eu tincidunt tortor aliquam. Sed blandit libero volutpat sed. Tincidunt dui ut ornare lectus sit amet est placerat. Sed id semper risus in hendrerit gravida rutrum. Netus et malesuada fames ac turpis egestas integer eget. Suscipit adipiscing bibendum est ultricies. </p>
-                    </li>
-                    <li>
-                        <h3>Two.</h3>
-                        <p>Ac turpis egestas sed tempus urna et pharetra pharetra massa. Bibendum est ultricies integer quis auctor elit sed vulputate mi. Eu tincidunt tortor aliquam nulla facilisi cras fermentum. Elementum eu facilisis sed odio. Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim. At lectus urna duis convallis. Non diam phasellus vestibulum lorem sed. </p>
-                    </li>
-                    <li>
-                        <h3>Three.</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="features">
-                <h2>Other <em>unique features</em></h2>
-                <ul class="cards">
-                    <li class="card">
-                        <h3>One</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
+        <section id="features">
+            <h2>Other <em>unique features</em></h2>
+            <ul class="cards">
+                <li class="card">
+                    <h3>One</h3>
+                    <p>Ornare aenean euismod elementum nisi. Nibh
+                    nisl condimentum id venenatis a condimentum.
+                    Sit amet facilisis magna etiam tempor. Sed
+                    blandit libero volutpat sed cras ornare arcu
+                    dui. Egestas sed tempus urna et.</p>
+                </li>
+                <li class="card">
+                    <h3>Two</h3>
+                    <p>Ornare aenean euismod elementum nisi. Nibh
+                    nisl condimentum id venenatis a condimentum.
+                    Sit amet facilisis magna etiam tempor. Sed
+                    blandit libero volutpat sed cras ornare arcu
+                    dui. Egestas sed tempus urna et.</p>
+                </li>
+                <li class="card">
+                    <h3>Three</h3>
+                    <p>Ornare aenean euismod elementum nisi. Nibh
+                    nisl condimentum id venenatis a condimentum.
+                    Sit amet facilisis magna etiam tempor. Sed
+                    blandit libero volutpat sed cras ornare arcu
+                    dui. Egestas sed tempus urna et.</p>
+                </li>
+                <li class="card">
+                    <h3>Four</h3>
+                    <p>Ornare aenean euismod elementum nisi. Nibh
+                    nisl condimentum id venenatis a condimentum.
+                    Sit amet facilisis magna etiam tempor. Sed
+                    blandit libero volutpat sed cras ornare arcu
+                    dui. Egestas sed tempus urna et.</p>
+                </li>
+                <li class="card">
+                    <h3>Five</h3>
+                    <p>Ornare aenean euismod elementum nisi. Nibh
+                    nisl condimentum id venenatis a condimentum.
+                    Sit amet facilisis magna etiam tempor. Sed
+                    blandit libero volutpat sed cras ornare arcu
+                    dui. Egestas sed tempus urna et.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="install">
+            <h2 id="interpreter">Getting an <em>interpreter</em></h2>
+            <p>There are three types of TADS interpreters: full-featured HTML TADS interpreters such as the confusingly named HTML TADS for Windows and the premier interpreter QTADS, which can handle the full multimedia capabilties of TADS, including multiple sound channels, images, text styling and centering, clickable buttons and links, and much more; text-only TADS interpreters such as FrobTADS, multi-format interpreters such as Gargoyle and Parchment, and
+            the DOS TADS interpreter that just ignore any output that isn't
+            text, and Web UI TADS which is where the virtual machine itself acts
+            as a server serving up a web-based version of an HTML TADS
+            interpreter which can actually embed arbitrary HTML interface
+            elements and JavaScript scripts and can communicate with them via
+            AJAX or WebSockets.</p>
+            <h2 id="compiler">Getting a <em>compiler</em></h2>
+            <h2 id="editor">Setting up your <em>development
+            environment</em></h2>
+        </section>
+        <section id="learn">
+            <h2>Learning resources for <em>adv3Lite</em></h2>
+            <h2>Learning resources for <em>adv3</em></h2>
+        </section>
+        <section id="faq">
+            <h2>1. The language hasn't been updated since 2013 —
+            doesn't that mean TADS is <em>dead</em>?</h2>
+        </section>
+        <section id="showcase">
+            <h2>Some <em>noteworthy games</em> made with TADS
+            3</h2>
+        </section>
+        <section id="timeline" style="width: 100%;">
+            <h2>A brief <em>history</em> of TADS</h2>
 
-                    <li class="card">
-                        <h3>Two</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
+            <div class="timeline">
+                <div class="outer">
+                    <div class="timeline-card">
+                        <div class="timeline-info">
+                            <h3 class="timeline-title">Beginnings</h3>
+                            <p>TADS 1.0 was written and designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> and
+                                released in September of 1990 as shareware under the imprint of "High Energy
+                                Software", a company created by Roberts and his friend Steve McAdams, at a time
+                                when the only other option for writing interactive fiction was <a href="https://www.ifwiki.org/AGT">AGT</a>. It was fairly popular at the time, spawning a trilogy of shareware Zork homage/parodies that were "the most concerted and sustained effort at building a real business out of [the shareware IF scene]" at
+                                the time.<sup><a href="https://www.filfre.net/2017/02/tads/">1</a></sup></p>
+                        </div>
+                    </div>
 
-                    <li class="card">
-                        <h3>Three</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
+                    <div class="timeline-card">
+                        <div class="timeline-info">
+                            <h3 class="timeline-title">Released as Open Source</h3>
+                            <p>By the time of TADS 2.2.1, released in October of 1996, due to a
+                                lack of money in the shareware business, TADS was released as
+                                freeware: although not stricty free software, since forks and modifications for
+                                the purpose of anything but porting were verboten, free
+                                use, copying, and distribution were now allowed.</p>
+                        </div>
+                    </div>
 
-                    <li class="card">
-                        <h3>Four</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
+                    <div class="timeline-card">
+                        <div class="timeline-info">
+                            <h3 class="timeline-title">TADS 3</h3>
+                            <p>Also open source freeware, TADS 3, first released on September 15, 2006, was designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> as
+                                a brand new revitalization superceding TADS 2. Despite being
+                                released in the early oughts, TADS 3 still pushes the boundaries of
+                                interactive fiction authoring system capabilities and world models
+                                in many ways, including with runtime object cloning and creation,
+                                multi-channel audio capabilities, and sense-passing for any kind of
+                                sense, even user-defined ones. The core appeal of TADS goes beyond
+                                specific features, however.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                    <li class="card">
-                        <h3>Five</h3>
-                        <p>Ornare aenean euismod elementum nisi. Nibh nisl condimentum id venenatis a condimentum. Sit amet facilisis magna etiam tempor. Sed blandit libero volutpat sed cras ornare arcu dui. Egestas sed tempus urna et.</p>
-                    </li>
-                </ul>
-            </section>
-            <section id="install">
-                <h2 id="interpreter">Getting an <em>interpreter</em></h2>
-                <h2 id="compiler">Getting a <em>compiler</em></h2>
-                <h2 id="editor">Setting up your <em>development environment</em></h2>
-            </section>
-            <section id="learn">
-                <h2>Learning resources for <em>adv3Lite</em></h2>
-                <h2>Learning resources for <em>adv3</em></h2>
-            </section>
-            <section id="faq">
-                <h2>1. The language hasn't been updated since 2013 &mdash; doesn't
-                    that mean TADS is <em>dead</em>?</h2>
-            </section>
-            <section id="showcase">
-                <h2>Some <em>noteworthy games</em> made with TADS 3</h2>
-            </section>
-        </div>
-
-        <script>
+            <p>If you want to learn more about the history of TADS, I recommend checking out the Digital Antiquarian's article <a href="https://www.filfre.net/2017/02/tads/">here</a>.
+            Unfortunately, that article only covers the early history, and what
+            we know of the rest is spotty at best.</p>
+        </section>
+    </div>
+    <footer>
+        <p>TADS is <a href="https://www.tads.org/copyright.htm">Copyright ©2001-2013 Michael J. Roberts</a>.  We
+        do not claim authorship over, or any rights to, TADS 3 itself.
+        </p>
+        <p>This is an unofficial informational website made by fans of the TADS 3
+        authoring system in an attempt to spread the word about what we believe
+        to be an underappreciated system, and provide a repository for more up
+        to date information than is contained on the original <a href="https://tads.org">tads.org</a> website,
+        which hasn't been updated since roughly 2013. For more information,
+        however, definitely go check out that website too, as there is a lot of
+        content there that we haven't covered here, just as there is content
+        here not covered there.</p>
+    </footer>
+    <script>
             window.onscrollend = () => {
                 if ( window.scrollY == 0 ) {
                     window.history.pushState(null, null, window.location.pathname);
                 }
             }
-        </script>
-    </body>
+    </script>
+</body>
 </html>

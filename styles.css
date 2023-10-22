@@ -192,6 +192,7 @@ nav {
     scroll-snap-align: start;
     text-align: center;
     padding: 15px;
+    border: 1px solid white;
 }
 
 .columns > li:not(:last-child) {
@@ -233,14 +234,14 @@ nav {
     max-width: 65ch;
 }
 
-h1, h2 {
+h1, h2, h3 {
     text-align: center;
 }
 
 em {
     font-weight: normal;
     font-style: normal;
-    color: rgba(170,92,75);
+    color: rgb(225, 142, 25);
 }
 
 section#install {
@@ -393,4 +394,134 @@ section#showcase {
 #what-interp, #what-comp, #what-ed {
     color: rgba(var(--purple));
     filter: brightness(600%);
+}
+
+.marketing-icon {
+    height: 45pt;
+    width: 45pt;
+    margin: 0 auto;
+    filter: invert(7%) sepia(37%) saturate(7114%) hue-rotate(289deg) brightness(101%) contrast(109%);
+}
+
+.feature-top {
+    height: 110pt;
+}
+
+.timeline {
+    background: var(--primary-color);
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Timeline-Card container */
+.timeline-card {
+    position: relative;
+    max-width: 400px;
+}
+
+/* setting padding based on even or odd */
+.timeline-card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+}
+.timeline-card:nth-child(even) {
+    padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.timeline-card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid rgb(225, 142, 25);
+}
+
+/* Setting the border of top, bottom, left */
+.timeline-card:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+    .timeline-card:nth-child(odd)::before {
+        top: -5px;
+        bottom: -5px;
+    }
+}
+
+/* Setting the border of top, bottom, right */
+.timeline-card:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first timeline-card */
+.timeline-card:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last timeline-card  and it's odd */
+.timeline-card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last timeline-card  and it's even */
+.timeline-card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Timeline-Information about the timeline */
+.timeline-info {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #400040;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 0px 13px #555;
+}
+
+/* Timeline-Title of the timeline-card */
+.timeline-title {
+    color: rgb(225, 142, 25);
+    position: relative;
+    text-align: left;
+}
+
+/* Timeline dot  */
+.timeline-title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid rgb(225, 142, 25);
+}
+
+/* text right if the timeline-card is even  */
+.timeline-card:nth-child(even) > .timeline-info > .timeline-title {
+    text-align: right;
+}
+
+/* setting dot to the left if the timeline-card is odd */
+.timeline-card:nth-child(odd) > .timeline-info > .timeline-title::before {
+    left: -62px;
+}
+
+/* setting dot to the right if the timeline-card is odd */
+.timeline-card:nth-child(even) > .timeline-info > .timeline-title::before {
+    right: -62px;
+}
+
+footer {
+    background: #eee;
+    padding: 15px;
 }
