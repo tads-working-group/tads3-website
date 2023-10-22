@@ -227,10 +227,7 @@ nav {
 
 .container {
     margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 15px;
     max-width: 65ch;
 }
 
@@ -413,6 +410,13 @@ section#showcase {
     padding: 20px;
 }
 
+.outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Timeline-Card container */
 .timeline-card {
     position: relative;
@@ -524,4 +528,33 @@ section#showcase {
 footer {
     background: #eee;
     padding: 15px;
+}
+
+.code-pen {
+    width: fit-content;
+    font-size: 13pt;
+    margin: 0 auto;
+    background: #eee;
+    border-radius: 15px;
+    line-height: 15pt;
+    padding: 0px 25px;
+}
+
+pre {
+    margin: 0 0;
+    overflow: scroll;
+    height: 65ch;
+    width: 65ch;
+    white-space: pre-wrap;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding: 5px 0px;
+}
+
+pre::-webkit-scrollbar {
+  display: none;
+}
+
+em > a {
+    color: inherit;
 }

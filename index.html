@@ -106,19 +106,60 @@
                 </li>
             </ul>
 
+            <h2>Show me the <em>code</em></h2>
+            <div class="code-pen">
+<pre>
+ <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;display:block;">vestibule: Room, RandomEventList <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;The Church Vestibule&#x27;</span>
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;This is the dilapitated vestibule of a long-abandoned Church. The white paint on the walls peels to reveal the dark, rotting wood underneath, and the purple carpet that covers the floor is infected with black mold. &quot;</span>
+
+    isLit = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">nil</span>
+
+    eventPercent = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">30</span>
+    eventList =
+        [ <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Your lungs burn from the dust and mold.&quot;</span>,
+          <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You cough and hack.&quot;</span>,
+          <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;The wind howls through the hollow halls of the Church&quot;</span> ]
+
+    south = ruinedDoubleDoors
+;
+
++ me: Thing <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;you&#x27;</span>
+    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;It&#x27;s you, just like you always were.&quot;</span>
+
+    isFixed = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>
+    person = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">2</span>
+    contType = Carrier
+;
+
+++ flashlight: Flashlight <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;aluminum flashlight&#x27;</span> ;
+
++ ruinedDoubleDoors: Passage <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;ruined double doors&#x27;</span>
+    specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;&lt;&lt;if !isKicked&gt;&gt;Ruined double doors, cracked and hanging on their hinges, bar your way south and deeper into the church.&lt;&lt;else&gt;&gt;An empty doorframe leading to the rest of the church stands to the south. The wreckage of its doors lies on the floor in the opening.&lt;&lt;end&gt;&gt;.&quot;</span>
+    travelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;&lt;&lt;if isKicked&gt;&gt;After taking a moment to kick the wreckage of the ruined double doors off their hinges and out of the way, you stride past.&lt;&lt;else&gt;&gt;You duck through the archway.&lt;&lt;end&gt;&gt;&quot;</span>
+
+    isKicked = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">nil</span>
+    travelExec(actor, traveler, conn) {
+        inherited(actor, traveler, conn);
+        isKicked = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>;
+    }
+
+    destination = church
+;
+</code></pre>
+            </div>
+
             <h2>Ready to <em>learn more</em>?</h2>
 
             <p>TADS 3 is comprised of several core components:</p>
             <ol>
-                <li>A special-purpose object-oriented <em>programming language</em> designed
+                <li>A <em><a href="http://www.tads.org/t3doc/doc/sysman/langsec.htm">special-purpose object-oriented programming language</a></em> designed
                 with concise yet readable syntax and a focus on <em>extensibility</em>, <em>dynamic typing</em>, and <em>ease of defining new objects</em> (and
                 sub-objects including contained and component objects) with
                 custom properties and methods without having to declare a new
                 class. The TADS 3 language makes growing and modifying your game &mdash; and the standard library! &mdash; fast,
                 fun, and easy.</li>
 
-                <li>A <em>text-adventure-specific standard library</em> (two, in
-                    fact) containing an <em>advanced world model</em> that includes things
+                <li>Two powerful <em>text-adventure-specific <a href="https://www.tads.org/t3doc/doc/index.htm">standard</a> <a href="https://faroutscience.com/adv3lite_docs/">libraries</a></em> containing <em>advanced world models</em> that have things
                     like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of
                 <em>attachable and detachable sub components and object
                     relationships</em>, and <em>hundreds of different powerful properties</em> to customize the precise
@@ -138,24 +179,23 @@
 
             <p>To learn more about, and download, these components, see <a href="#install">below</a></p>
 
-            <p>TADS 3 also has an <i>extensive</i> set of learning resources,
-                <a href="https://www.tads.org/t3doc/doc/tourguide/index.html">including</a> <a href="https://faroutscience.com/adv3lite_docs/learning/LearningT3Lite.pdf">four</a> <a href="https://faroutscience.com/adv3lite_docs/tutorial/toc.htm">introductory</a> <a href="https://www.tads.org/t3doc/doc/learning/Learning%20T3.pdf">books</a>, a <a href="http://www.tads.org/t3doc/doc/sysman/toc.htm">System Manual</a>, a <a href="http://www.tads.org/t3doc/doc/techman/toc.htm">Technical
-                    Manual</a>, a <a href="https://faroutscience.com/adv3lite_docs/manual/index.htm">Library Manual</a>, and two <a href="https://www.tads.org/t3doc/doc/libref/index.html">Reference</a> <a href="https://faroutscience.com/adv3lite_docs/libref/index.html">Manuals</a>,
-            all of which are many hundreds of detailed, orderly, and clear pages
-            long. If you've struggled with the documentation of other
-            interactive fiction authoring systems in the past, or are concerned
-            that using such a niche piece of software will make answers hard to
-            find, fear not! Michael J. Roberts and Eric Eve have ensured that no
-            TADS programmer will ever stay confused for long. For more
-            information on which manuals to read and where to find a full list
-            of TADS documentation for each of the respective standard libraries,
-            please consult the relevant section <a href="#learn">below</a></p>
+            <p>TADS 3 also has an <i>extensive</i> set of learning resources, including
+                roughly <em>eight book-length references and guides</em>, all of
+            which are many hundreds of detailed, orderly, and clear pages long.
+            If you've struggled with the documentation of other interactive
+            fiction authoring systems in the past, or are concerned that using
+            such a niche piece of software will make answers hard to find, fear
+            not! Michael J. Roberts and Eric Eve have ensured that no TADS
+            programmer will ever stay confused for long. For more information on
+            which manuals to read and where to find a full list of TADS
+            documentation for each of the respective standard libraries, please
+            consult the relevant section <a href="#learn">below</a></p>
         </section>
         <section id="features">
             <h2>Other <em>unique features</em></h2>
             <ul class="cards">
                 <li class="card">
-                    <h3>One</h3>
+                    <h3>Did you know that TADS games can have images?</h3>
                     <p>Ornare aenean euismod elementum nisi. Nibh
                     nisl condimentum id venenatis a condimentum.
                     Sit amet facilisis magna etiam tempor. Sed
@@ -163,7 +203,7 @@
                     dui. Egestas sed tempus urna et.</p>
                 </li>
                 <li class="card">
-                    <h3>Two</h3>
+                    <h3></h3>
                     <p>Ornare aenean euismod elementum nisi. Nibh
                     nisl condimentum id venenatis a condimentum.
                     Sit amet facilisis magna etiam tempor. Sed
@@ -171,7 +211,7 @@
                     dui. Egestas sed tempus urna et.</p>
                 </li>
                 <li class="card">
-                    <h3>Three</h3>
+                    <h3>Did you know that TADS games can have basic animation within a UI pane?</h3>
                     <p>Ornare aenean euismod elementum nisi. Nibh
                     nisl condimentum id venenatis a condimentum.
                     Sit amet facilisis magna etiam tempor. Sed
@@ -179,7 +219,7 @@
                     dui. Egestas sed tempus urna et.</p>
                 </li>
                 <li class="card">
-                    <h3>Four</h3>
+                    <h3>Text with custom colors, fonts, and justifications</h3>
                     <p>Ornare aenean euismod elementum nisi. Nibh
                     nisl condimentum id venenatis a condimentum.
                     Sit amet facilisis magna etiam tempor. Sed
@@ -198,18 +238,83 @@
         </section>
         <section id="install">
             <h2 id="interpreter">Getting an <em>interpreter</em></h2>
-            <p>There are three types of TADS interpreters: full-featured HTML TADS interpreters such as the confusingly named HTML TADS for Windows and the premier interpreter QTADS, which can handle the full multimedia capabilties of TADS, including multiple sound channels, images, text styling and centering, clickable buttons and links, and much more; text-only TADS interpreters such as FrobTADS, multi-format interpreters such as Gargoyle and Parchment, and
-            the DOS TADS interpreter that just ignore any output that isn't
-            text, and Web UI TADS which is where the virtual machine itself acts
-            as a server serving up a web-based version of an HTML TADS
-            interpreter which can actually embed arbitrary HTML interface
-            elements and JavaScript scripts and can communicate with them via
-            AJAX or WebSockets.</p>
+
+            <p>There are three types of TADS interpreters:</p>
+            <ol>
+                <li><em>HTML TADS interpeters</em>, which support the fully panoply of TADS' built-in
+                    multimedia, interface, and virtual machine runtime features;</li>
+                <li><em>text-only TADS interpreters</em>, which just ignore all the
+                    multimedia commands and display only text, and which often do not
+                    support the full runtime,</li>
+                <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in your game image so that when run, the game
+                    will function as a server and serve up a full HTML TADS interpeter
+                    into the web browser, with a lot of <a href="https://tads.org/t3doc/doc/sysman/webui.htm">extra</a>
+                    <a href="https://github.com/Otto73/TADS3">functionality</a>.</li>
+            </ol>
+
+            <h3>HTML TADS</h3>
+            <p>If you want to play or develop regular TADS 3 games the simplest
+            and most supported way, we recommend going with
+            an HTML TADS interpreter. Currently, the best one is <em><a
+            href="https://realnc.github.io/qtads/#downloads">QTADS</a></em>,
+            both because it is the most feature-complete and bug free, and
+            because it is still being regularly updated and improved (at least
+            as of May 17, 2023). It has versions available for Linux, Windows,
+            and macOS.</p>
+
+            <p>There is also the confusingly-named "HTML TADS" for Windows,
+            available on the <a href="https://www.tads.org/t3dl/pksetup.exe">official TADS website</a>,
+            which was the reference implementation for TADS interpreters but
+            which has not been updated since at best 2013.</p>
+
+            <h3>Text-only and Web UI</h3>
+            <p>If you want to run the Web UI or just want to use a text-only
+            interpreter, we recommend <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>,
+            as it has the most complete implementation of the virtual
+            machine/runtime and can run headless, so it makes sense to use as a
+            server, and since it also has a nice text-only interpreter built in. FrobTADS
+            has also been recently updated, reaching version 2.0 in 2021.</p>
+
+            <h3>Text-only</h3>
+            <p>The popular multi-format interpreter <em><a href="http://ccxvii.net/gargoyle/">Gargoyle</a></em> can
+            also run TADS games, but it does so in text-only mode and is not
+            capable of running a Web UI, so it is recommended not to use this
+            unless you're just playing a few TADS games and don't care about the
+            missing features.</p>
+
             <h2 id="compiler">Getting a <em>compiler</em></h2>
-            <h2 id="editor">Setting up your <em>development
-            environment</em></h2>
+            <p>If you intend to develop TADS 3 games, you'll need a compiler to
+            turn your source files into a game file that an interpreter can run.
+            On Windows, you can use <em><a
+            href="https://www.tads.org/tads3.htm#">the official Author's Kit for
+            Windows</a></em>, although compatibility with modern 64-bit
+            operating systems is in question. On macOS, Linux, or BSD, you can
+            use <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>,
+            which should run fine on modern machines.</p>
+
+            <h2 id="editor">Setting up your <em>development environment</em></h2>
+
+            <p>Although the TADS 3 Author's Kit for Windows comes with a full-fledged IDE called Workbench, that program is now very old and probably doesn't have all the features you're used to in a modern editor. As a result, across the board, we recommend one of two editors for
+            writing TADS:</p>
+
+            <ol>
+                <li><em><a href="https://marketplace.visualstudio.com/items?itemName=toerob.vscode-tads3tools">TADS 3 Tools for Visual Studio Code</a></em> offers
+                a feature-rich and easy to use integrated development
+                environment for TADS 3 authors, so if you have no specific
+                editor preference or already use Visual Studio Code, it is
+                highly recommended.</li>
+
+                <li>There is also <em><a href="https://github.com/alexispurslane/tads3-mode">tads3-mode</a></em>
+                for Emacs, which offers slightly better auto completion and most
+                of the basic necessary capabilities to make a modern programmer
+                feel at home, but which is admittedly not as advanced as TADS 3
+                Tools. This is for relatively advanced authors who prefer not to
+                use Visual Studio Code for whatever reason.</li>
+            </ol>
         </section>
         <section id="learn">
+            <h2>Which standard library should I choose, <em>adv3</em> or <em>adv3Lite</em>?</h2>
+
             <h2>Learning resources for <em>adv3Lite</em></h2>
             <h2>Learning resources for <em>adv3</em></h2>
         </section>
@@ -221,7 +326,7 @@
             <h2>Some <em>noteworthy games</em> made with TADS
             3</h2>
         </section>
-        <section id="timeline" style="width: 100%;">
+        <section id="timeline">
             <h2>A brief <em>history</em> of TADS</h2>
 
             <div class="timeline">
@@ -251,7 +356,9 @@
                     <div class="timeline-card">
                         <div class="timeline-info">
                             <h3 class="timeline-title">TADS 3</h3>
-                            <p>Also open source freeware, TADS 3, first released on September 15, 2006, was designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> as
+                            <p>Also <a href="https://github.com/tajmone/tads-sources">open source</a> freeware,
+                            TADS 3, first released on September 15, 2006, was
+                            designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> as
                                 a brand new revitalization superceding TADS 2. Despite being
                                 released in the early oughts, TADS 3 still pushes the boundaries of
                                 interactive fiction authoring system capabilities and world models
