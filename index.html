@@ -321,8 +321,8 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
             <h2>Other <em>unique features</em></h2>
             <ul class="cards">
                 <li class="card">
-                    <h3>Advanced multimedia capabilities</h3>
-                    <p>Did you know that TADS 3 games can have embedded images,
+                    <h3>Advanced <em>multimedia capabilities</em></h3>
+                    <p>Did you know that using a subset of HTML, TADS 3 games can have embedded images,
                     colorful text with script and monospaced fonts (as well as
                     the usual bold, italic, underline, and strighthrough),
                     centered text, and simultaneous music and sound effects (with
@@ -334,14 +334,14 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     file with everything your game needs to run.</p>
                 </li>
                 <li class="card">
-                    <h3>Advanced user interface capabilities</h3>
+                    <h3>Advanced <em>user interface capabilities</em></h3>
                     <p>In addition to clickable hyperlinks and embedded buttons,
-                    TADS 3 games can also use multiple fully-customizable UI
+                    TADS 3 games can also use multiple different UI
                     panes that can animate, as well as add stylized custom
                     borders to the game play window.</p>
                 </li>
                 <li class="card">
-                    <h3>A customizable standard library</h3>
+                    <h3><em>Extensible</em> standard library</h3>
                     <p>Any object or class, including intrinsic ones built into
                     the language and standard library ones, can be modified
                     <i>or replaced</i> in TADS 3 code. This gives authors the
@@ -359,7 +359,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     between them easy and clear.</p>
                 </li>
                 <li class="card">
-                    <h3>Dynamic during play as well as during development</h3>
+                    <h3><em>Dynamic</em> during play as well as during development</h3>
                     <p>TADS 3 has the powerful ability to create new objects or
                     clone existing ones dynamically during play, thanks to its
                     built in garbage collector. Moreover, TADS games can perform
@@ -375,10 +375,12 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     capabilities.</p>
                 </li>
                 <li class="card">
-                    <h3>Advanced online multimedia and play capabilities</h3>
+                    <h3>The full power of the internet and arbitrary HTML, CSS, and JavaScript with <em>Web UI</em></h3>
                     <p>With Web UI, TADS 3 games can include online multiplayer,
-                    as well as arbitary HTML, CSS, and JavaScript in their
-                    games, and TADS has a special library that allows the TADS 3
+                    as well as arbitary HTML, CSS, and JavaScript (as opposed to
+                    the limited HTML subset in HTML TADS) in their
+                    games, allowing for a much wider variety of game
+                    experiences, and TADS has a special library that allows the TADS 3
                     game to talk directly to the JavaScript, allowing you to add
                     custom user interface elements such as directional arrow
                     buttons or action buttons or a tile map constructed from
@@ -517,13 +519,16 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                 href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">adv3Lite</a></em>.
                 Adv3Lite is a newer standard library created by Eric Eve, and
                 has been updated as recently as 2023. The main benefit of
-                adv3Lite is that the class hierarchy is much simpler, and most
-                customization on kinds of things has been relocated to
-                properties on a single class representing that kind of thing,
-                instead of through a main base class and several mix-in classes
-                to modify its behavior. Additionally, the library has been made
-                extremely modular, and a few features have been streamlined out
-                in comparison to adv3. Most of those features, such as room
+                adv3Lite is that the class hierarchy is much simpler, since most
+                customization for objects has been relocated to properties on a
+                single class representing that kind of thing, instead of through
+                a main base class and several mix-in classes to modify its
+                behavior. Additionally, the library has been made extremely
+                modular and more easy to extend and modify than adv3, so if you
+                need really obscure or strange capabilities but adv3's existing
+                world model doesn't fit your needs, adv3lite is for you. In the
+                process of this redesign, a few features have been streamlined
+                out in comparison to adv3. Most of those features, such as room
                 parts, postures, library classes as a shorthand for properties,
                 and a few other things can be added back via extensions, but
                 some, such as custom senses and real time processing and
