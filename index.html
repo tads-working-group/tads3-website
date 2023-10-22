@@ -74,7 +74,8 @@
                         <h3>Simulation-Oriented</h3>
                     </div>
                     <p>Interested in simulation? Both of TADS 3's standard
-                    libraries, adv3 and adv3lite, come with rich and fully-featured world models
+                    libraries, adv3 and adv3lite, come with rich and
+                    well-implemented world models
                     with all of the features you could possibly need for even
                     the most complex and simulation-heavy parser game. And, if you don't need these
                     features, they cleanly fade into the background.</p>
@@ -173,9 +174,8 @@
             <div class="code-pen">
 <pre>
  <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;"><span class="hljs-title class_">Doer</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;think about ResolvedTopic&#x27;</span>
-    <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">c</span>)
-    {
-    <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;That&#x27;s quite beyond you. &quot;</span>;
+    <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">c</span>) {
+        <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;That&#x27;s quite beyond you. &quot;</span>;
     }
     when = gCommand.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">dobj</span>.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">name</span> == <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;relativity&#x27;</span>
 ;</code></pre>
@@ -198,15 +198,16 @@
 <pre>
  <code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;"><span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);"><span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);">// Arbitrary</span>
 <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">cup</span>: <span class="hljs-title class_">Container</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;a cup&#x27;</span>
-    taken = nil
+    taken = 0
     <span class="hljs-title function_">dobjFor</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Take</span>) {
-        <span class="hljs-title function_">action</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
-            taken = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>;
+        action() {
+            <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">inherited</span>();
+            taken++;
         }
-
-        <span class="hljs-title function_">report</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
+        <span class="hljs-title function_">report</span>(taken == 1) {
             <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span> (!taken)
-            <span class="hljs-title class_">DMsg</span>(taken, <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Taking {the obj}, {I} notice that it is still hot.&quot;</span>)
+                <span class="hljs-title class_">DMsg</span>(taken, <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Taking {the obj}, {I} notice that it is still hot.&quot;</span>)
+            taken = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">true</span>;
         }
     }
 ;
@@ -230,7 +231,7 @@
         <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span>(gActor.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">bulk</span> &gt; <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">1500</span>)
             <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You&#x27;re too big to jump. &quot;</span>;
         <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">else</span>
-        <span class="hljs-title function_">inherited</span>();
+            <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">inherited</span>();
     }
 ;
 
@@ -399,8 +400,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                 <li><em>HTML TADS interpeters</em>, which support the fully panoply of TADS' built-in
                     multimedia, interface, and virtual machine runtime features;</li>
                 <li><em>text-only TADS interpreters</em>, which just ignore all the
-                    multimedia commands and display only text, and which often do not
-                    support the full runtime,</li>
+                    multimedia commands and display only text, and can sometimes not support the full runtime,</li>
                 <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in your game image so that when run, the game
                     will function as a server and serve up a full HTML TADS interpeter
                     into the web browser, with a lot of <a href="https://tads.org/t3doc/doc/sysman/webui.htm">extra</a>
