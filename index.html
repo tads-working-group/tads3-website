@@ -27,8 +27,8 @@
             </span>
 
             <input id="menu-toggle" type="checkbox" />
-            <label class='menu-button-container' for="menu-toggle">
-                <div class='menu-button'></div>
+            <label class="menu-button-container" for="menu-toggle">
+                <div class="menu-button"></div>
             </label>
 
             <nav class="menu">
@@ -325,70 +325,98 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
             <ul class="cards">
                 <li class="card">
                     <h3>Advanced <em>multimedia capabilities</em></h3>
-                    <p>Did you know that using a subset of HTML, TADS 3 games can have embedded images,
-                    colorful text with script and monospaced fonts (as well as
-                    the usual bold, italic, underline, and strighthrough),
-                    centered text, and simultaneous music and sound effects (with
-                    channels for foreground, looping background, and sporadic
-                    background sounds)? They can! They can also have clickable
-                    hyperlinks, as well as clickable text that functions as
-                    buttons for in-game actions. TADS 3 games can embed
-                    multimedia files as well, allowing you to ship one single
-                    file with everything your game needs to run.</p>
-                </li>
-                <li class="card">
-                    <h3>Advanced <em>user interface capabilities</em></h3>
-                    <p>In addition to clickable hyperlinks and embedded buttons,
-                    TADS 3 games can also use multiple different UI
-                    panes that can animate, as well as add stylized custom
-                    borders to the game play window.</p>
+                    <p>Present your stories through immersion, interactivity, and clarity!</p>
+                    <ul>
+                        <li>In-line images</li>
+                        <li>Colorful text with script and monospaced fonts (as well as
+                        the usual bold, italic, underline, strikethrough, and centering)</li>
+                        <li>Music and sound effects, with simultaneous
+                        one-shot, looping, and sporadic channels</li>
+                        <li>Fade, volume, and queue control for all sounds</li>
+                        <li>Clickable text for hyperlinks and buttons</li>
+                        <li>Multiple layout panes, which can be leveraged for
+                        animation, decorative window borders, button grids,
+                        live readouts, control panels, and more!</li>
+                        <li>Embedded multimedia files, wrapped into one ready-to-ship game file</li>
+                    </ul>
                 </li>
                 <li class="card">
                     <h3><em>Extensible</em> standard library</h3>
-                    <p>Any object or class, including intrinsic ones built into
-                    the language and standard library ones, can be modified
-                    <i>or replaced</i> in TADS 3 code. This gives authors the
-                    ability to confidently tinker with things, even including
-                    basic features like TADS 3's autocorrect and command
-                    clarification system, or what commands like undo, redo,
-                    save, and restore do! Even the main game loop and the
-                    <b>parser itself</b> are customizable components of the TADS
-                    standard library. In fact, although TADS games typically use
-                    a traditional world model of objects, rooms, and directional
-                    connections, this could be replaced with any
-                    world model while still taking advantage of the fact that
-                    TADS 3 offers a language designed specifically to make
-                    representing complex objects and relationships and mechanics
-                    between them easy and clear.</p>
+                    <p>Any object or class&mdash;including those intrinsic to
+                    the language and standard library&mdash;can be modified
+                    <i>or entirely replaced</i> in TADS 3 code. This gives authors the
+                    <i>powerful</i> ability to quickly, clearly, and confidently tinker with
+                    their game worlds and logic.</p>
+                    <p>Modification applies to <i>everything,</i>
+                    from author-created objects at the surface,
+                    to the deeper core features like autocorrect, command
+                    clarification, undo, redo, save, and restore systems!
+                    Would you like to edit the <b>main execution loop</b> or the
+                    <b>parser itself</b>? <i>TADS put the power in your hands, <b>at your own pace!</b></i></p>
+                    <p>The modification system even lets you change
+                    <i>specific fractions</i> of classes and defined objects,
+                    freeing you from the hassle of redefining large swaths of the codebase
+                    to repair or avoid definition conflicts.</p>
+                    <p><i>Modules have never been easier!</i>
+                    The modification system smooths out the majority of compatibility concerns
+                    with plug-in extensions and code modules from other authors.</p>
                 </li>
                 <li class="card">
-                    <h3><em>Dynamic</em> during play as well as during development</h3>
-                    <p>TADS 3 has the powerful ability to create new objects or
-                    clone existing ones dynamically during play, thanks to its
-                    built in garbage collector. Moreover, TADS games can perform
-                    full procedural generation of everything from maps to
-                    properties, as well as "bake" games, allowing you to run
-                    instructions in your game before the final game image is
-                    created! TADS 3 games can also read and write files within
-                    the game file's current directory using a wide
-                    array of file types including custom binary formats, as well
-                    as perform network requests and even act as a server! TADS 3
-                    can even procedurally generate and run code during play,
-                    even code entered by the player, and use runtime reflection
-                    capabilities.</p>
+                    <h3>Create with <em>speed</em></h3>
+                    <p>Expertly wield grand complexity through simpler edits!</p>
+                    <ul>
+                        <li>Macros</li>
+                        <li>Templates</li>
+                        <li>Operator-based object hierarchies</li>
+                        <li>Separate compilation</li>
+                        <li>Compile-time code execution</li>
+                        <li>Compiler preprocessing</li>
+                        <li>Runtime reflection</li>
+                    </ul>
+                    <p><i>It's like the code can write itself!</i></p>
+                    <p>Tell your story through a wide number of easy notations for both strings and printed passages!
+                    Writing in TADS feels has the ease of HTML-like formatting, fused with the power of a
+                    capable and flexible coding language.</p>
+                    <p>Functions and values can be directly into your strings!
+                    Say goodbye to lines of pesky concatenations!</p>
                 </li>
                 <li class="card">
-                    <h3>The full power of the internet and arbitrary HTML, CSS, and JavaScript with <em>Web UI</em></h3>
-                    <p>With Web UI, TADS 3 games can include online multiplayer,
-                    as well as arbitary HTML, CSS, and JavaScript (as opposed to
-                    the limited HTML subset in HTML TADS) in their
-                    games, allowing for a much wider variety of game
-                    experiences, and TADS has a special library that allows the TADS 3
-                    game to talk directly to the JavaScript, allowing you to add
-                    custom user interface elements such as directional arrow
-                    buttons or action buttons or a tile map constructed from
-                    TADS's own internal map that pathfinds a character to any
-                    location they click on.</p>
+                    <h3><em>Dynamic</em> play and development</h3>
+                    <p>TADS 3 has the powerful ability to dynamically create new objects&mdash;or
+                    clone <i>existing</i> ones&mdash;during play
+                    <b>or during compile time</b>, thanks to automatic
+                    garbage collection.</p>
+                    <p>Perform full procedural generation of everything from objects
+                    to <b>interpreted code strings</b>!</p>
+                    <p>TADS 3 games can also read and write files <b>safely</b>
+                    within the game file's sandboxed directory.
+                    Persistent data is yours, in a wide
+                    variety of file types.
+                    You can even roll your own custom binary formats&mdash;if
+                    the need arises&mdash;with bitwise operations and binary file parsing!</p>
+                    <p>Expand your game's connectivity with network packets,
+                    and create a server, all in TADS 3!</p>
+                    <p>Need to distribute a patch file? Interpreted code can be loaded
+                    from a file, and executed during play!
+                    </p>
+                </li>
+                <li class="card">
+                    <h3>Maximum power with <em>Web UI</em></h3>
+                    <p>By utilizing the <b>Web UI</b>, TADS 3 games can include online multiplayer,
+                    as well as CSS, JavaScript, and <b>true</b> HTML (as opposed to
+                    the utilitarian variant in HTML TADS).</p>
+                    <p>Craft cooperative and competitive experiences by
+                    directly implement JavaScript to give the player
+                    an authentic and unlimited browser-based interface!</p>
+                    <ul>
+                        <li>Directional arrow buttons</li>
+                        <li>Action buttons</li>
+                        <li>Live tile-based minimap</li>
+                        <li>Minimap-based click-to-go-to</li>
+                        <li>True Twine-style choice menus alongside the parser</li>
+                    </ul>
+                    <p>It's the incredible flexibility of TADS 3 with the endless power and community
+                    of JavaScript!</p>
                 </li>
             </ul>
         </section>
@@ -397,12 +425,12 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
 
             <p>There are three types of TADS interpreters:</p>
             <ol>
-                <li><em>HTML TADS interpeters</em>, which support the fully panoply of TADS' built-in
+                <li><em>HTML TADS interpreters</em>, which support the fully panoply of TADS' built-in
                     multimedia, interface, and virtual machine runtime features;</li>
                 <li><em>text-only TADS interpreters</em>, which just ignore all the
                     multimedia commands and display only text, and can sometimes not support the full runtime,</li>
                 <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in your game image so that when run, the game
-                    will function as a server and serve up a full HTML TADS interpeter
+                    will function as a server and serve up a full HTML TADS interpreter
                     into the web browser, with a lot of <a href="https://tads.org/t3doc/doc/sysman/webui.htm">extra</a>
                     <a href="https://github.com/Otto73/TADS3">functionality</a>.</li>
             </ol>
@@ -501,7 +529,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         comes along with some benefits as well as some
                         downsides. The main benefit of using adv3 is that it is
                         <i>incredibly</i> complete. It comes packed with every
-                        concievable object type, class, or feature you could
+                        conceivable object type, class, or feature you could
                         possibly need, and an incredibly complex world model
                         already wired up and integrated into the whole, so that
                         any game you create with it will automatically be
@@ -509,7 +537,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         parser interactive fiction game.</p>
 
                     <p> The downside, however, is that adv3 relies on an
-                        incredibly deep and complex multiple inheritence class
+                        incredibly deep and complex multiple inheritance class
                         hierarchy and a huge number of highly specific classes,
                         which it relies heavily on as mix-ins to customize the
                         behavior of objects. Moreover, it is not particularly
@@ -573,7 +601,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
 
                         <li><em>the vocab property</em>, which allows you to define
                             several vocabulary-related properties of an object all at once
-                            in a concinse and convenient manner more akin to how it works in
+                            in a concise and convenient manner more akin to how it works in
                             Inform;</li>
 
                         <li>a <em>world-model query system</em> for making queries about
@@ -608,9 +636,9 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
             even in the existing standard libraries. All of these are compatible
             with adv3 and most can probably be trivially made compatible with
             adv3Lite, in our experience. Just a few of the delightful things you'll
-            find there include qtalk, a suprisingly feature-complete plugin for
+            find there include qtalk, an impressively feature-complete plugin for
             Fallout-style menu based conversation, Achievement, a library for
-            creating and persistantly storing Steam-style achievements,
+            creating and persistently storing Steam-style achievements,
             and ConSpace, an extension that enhances the modelling of spatial
             relations and allows several rooms to act as one large subdivided
             location!</p>
@@ -647,7 +675,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                             <h3 class="timeline-title">Released as Open Source</h3>
                             <p>By the time of TADS 2.2.1, released in October of 1996, due to a
                                 lack of money in the shareware business, TADS was released as
-                                freeware: although not stricty free software, since forks and modifications for
+                                freeware: although not strictly free software, since forks and modifications for
                                 the purpose of anything but porting were verboten, free
                                 use, copying, and distribution were now allowed.</p>
                         </div>
@@ -659,7 +687,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                             <p>Also <a href="https://github.com/tajmone/tads-sources">open source</a> freeware,
                             TADS 3, first released on September 15, 2006, was
                             designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> as
-                                a brand new revitalization superceding TADS 2. Despite being
+                                a brand new revitalization superseding TADS 2. Despite being
                                 released in the early oughts, TADS 3 still pushes the boundaries of
                                 interactive fiction authoring system capabilities and world models
                                 in many ways, including with runtime object cloning and creation,
