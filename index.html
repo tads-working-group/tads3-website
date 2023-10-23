@@ -99,13 +99,13 @@
                         <h3>Power-User Friendly</h3>
                     </div>
                     <p>Already comfortable with programming? TADS 3 is designed
-                    with advanced interactive fiction authors in mind, offering
-                    the clarity, conciseness, and specificity of a fully-fledged
-                    programming language with all the capabilities you would
-                    expect and much more. TADS is confident in its authors'
-                    ability to use complex, powerful, and advanced feature sets,
-                    which enables it to do a lot more without worrying about
-                    whether its users can keep up.</p>
+                        with advanced interactive fiction authors in mind,
+                        offering the clarity, conciseness, and capability of a
+                        fully-fledged programming language alongside the power
+                        of a <a
+                        href="https://www.tads.org/ov_lang.htm">syntax</a> and
+                        VM built with extra capabilities for text-based
+                        simulation of any kind.</p>
                 </li>
             </ul>
 
@@ -283,10 +283,13 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                 features like advanced multiple inheritance, multimethods,
                 operator overloading, a garbage collector, anonymous functions,
                 Smalltalk-style catch-all methods, runtime reflection, and more.
-                The TADS 3 language makes growing and modifying your game
-                &mdash; and the standard library! &mdash; faster, more fun, and
-                easier than a general purpose language by being a language custom-designed for the use case of
-                authoring semantic simulations like interactive fiction games.</li>
+                Think of it like JavaScript's syntax, Ruby's object model, and
+                many of C++'s features mixed together. The TADS 3 language makes
+                growing and modifying your game &mdash; and the standard
+                library! &mdash; faster, more fun, and easier than a general
+                purpose language by being a language custom-designed for the use
+                case of authoring semantic simulations like interactive fiction
+                games.</li>
 
                 <li>Two powerful <em>text-adventure-specific <a href="https://www.tads.org/t3doc/doc/index.htm">standard</a> <a href="https://faroutscience.com/adv3lite_docs/">libraries</a></em> containing <em>advanced world models</em> that have things
                     like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of
@@ -296,9 +299,12 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                 parser that can understand arbitrary custom sentences, and
                 perform user-customizable spell check &mdash; and more.</li>
 
-                <li>A performant <em>compiler</em> to compile these programs.</li>
+                <li>A performant <em>compiler</em> designed to be simple,
+                flexible, and easy to use with any build system you want.</li>
 
-                <li>An advanced <em>virtual machine</em> to run TADS programs and produce output.</li>
+                <li>An advanced <em>virtual machine</em> specifically designed
+                for text-based simulations and multimedia output, but capable of
+                much more.</li>
             </ol>
 
             <p>In addition, there are also different kinds of <em>interpreters</em> that
@@ -495,28 +501,28 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     <img class="marketing-icon" src="assets/beard-svgrepo-com.svg"/>
                     <h3>The big, complex, full-featured graybeard: <em>adv3</em></h3>
                     <p><em><a href="http://www.tads.org/t3doc/doc/index.htm">Adv3</a></em>
-                        is the default standard library distributed with TADS 3.
+                        is the <em>default standard library</em> distributed with TADS 3.
                         It is quite old, having been created along with TADS in
                         2006 and last having been updated in 2013, but that
                         comes along with some benefits as well as some
-                        downsides. The main benefit of using adv3 is that it is
-                        <i>incredibly</i> complete. It comes packed with every
+                        downsides. The main benefit of using <em>adv3 is that it is
+                        <i>incredibly</i> complete</em>. It comes packed with every
                         concievable object type, class, or feature you could
-                        possibly need, and an incredibly complex world model
+                        possibly need, and an <em>incredibly complex world model</em>
                         already wired up and integrated into the whole, so that
                         any game you create with it will automatically be
                         running with a world model more complex than almost any
                         parser interactive fiction game.</p>
 
                     <p> The downside, however, is that adv3 relies on an
-                        incredibly deep and complex multiple inheritence class
-                        hierarchy and a huge number of highly specific classes,
+                        incredibly <em>deep and complex multiple inheritence class
+                        hierarchy</em> and a <em>huge number of highly specific classes,</em>
                         which it relies heavily on as mix-ins to customize the
                         behavior of objects. Moreover, it is not particularly
                         modular, so every game you write with it will have to
                         bring in that whole gigantic world model. Furthermore,
-                        it is not as explicitly designed for extensibility or
-                        customizability as adv3Lite is. Thus, if you want a very
+                        it is <em>not as explicitly designed for extensibility or
+                        customizability</em> as adv3Lite is. Thus, if you want a very
                         complex and simulation-heavy parser game, and what you
                         want to do fits with the existing carefully crafted
                         complex world model of adv3, then it might be for you.
@@ -545,21 +551,32 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     <img class="marketing-icon" src="assets/feather-svgrepo-com.svg"/>
                     <h3>The lightweight, modular, and modern newcomer: <em>adv3Lite</em></h3>
                     <p><em><a href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">Adv3Lite</a></em>
-                        is a newer standard library created by Eric Eve, and
-                        has been updated as recently as 2023. The main benefit of
-                        adv3Lite is that the class hierarchy is much simpler, since most
-                        customization for objects has been relocated to properties on a
-                        single class representing that kind of thing, instead of
-                        in a main base class and several mix-in classes.
-                        Additionally, the library has been made more modular and
-                        extensible compared to adv3, so if you
-                        want to write very obscure or strange game mechanics or
-                        world models that don't slot neatly into adv3's existing
-                        world model, adv3lite is for you. Some features have
-                        been streamlined out in comparison to adv3, but the some
-                        of the common ones, such as room parts, postures, and
-                        library classes as a shorthand for properties, can be
-                        added back via extensions.</p>
+                        is a newer standard library created by Eric Eve, and has
+                        been updated as recently as 2023. Although the main
+                        benefit of adv3Lite is that <em>the class hierarchy is much
+                        simpler</em>, since most customization for objects has been
+                        relocated to properties on a single class representing
+                        the object's general kind, instead of in a main base
+                        class and several mix-in classes, <em>the "lite" in the name
+                        is somewhat of a misnomer</em>. This restructuring allows
+                        much <em>greater flexibility in creating custom objects and
+                        makes the library easier to learn</em>, but <em>only a few
+                        features have been streamlined out in the process</em>, and many of
+                        the common ones &mdash; such as room parts, postures, and
+                        library classes as a shorthand for properties &mdash; <em>can be
+                        added back via extensions</em>.</p>
+
+                    <p>Instead, <em>the library is
+                        "lite" because it has been specifically designed with
+                        modularity and extensiblility in mind</em>. Adv3Lite makes
+                        customizing game mechanics, changing the world model, or
+                        creating extensions in ways that wouldn't slot neatly
+                        into adv3's existing world model easier and more
+                        powerful, and if you're not using specific game
+                        mechanics, your game doesn't have to import them and
+                        your code doesn't have to deal with them, unlike with
+                        adv3 where the whole complex world model is turned on at
+                        all times.</p>
 
                     <p>However, as the adv3Lite website says, you get several
                         crucial new features with adv3Lite that have become
