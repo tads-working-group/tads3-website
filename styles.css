@@ -211,7 +211,7 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
-    flex: 0 0 40%;
+    flex: 0 0 45%;
     min-height: 250pt;
     padding: 20px;
     background: rgba(var(--purple), 0.9);
