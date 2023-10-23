@@ -104,9 +104,8 @@
                         fully-fledged programming language alongside the power
                         of a <a
                         href="https://www.tads.org/ov_lang.htm">syntax</a> and
-                        VM built with extra capabilities for text-based
-                        simulation of any kind.</p>
-                </li>
+                        VM designed for text-based simulations of any
+                        kind.</p> </li>
             </ul>
 
             <h2>Show me the <em>code</em></h2>
@@ -371,30 +370,34 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     <h3>Create with <em>speed</em></h3>
                     <p>Expertly wield grand complexity through simpler edits!</p>
                     <ul>
-                        <li>Macros</li>
+                        <li>C-style preprocessor macros</li>
                         <li>Templates</li>
                         <li>Operator-based object hierarchies</li>
-                        <li>Separate compilation</li>
+                        <li>Incremental builds and modular compilation</li>
                         <li>Compile-time code execution</li>
-                        <li>Compiler preprocessing</li>
+                        <li>Run-time string templating</li>
                         <li>Runtime reflection</li>
                     </ul>
                     <p><i>It's like the code can write itself!</i></p>
                     <p>Tell your story through a wide number of easy notations for both strings and printed passages!
-                    Writing in TADS feels has the ease of HTML-like formatting, fused with the power of a
+                    Writing in TADS has the ease of HTML-like formatting, fused with the power of a
                     capable and flexible coding language.</p>
-                    <p>Functions and values can be directly into your strings!
+                    <p>Function calls, conditionals, values and can be inserted directly into your strings!
                     Say goodbye to lines of pesky concatenations!</p>
                 </li>
                 <li class="card">
                     <h3><em>Dynamic</em> play and development</h3>
-                    <p>TADS 3 has the powerful ability to dynamically create new objects&mdash;or
-                    clone <i>existing</i> ones&mdash;during play
-                    <b>or during compile time</b>, thanks to automatic
-                    garbage collection.</p>
-                    <p>Perform full procedural generation of everything from objects
-                    to <b>interpreted code strings</b>!</p>
-                    <p>TADS 3 games can also read and write files <b>safely</b>
+                    <p>TADS 3 has the powerful ability to dynamically create new
+                    objects&mdash;or clone <i>existing</i> ones&mdash;during
+                    play <b>or during compile time</b>, thanks to automatic
+                    garbage collection, from world model objects like Rooms and
+                    Things to regular objects, lists, string buffers, and more,
+                    and expand their size at runtime.</p>
+                    <p>Perform full procedural generation of everything from objects to
+                    to <b>code strings</b>!</p>
+                    <p>Evaluate arbitrary code strings, even ones provided by
+                    the user, at runtime!</p> <p>TADS 3 games can also read and
+                    write files <b>safely</b>
                     within the game file's sandboxed directory.
                     Persistent data is yours, in a wide
                     variety of file types.
@@ -407,22 +410,114 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                     </p>
                 </li>
                 <li class="card">
+                    <h3>An advanced <em>NPC AI</em> system</h3>
+
+                    <p>Tired of static NPCs with little agency of their own?
+                        TADS 3 offers a complex and capable, <em><a
+                        href="https://faroutscience.com/adv3lite_docs/manual/actor.htm">in-depth
+                        system for writing NPC AIs, with features like:</a></em></p>
+
+                    <ul>
+                        <li><em><a href="https://faroutscience.com/adv3lite_docs/manual/agenda.htm">Agenda
+                        Items</a></em>, to craft intelligent NPCs that gain and
+                        dismiss goals according to dynamic conditions in the
+                        world or their own internal
+                        state and take actions to achieve them;</li>
+
+                        <li><em><a href="https://faroutscience.com/adv3lite_docs/manual/actorstate.htm">Actor States</a></em> to represent the different moods,
+                        activities, or other states an NPC might be in, in a way
+                        that encapsulates all the state information into one
+                        coherent place and automatically updates every detail of
+                        the actor to match their relevant state, as well as
+                        including passive behaviors associated with the
+                        state;</li>
+
+                        <li><em><a href="https://faroutscience.com/adv3lite_docs/manual/actortopicentry.htm">Actor
+                        Topic Entries</a></em>, to represent <em><a
+                        href="https://faroutscience.com/adv3lite_docs/manual/convnode.htm">complex
+                        trees</a></em> of conversation topics and responses that
+                        open up other topics, recommend topics, or temporarly enable contextually-relevant
+                        responses, and all can be enabled or disabled
+                        dynamically based on changing world state, represented as a purely
+                        declarative object hierarchy, no need for nasty
+                        if-elseif-else chains and lots of state variables;</li>
+
+                        <li>a system for NPCs to initiate conversation with players;</li>
+
+                        <li>and a sophisticated player and NPC knowledge system
+                        integrated into the conversation system!</li>
+
+                    </ul>
+                </li>
+                <li class="card">
                     <h3>Maximum power with <em>Web UI</em></h3>
-                    <p>By utilizing the <b>Web UI</b>, TADS 3 games can include online multiplayer,
-                    as well as CSS, JavaScript, and <b>true</b> HTML (as opposed to
-                    the utilitarian variant in HTML TADS).</p>
-                    <p>Craft cooperative and competitive experiences by
-                    directly implement JavaScript to give the player
-                    an authentic and unlimited browser-based interface!</p>
+
+                    <p>Modern Web browsers are extremely sophisticated UI
+                        application platforms, far beyond what any stand-alone
+                        IF interpreter can offer. With TADS 3's <em><a
+                        href="http://www.tads.org/t3doc/doc/sysman/webui.htm">Web
+                        UI</a></em> library, you can harness that power! Web UI
+                        games can use the power of server network programming,
+                        <b>full</b> client-side CSS, JavaScript, and HTML,
+                        access to the DOM in your TADS code, communication with
+                        client-side JS from TADS via AJAX or a custom
+                        asynchornous pub/sub event framework, and more, to build
+                        something incredible.</p>
+
+                    <p>Craft cooperative and competitive experiences by using
+                    TADS 3's networking and server capabilities! Stretch the
+                    limits of what it means to be a parser IF game using the multimedia
+                    and UI capabilities enabled by TADS 3's Web library!</p>
+
                     <ul>
                         <li>Directional arrow buttons</li>
                         <li>Action buttons</li>
-                        <li>Live tile-based minimap</li>
-                        <li>Minimap-based click-to-go-to</li>
+                        <li>Live tile-based minimap with click to go-to</li>
                         <li>True Twine-style choice menus alongside the parser</li>
                     </ul>
                     <p>It's the incredible flexibility of TADS 3 with the endless power and community
                     of JavaScript!</p>
+                </li>
+                <li class="card">
+                    <h3>...and many other <em>built-in features</em>!</h3>
+
+                    <p>In addition to the powerful TADS 3 features already
+                    mentioned above or below, TADS
+                    3 has many more Interesting features:</p>
+
+                    <ul>
+                    <li>Items have weight and bulk, and containment can be
+                    limited by weight and/or bulk;</li>
+
+                    <li>Items can be contained under and behind others (as well
+                    as in or on);</li>
+
+                    <li>Complex Containers simulate multiple types of
+                    containment in the same object;</li>
+
+                    <li>Lockable objects (doors and containers) can be
+                    locked/unlocked with multiple keys or none;</li>
+
+                    <li>An adaptive hints system;</li>
+
+                    <li>A number of different scoring mechanisms, one of which
+                    has the ability to automate the calculation of the maximum
+                    score;</li>
+
+                    <li>An advanced system for representing objects composed out
+                    of multiple components that relate to each other in
+                    different ways and can be either fixed or detachable, from a
+                    briefcase with a handle on the outside and the ability to
+                    contain things inside to something more complex, like a
+                    steampunk gun;</li>
+
+                    <li>The ability to switch narration between the present and
+                    past tenses, and between the first, second and third
+                    persons;</li>
+
+                    <li>Buffering textual output through the transcript;</li>
+                    <li>...and more!</li>
+                    </ul>
                 </li>
             </ul>
         </section>
@@ -432,7 +527,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
             <p>There are three types of TADS interpreters:</p>
             <ol>
                 <li><em>HTML TADS interpreters</em>, which support the fully panoply of TADS' built-in
-                    multimedia, interface, and virtual machine runtime features;</li>
+                    multimedia, interface, and virtual machine runtime features using a small subset of HTML;</li>
                 <li><em>text-only TADS interpreters</em>, which just ignore all the
                     multimedia commands and display only text, and can sometimes not support the full runtime,</li>
                 <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in your game image so that when run, the game
@@ -468,7 +563,8 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                 QTADS
             </a>
 
-            <p>There is also the confusingly-named "HTML TADS" for Windows,
+            <p>There is also the self-titled "HTML TADS" interpreter for Windows (named
+            after the language that it handles),
             available on the <a href="https://www.tads.org/t3dl/pksetup.exe">official TADS website</a>,
             which was the reference implementation for TADS interpreters but
             which has not been updated since at best 2013.</p>
@@ -533,10 +629,13 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         It is quite old, having been created along with TADS in
                         2006 and last having been updated in 2013, but that
                         comes along with some benefits as well as some
-                        downsides. The main benefit of using <em>adv3 is that it is
-                        <i>incredibly</i> complete</em>. It comes packed with every
-                        concievable object type, class, or feature you could
-                        possibly need, and an <em>incredibly complex world model</em>
+                        downsides. The main benefit of using adv3 is that it
+                        is a coherent, integrated whole, one single
+                        <i>incredibly</i> complete and complex</em> world model
+                        where everything integrates with everything else. It
+                        comes packed with every concievable object type, class,
+                        or feature you could possibly need, and an
+                        <em>incredibly complex world model</em>
                         already wired up and integrated into the whole, so that
                         any game you create with it will automatically be
                         running with a world model more complex than almost any
@@ -572,6 +671,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         <li>Sensory <em>attenuation</em></li>
                         <li>Different <em>sensory media</em></li>
                         <li>Built-in provisions for <em>entirely new senses</em></li>
+                        <li>Several different scoring systems</li>
                     </ul>
                 </div>
 
@@ -612,7 +712,7 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         space and which adv3 does not offer:</p>
 
                     <ul>
-                        <li><em>Doers</em> which work like <em>instead rules</em> in Inform 7,
+                        <li><em>Doers</em>, which work like <em>Instead rules</em> in Inform 7,
                             allowing you to specify command queries that apply under certain
                             conditions and override the default action;</li>
 
@@ -624,9 +724,9 @@ modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0,
                         <li>a <em>world-model query system</em> for making queries about
                             the general state of the world;</li>
 
-                        <li>the introduction of <em>message parameter substitutions</em>
-                            to automatically choose words based on person, number, and
-                            tense, including working for over <em>200 irregular verbs</em> and plurals;</li>
+                        <li><em>message parameter substitutions</em>
+                            to automatically decline/conjugate based on person, number, and
+                            tense, including working for over <em>200 irregular verbs</em> and many plurals;</li>
 
                         <li>built in <em>pathfinding</em> for players and AIs;</li>
 
