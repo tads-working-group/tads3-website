@@ -211,7 +211,7 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
-    flex: 0 0 45%;
+    flex: 0 0 40%;
     min-height: 250pt;
     padding: 20px;
     background: rgba(var(--purple), 0.9);
@@ -365,9 +365,11 @@ section#showcase {
     }
     #menu-toggle ~ #spacer {
         height: 0pt;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
     #menu-toggle:checked ~ #spacer {
-        height: 220pt;
+        height: 250pt;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
     .nav-element {
         overflow: hidden;
