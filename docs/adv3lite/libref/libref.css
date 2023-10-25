@@ -188,12 +188,12 @@ body {
 }
 
 .fdesc {
-    width: 65ch;
+    max-width: 65ch;
 }
 
 .desc {
     margin-left: 30px;
-    width: 65ch;
+    max-width: 65ch;
 }
 
 code {
