@@ -30,128 +30,128 @@ benefit:
 code-example:
 - title: Defining rooms
   code: |
-    exampleRoom: Room <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;Room Name&#x27;</span>
-        <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Room description&quot;</span>
+    exampleRoom: Room 'Room Name'
+        "Room description"
 
-        isLit = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">nil</span>
-        south = <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">southRoom
-        <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">in</span> <span style="color:rgb(0, 127, 170); font-weight:400;background:rgba(0, 0, 0, 0);">asExit</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">south</span>)</span>
+        isLit = nil
+        south = southRoom
+        in asExit(south)
     ;
 - title: Adding objects to rooms and other objects
   code: |
-    // below <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">a</span> room
+    // below a room
 
-        + <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">table</span>: Surface <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;a simple table&#x27;</span>
-            <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Table description&quot;</span>
-        ;
+    + table: Surface 'a simple table'
+        "Table description"
+    ;
 
-        ++ cup: Container <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;cup&#x27;</span> ;
+    ++ cup: Container 'cup' ;
 
-        +++ water: Thing <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;water&#x27;</span>
-            massNoun = true
-            ambiguouslyPlural = true
-            isFixed = true
-            cannotTakeMsg = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to scoop the water out of the cup, but it slips through your fingers.&quot;</span>
-        ;
+    +++ water: Thing 'water'
+        massNoun = true
+        ambiguouslyPlural = true
+        isFixed = true
+        cannotTakeMsg = "You try to scoop the water out of the cup, but it slips through your fingers."
+    ;
 - title: Dynamically creating objects at runtime
   code: |
-    + <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">cokeDispenser</span>: <span class="hljs-title class_">Thing</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;refrigerator thing&#x27;</span>
-        <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;There is a big red button on the front.&quot;</span>
-        specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;There is a large refrigerator-sized box humming away in the corner.&quot;</span>
+    + cokeDispenser: Thing 'refrigerator thing'
+        "There is a big red button on the front."
+        specialDesc = "There is a large refrigerator-sized box humming away in the corner."
     ;
 
-    ++ <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">button</span>: <span class="hljs-title class_">Button</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;big red button&#x27;</span>
-        <span class="hljs-title function_">makePushed</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
-            cokeDispenser.<span class="hljs-title function_">addVocab</span>(<span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;Coke dispenser&#x27;</span>);
-            local newCoke = coke.<span class="hljs-title function_">createClone</span>();
-            coke.<span class="hljs-title function_">moveInto</span>(gPlayerChar);
-        }
+    ++ button: Button 'big red button'
+          makePushed() {
+              cokeDispenser.addVocab('Coke dispenser');
+              local newCoke = coke.createClone();
+              coke.moveInto(gPlayerChar);
+          }
     ;
-    ++ <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">coke</span>: <span class="hljs-title class_">Thing</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;coka-cola bottle&#x27;</span>
-        <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;A cold bottle of coke.&quot;</span>
-        feelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;It feels cold.&quot;</span>
-        specialDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You see bottle of coke lying on the floor.&quot;</span>
+    ++ coke: Thing 'coca-cola bottle'
+          "A cold bottle of coke."
+          feelDesc = "It feels cold."
+          specialDesc = "You see bottle of coke lying on the floor."
     ;
 - title: Rules
   code: |
-    <span class="hljs-title class_">Doer</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;think about ResolvedTopic&#x27;</span>
-        <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">c</span>) {
-            <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;That&#x27;s quite beyond you. &quot;</span>;
+    Doer 'think about ResolvedTopic'
+        execAction(c) {
+            "That's quite beyond you. ";
         }
-        when = gCommand.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">dobj</span>.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">name</span> == <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;relativity&#x27;</span>
+        when = gCommand.dobj.name == 'relativity'
     ;
 - title: Embedded objects
   code: |
-    room: Room <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;room&#x27;</span>
-        south: TravelConnector {
-            travelDesc = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to move south, but nothing happens.&quot;</span>
+    room: Room 'room'
+    south: TravelConnector {
+        travelDesc = "You try to move south, but nothing happens."
         }
     ;
 - title: Respond to actions
   code: |
-    <span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);"><span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);">// Arbitrary</span>
-    <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">cup</span>: <span class="hljs-title class_">Container</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;a cup&#x27;</span>
+    // Arbitrary
+    cup: Container 'a cup'
         taken = 0
 
-        <span class="hljs-title function_">dobjFor</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Take</span>) {
+        dobjFor(Take) {
             action() {
-                <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">inherited</span>();
+                inherited();
                 taken++;
             }
-            <span class="hljs-title function_">report</span>() {
-                <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span> (taken == 1)
-                    <span class="hljs-title class_">DMsg</span>(taken, <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;Taking {the obj}, {I} notice that it is still hot.&quot;</span>)
+            report() {
+                if (taken == 1)
+                    DMsg(taken, "Taking {the obj}, {I} notice that it is still hot.")
             }
         }
     ;
 
-    <span style="color:rgb(105, 105, 105); font-weight:400;background:rgba(0, 0, 0, 0);">// On a room</span>
+    // On a room
 
-    <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">room</span>: <span class="hljs-title class_">Room</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;room&#x27;</span>
-        <span class="hljs-title function_">roomAfterAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);"></span>) {
-            <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span> (<span class="hljs-title function_">gActionIs</span>(<span class="hljs-title class_">Jump</span>))
-                <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You try to jump, but the roof is too low and you end up bumping your head without going much of anywhere.&quot;</span>;
+    room: Room 'room'
+        roomAfterAction() {
+            if (gActionIs(Jump))
+                "You try to jump, but the roof is too low and you end up bumping your head without going much of anywhere.";
         }
     ;
 - title: Modifying and replacing objects and classes
   code: |
-    modify <span class="hljs-title class_">Jump</span>
-    <span class="hljs-title function_">execAction</span>(<span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">cmd</span>) {
-            <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span>(gActor.<span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">bulk</span> &gt; <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">1500</span>)
-                <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&quot;You&#x27;re too big to jump. &quot;</span>;
-            <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">else</span>
-                <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">inherited</span>();
+    modify Jump
+    execAction(cmd) {
+            if(gActor.bulk > 1500)
+                "You're too big to jump. ";
+            else
+                inherited();
         }
     ;
 
-    replace <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">class</span> <span class="hljs-title class_">LibClass</span>: <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">object</span>
-        prop1 = <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">10</span>
+    replace class LibClass: object
+        prop1 = 10
     ;
 - title: Defining new verbs and actions
   code: |
     VerbRule(Repair)
-        (<span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;repair&#x27;</span> | <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;mend&#x27;</span> | <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;fix&#x27;</span>) singleDobj
-        : <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">VerbProduction</span>
-        <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">action</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Repair</span>
-        <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">verbPhrase</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;repair/ repairing (what)&#x27;</span>
-        missingQ = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;what do you want to repair&#x27;</span>
+        ('repair' | 'mend' | 'fix') singleDobj
+        : VerbProduction
+        action = Repair
+        verbPhrase = 'repair/ repairing (what)'
+        missingQ = 'what do you want to repair'
       ;
 
       DefineTAction(Repair) ;
 
-      modify <span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">Thing</span>
-          <span style="color:rgb(217, 30, 24); font-weight:400;background:rgba(0, 0, 0, 0);">isRepairable</span> <span style="color:rgb(84, 84, 84); font-weight:400;background:rgba(0, 0, 0, 0);">=</span> nil
+      modify Thing
+          isRepairable = nil
 
-          <span class="hljs-title function_">dobjFor</span><span style="color:rgb(170, 93, 0); font-weight:400;background:rgba(0, 0, 0, 0);">(Repair)</span> {
+          dobjFor(Repair) {
               preCond = [touchObj]
 
               verify() {
-                  <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0, 0, 0, 0);">if</span>(!isRepairable)
+                  if(!isRepairable)
                       illogical(cannotRepairMsg);
               }
           }
 
-          cannotRepairMsg = <span style="color:rgb(0, 128, 0); font-weight:400;background:rgba(0, 0, 0, 0);">&#x27;{The subj dobj} {doesn\&#x27;t need mending. &#x27;</span>
+          cannotRepairMsg = '{The subj dobj} {doesn\'t need mending. '
       ;
 
 learnmore:

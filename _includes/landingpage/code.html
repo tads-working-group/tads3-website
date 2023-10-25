@@ -2,7 +2,8 @@
 {% for item in site.data.intro.code-example %}
 <h3>{{item.title}}</h3>
 
-<div class="code-pen"><pre><code id="htmlViewer" style="color:rgb(84, 84, 84); font-weight:400;background-color:rgb(254, 254, 254);background:rgb(254, 254, 254);display:block;padding: .5em;">{{item.code}}</code></pre>
-</div>
+{% highlight javascript %}
+{{item.code}}
+{% endhighlight %}
 
 {% endfor %}
