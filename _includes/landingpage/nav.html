@@ -1,0 +1,6 @@
+<nav class="menu">
+    <a class="nav-element important" href="#install">Download</a>
+    {% for item in site.data.intro.navbar %}
+    <a class="nav-element" href="#{{item.id}}">{{item.title}}</a>
+    {% endfor %}
+</nav>

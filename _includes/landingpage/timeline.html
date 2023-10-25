@@ -1,0 +1,14 @@
+<h2>A brief <em>history</em> of TADS</h2>
+<div class="timeline">
+    <div class="outer">
+        {% for item in site.data.intro.timeline %}
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">{{item.title}}</h3>
+                {{item.description | markdownify}}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<p>If you want to learn more about the history of TADS, I recommend checking out the Digital Antiquarian's article <a href="https://www.filfre.net/2017/02/tads/">here</a>. Unfortunately, that article only covers the early history, and what we know of the rest is spotty at best.</p>

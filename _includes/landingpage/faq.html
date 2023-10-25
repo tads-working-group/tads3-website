@@ -1,0 +1,4 @@
+{% for item in site.data.intro.faq %}
+<h2>{{item.q}}</h2>
+{{item.description | markdownify}}
+{% endfor %}

@@ -1,0 +1,53 @@
+<h2 id="interpreter">Getting an <em>interpreter</em></h2>
+
+<p>There are three types of TADS interpreters:</p>
+<ol>
+    <li><em>HTML TADS interpreters</em>, which support the fully panoply of TADS' built-in multimedia, interface, and virtual machine runtime features using a small subset of HTML;</li>
+    <li><em>text-only TADS interpreters</em>, which just ignore all the multimedia commands and display only text, and can sometimes not support the full runtime,</li>
+    <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in the game image itself, so that when run, the game will function as a server and serve up a full HTML TADS interpreter into your web browser, with a lot of <a href="./docs/adv3/sysman/webui.htm">extra</a> <a href="https://github.com/Otto73/TADS3">functionality</a>.</li>
+</ol>
+
+<h3>HTML TADS</h3>
+<p>If you want to play or develop regular TADS 3 games the simplest and most supported way, we recommend going with an HTML TADS interpreter. Currently, the best one is <em><a href="https://realnc.github.io/qtads/">QTADS</a></em>, both because it is the most feature-complete and bug free, and because it is still being regularly updated and improved (at least as of May 17, 2023). It has versions available for Linux, Windows, and macOS. If the links below don't suit your needs, more architectures and OS versions are listed on the qTADS downloads page.</p>
+
+<a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Linux-x86_64-AppImage.tar.gz">
+    <img class="icon" src="assets/linux-svgrepo-com.svg"/>
+    Download
+    QTADS
+</a>
+<a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Windows-x64.zip">
+    <img class="icon" src="assets/windows-svgrepo-com.svg"/>
+    Download
+    QTADS
+</a>
+<a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-macOS.zip">
+    <img class="icon" src="assets/macos-svgrepo-com.svg"/>
+    Download
+    QTADS
+</a>
+
+<p>There is also the self-titled "HTML TADS" interpreter for Windows (named after the language that it handles), available on the <a href="https://www.tads.org/t3dl/pksetup.exe">official TADS website</a>, which was the reference implementation for TADS interpreters but which has not been updated since at best 2013.</p>
+
+<h3>Web UI</h3>
+<p>If you want to run a Web UI TADS game, we recommend <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, as it has the most complete implementation of the virtual machine/runtime and can run in the headless networked server mode needed for Web Play. FrobTADS has also been recently updated,     reaching version 2.0 in 2021. To run a Web UI TADS 3 game with FrobTADS, just run this command after installing FrobTADS: <pre>frob -N 0 your-t3-file.t3</pre></p>
+
+<p>Note: we play to release a cross-platform GUI program for running TADS 3 Web UI games on your local computer eventually.</p>
+
+<h3>Text-only</h3>
+<p>If you just want to play a TADS 3 game in text-only mode, we recommend going with a general purpose multi-format interpreter. Just keep in mind that playing TADS 3 games in text-only mode will cause you to miss out on a lot of the experience, so we don't recommend it. The most popular multi-format interpreter, <em><a href="http://ccxvii.net/gargoyle/">Gargoyle</a></em>, is a good choice, since it can run TADS games. <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em> does also come with a command line text-only interpreter as well.</p>
+
+<h2 id="compiler">Getting a <em>compiler</em></h2>
+<p>If you intend to develop TADS 3 games, you'll need a compiler to turn your source files into a game file that an interpreter can run. On Windows, you can use <em><a href="./assets/t3setup.exe">the official Author's Kit for Windows</a></em>, although compatibility with modern 64-bit operating systems is in question. On macOS, Linux, or BSD, you can use <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, which should run fine on modern machines.</p>
+
+<h2 id="editor">Setting up your <em>development environment</em></h2>
+<p>Although the TADS 3 Author's Kit for Windows comes with a full-fledged IDE called Workbench, that program is now very old and probably doesn't have all the features you're used to in a modern editor. As a result, across the board, we recommend one of two editors for writing TADS:</p>
+
+<ol>
+    <li><em><a href="https://marketplace.visualstudio.com/items?itemName=toerob.vscode-tads3tools">TADS 3 Tools for Visual Studio Code</a></em> offers
+    a feature-rich and easy to use integrated development environment for TADS 3 authors, so if you have no specific editor preference or already use Visual Studio Code, it is highly recommended.</li>
+
+    <li>There is also <em><a href="https://github.com/alexispurslane/tads3-mode">tads3-mode</a></em> for Emacs, which offers slightly better auto completion and most of the basic necessary capabilities to make a modern programmer feel at home, but which is admittedly not as advanced as TADS 3
+    Tools. This is for relatively advanced authors who prefer not to use Visual Studio Code for whatever reason.</li>
+</ol>
+
+<p>Adventurous and ambitious authors who intend on writing very large games, or perhaps TADS 3 libraries on their own, might also benefit from installing and setting up Eric Eve's <em><a href="https://github.com/EricEve/docgen">docgen</a></em> program, which generates a Rust-like organized and cross-referenced documentation reference from your source code.</p>
