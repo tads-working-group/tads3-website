@@ -59,7 +59,7 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0 0;
     width: 100%;
     border: none;
-    height: 106px;
+    height: 55pt;
 }
 
 body {
@@ -72,7 +72,7 @@ table.hdr {
     margin: 0 0;
     width: 100%;
     height: 30pt;
-    padding: 30px 15px;
+    padding: 10pt 15px;
     background: rgb(var(--purple));
     background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(assets/map.jpg);
     background-attachment: fixed;
@@ -110,7 +110,7 @@ body {
 .hsplit {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 100%;
     height: 100%;
     justify-content: space-between;
@@ -131,17 +131,15 @@ body {
     display: flex;
     border: none;
     height: 100%;
-    flex-grow: 1;
     min-width: 0;
 }
 
 #files {
     border: none;
     border-bottom: 2px solid #999;
-    width: 345px;
     background: #ddd;
     margin: 0 0;
-    height: calc(50vh - 83px);
+    height: calc(50vh - 52pt);
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -149,11 +147,10 @@ body {
 #classes {
     margin: 0 0;
     border: none;
-    width: 345px;
     background: #ddd;
     padding-top: 15px;
     padding-bottom: 15px;
-    height: calc(50vh - 83px);
+    height: calc(50vh - 52pt);
 }
 
 .vsplit {
@@ -165,8 +162,11 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: top;
+    flex: 0 1 15%;
+    min-width: fit-content;
+    overflow:hidden;
 }
 
 .vsplit > * {
@@ -225,4 +225,86 @@ table.nav td a {
 
 table.ban tr {
     vertical-align: middle;
+}
+
+
+.menu-button-container {
+    display: none;
+    height: 30pt;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+    .vsplit {
+        flex: 1 1 0%;
+        min-width: 0;
+    }
+    .menu-button-container {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #400040;
+        padding: 11.5pt;
+    }
+    table.hdr {
+        padding-left: 75px;
+    }
+    #menu-toggle ~ .vsplit {
+        flex: 0 0 0;
+        width: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: flex-basis 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .vsplit {
+        flex-basis: 100%;
+        padding: 5px 10px;
+        transition: flex-basis 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
 }
