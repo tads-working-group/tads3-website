@@ -454,12 +454,15 @@ timeline:
   - title: adv3Lite 0.2 is released (2012)
     description: |
       According to Eric Eve himself, "You can trace the release history of adv3Lite back to version 0.2 released in November 2012 by looking at the change log supplied with the adv3Lite docs. I believe the first (beta) release would have been version 0.1 on 11th October 2012 (judging by the file date on adv3Lite01.zip)."
+  - title: adv3Lite 1.0 is released (2013)
+    description: |
+      The first full release version of adv3Lite was 1.0, released on the 30th of November, 2013.
   - title: TADS 3 is finished (2013)
     description: |
       The final update to TADS 3, "a small update, mostly to fix bugs" according to the changelog, was 3.1.3, made on May 16th, 2013. After this point, Michael J. Roberts considered TADS finished.
   - title: Michael J. Roberts steps away from the community (2016)
     description: |
-      Although the exact date of this is unclear, and it probably happened gradually over time, Michael J. Roberts would eventually stop responding to emails from interactive fiction community members, including Eric Eve, who he worked closely with on parts of the TADS documentation, or interacting on forums. According to Eve himself, MJR stopped responding to emails in around 2016, so we can probably consider that point a significant cutoff for MJR's involvement in the community. After twenty-six years, he was probably just tired.
+      Eventually, Michael J. Roberts would stop interacting with the interactive fiction community, including Eric Eve, who he worked closely with on parts of the TADS documentation. When exactly this happened isn't clear, since it happened gradually over time, but it appears he stopped interacting with the community on forums by around 2013, and finally stopped responding to Eric Eve's emails in 2016. We can safely say this is when he almost entirely detached from the community.
   - title: Michael J. Roberts hands IFDB over to the IFTF (2021)
     description: |
       The last known interaction between the community and MJR took place in 2021, when he handed IFDB, which used to be hosted on a subdomain of tads.org and managed by him, over to a special committee of the IFTF for safekeeping.

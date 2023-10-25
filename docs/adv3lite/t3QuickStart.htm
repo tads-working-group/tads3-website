@@ -8,7 +8,7 @@
     </head>
 
     <body>
-<header>
+        <header>
             <span><a href="../../index.html">TADS 3</a></span>
 
             <input id="menu-toggle" type="checkbox" />
@@ -181,9 +181,9 @@
                     <p>The plot of the game (such as it is) consists of the player character entering a house, stealing the Orb of Ultimate Satisfaction, and then escaping with it. We start with an absolutely basic bare bones implementation.</p>
 
                     <pre><span class=code>
-                        #charset "us-ascii"
-                        #include &lt;tads.h&gt;
-                        #include "advlite.h"
+#charset "us-ascii"
+#include &lt;tads.h&gt;
+#include "advlite.h"
 
                         <span class="comment">
                             /* The header, shown above, tells TADS to include some essential files. */
@@ -284,9 +284,9 @@
                     <p>Once again, if you want to try this version out be very careful to copy everything exactly, or it probably won't work. If you already have some experienced with programming, especially in another IF authoring system, you may be able to work out at least some of what's going on in the code below, but if it totally baffles you it may be time to start reaching for the manuals!</p>
 
                     <pre><span class=code>
-                        #charset "us-ascii"
-                        #include &lt;tads.h&gt;
-                        #include "advlite.h"
+#charset "us-ascii"
+#include &lt;tads.h&gt;
+#include "advlite.h"
 
                         versionInfo: GameID
                         IFID = '558c20af-6559-477a-9f98-b7b4274cd304'
@@ -569,9 +569,9 @@
                     <p>We'll make the third and final version of <q>The Best Burglar</q> just a <i>little</i> more challenging by hiding the front door key under a flowerpot, hiding the safe behind a picture, and making the clue to the combination in the notebook a bit more cryptic. We'll also make the Orb of Ulimate Satisfaction a tad more interesting by making it do something (albeit not that much) when it's rubbed, which means we'll also need to define a new RUB verb. We'll add a few decoration objects to field commands directed at things mentioned in room descriptions and the like, and we'll tidy up a couple of things, by, for example, defining the bulk and bulk capacity of various objects so the player can't put something obviously bigger inside something obviously smaller, and, for example, by preventing the player picking up the hall table when there's something still on it. Finally, we'll add some scoring and hints to the game.</p>
 
                     <pre><span class=code>
-                        #charset "us-ascii"
-                        #include &lt;tads.h&gt;
-                        #include "advlite.h"
+#charset "us-ascii"
+#include &lt;tads.h&gt;
+#include "advlite.h"
 
                         versionInfo: GameID
                         IFID = '558c20af-6559-477a-9f98-b7b4274cd304'
