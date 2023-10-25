@@ -7,42 +7,42 @@
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-Regular.woff2);
+    src: url(fonts/Metropolis-Regular.woff2);
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-Light.woff2);
+    src: url(fonts/Metropolis-Light.woff2);
     font-weight: 300;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-RegularItalic.woff2);
+    src: url(fonts/Metropolis-RegularItalic.woff2);
     font-style: italic;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-Bold.woff2);
+    src: url(fonts/Metropolis-Bold.woff2);
     font-weight: 400;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-SemiBold.woff2);
+    src: url(fonts/Metropolis-SemiBold.woff2);
     font-weight: 500;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-ExtraBold.woff2);
+    src: url(fonts/Metropolis-ExtraBold.woff2);
     font-weight: 800;
 }
 
 @font-face {
     font-family: Metropolis;
-    src: url(assets/fonts/Metropolis-Black.woff2);
+    src: url(fonts/Metropolis-Black.woff2);
     font-weight: 900;
 }
 
@@ -155,7 +155,7 @@ nav {
     padding: 15px;
     min-height: 340pt;
     background: rgb(var(--purple));
-    background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(assets/map.jpg);
+    background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(map.jpg);
     background-attachment: fixed;
     background-position: 0% 0%;
     background-size: cover;

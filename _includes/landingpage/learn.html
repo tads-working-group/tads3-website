@@ -1,0 +1,17 @@
+<h2>Which standard library should I choose, <em>adv3</em> or <em>adv3Lite</em>?</h2>
+
+<p>Yes, that's right, TADS 3 has <i>two</i> standard libraries! Here's the breakdown:</p>
+
+<div class="side-by-side">
+{% for item in site.data.intro.learn.comparison %}
+    <div>
+        <img class="marketing-icon" src="{{ item.image }}">
+        <h3>{{ item.title }}</h3>
+        <p>
+            {{ item.description | markdownify }}
+        </p>
+    </div>
+{% endfor %}
+</div>
+
+{{ site.data.intro.learn.learning | markdownify }}

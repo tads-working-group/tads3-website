@@ -1,0 +1,12 @@
+<h2>Core <em>benefits</em></h2>
+<ul class="columns">
+{% for item in site.data.intro.benefit %}
+<li>
+    <div class="feature-top">
+        <img class="marketing-icon" src="{{item.image}}"/>
+        <h3>{{item.title}}</h3>
+    </div>
+    <p>{{item.description | markdownify}}</p>
+</li>
+{% endfor %}
+</ul>

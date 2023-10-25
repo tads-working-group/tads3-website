@@ -1,0 +1,9 @@
+<h2>Other <em>unique features</em></h2>
+<ul class="cards">
+{% for item in site.data.intro.feature %}
+<li class="card">
+    <h3>{{item.title}}</h3>
+    {{item.description | markdownify}}
+</li>
+{% endfor %}
+</ul>
