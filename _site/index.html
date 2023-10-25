@@ -17,7 +17,7 @@
     <meta property="og:image" content="assets/topbarl.jpg">
     <link rel="icon" href="assets/tads-favicon.png" type=
     "image/png">
-    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles.css">
 </head>
 <body>
         <section class="jumbotron">
@@ -45,15 +45,9 @@
 </nav>
     </header>
     <h1>Empowering Ambitious Authors</h1>
-<p>TADS 3 is a <em>powerful and flexible interactive fiction
-authoring system</em> designed and built for <em>ambitious
-authors</em>. It brings to the table a <em>dynamic</em> yet <em>fun
-to use</em> object-oriented programming language that's
-purpose-built for writing primarily <em>parser-based</em>
-interactive fiction, and two standard libraries that push the
-boundaries of what the medium is capable of in terms of
-<em>simulation</em>, <em>customization</em>, and
-<em>multimedia</em>.<br/><br/></p>
+<p>TADS 3 is a <em>powerful and flexible interactive fiction authoring system</em> designed and built for <em>ambitious authors</em>. It brings to the table a <em>dynamic</em> yet <em>fun to use</em> object-oriented programming language that’s purpose-built for writing primarily <em>parser-based</em> interactive fiction, and two standard libraries that push the boundaries of what the medium is capable of in terms of <em>simulation</em>, <em>customization</em>, and <em>multimedia</em>.<br /><br /></p>
+
+
 </section>
     <div class="container">
         <section id="info">
@@ -261,23 +255,29 @@ replace <span style="color:rgb(121, 40, 161); font-weight:400;background:rgba(0,
             <h2>Ready to <em>learn more</em>?</h2>
 
 <p>TADS 3 is comprised of several core components:</p>
+
 <ol>
-<li>A <em><a href="./docs/adv3/sysman/langsec.htm">special-purpose object-oriented programming language</a></em> designed with concise yet readable syntax and a focus on
-<em>extensibility</em>, <em>dynamic typing</em>, and <em>declarative data declaration as a first-class citizen</em>. It has features like advanced multiple inheritance, multimethods, operator overloading, a garbage collector, anonymous functions. Smalltalk-style catch-all methods, runtime reflection, and more. Think of it like JavaScript's syntax, Ruby's object model, and many of C++'s features mixed together. Yet, at the same time the TADS 3 language makes growing and modifying your game&mdash;and the standard library!&mdash;faster and more fun than a general purpose language because although it is general purpose, it has been custom-designed for the use case of authoring semantic simulations like interactive fiction games.</li>
-
-<li>Two powerful <em>text-adventure-specific <a href="./docs/adv3/index.htm">standard</a> <a href="./docs/adv3lite/index.htm">libraries</a></em> containing <em>advanced world models</em> that have things like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of <em>attachable and detachable sub components and object relationships</em>, and <em>hundreds of different powerful properties</em> to customize the precise
-behavior of each object, an advanced and extremely customizable parser that can understand arbitrary custom sentences, and perform user-customizable spell check&mdash;and more.</li>
-
-<li>A performant <em>compiler</em> designed to be simple, flexible, and easy to use with any build system you want.</li>
-
-<li>An advanced <em>virtual machine</em> specifically designed for text-based simulations and multimedia output, but capable of much more.</li>
+  <li>
+    <p>A <em><a href="./docs/adv3/sysman/langsec.htm">special-purpose object-oriented programming language</a></em> designed with concise yet readable syntax and a focus on <em>extensibility</em>, <em>dynamic typing</em>, and <em>declarative data declaration as a first-class citizen</em>. It has features like advanced multiple inheritance, multimethods, operator overloading, a garbage collector, anonymous functions. Smalltalk-style catch-all methods, runtime reflection, and more. Think of it like JavaScript’s syntax, Ruby’s object model, and many of C++’s features mixed together. Yet, at the same time the TADS 3 language makes growing and modifying your game—and the standard library!—faster and more fun than a general purpose language because although it is general purpose, it has been custom-designed for the use case of authoring semantic simulations like interactive fiction games.</p>
+  </li>
+  <li>
+    <p>Two powerful <em>text-adventure-specific <a href="#learn">standard libraries</a></em> containing <em>advanced world models</em> that have things like <em>room parts</em>, <em>sense-passing</em>, a complex understanding of <em>attachable and detachable sub components and object relationships</em>, and <em>hundreds of different powerful properties</em> to customize the precise behavior of each object, an advanced and extremely customizable parser that can understand arbitrary custom sentences, and perform user-customizable spell check— and more.</p>
+  </li>
+  <li>
+    <p>A performant <em>compiler</em> designed to be simple, flexible, and easy to use with any build system you want.</p>
+  </li>
+  <li>
+    <p>An advanced <em>virtual machine</em> specifically designed for text-based simulations and multimedia output, but capable of much more.</p>
+  </li>
 </ol>
 
 <p>In addition, there are also different kinds of <em>interpreters</em> that use the virtual machine to run your TADS games and then interpret the output produced by the games into the multimedia output and graphical user interface players see.</p>
 
-<p>To learn more about, and download, these components, see <a href="#install">below.</a></p>
+<p>To learn more about, and download, these components, see <a href="#install">below</a>.</p>
 
-<p>TADS 3 also has an <i>extensive</i> set of learning resources, including roughly <em>eight book-length references and guides</em>, all of which are detailed, orderly, clear, and thorough. If you've struggled with the documentation of other interactive fiction authoring systems in the past, or are concerned that using such a niche piece of software will make answers hard to find, fear not! Michael J. Roberts and Eric Eve have ensured that no TADS programmer will ever stay confused for long. For more information on which manuals to read and where to find a full list of TADS documentation for each of the respective standard libraries, please consult the relevant section <a href="#learn">below.</a></p>
+<p>TADS 3 also has an <i>extensive</i> set of learning resources, including roughly <em>eight book-length references and guides</em>, all of which are detailed, orderly, clear, and thorough. If you’ve struggled with the documentation of other interactive fiction authoring systems in the past, or are concerned that using such a niche piece of software will make answers hard to find, fear not! Michael J. Roberts and Eric Eve have ensured that no TADS programmer will ever stay confused for long. For more information on which manuals to read and where to find a full list of TADS documentation for each of the respective standard libraries, please consult the relevant section <a href="#learn">below</a>;</p>
+
+
         </section>
         <section id="features">
             <h2>Other <em>unique features</em></h2>
@@ -407,59 +407,65 @@ of JavaScript!</p>
 </ul>
         </section>
         <section id="install">
-            <h2 id="interpreter">Getting an <em>interpreter</em></h2>
+            <h2>Installing <em>TADS 3</em></h2>
+
+<h3 id="getting-an-interpreter">Getting an <em>interpreter</em></h3>
 
 <p>There are three types of TADS interpreters:</p>
+
 <ol>
-    <li><em>HTML TADS interpreters</em>, which support the fully panoply of TADS' built-in multimedia, interface, and virtual machine runtime features using a small subset of HTML;</li>
-    <li><em>text-only TADS interpreters</em>, which just ignore all the multimedia commands and display only text, and can sometimes not support the full runtime,</li>
-    <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in the game image itself, so that when run, the game will function as a server and serve up a full HTML TADS interpreter into your web browser, with a lot of <a href="./docs/adv3/sysman/webui.htm">extra</a> <a href="https://github.com/Otto73/TADS3">functionality</a>.</li>
+  <li><em>HTML TADS interpreters</em>, which support the fully panoply of TADS’ built-in multimedia, interface, and virtual machine runtime features using a small subset of HTML;</li>
+  <li><em>text-only TADS interpreters</em>, which just ignore all the multimedia commands and display only text, and can sometimes not support the full runtime,</li>
+  <li>and the <em>Web UI TADS interpreter</em>, which can be enabled in the game image itself, so that when run, the game will function as a server and serve up a full HTML TADS interpreter into your web browser, with a lot of <a href="./docs/adv3/sysman/webui.htm">extra</a> <a href="https://github.com/Otto73/TADS3">functionality</a>.</li>
 </ol>
 
-<h3>HTML TADS</h3>
-<p>If you want to play or develop regular TADS 3 games the simplest and most supported way, we recommend going with an HTML TADS interpreter. Currently, the best one is <em><a href="https://realnc.github.io/qtads/">QTADS</a></em>, both because it is the most feature-complete and bug free, and because it is still being regularly updated and improved (at least as of May 17, 2023). It has versions available for Linux, Windows, and macOS. If the links below don't suit your needs, more architectures and OS versions are listed on the qTADS downloads page.</p>
+<h4 id="html-tads">HTML TADS</h4>
+<p>If you want to play or develop regular TADS 3 games the simplest and most supported way, we recommend going with an HTML TADS interpreter. Currently, the best one is <em><a href="https://realnc.github.io/qtads/">QTADS</a></em>, both because it is the most feature-complete and bug free, and because it is still being regularly updated and improved (at least as of May 17, 2023). It has versions available for Linux, Windows, and macOS. If the links below don’t suit your needs, more architectures and OS versions are listed on the qTADS downloads page.</p>
 
-<a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Linux-x86_64-AppImage.tar.gz">
-    <img class="icon" src="assets/linux-svgrepo-com.svg"/>
+<p><a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Linux-x86_64-AppImage.tar.gz">
+    <img class="icon" src="assets/linux-svgrepo-com.svg" />
     Download
     QTADS
 </a>
 <a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Windows-x64.zip">
-    <img class="icon" src="assets/windows-svgrepo-com.svg"/>
+    <img class="icon" src="assets/windows-svgrepo-com.svg" />
     Download
     QTADS
 </a>
 <a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-macOS.zip">
-    <img class="icon" src="assets/macos-svgrepo-com.svg"/>
+    <img class="icon" src="assets/macos-svgrepo-com.svg" />
     Download
     QTADS
-</a>
+</a></p>
 
-<p>There is also the self-titled "HTML TADS" interpreter for Windows (named after the language that it handles), available on the <a href="https://www.tads.org/t3dl/pksetup.exe">official TADS website</a>, which was the reference implementation for TADS interpreters but which has not been updated since at best 2013.</p>
+<p>There is also the self-titled “HTML TADS” interpreter for Windows (named after the language that it handles), available on the <a href="https://www.tads.org/t3dl/pksetup.exe">official TADS website</a>, which was the reference implementation for TADS interpreters but which has not been updated since at best 2013.</p>
 
-<h3>Web UI</h3>
-<p>If you want to run a Web UI TADS game, we recommend <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, as it has the most complete implementation of the virtual machine/runtime and can run in the headless networked server mode needed for Web Play. FrobTADS has also been recently updated,     reaching version 2.0 in 2021. To run a Web UI TADS 3 game with FrobTADS, just run this command after installing FrobTADS: <pre>frob -N 0 your-t3-file.t3</pre></p>
+<h4 id="web-ui">Web UI</h4>
+<p>If you want to run a Web UI TADS game, we recommend <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, as it has the most complete implementation of the virtual machine/runtime and can run in the headless networked server mode needed for Web Play. FrobTADS has also been recently updated, reaching version 2.0 in 2021. To run a Web UI TADS 3 game with FrobTADS, just run this command after installing FrobTADS: <code class="language-plaintext highlighter-rouge">frob -N 0 your-t3-file.t3</code></p>
 
-<p>Note: we play to release a cross-platform GUI program for running TADS 3 Web UI games on your local computer eventually.</p>
+<p>Note: we plan to release a cross-platform self-contained GUI program for running TADS 3 Web UI games on your local computer eventually.</p>
 
-<h3>Text-only</h3>
-<p>If you just want to play a TADS 3 game in text-only mode, we recommend going with a general purpose multi-format interpreter. Just keep in mind that playing TADS 3 games in text-only mode will cause you to miss out on a lot of the experience, so we don't recommend it. The most popular multi-format interpreter, <em><a href="http://ccxvii.net/gargoyle/">Gargoyle</a></em>, is a good choice, since it can run TADS games. <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em> does also come with a command line text-only interpreter as well.</p>
+<h4 id="text-only">Text-only</h4>
+<p>If you just want to play a TADS 3 game in text-only mode, we recommend going with a general purpose multi-format interpreter. Just keep in mind that playing TADS 3 games in text-only mode will cause you to miss out on a lot of the experience, so we don’t recommend it. The most popular multi-format interpreter, <em><a href="http://ccxvii.net/gargoyle/">Gargoyle</a></em>, is a good choice, since it can run TADS games. <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em> does also come with a command line text-only interpreter as well.</p>
 
-<h2 id="compiler">Getting a <em>compiler</em></h2>
-<p>If you intend to develop TADS 3 games, you'll need a compiler to turn your source files into a game file that an interpreter can run. On Windows, you can use <em><a href="./assets/t3setup.exe">the official Author's Kit for Windows</a></em>, although compatibility with modern 64-bit operating systems is in question. On macOS, Linux, or BSD, you can use <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, which should run fine on modern machines.</p>
+<h3 id="getting-a-compiler">Getting a <em>compiler</em></h3>
+<p>If you intend to develop TADS 3 games, you’ll need a compiler to turn your source files into a game file that an interpreter can run. On Windows, you can use <em><a href="./assets/t3setup.exe">the official Author’s Kit for Windows</a></em>, although compatibility with modern 64-bit operating systems is in question. On macOS, Linux, or BSD, you can use <em><a href="https://github.com/realnc/frobtads/releases">FrobTADS</a></em>, which should run fine on modern machines.</p>
 
-<h2 id="editor">Setting up your <em>development environment</em></h2>
-<p>Although the TADS 3 Author's Kit for Windows comes with a full-fledged IDE called Workbench, that program is now very old and probably doesn't have all the features you're used to in a modern editor. As a result, across the board, we recommend one of two editors for writing TADS:</p>
+<h3 id="setting-up-your-development-environment">Setting up your <em>development environment</em></h3>
+<p>Although the TADS 3 Author’s Kit for Windows comes with a full-fledged IDE called Workbench, that program is now very old and probably doesn’t have all the features you’re used to in a modern editor. As a result, across the board, we recommend one of two editors for writing TADS:</p>
 
 <ol>
-    <li><em><a href="https://marketplace.visualstudio.com/items?itemName=toerob.vscode-tads3tools">TADS 3 Tools for Visual Studio Code</a></em> offers
-    a feature-rich and easy to use integrated development environment for TADS 3 authors, so if you have no specific editor preference or already use Visual Studio Code, it is highly recommended.</li>
-
-    <li>There is also <em><a href="https://github.com/alexispurslane/tads3-mode">tads3-mode</a></em> for Emacs, which offers slightly better auto completion and most of the basic necessary capabilities to make a modern programmer feel at home, but which is admittedly not as advanced as TADS 3
-    Tools. This is for relatively advanced authors who prefer not to use Visual Studio Code for whatever reason.</li>
+  <li>
+    <p><em><a href="https://marketplace.visualstudio.com/items?itemName=toerob.vscode-tads3tools">TADS 3 Tools for Visual Studio Code</a></em> offers a feature-rich and easy to use integrated development environment for TADS 3 authors, so if you have no specific editor preference or already use Visual Studio Code, it is highly recommended.&lt;/li&gt;</p>
+  </li>
+  <li>
+    <p>There is also <em><a href="https://github.com/alexispurslane/tads3-mode">tads3-mode</a></em> for Emacs, which offers slightly better auto completion and most of the basic necessary capabilities to make a modern programmer feel at home, but which is admittedly not as advanced as TADS 3 Tools. This is for relatively advanced authors who prefer not to use Visual Studio Code for whatever reason.</p>
+  </li>
 </ol>
 
-<p>Adventurous and ambitious authors who intend on writing very large games, or perhaps TADS 3 libraries on their own, might also benefit from installing and setting up Eric Eve's <em><a href="https://github.com/EricEve/docgen">docgen</a></em> program, which generates a Rust-like organized and cross-referenced documentation reference from your source code.</p>
+<p>Adventurous and ambitious authors who intend on writing very large games, or perhaps TADS 3 libraries on their own, might also benefit from installing and setting up Eric Eve’s <em><a href="https://github.com/EricEve/docgen">docgen</a></em> program, which generates a Rust-like organized and cross-referenced documentation reference from your source code.</p>
+
+
         </section>
         <section id="learn">
             <h2>Which standard library should I choose, <em>adv3</em> or <em>adv3Lite</em>?</h2>
@@ -467,296 +473,122 @@ of JavaScript!</p>
 <p>Yes, that's right, TADS 3 has <i>two</i> standard libraries! Here's the breakdown:</p>
 
 <div class="side-by-side">
-    <div id="adv3">
-        <!-- extend this to be more fair! -->
-        <img class="marketing-icon" src="assets/beard-svgrepo-com.svg"/>
-        <h3>The big, complex, full-featured graybeard: <em>adv3</em></h3>
-        <p><em><a href="https://www.tads.org/ov_lib.htm">Adv3</a></em>
-            is the <em>default standard library</em> distributed with TADS 3.
-            It is quite old, having been created along with TADS in
-            2006 and last having been updated in 2013, but that
-            comes along with some benefits as well as some
-            downsides. The main benefit of using adv3 is that it
-            is a coherent, integrated whole, one single
-            <i>incredibly</i> complete and complex</em> world model
-            where everything integrates with everything else. It
-            comes packed with every concievable object type, class,
-            or feature you could possibly need, and an
-            <em>incredibly complex world model</em>
-            already wired up and integrated into the whole, so that
-            any game you create with it will automatically be
-            running with a world model more complex than almost any
-            parser interactive fiction game.</p>
 
-        <p> The downside, however, is that adv3 relies on an
-            incredibly <em>deep and complex multiple inheritence class
-            hierarchy</em> and a <em>huge number of highly specific classes,</em>
-            which it relies heavily on as mix-ins to customize the
-            behavior of objects. Moreover, it is not particularly
-            modular, so every game you write with it will have to
-            bring in that whole gigantic world model. Furthermore,
-            it is <em>not as explicitly designed for extensibility or
-            customizability</em> as adv3Lite is. Thus, if you want a very
-            complex and simulation-heavy parser game, and what you
-            want to do fits with the existing carefully crafted
-            complex world model of adv3, then it might be for you.
-            If not, you might want to look at adv3Lite.</p>
+    <div>
+        <img class="marketing-icon" src="./assets/beard-svgrepo-com.svg">
+        <h3>The big, complex, full-featured graybeard: *adv3*</h3>
+        <p>
+            <p><em><a href="https://www.tads.org/ov_lib.htm">Adv3</a></em> is the <em>default standard library</em> distributed with TADS 3. It is quite old, having been created along with TADS in 2006 and last having been updated in 2013, but that comes along with some benefits as well as some downsides. The main benefit of using adv3 is that it is a coherent, integrated whole, one single <em><i>incredibly</i> complete and complex world model</em> where everything integrates with everything else. It comes packed with every concievable object type, class, or feature you could possibly need, and an <em>incredibly complex world model</em> already wired up and integrated into the whole, so that any game you create with it will automatically be running with a world model more complex than almost any parser interactive fiction game.</p>
 
-        <p>Another downside is that adv3 lacks many of the features popular
-            in modern interactive fiction authoring systems, such as
-            scenes, regions, rules, relations, and more.</p>
-        <ul>
-            <li><em>Room parts</em> and <em>postures</em> included as default</li>
-            <li>A large assortment of already premade objects
-                and behaviors (there are 150 subclasses of the Thing category
-                alone, including things like Chairs, Beds, Platforms, Booths,
-                Nested Rooms, Vehicles, Floorless Rooms, Dispenser, Matchbook,
-                StretchyContainer, Distant, Enterable, Stairway, and more)</li>
-            <li><em>Multiple lighting levels</em></li>
-            <li>Real time processing</li>
-            <li>Sense passing</li>
-            <li>Sensory <em>attenuation</em></li>
-            <li>Different <em>sensory media</em></li>
-            <li>Built-in provisions for <em>entirely new senses</em></li>
-            <li>Several different scoring systems</li>
-        </ul>
+<p>The downside, however, is that adv3 relies on an incredibly <em>deep and complex multiple inheritence class hierarchy</em> and a <em>huge number of highly specific classes,</em> which it relies heavily on as mix-ins to customize the behavior of objects. Moreover, it is not particularly modular, so every game you write with it will have to bring in that whole gigantic world model. Furthermore, it is <em>not as explicitly designed for extensibility or customizability</em> as adv3Lite is. Thus, if you want a very complex and simulation-heavy parser game, and what you want to do fits with the existing carefully crafted complex world model of adv3, then it might be for you. If not, you might want to look at adv3Lite.</p>
+
+<p>Another downside is that adv3 lacks many of the features popular in modern interactive fiction authoring systems, such as scenes, regions, rules, relations, and more. What it does have, however, is:</p>
+
+<ul>
+  <li><em>Room parts</em> and <em>postures</em> integrated as default</li>
+  <li>A large assortment of already premade objects and behaviors (there are 150 subclasses of the Thing category alone, including things like Chairs, Beds, Platforms, Booths, Nested Rooms, Vehicles, Floorless Rooms, Dispenser, Matchbook, StretchyContainer, Distant, Enterable, Stairway, and more)</li>
+  <li><em>Multiple lighting levels</em></li>
+  <li>Real time processing</li>
+  <li>Sense passing</li>
+  <li>Sensory <em>attenuation</em></li>
+  <li>Different <em>sensory media</em></li>
+  <li>Built-in provisions for <em>entirely new senses</em></li>
+  <li>Several different scoring systems</li>
+</ul>
+
+        </p>
     </div>
 
-    <div id="adv3lite">
-        <img class="marketing-icon" src="assets/feather-svgrepo-com.svg"/>
-        <h3>The lightweight, modular, and modern newcomer: <em>adv3Lite</em></h3>
-        <p><em><a href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">Adv3Lite</a></em>
-            is a newer standard library created by Eric Eve, and has
-            been updated as recently as 2023. Although the main
-            benefit of adv3Lite is that <em>the class hierarchy is much
-            simpler</em>, since most customization for objects has been
-            relocated to properties on a single class representing
-            the object's general kind, instead of in a main base
-            class and several mix-in classes, <em>the "lite" in the name
-            is somewhat of a misnomer</em>. This restructuring allows
-            much <em>greater flexibility in creating custom objects and
-            makes the library easier to learn</em>, but <em>only a few
-            features have been streamlined out in the process</em>, and many of
-            the common ones &mdash; such as room parts, postures, and
-            library classes as a shorthand for properties &mdash; <em>can be
-            added back via extensions</em>.</p>
+    <div>
+        <img class="marketing-icon" src="./assets/feather-svgrepo-com.svg">
+        <h3>The lightweight, modular, and modern newcomer: *adv3Lite*</h3>
+        <p>
+            <p><em><a href="https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm">Adv3Lite</a></em> is a newer standard library created by Eric Eve, and has been updated as recently as 2023. Although the main benefit of adv3Lite is that <em>the class hierarchy is much simpler</em>, since most customization for objects has been relocated to properties on a single class representing the object’s general kind, instead of in a main base class and several mix-in classes, <em>the “lite” in the name is somewhat of a misnomer</em>. This restructuring allows much <em>greater flexibility in creating custom objects and makes the library easier to learn</em>, but <em>only a few features have been streamlined out in the process</em>, and many of the common ones — such as room parts, postures, and library classes as a shorthand for properties — <em>can be added back via extensions</em>.</p>
 
-        <p>Instead, <em>the library is
-            "lite" because it has been specifically designed with
-            modularity and extensiblility in mind</em>. Adv3Lite makes
-            customizing game mechanics, changing the world model, or
-            creating extensions in ways that wouldn't slot neatly
-            into adv3's existing world model easier and more
-            powerful, and if you're not using specific game
-            mechanics, your game doesn't have to import them and
-            your code doesn't have to deal with them, unlike with
-            adv3 where the whole complex world model is turned on at
-            all times.</p>
+<p>Instead, <em>the library is “lite” because it has been specifically designed with modularity and extensiblility in mind</em>. Adv3Lite makes customizing game mechanics, changing the world model, or creating extensions in ways that wouldn’t slot neatly into adv3’s existing world model easier and more powerful, and if you’re not using specific game mechanics, your game doesn’t have to import them and your code doesn’t have to deal with them, unlike with adv3 where the whole complex world model is turned on at all times.</p>
 
-        <p>However, as the adv3Lite website says, you get several
-            crucial new features with adv3Lite that have become
-            popular in the modern interactive fiction authoring
-            space and which adv3 does not offer:</p>
+<p>However, as the adv3Lite website says, you get several crucial new features with adv3Lite that have become popular in the modern interactive fiction authoring space and which adv3 does not offer:</p>
 
-        <ul>
-            <li><em>Doers</em>, which work like <em>Instead rules</em> in Inform 7,
-                allowing you to specify command queries that apply under certain
-                conditions and override the default action;</li>
+<ul>
+  <li><em>Doers</em>, which work like <em>Instead rules</em> in Inform 7, allowing you to specify command queries that apply under certain conditions and override the default action;</li>
+  <li><em>the vocab property,</em> which allows you to define several vocabulary-related properties of an object all at once in a concise and convenient manner more akin to how it works in Inform;</li>
+  <li>a <em>world-model query system</em> for making queries about the general state of the world;</li>
+  <li><em>message parameter substitutions</em> to automatically decline/conjugate based on person, number, and tense, including working for over <em>200 irregular verbs</em> and many plurals;</li>
+  <li>built in <em>pathfinding</em> for players and AIs;</li>
+  <li>built in debugging commands;</li>
+  <li><em>regions</em> (and dynamic regions) with region-located backdrops, scenery, events, actions, senses, and so on;</li>
+  <li>scenes;</li>
+  <li>automatic grouping of objects;</li>
+  <li>built in help for new players;</li>
+  <li>and a significantly enhanced conversation and NPC AI system.&lt;</li>
+</ul>
 
-            <li><em>the vocab property</em>, which allows you to define
-                several vocabulary-related properties of an object all at once
-                in a concise and convenient manner more akin to how it works in
-                Inform;</li>
-
-            <li>a <em>world-model query system</em> for making queries about
-                the general state of the world;</li>
-
-            <li><em>message parameter substitutions</em>
-                to automatically decline/conjugate based on person, number, and
-                tense, including working for over <em>200 irregular verbs</em> and many plurals;</li>
-
-            <li>built in <em>pathfinding</em> for players and AIs;</li>
-
-            <li>built in debugging commands;</li>
-
-            <li><em>regions</em> and region-located backdrops, scenery, events,
-                actions, senses, and so on;</li>
-
-            <li>scenes;</li>
-
-            <li>automatic grouping of objects;</li>
-
-            <li>built in help for new players;</li>
-
-            <li>and a significantly enhanced conversation and NPC AI
-                system.</li>
-        </ul>
+        </p>
     </div>
+
 </div>
 
-<p>There is also an <em><a href="https://www.ifarchive.org/indexes/if-archiveXprogrammingXtads3XlibraryXcontributions">extensive
-list</a></em> of other community-contributed extensions and
-libraries on the IF Archive, should you need features not available
-even in the existing standard libraries. All of these are compatible
-with adv3 and most can probably be trivially made compatible with
-adv3Lite, in our experience. Just a few of the delightful things you'll
-find there include qtalk, an impressively feature-complete plugin for
-Fallout-style menu based conversation, Achievement, a library for
-creating and persistently storing Steam-style achievements,
-and ConSpace, an extension that enhances the modelling of spatial
-relations and allows several rooms to act as one large subdivided
-location!</p>
+<p>There is also an <em><a href="https://www.ifarchive.org/indexes/if-archiveXprogrammingXtads3XlibraryXcontributions">extensive list</a></em> of other community-contributed extensions and libraries on the IF Archive, should you need features not available even in the existing standard libraries. All of these are compatible with adv3 and most can probably be trivially made compatible with adv3Lite, in our experience. Just a few of the delightful things you’ll find there include qtalk, an impressively feature-complete plugin for Fallout-style menu based conversation, Relations and Rulebooks, which allow you to specify relations and use rulebooks just like in Inform, and ConSpace, an extension that enhances the modelling of spatial relations and allows several rooms to act as one large subdivided location!</p>
 
-<h2>Learning resources for <em>adv3Lite</em></h2>
+<h2 id="learning-resources-for-adv3lite">Learning resources for <em>adv3Lite</em></h2>
 
-<p>If you decide to use adv3Lite, you can <em><a
-href="https://github.com/EricEve/adv3lite/releases">download the
-latest version of the adv3Lite library from GitHub</a></em>. Please
-ignore the other download locations mentioned in the adv3Lite
-documentation, things have changed since then. Other than that, the
-documentation below is adequately up to date.</p>
+<p>If you decide to use adv3Lite, you can <em><a href="https://github.com/EricEve/adv3lite/releases">download the latest version of the adv3Lite library from GitHub</a></em>. Please ignore the other download locations mentioned in the adv3Lite documentation, things have changed since then. Other than that, the documentation below is adequately up to date.</p>
 
-<a class="download-button" href="https://github.com/EricEve/adv3lite/releases">
-    <img class="icon" src="assets/github-svgrepo-com.svg"/>
+<p><a class="download-button" href="https://github.com/EricEve/adv3lite/releases">
+    <img class="icon" src="assets/github-svgrepo-com.svg" />
     Download
     Adv3Lite
-</a>
+</a></p>
 
-<p>The main hub for adv3Lite documentation is the <em><a
-href="./docs/adv3lite/index.htm">Adv3Lite Bookshelf.</a></em> The
-resources found there will teach you both the TADS 3 language and
-the Adv3Lite library. The bookshelf contains:</p>
+<p>The main hub for adv3Lite documentation is the <em><a href="./docs/adv3lite/index.htm">Adv3Lite Bookshelf</a></em>. The resources found there will teach you both the TADS 3 language and the Adv3Lite library. The bookshelf contains:</p>
 
 <ol>
-    <li>the <em><a href="./docs/adv3lite/t3QuickStart.htm">Adv3Lite
-    Quick Start Quide</a></em>, demonstrating how to install the
-    Adv3Lite library and set up a project,</li>
-
-    <li>a gentle but fairly wide-ranging <em><a
-    href="./docs/adv3lite/tutorial/index.htm">Adv3Lite
-    Tutorial</a></em> aimed at beginners who are new to both
-    programming and TADS 3,</li>
-
-    <li>a very thorough yet readable guide <em><a
-    href="./docs/adv3lite/learning/LearningT3Lite.pdf">Learning TADS
-    3 With Adv3Lite</a></em>, which assumes general programming
-    knowledge but teaches you the TADS 3 language and adv3Lite at
-    the same time organized by topic, with detailed technical
-    information as well as tutorial-like instruction and examples,
-    so that it functions very well as both a guide and reference
-    manual,</li>
-
-    <li>the impressive <em><a
-        href="./docs/adv3lite/manual/index.htm">Adv3Lite Library
-        Manual</a></em>, which is a comprehensive reference manual
-        for adv3Lite that covers almost every significant aspect of
-        the library (think of it like the <a
-        href="https://www.oreilly.com/library/view/opengl-programming-guide/9780321669292/">OpenGL
-        Programming Guide</a>, but for Adv3Lite),</li>
-
-    <li>and the <em><a
-    href="./docs/adv3lite/libref/index.html">Adv3Lite Library
-    Reference Manual</a></em>, which is an extensively
-    cross-referenced and hyperlinked complete reference
-    documentation for the <b>entirety</b> of the Adv3Lite library in
-    extreme detail, auto generated from documentation comments in
-    the codebase of the library itself.</li>
+  <li>the <em><a href="./docs/adv3lite/t3QuickStart.htm">Adv3Lite Quick Start Quide</a></em>, demonstrating how to install the Adv3Lite library and set up a project,</li>
+  <li>a gentle but fairly wide-ranging <em><a href="./docs/adv3lite/tutorial/index.htm">Adv3Lite Tutorial</a></em> aimed at beginners who are new to both programming and TADS 3,</li>
+  <li>a very thorough yet readable guide <em><a href="./docs/adv3lite/learning/LearningT3Lite.pdf">Learning TADS 3 With Adv3Lite</a></em>, which assumes general programming knowledge but teaches you the TADS 3 language and adv3Lite at the same time organized by topic, with detailed technical information as well as tutorial-like instruction and examples, so that it functions very well as both a guide and reference manual,</li>
+  <li>the impressive <em><a href="./docs/adv3lite/manual/index.htm">Adv3Lite Library Manual</a></em>, which is a comprehensive reference manual for adv3Lite that covers almost every significant aspect of the library (think of it like the <a href="https://www.oreilly.com/library/view/opengl-programming-guide/9780321669292/">OpenGL Programming Guide</a>, but for adv3Lite),</li>
+  <li>and the <em><a href="./docs/adv3lite/libref/index.html">Adv3Lite Library Reference Manual</a></em>, which is an extensively cross-referenced and hyperlinked complete reference documentation for the <strong>entirety</strong> of the Adv3Lite library in extreme detail, auto generated from documentation comments in the codebase of the library itself.</li>
 </ol>
 
 <p>There are other resources not found in the Bookshelf, however, including:</p>
 
 <ul>
-    <li>the <em><a href="https://jimbonator.github.io/tads-cookbook/adv3Lite/">Adv3Lite
-Periplus</a></em>, which is a general reference for various TADS 3
-        and Adv3Lite features, organized by subject matter and
-        collected from the various other documentation, and
-        containing links to the relevant documentation should you
-        want to expore further, and</li>
-    <li>the <em><a
-href="https://github.com/jimbonator/tads-cookbook">TADS 3
-Cookbook</a></em>, which is pretty sparse at the moment but which
-contains snippets on how to perform various tasks you might want to
-        perform</li>
+  <li>the <em><a href="https://jimbonator.github.io/tads-cookbook/adv3Lite/">Adv3Lite Periplus</a></em>, which is a general reference for various TADS 3 and Adv3Lite features, organized by subject matter and collected from the various other documentation, and containing links to the relevant documentation should you want to expore further, and</li>
+  <li>the <em><a href="https://github.com/jimbonator/tads-cookbook">TADS 3 Cookbook</a></em>, which is very sparse, but which contains snippets on how to perform various tasks you might want to perform.</li>
 </ul>
 
-<h2>Learning resources for <em>adv3</em></h2>
+<h2 id="learning-resources-for-adv3">Learning resources for <em>adv3</em></h2>
 
-<p>Adv3 itself also has a bookshelf, called the <em><a
-href="./docs/adv3/index.htm">TADS 3 Bookshelf</a></em> containing
-much of its relevant documentation, containing:</p>
+<p>Adv3 itself also has a bookshelf, called the <em><a href="./docs/adv3/index.htm">TADS 3 Bookshelf</a></em> containing much of its relevant documentation, containing:</p>
 
 <ol>
-    <li>a <em><a href="./docs/adv3/T3QuickStart.htm">TADS 3 Quick
-    Start Guide</a></em> (which serves much the same purpose as the
-    adv3Lite has, above),</li>
-
-    <li>the <em><a href="./docs/adv3/gsg/index.html">Getting Started
-    in TADS 3</a></em> guide, which serves the same purpose as
-    <i>Adv3Lite Tutorial</i> above,</li>
-
-    <li>a version of <em><a
-    href="./docs/adv3/learning/Learning%20T3.pdf">Learning TADS 3
-    for adv3</a></em>,</li>
-
-    <li>the <em><a href="./docs/adv3/tourguide/index.html">TADS 3
-    Tour Guide</a></em>, which serves something like the purpose of
-    the Adv3Lite Library Manual, but is organized by library class
-    instead of subject and generally goes into less detail about
-    abstract concepts,</li>
-
-    <li>and finally the <em><a
-    href="./docs/adv3/libref/index.html">TADS 3 Library Reference
-    Manual</a></em>, which is equivalent to the Adv3Lite one
-    above.</li>
+  <li>a <em><a href="./docs/adv3/T3QuickStart.htm">TADS 3 Quick Start Guide</a></em> (which serves much the same purpose as the adv3Lite has, above),</li>
+  <li>the <em><a href="./docs/adv3/gsg/index.html">Getting Started in TADS 3</a></em> guide, which serves the same purpose as <i>Adv3Lite Tutorial</i> above,</li>
+  <li>a version of <em><a href="./docs/adv3/learning/Learning%20T3.pdf">Learning TADS 3 for adv3</a></em>,</li>
+  <li>the <em><a href="./docs/adv3/tourguide/index.html">TADS 3 Tour Guide</a></em>, which serves something like the purpose of the Adv3Lite Library Manual, but is organized by library class instead of subject and generally goes into less detail about abstract concepts,</li>
+  <li>and finally the <em><a href="./docs/adv3/libref/index.html">TADS 3 Library Reference Manual</a></em>, which is equivalent to the Adv3Lite one above.</li>
 </ol>
 
-<p>There is also an <em><a href="https://jimbonator.github.io/tads-cookbook/adv3/">Adv3 Periplus</a></em> as
-well, which can be a useful reference.</p>
+<p>There is also an <em><a href="https://jimbonator.github.io/tads-cookbook/adv3/">Adv3 Periplus</a></em> as well, which can be a useful reference.</p>
 
-<h2>Advanced learning resources for <em>TADS 3</em></h2>
+<h2 id="advanced-learning-resources-for-tads-3">Advanced learning resources for <em>TADS 3</em></h2>
 
-<p>The introductory materials and guide books for both adv3 and
-adv3Lite will also teach you the TADS 3 language for the most part
-(especially Learning TADS 3 and Learning TADS 3 with Adv3Lite). If
-you don't know the TADS 3 language at all and are looking to get
-started with it, those are the resources you'll want to use.
-However, there are some language specific resources as well:</p>
+<p>The introductory materials and guide books for both adv3 and adv3Lite will also teach you the TADS 3 language for the most part (especially Learning TADS 3 and Learning TADS 3 with Adv3Lite). If you don’t know the TADS 3 language at all and are looking to get started with it, those are the resources you’ll want to use. However, there are some language specific resources as well:</p>
 
-<ol>
-    <li>the <em><a href="./docs/adv3/sysman/cover.htm">TADS 3 System
-    Manual</a></em>, which provides a comprehensive and
-    <i>in-depth</i> reference for every feature in the TADS 3
-    language and virtual machine and how it works, including
-    intrinsic functions and classes, and</li>
+<ul>
+  <li>the excellent <em><a href="./docs/adv3/sysman/cover.htm">TADS 3 System Manual</a></em> which provides a comprehensive and <i>in-depth</i> reference for every feature in the TADS 3 language and virtual machine and how it works, including intrinsic functions and classes,</li>
+  <li>Eric Eve’s <em><a href="http://users.ox.ac.uk/~manc0049/TADSGuide/intro.htm">TADS 3 resources page</a></em>,</li>
+  <li>the <em><a href="./docs/adv3/techman/cover.htm">TADS 3 Technical Manual</a></em>, a collection of articles by various on detailed technical subjects regarding the TADS 3 language and VM, and</li>
+  <li>the <em><a href="./docs/adv3/htmltads/intro.htm">Introduction to HTML TADS</a></em> which documents the multimedia capabilities and HTML subset that standard interpreted HTML TADS uses.</li>
+</ul>
 
-    <li>Eric Eve's <em><a
-    href="http://users.ox.ac.uk/~manc0049/TADSGuide/intro.htm">TADS
-    3 resources page</a>, and</em></li>
+<p>There is also <a href="https://midiguru.wordpress.com/2022/06/16/from-inform-to-tads/">a brief overview of the TADS 3 language specifically from the perspective of someone used to Inform</a> which may help IF authors looking to switch.</p>
 
-    <li>the <em><a href="./docs/adv3/techman/cover.htm">TADS 3
-    Technical Manual</a></em>, a collection of articles by various
-    on detailed technical subjects regarding the TADS 3 language and
-    VM,</li>
+<h2 id="welcome-to-the-community">Welcome to the <em>community</em>!</h2>
 
-    <li>the <em><a
-    href="./docs/adv3/htmltads/intro.htm">Introduction to HTML
-    TADS</a></em> which documents the multimedia capabilities and
-    HTML subset that standard interpreted HTML TADS uses.</li>
-</ol>
+<p>If you have more questions about TADS, want to share a project of yours, or just want to come and chat, you can find the TADS 3 community on the <em><a href="https://intfiction.org/c/authoring/tads/20">IntFiction Forums</a></em>!</p>
 
-<p>There is also <a
-href="https://midiguru.wordpress.com/2022/06/16/from-inform-to-tads/">a
-brief overview of the TADS 3 language specifically from the
-perspective of someone used to Inform</a> which may help IF authors
-looking to switch.</p>
 
-<h2>Welcome to the <em>community!</em></h2>
-
-<p>If you have more questions about TADS, want to share a project of
-yours, or just want to come and chat, you can find the TADS 3
-community on the <em><a
-href="https://intfiction.org/c/authoring/tads/20">IntFiction
-Forums</a></em>!</p>
         </section>
         <section id="faq">
             
@@ -800,7 +632,7 @@ open source software. Thus, when TADS 3 was eventually released, it too was rele
         
         <div class="timeline-card">
             <div class="timeline-info">
-                <h3 class="timeline-title">Beginnings</h3>
+                <h3 class="timeline-title">Beginnings (1990)</h3>
                 <p>TADS 1.0 was written and designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> and released in September of 1990 as shareware under the imprint of “High Energy Software”, a company created by Roberts and his friend Steve McAdams, at a time when the only other option for writing interactive fiction was <a href="https://www.ifwiki.org/AGT">AGT</a>. It was fairly popular at the time, spawning a trilogy of shareware Zork homage/parodies that were “the most concerted and sustained effort at building a real business out of [the shareware IF scene]” at the time.<sup><a href="https://www.filfre.net/2017/02/tads/">1</a></sup></p>
 
             </div>
@@ -808,7 +640,7 @@ open source software. Thus, when TADS 3 was eventually released, it too was rele
         
         <div class="timeline-card">
             <div class="timeline-info">
-                <h3 class="timeline-title">Released as Open Source</h3>
+                <h3 class="timeline-title">TADS is made open source freeware (1996)</h3>
                 <p>By the time of TADS 2.2.1, released in October of 1996, due to a lack of money in the shareware business, TADS was released as freeware: although not strictly free software, since forks and modifications for the purpose of anything but porting were verboten, free use, copying, and distribution were now allowed.</p>
 
             </div>
@@ -816,8 +648,80 @@ open source software. Thus, when TADS 3 was eventually released, it too was rele
         
         <div class="timeline-card">
             <div class="timeline-info">
-                <h3 class="timeline-title">TADS 3</h3>
+                <h3 class="timeline-title">Inform 7 is released (2006)</h3>
+                <p>Inform 7, TADS 3’s sister IF authoring system, was first released in April 2006.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">TADS 3 is released (2006)</h3>
                 <p>Also <a href="https://github.com/tajmone/tads-sources">open source</a> freeware, TADS 3, first released on September 15, 2006, was designed by <a href="https://www.ifwiki.org/Michael_J._Roberts">Michael J. Roberts</a> as a brand new revitalization superseding TADS 2. Despite being released in the early aughts, TADS 3 still pushes the boundaries of interactive fiction authoring system capabilities and world models in many ways, including with runtime object cloning and creation, multi-channel audio capabilities, and sense-passing for any kind of sense, even user-defined ones. The core appeal of TADS goes beyond specific features, however.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">TADS 3.1 is released (2011)</h3>
+                <p>TADS 3.1, released in 2011, was a major update to TADS, introducing Web UI / Web Play, allowing you to create games that run over the internet, where the game itself can run either as a network server, client, or both. TADS 3.1 also included “a raft of enhancements to the TADS language that make it easier and faster to write games, and dynamic complication technology…” according to the changelog.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">adv3Lite 0.2 is released (2012)</h3>
+                <p>According to Eric Eve himself, “You can trace the release history of adv3Lite back to version 0.2 released in November 2012 by looking at the change log supplied with the adv3Lite docs. I believe the first (beta) release would have been version 0.1 on 11th October 2012 (judging by the file date on adv3Lite01.zip).”</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">TADS 3 is finished (2013)</h3>
+                <p>The final update to TADS 3, “a small update, mostly to fix bugs” according to the changelog, was 3.1.3, made on May 16th, 2013. After this point, Michael J. Roberts considered TADS finished.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">Michael J. Roberts steps away from the community (2016)</h3>
+                <p>Although the exact date of this is unclear, and it probably happened gradually over time, Michael J. Roberts would eventually stop responding to emails from interactive fiction community members, including Eric Eve, who he worked closely with on parts of the TADS documentation, or interacting on forums. According to Eve himself, MJR stopped responding to emails in around 2016, so we can probably consider that point a significant cutoff for MJR’s involvement in the community. After twenty-six years, he was probably just tired.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">Michael J. Roberts hands IFDB over to the IFTF (2021)</h3>
+                <p>The last known interaction between the community and MJR took place in 2021, when he handed IFDB, which used to be hosted on a subdomain of tads.org and managed by him, over to a special committee of the IFTF for safekeeping.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">adv3Lite 1.5 is released (2016)</h3>
+                <p>Version 1.5 of adv3Lite was released in March of 2016, and was the last update to the library for awhile.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">Inform 7 is made open source (2022)</h3>
+                <p>Inform 7 is made open-source after sixteen years.</p>
+
+            </div>
+        </div>
+        
+        <div class="timeline-card">
+            <div class="timeline-info">
+                <h3 class="timeline-title">adv3Lite 1.6 is released (2022)</h3>
+                <p>After a long haitus, Eric Eve returned to updating adv3Lite with version 1.6 in December of 2022, soon followed by 1.6.1 in March of 2023. 1.6 introduced a very large number of small, but surprisingly important features and made a number of bugfixes and overhauls of small subsystems. 1.6.1 introduced lots more small features, and introduced the EventListItem extension.</p>
 
             </div>
         </div>
