@@ -435,7 +435,7 @@ faq:
       The next most important thing, of course, are interpreters. Here again, the dominant interpreters, FrobTADS and QTADS, are both free and open source software, and are also relatively regularly updated (2021 and 2023 respectively). Thus, if you're worried about not being able to play games, or the interpreters all being old and strange, fear not!
 
       As you can see then, <em>while TADS 3 the langauge/VM might be "stagnant," that doesn't mean it's dead. Just complete. And everything else around it is free and open source software that continues to carry on at a steady pace to this day.</em>
-  - q: Does TADS 3 <em>work in Parchment?</em>
+  - q: 3. Does TADS 3 <em>work in Parchment?</em>
     description: |
       Because Parchment is a Glk-based interpreter, it runs TADS games from an internal sub-interpreter&mdash;or *"runner"*&mdash;shared by all Glk-based interpreters (like Gargoyle, Lectrote, and Spatterlight).
 
