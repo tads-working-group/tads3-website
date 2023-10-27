@@ -190,11 +190,11 @@ feature:
   - title: <em>Extensible</em> standard library
     description: |
       Any object or class&mdash;including those intrinsic to the language and standard library&mdash;can be modified <i>or entirely replaced</i> in TADS 3 code. This gives authors the *powerful ability to quickly, clearly, and confidently tinker with their game worlds and logic.
-      
+
       Modification applies to <i>everything</i>, from author-created objects at the surface, to the deeper core features like autocorrect, command clarification, undo, redo, save, and restore systems! Would you like to edit the **main execution loop** or the **parser itself**? <i>TADS put the power in your hands, at your own pace!</i>
-      
+
       The modification system even lets you change <i>specific fractions</i> of classes and defined objects, freeing you from the hassle of redefining large swaths of the codebase to repair or avoid definition conflicts.
-      
+
       <i>Modules have never been easier!</i> The modification system smooths out the majority of compatibility concerns with plug-in extensions and code modules from other authors.
   - title: Create with <em>speed</em>
     description: |
@@ -206,9 +206,9 @@ feature:
       * Compile-time code execution
       * Run-time string templating
       * Runtime reflection
-      
+
       <i>It's like the code can write itself!</i>
-      
+
       Tell your story through a wide number of easy notations for both strings and printed passages!
       Writing in TADS has the ease of HTML-like formatting, fused with the power of a capable and flexible coding language.
 
@@ -228,7 +228,7 @@ feature:
       Need to distribute a patch file? Interpreted code can be loaded from a file, and executed during play!
   - title: An advanced <em>NPC AI</em> system
     description: |
-      Tired of static NPCs with little agency of their own? As well as providing a built-in means for NPCs to initiate conversation, TADS 3 has an *[in depth system for writing NPC AIs](https://faroutscience.com/adv3lite_docs/manual/actor.htm)*, with features like:  
+      Tired of static NPCs with little agency of their own? As well as providing a built-in means for NPCs to initiate conversation, TADS 3 has an *[in depth system for writing NPC AIs](https://faroutscience.com/adv3lite_docs/manual/actor.htm)*, with features like:
       * *[Agenda Items](https://faroutscience.com/adv3lite_docs/manual/agenda.htm)*, to craft intelligent NPCs that gain and dismiss goals according to dynamic conditions in the world or their own internal state and take actions to achieve them;
       * *[Actor States](https://faroutscience.com/adv3lite_docs/manual/actorstate.htm)*, to represent the different moods, activities, or other states an NPC might be in, in a way that encapsulates all the state information into one coherent place and automatically updates every detail of the actor to match their relevant state, as well as including  passive behaviors associated with the state;
       * *[Actor Topic Entries](https://faroutscience.com/adv3lite_docs/manual/actortopicentry.htm)*, for *[complex trees](https://faroutscience.com/adv3lite_docs/manual/convnode.htm)* of conversation topics that can open up other topics, automatically recommend topics, or temporarily enable contextual responses, and can be enabled or disabled dynamically based on changing world state, and represented as a declarative object hierarchy with no need for nasty if-else chains and state variables;
@@ -357,6 +357,8 @@ learn:
   learning: |
       There is also an *[extensive list](https://www.ifarchive.org/indexes/if-archiveXprogrammingXtads3XlibraryXcontributions)* of other community-contributed extensions and libraries on the IF Archive, should you need features not available even in the existing standard libraries. All of these are compatible with adv3 and most can probably be trivially made compatible with adv3Lite, in our experience. Just a few of the delightful things you'll find there include qtalk, an impressively feature-complete plugin for Fallout-style menu based conversation, Relations and Rulebooks, which allow you to specify relations and use rulebooks just like in Inform, and ConSpace, an extension that enhances the modelling of spatial relations and allows several rooms to act as one large subdivided location!
 
+      We also highly recommend, especially if you're using Adv3, checking out the excellent work done by *[diegesisandmimesis on GitHub](https://github.com/diegesisandmimesis?tab=repositories)*. They are regularly turning out simply incredible (and regularly updated and maintained!) modules for TADS 3 focused on powerful declarative semantic simulation capabilities like rule engines, state machines, integer approximiation, undirected graphs, and more.
+
       ## Learning resources for *adv3Lite*
 
       If you decide to use adv3Lite, you can *[download the latest version of the adv3Lite library from GitHub](https://github.com/EricEve/adv3lite/releases)*. Please ignore the other download locations mentioned in the adv3Lite documentation, things have changed since then. Other than that, the documentation below is adequately up to date.
@@ -381,6 +383,8 @@ learn:
       * the *[TADS 3 Cookbook](https://github.com/jimbonator/tads-cookbook)*, which is very sparse, but which contains snippets on how to perform various tasks you might want to perform.
 
       ## Learning resources for *adv3*
+
+      **Warning**: Adv3 is much older than adv3Lite, and as such has not been updated in roughly a decade, unlike the adv3Lite documenation, so the state of the documentation is going to be a bit worse. Be prepared to deal with outdated download and compilation instructions, as well as occasionally wonky/strange formatting. We do have a long term project to fix this, but it will take some time given the grand size of adv3's documentation.
 
       Adv3 itself also has a bookshelf, called the *[TADS 3 Bookshelf](./docs/adv3/index.htm)* containing much of its relevant documentation, containing:
 
@@ -433,7 +437,102 @@ faq:
       As you can see then, <em>while TADS 3 the langauge/VM might be "stagnant," that doesn't mean it's dead. Just complete. And everything else around it is free and open source software that continues to carry on at a steady pace to this day.</em>
   - q: Does TADS 3 <em>work in Parchment?</em>
     description: |
-      put your answer here
+      Because Parchment is a Glk-based interpreter, it runs TADS games from an internal sub-interpreter&mdash;or *"runner"*&mdash;shared by all Glk-based interpreters (like Gargoyle, Lectrote, and Spatterlight).
+
+      As of late October of 2023, the Glk tech stack does not handle HTML TADS capabilities, but it *does* handle *non*-HTML TADS. Web UI is wholly unsupported by any interpreter that is *not specifically* built for Web UI.
+
+      What this means for TADS games run on Parchment is that they will be missing clickable text (including hyperlinks), images, sound, music, small text, centered text, colorful text, underlining, and possible strikethrough text. Effectively, what remains is text that be **bold** or *italicized*.
+
+      To know if your game is being played on a Glk-based interpreter, you can check the value of `outputManager.htmlMode`, which will have a value of `nil`. If the value is `true`, then the interpreter *can* handle HTML features. **Remember:** This does not tell you if the interpreter can handle Web UI; it only tells you if the interpreter can handle HTML TADS or not! Also keep in mind that `outputManager.htmlMode` is **read-only**; attempting to change it will *not* unlock HTML TADS features in the interpreter.
+
+      Using `outputManager.htmlMode`, you can dynamically rearrange parts of your game to maximize its presentation, whether or not the interpreter can handle the HTML features.
+
+      At this time, the Parchment team is requesting volunteer TADS devs to implement the remaining features in their Glk-based TADS runner, and allow for full HTML TADS capabilities in a web browser.
+
+
+showcase:
+  blurb: Although TADS 3 isn't as popular as some other interactive fiction authoring systems in the community, there is still a lively community of TADS 3 authors producing widely respected work even among those who don't use TADS. And in fact, in recent years, many new people have joined the ranks of TADS authors! Here's a look at some of TADS's best works, so you can get a sense for what it's capable of.
+  showcases:
+    - title: According to Cain
+      author: Jim Nelson
+      year: 2022
+      cover: 'https://ifdb.org/showimage?id=1%3A1618'
+      blurb: |
+        Two brothers. One murder. And a mystery as old as mankind.
+
+        You are a medieval investigator sent back in time to learn the secrets behind mankind's first murder. Using a novel alchemy system, observation, and your wits, you must discover the untold truth about Cain and Abel.
+      awards: |
+        - 6th Place overall; 1st Place, Miss Congeniality - 28th Annual Interactive Fiction Competition (2022)
+        - 21st Place - Interactive Fiction Top 50 of All Time (2023 edition)
+        - Winner, Outstanding Game of the Year 2022 - Player’s Choice; Winner, Outstanding Game Over 2 Hours of 2022 - Player's and Author's Choice - The 2022 IFDB Awards
+    - title: I Am Prey
+      author: Joey Cramsey
+      year: 2023
+      cover: 'https://ifdb.org/showimage?id=2%3A1746'
+      blurb: |
+        A horror-lite science fiction game of evasion.
+
+        Inspired by the casual and round-based designs of visual indie games—such as *Slender: The Eight Pages* and *Duskers*—*I Am Prey* aims to bring tense, methodical, and replayable stealth challenges to screen reader users and text game enthusiasts alike.
+
+        The player follows the titular protagonist, Prey, and guides the character through a cloning facility under siege. By using parkour navigation and evasion tactics, Prey must avoid The Predator, and locate seven randomly-scattered pieces of an environment suit to escape.
+
+        The player must be careful, though, because The Predator is always looking for clues of Prey's presence and location.
+      awards:
+    - title: Indigo
+      author: Emily Short
+      year: 2011
+      cover: 'https://ifdb.org/showimage?id=4%3A268'
+      blurb: |
+        "Years ago, a witch placed you in this tower and arranged for your upkeep, paying certain villagers well to keep you supplied with the most basic necessities, and no more.
+
+        Your years in the tower have changed you. You are more or less a grown woman now, with hair nearly to the floor. Your skills have developed as far as solitude and tedium can take them. You are ready to leave.
+
+        Take your time."
+
+        Written for the Indigo New Language Speed-IF, this is a short puzzle piece in TADS 3 riffing on the story of Rapunzel.
+      awards: |
+        - Nominee, Best Individual Puzzle - 2011 XYZZY Awards
+    - title: Gun Mute
+      author: C. E. J. Pacian
+      year: 2008
+      cover: 'https://ifdb.org/showimage?id=0%3A85'
+      blurb: |
+        Step into the shoes of Mute Lawton, a lone cowboy who must stop an execution set to occur at noon by shooting his way past dangerous cyborgs and mutants in a post-apocalyptic western setting. (From the IndieGames.com review.)
+
+        Gun Mute is intended as an Interactive Fiction shoot-em-up. Each location presents you with a simple puzzle which you must solve before you can progress to the next location and, in contrast to the Inform parser's famous default response, violence usually is the answer. (From the ABOUT text.)
+      awards: |
+        - Nominee, Best Game; Nominee, Best Writing; Nominee, Best Story; Nominee, Best Setting; Winner, Best Puzzles; Nominee, Best NPCs; Nominee, Best Individual Puzzle; Nominee, Best Individual NPC; Nominee, Best Individual PC; Nominee, Best Use of Medium - 2008 XYZZY Awards
+        - 22nd Place - Interactive Fiction Top 50 of All Time (2011 edition)
+        - 32nd Place - Interactive Fiction Top 50 of All Time (2015 edition)
+        - 29th Place - Interactive Fiction Top 50 of All Time (2019 edition)
+
+    - title: Lydia's Heart
+      author: Jim Aikin
+      year: 2007
+      cover: 'https://ifdb.org/showimage?id=2%3A96'
+      blurb: |
+        "Lydia's Heart" is a large, complex game with a serious tone and seven or eight NPCs you can converse with. The genre is low-key horror: There's almost no actual blood, but there are several ways to die in a very frightening way. Various bits of magical fantasy are included in a basically real-world setting.
+
+        You play the part of 14-year-old Diane Lindsay. You have been dragged off by your Aunt Caroline to a run-down motor court in rural Mississippi for reasons that are not initially clear. As you explore the motor court, you'll meet various creepy people and overhear a murder being committed. You'll meet a ghost named Lydia, who (if you can figure out how to make friends with her) will tell you why you've been brought here, and why you must get away before the afternoon is over.
+      awards:
+    - title: All Hope Abandon
+      author: Eric Eve
+      year: 2005
+      cover: 'https://ifdb.org/showimage?id=4%3A94'
+      blurb: |
+        Your day got off to a good enough start when you met that blonde in the breakfast queue, but it's all downhill from there: you may be wishing you could escape a particularly dire lecture, but not by the one way the lecture has just declared impossible. For suddenly, you are lurched into limbo, apparently to experience the after-life at first hand. What will you find there: heaven, hell, or the blonde you met at breakfast?
+      awards: |
+        - Nominee, Best Game; Nominee, Best Story; Nominee, Best Setting; Nominee, Best NPCs; Nominee, Best Individual Puzzle; Nominee, Best Individual NPC - 2005 XYZZY Awards
+    - title: Return to Ditch Day
+      author: Michael J. Roberts
+      year: 2004
+      cover: 'https://ifdb.org/showimage?id=0%3A6'
+      blurb: |
+        It's been a decade since you graduated, but now it looks like you're going to have to solve one more Ditch Day stack.
+
+        "Mike Roberts' 'Return to Ditch Day' is a full-size, medium-difficulty puzzle game, and a very strong example of this type. The map is large, and much of it is open to unrestricted exploration from the outset of the game. There are a hundred and fifty points to be earned. There's a story that provides ample motivation and context for your behavior, but lets the puzzles shine through. This is a game you can settle into for a while." (From the IF-Review)
+      awards: |
+        - Nominee, Best Game; Nominee, Best Individual NPC; Nominee, Best Use of Medium - 2004 XYZZY Awards
 
 timeline:
   - title: Beginnings (1990)
