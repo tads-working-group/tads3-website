@@ -454,6 +454,7 @@ showcase:
   blurb: Although TADS 3 isn't as popular as some other interactive fiction authoring systems in the community, there is still a lively community of TADS 3 authors producing widely respected work even among those who don't use TADS. And in fact, in recent years, many new people have joined the ranks of TADS authors! Here's a look at some of TADS's best works, so you can get a sense for what it's capable of.
   showcases:
     - title: According to Cain
+      ifdb: https://ifdb.org/viewgame?id=6qp3g7te26h3rb5u
       author: Jim Nelson
       year: 2022
       cover: 'https://ifdb.org/showimage?id=1%3A1618'
@@ -466,7 +467,8 @@ showcase:
         - 21st Place - Interactive Fiction Top 50 of All Time (2023 edition)
         - Winner, Outstanding Game of the Year 2022 - Player’s Choice; Winner, Outstanding Game Over 2 Hours of 2022 - Player's and Author's Choice - The 2022 IFDB Awards
     - title: I Am Prey
-      author: Joey Cramsey
+      ifdb: https://ifdb.org/viewgame?id=1vaafzgrqf4m8yvr
+      author: Joey Tanden
       year: 2023
       cover: 'https://ifdb.org/showimage?id=2%3A1746'
       blurb: |
@@ -479,6 +481,7 @@ showcase:
         The player must be careful, though, because The Predator is always looking for clues of Prey's presence and location.
       awards:
     - title: Indigo
+      ifdb: https://ifdb.org/viewgame?id=vva8s4r00b3zli59
       author: Emily Short
       year: 2011
       cover: 'https://ifdb.org/showimage?id=4%3A268'
@@ -493,6 +496,7 @@ showcase:
       awards: |
         - Nominee, Best Individual Puzzle - 2011 XYZZY Awards
     - title: Gun Mute
+      ifdb: https://ifdb.org/viewgame?id=xwedbibfksczn7eq
       author: C. E. J. Pacian
       year: 2008
       cover: 'https://ifdb.org/showimage?id=0%3A85'
@@ -507,6 +511,7 @@ showcase:
         - 29th Place - Interactive Fiction Top 50 of All Time (2019 edition)
 
     - title: Lydia's Heart
+      ifdb: https://ifdb.org/viewgame?id=7t22wbllftv7nuiw
       author: Jim Aikin
       year: 2007
       cover: 'https://ifdb.org/showimage?id=2%3A96'
@@ -516,6 +521,7 @@ showcase:
         You play the part of 14-year-old Diane Lindsay. You have been dragged off by your Aunt Caroline to a run-down motor court in rural Mississippi for reasons that are not initially clear. As you explore the motor court, you'll meet various creepy people and overhear a murder being committed. You'll meet a ghost named Lydia, who (if you can figure out how to make friends with her) will tell you why you've been brought here, and why you must get away before the afternoon is over.
       awards:
     - title: All Hope Abandon
+      ifdb: https://ifdb.org/viewgame?id=4l33jjysofp3very
       author: Eric Eve
       year: 2005
       cover: 'https://ifdb.org/showimage?id=4%3A94'
@@ -524,6 +530,7 @@ showcase:
       awards: |
         - Nominee, Best Game; Nominee, Best Story; Nominee, Best Setting; Nominee, Best NPCs; Nominee, Best Individual Puzzle; Nominee, Best Individual NPC - 2005 XYZZY Awards
     - title: Return to Ditch Day
+      ifdb: https://ifdb.org/viewgame?id=sicva377zqygxcq2
       author: Michael J. Roberts
       year: 2004
       cover: 'https://ifdb.org/showimage?id=0%3A6'

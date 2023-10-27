@@ -10,24 +10,44 @@
                 class="carousel__slide">
                 <div class="carousel__snapper">
 
-                    <img class="gamescreenshot" src="assets/htmltadsdemo1.png">
+                    <img loading="lazy" class="gamescreenshot" src="assets/htmltadsdemo1.png">
 
-                    <a href="#carousel__slide{{ forloop.index | minus: 1 }}"
-                       class="carousel__prev">Go to last slide</a>
+                    {% if forloop.index > 1 %}
+                        <a href="#carousel__slide{{ forloop.index | minus: 1 }}"
+                           class="carousel__prev">Go to last slide</a>
+                    {% elsif forloop.index == 1 %}
+                        <a href="#carousel__slide{{ site.data.intro.showcase.showcases.size }}"
+                           class="carousel__prev">Go to last slide</a>
+                    {% endif %}
 
-
-                    <div class="gamecard">
-                        <img src="{{ item.cover }}"/>
-                        <div>
-                            <h3>{{ item.title }}</h3>
-                            <p><i>by {{ item.author }}</i> <b>({{ item.year }})</b></p>
+                    <div class="gameplate">
+                        <div class="gamecard">
+                            <a href="{{ item.ifdb }}">
+                                <img loading="lazy" src="{{ item.cover }}"/>
+                            </a>
+                            <div>
+                                <a href="{{ item.ifdb }}">
+                                    <h3>{{ item.title }}</h3>
+                                    <p><i>by {{ item.author }}</i> <b>({{ item.year }})</b></p>
+                                </a>
+                                {% if item.awards.size > 0 %}
+                                    <div class="awards">
+                                        <p>{{ item.awards | markdownify }}</p>
+                                    </div>
+                                {% endif %}
+                            </div>
                         </div>
+
+                        <div class="gameblurb">{{ item.blurb | markdownify }}</div>
                     </div>
 
-                    <div class="gameblurb">{{ item.blurb | markdownify }}</div>
-
-                    <a href="#carousel__slide{{ forloop.index | plus: 1 }}"
-                       class="carousel__next">Go to next slide</a>
+                    {% if forloop.index < site.data.intro.showcase.showcases.size %}
+                        <a href="#carousel__slide{{ forloop.index | plus: 1 }}"
+                           class="carousel__next">Go to next slide</a>
+                    {% elsif forloop.index == site.data.intro.showcase.showcases.size %}
+                        <a href="#carousel__slide1"
+                           class="carousel__next">Go to next slide</a>
+                    {% endif %}
                 </div>
             </li>
         {% endfor %}

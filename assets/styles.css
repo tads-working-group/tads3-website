@@ -274,7 +274,6 @@ section#faq {
 }
 
 section#showcase {
-    min-height: 800px;
     margin-top: 0px;
     padding: 45px;
 }
@@ -583,6 +582,8 @@ em > a {
     color: white;
     text-decoration: none;
     font-weight: 700;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .download-button:hover {
@@ -677,7 +678,7 @@ em > a {
     -ms-overflow-style: none;
 }
 
-.carousel ol, li {
+.carousel ol, .carousel li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -688,6 +689,14 @@ em > a {
     padding-top: 75%;
     filter: drop-shadow(0 0 15px #0006);
     perspective: 100px;
+}
+
+@media (max-width: 700px) {
+    .carousel {
+        height: 600pt;
+        width: 120%;
+        left: -10%;
+    }
 }
 
 .carousel__viewport {
@@ -789,6 +798,15 @@ em > a {
     outline: 0;
 }
 
+@media (max-width: 700px) {
+    .carousel::before,
+    .carousel::after,
+    .carousel__prev,
+    .carousel__next {
+        top: 300pt;
+    }
+}
+
 .carousel::before,
 .carousel__prev {
     left: -1rem;
@@ -822,6 +840,16 @@ em > a {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='100,50 20,100 20,0' fill='%23fff'/%3E%3C/svg%3E");
 }
 
+.gameplate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    margin: 0 0;
+    padding: 0 0;
+}
+
 .gamecard {
     display: flex;
     flex-direction: row;
@@ -829,25 +857,27 @@ em > a {
     justify-content: flex-start;
     align-items: center;
 
-    position: absolute;
-    left: 30pt;
-    top: 30pt;
     border-radius: 15px;
     height: 150pt;
+    z-index: 100;
+    margin: 30pt;
+}
+
+@media (max-width: 700px) {
+    .gamecard {
+        height: fit-content;
+        flex-wrap: wrap;
+    }
 }
 
 .gameblurb {
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 210pt;
-    height: 200pt;
-    width: 80%;
     color: white;
     z-index: 100;
     overflow: scroll;
     background-color: #11111133;
-    padding: 0 30pt;
+    margin: 0 30pt;
+    padding: 15pt;
+    margin-bottom: 30pt;
     border-radius: 15px;
 }
 
@@ -863,6 +893,8 @@ em > a {
 .gamecard h3 {
     text-align: left;
     font-size: 25pt;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
 .gamescreenshot {
@@ -877,4 +909,44 @@ em > a {
     top: 0;
     left: 0;
     filter: blur(8px);
+}
+
+.gamecard a {
+    text-decoration: inherit;
+    color: inherit;
+    display: inline;
+}
+
+.gamecard p {
+    margin: 0;
+    padding: 0;
+}
+
+.awards {
+    color: white;
+    font-size: 12pt;
+}
+
+.awards ul {
+    margin-left: 0px;
+    padding-left: 0;
+}
+
+.awards li {
+    line-height: 1em;
+}
+
+.awards li::before {
+    content: '';
+    padding-top: 0px;
+    height: 20pt;
+    width: 20pt;
+
+    display: inline-block;
+    position: relative;
+    top: 5pt;
+    background-size: contain;
+    background-image: url(laurel-crown-svgrepo-com.svg);
+    margin-right: 5px;
+    filter: invert(100%);
 }
