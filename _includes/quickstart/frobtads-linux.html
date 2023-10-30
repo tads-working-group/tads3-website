@@ -1,40 +1,29 @@
 <ol>
     <li>
-        Open a terminal with <code class="terminal-command"><span class="terminal-prompt">$</span>CTRL + ALT + T</code>.
+        Open a terminal with <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">ALT</span> + <span class="keypress-icon">T</span></span>.
     </li>
     <li>
-        Check to verify the following packages are installed.
+        Check to verify <code class="terminal-command">cmake</code> is installed.
         This can be done with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>which package-name</code>&nbsp;<b>(Ubuntu/Debian)</b>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>which cmake</code>&nbsp;<b>(Ubuntu/Debian)</b>
         or
-        <code class="terminal-command"><span class="terminal-prompt">$</span>rpm -ql package-name</code>&nbsp;<b>(Fedora/CentOS)</b>.
-        <ol type="a">
-            <li>
-                <code class="terminal-command">cmake</code>
-            </li>
-            <li>
-                <code class="terminal-command">g++</code>
-            </li>
-            <li>
-                <code class="terminal-command">make</code>
-            </li>
-        </ol>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>rpm -ql cmake</code>&nbsp;<b>(Fedora/CentOS)</b>.
     </li>
     <li>
-        If you are missing any of these three packages (indicated by a blank response),
-        then install them. This can be done with
+        If you are missing this package (indicated by a blank response),
+        then you are likely missing the required dependencies as well. These can be installed with
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install cmake g++ make</code>&nbsp;<b>(Ubuntu/Debian)</b>
         or
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install cmake gcc-c++ make</code>&nbsp;<b>(Fedora/CentOS)</b>.
     </li>
     <li>
-        Verify/install **ncurses** with
+        Verify/install your <code class="terminal-command">ncurses</code> package with
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt-get install libncurses5-dev libncursesw5-dev</code>&nbsp;<b>(Ubuntu/Debian)</b>
         or
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install ncurses-devel</code>&nbsp;<b>(Fedora/CentOS)</b>.
     </li>
     <li>
         Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br>
-        <i>(It is recommended to move the extracted directory <code class="terminal-command">frobtads-2.0</code> to your home <code class="terminal-command">~</code> directory.)</i>
+        <i>(It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)</i>
     </li>
 </ol>

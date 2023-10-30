@@ -977,3 +977,17 @@ em > a {
 .terminal-prompt::after {
     content: ' ';
 }
+
+.keypress-wrapper {
+    white-space: nowrap;
+}
+
+.keypress-icon {
+    padding: 0.125em 0.35em;
+    border-color: #C0C0C0;
+    border-width: 2px;
+    border-style: solid;
+    font-weight: bolder;
+    border-radius: 0.5em;
+    font-size: 14pt;
+}
