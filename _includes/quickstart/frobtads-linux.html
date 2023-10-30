@@ -1,0 +1,40 @@
+<ol>
+    <li>
+        Open a terminal with <code class="terminal-command"><span class="terminal-prompt">$</span>CTRL + ALT + T</code>.
+    </li>
+    <li>
+        Check to verify the following packages are installed.
+        This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>which package-name</code>&nbsp;<b>(Ubuntu/Debian)</b>
+        or
+        <code class="terminal-command"><span class="terminal-prompt">$</span>rpm -ql package-name</code>&nbsp;<b>(Fedora/CentOS)</b>.
+        <ol type="a">
+            <li>
+                <code class="terminal-command">cmake</code>
+            </li>
+            <li>
+                <code class="terminal-command">g++</code>
+            </li>
+            <li>
+                <code class="terminal-command">make</code>
+            </li>
+        </ol>
+    </li>
+    <li>
+        If you are missing any of these three packages (indicated by a blank response),
+        then install them. This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install cmake g++ make</code>&nbsp;<b>(Ubuntu/Debian)</b>
+        or
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install cmake gcc-c++ make</code>&nbsp;<b>(Fedora/CentOS)</b>.
+    </li>
+    <li>
+        Verify/install **ncurses** with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt-get install libncurses5-dev libncursesw5-dev</code>&nbsp;<b>(Ubuntu/Debian)</b>
+        or
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install ncurses-devel</code>&nbsp;<b>(Fedora/CentOS)</b>.
+    </li>
+    <li>
+        Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br>
+        <i>(It is recommended to move the extracted directory <code class="terminal-command">frobtads-2.0</code> to your home <code class="terminal-command">~</code> directory.)</i>
+    </li>
+</ol>

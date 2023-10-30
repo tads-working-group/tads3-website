@@ -4,5 +4,45 @@ description: A guide for quickly starting a new TADS 3 project.
 layout: article
 toroot: ./
 ---
-# This is a test
-This is content
+# Landing with a Running Start!
+## A quickstart guide for TADS 3
+Please choose your operating system and preferred software:
+
+{% include quickstart/os-list.html %}
+
+***
+
+# Windows
+
+{% assign selected_os = "Windows" %}
+
+<h2 id="workbench-windows">Install for Workbench</h2>
+
+Text here.
+
+<h2 id="vscode-windows">Install for VSCode</h2>
+
+Text here.
+
+# MacOS
+
+{% assign selected_os = "MacOS" %}
+
+<h2 id="vscode-macos">Install for VSCode</h2>
+
+**This guide assumes that you have already installed Xcode
+on your computer, which is required to compile FrobTADS from source.**
+
+{% include quickstart/frobtads-instructions.md %}
+
+# Linux
+
+{% assign selected_os = "Linux" %}
+
+<h2 id="vscode-linux">Install for VSCode</h2>
+
+{% include quickstart/frobtads-instructions.md %}
+
+<h2 id="terminal-linux">Install for Terminal</h2>
+
+{% include quickstart/frobtads-instructions.md %}

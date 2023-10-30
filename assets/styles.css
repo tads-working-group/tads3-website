@@ -402,6 +402,14 @@ section#showcase {
     margin: 0px 10px;
 }
 
+.text-os-icon {
+    position: relative;
+    top: .5em;
+    flex-shrink: 0;
+    height: 2em;
+    width: 2em;
+}
+
 #what-interp, #what-comp, #what-ed {
     color: rgba(var(--purple));
     filter: brightness(600%);
@@ -949,4 +957,23 @@ em > a {
     background-image: url(laurel-crown-svgrepo-com.svg);
     margin-right: 5px;
     filter: invert(100%);
+}
+
+.terminal-command, .terminal-prompt {
+    white-space: nowrap;
+    padding: 0.125em 1em;
+    background-color: #404040;
+    color: white;
+    font-weight: bolder;
+    border-radius: 0.25em;
+    font-size: 14pt;
+}
+
+.terminal-prompt {
+    user-select: none;
+    color: #808080;
+    padding: 0;
+}
+.terminal-prompt::after {
+    content: ' ';
 }
