@@ -33,9 +33,8 @@ code-example:
     // NOTE: Two slashes denote a comment!
 
     exampleRoom: Room 'Room Name'
-        "Room description"
-
-        isLit = nil
+        "Room description here. "
+        
         south = southRoom
         // Block travel with a message:
         southwest = "There is only a sealed window that way. "
@@ -46,16 +45,19 @@ code-example:
   code: |
     // Will be added to exampleRoom
     table: Surface 'a simple table' @exampleRoom
-        "Table description"
+        "Table description here. "
     ;
 
     // Will be added to table.
     // The number of plus signs ("+") indicates
     // container nesting level, relative to objects above!
-    + cup: Container 'cup' ;
+    + cup: Container 'cup'
+        "Just a simple cup. "
+    ;
 
     // Will be added to cup
     ++ water: Thing 'water'
+        "Clear and clean! "
         massNoun = true
         ambiguouslyPlural = true
         isFixed = true
@@ -68,7 +70,7 @@ code-example:
     ;
 
     // Will be added to table
-    + newspaper: Thing 'newspaper;;paper'
+    + newspaper: Thing 'newspaper;;news paper'
         "The newspaper is not from today. "
         readDesc = "The headline reads, <q>Dog wins new car!</q>"
     ;
@@ -87,20 +89,28 @@ code-example:
         specialDesc =
             "There is a large refrigerator-sized box
             humming away in the corner. "
+    
+        dispenseSound = 'beep'
     ;
 
     ++ button: Button 'big red button'
-          makePushed() {
-              // Allow the machine to be called a "soda dispenser"
-              sodaDispenser.addVocabWord('soda', MatchAdj);
-              sodaDispenser.addVocabWord('dispenser', MatchNoun);
+        makePushed() {
+            // Allow the machine to be called a "soda dispenser"
+            sodaDispenser.addVocabWord('soda', MatchAdj);
+            sodaDispenser.addVocabWord('dispenser', MatchNoun);
 
-              // Create a new clone of sodaBottle, and
-              // give it to the player
-              local newSoda = sodaBottle.createClone();
-              newSoda.moveInto(gPlayerChar);
-          }
+            // Create a new clone of sodaBottle, and
+            // give it to the player
+            local newSoda = sodaBottle.createClone();
+            newSoda.moveInto(gPlayerChar);
+
+            // You can use <<variables>> in your strings!
+            "The box makes a <<sodaDispenser.dispenseSound>>
+            sound, and a new soda bottle falls out, which you
+            then pick up. ";
+        }
     ;
+
     + sodaBottle: Thing 'soda bottle'
         "A cold bottle of soda."
         feelDesc = "It feels cold."
@@ -124,7 +134,7 @@ code-example:
     room: Room 'room'
         // south is a new object, defined as follows:
         south: TravelConnector {
-            travelDesc = "You try to move south, but nothing happens."
+            travelDesc = "You try to move south, but nothing happens. "
         }
     ;
 - title: Respond to actions
@@ -155,6 +165,10 @@ code-example:
                     "Taking {the dobj},
                     {I} notice{s/d} that it is still hot. ";
                 }
+                else {
+                    // Say the usual stuff instead:
+                    inherited();
+                }
             }
         }
     ;
@@ -171,9 +185,11 @@ code-example:
                 too low and you end up bumping your head
                 without going much of anywhere.
                 """;
+
+                // Cancel the action with
+                // the "exit" statement:
+                exit;
             }
-            // Cancel the action:
-            exit;
         }
     ;
 - title: Modifying and replacing objects and classes
@@ -182,12 +198,14 @@ code-example:
         execAction(cmd) {
             if (gActor.bulk > 1500) {
                 "You're too big to jump. ";
+                // "abort" is like "exit",
+                // but prevents a spent turn
+                abort;
             }
-            else {
-                // Otherwise, do what was defined
-                // before our modification.
-                inherited();
-            }
+
+            // Otherwise, do what was defined
+            // before our modification.
+            inherited();
         }
     ;
 
@@ -219,7 +237,7 @@ code-example:
             }
         }
 
-        cannotRepairMsg = '{The subj dobj} {doesn\'t} need mending. '
+        cannotRepairMsg = '{The subj dobj} {does} not need mending. '
     ;
 
 learnmore:
