@@ -78,7 +78,7 @@ code-example:
         execAction(c) {
             "That's quite beyond you. ";
         }
-        when = gCommand.dobj.name == 'relativity'
+        when = (gCommand.dobj.name == 'relativity')
     ;
 - title: Embedded objects
   code: |
