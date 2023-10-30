@@ -30,61 +30,101 @@ benefit:
 code-example:
 - title: Defining rooms
   code: |
+    // NOTE: Two slashes denote a comment!
+
     exampleRoom: Room 'Room Name'
         "Room description"
 
         isLit = nil
         south = southRoom
+        // Block travel with a message:
+        southwest = "There is only a sealed window that way. "
+        // Reroutes: in -> south
         in asExit(south)
     ;
 - title: Adding objects to rooms and other objects
   code: |
-    // below a room
-
-    + table: Surface 'a simple table'
+    // Will be added to exampleRoom
+    table: Surface 'a simple table' @exampleRoom
         "Table description"
     ;
 
-    ++ cup: Container 'cup' ;
+    // Will be added to table.
+    // The number of plus signs ("+") indicates
+    // container nesting level, relative to objects above!
+    + cup: Container 'cup' ;
 
-    +++ water: Thing 'water'
+    // Will be added to cup
+    ++ water: Thing 'water'
         massNoun = true
         ambiguouslyPlural = true
         isFixed = true
-        cannotTakeMsg = "You try to scoop the water out of the cup, but it slips through your fingers."
+
+        // Strings can span several lines,
+        // just like in HTML!
+        cannotTakeMsg =
+            'You try to scoop the water out of the cup,
+            but it slips through your fingers. '
+    ;
+
+    // Will be added to table
+    + newspaper: Thing 'newspaper;;paper'
+        "The newspaper is not from today. "
+        readDesc = "The headline reads, <q>Dog wins new car!</q>"
     ;
 - title: Dynamically creating objects at runtime
   code: |
-    + cokeDispenser: Thing 'refrigerator thing'
+    hallway: Room 'Simple Hallway'
+        "Just a simple hallway. "
+    ;
+
+    + sodaDispenser: Thing 'refrigerator thing'
         "There is a big red button on the front."
-        specialDesc = "There is a large refrigerator-sized box humming away in the corner."
+
+        isFixed = true
+
+        // The player will see this described in the hallway
+        specialDesc =
+            "There is a large refrigerator-sized box
+            humming away in the corner. "
     ;
 
     ++ button: Button 'big red button'
           makePushed() {
-              cokeDispenser.addVocab('Coke dispenser');
-              local newCoke = coke.createClone();
-              coke.moveInto(gPlayerChar);
+              // Allow the machine to be called a "soda dispenser"
+              sodaDispenser.addVocabWord('soda', MatchAdj);
+              sodaDispenser.addVocabWord('dispenser', MatchNoun);
+
+              // Create a new clone of sodaBottle, and
+              // give it to the player
+              local newSoda = sodaBottle.createClone();
+              newSoda.moveInto(gPlayerChar);
           }
     ;
-    ++ coke: Thing 'coca-cola bottle'
-          "A cold bottle of coke."
-          feelDesc = "It feels cold."
-          specialDesc = "You see bottle of coke lying on the floor."
+    + sodaBottle: Thing 'soda bottle'
+        "A cold bottle of soda."
+        feelDesc = "It feels cold."
+
+        specialDesc = "You see bottle of soda lying on the floor."
     ;
 - title: Rules
   code: |
+    // Instead of thinking about a ResolvedTopic ...
     Doer 'think about ResolvedTopic'
         execAction(c) {
+            // ... say "That's quite beyond you." instead ...
             "That's quite beyond you. ";
         }
+        // ... but only when the ResolvedTopic
+        // is "relativity", specifically.
         when = (gCommand.dobj.name == 'relativity')
     ;
 - title: Embedded objects
   code: |
     room: Room 'room'
-    south: TravelConnector {
-        travelDesc = "You try to move south, but nothing happens."
+        // south is a new object, defined as follows:
+        south: TravelConnector {
+            travelDesc = "You try to move south, but nothing happens."
         }
     ;
 - title: Respond to actions
@@ -93,34 +133,61 @@ code-example:
     cup: Container 'a cup'
         taken = 0
 
+        // To handle taking this cup
+        // ("dobj" is short for "direct object")
         dobjFor(Take) {
             action() {
                 inherited();
                 taken++;
             }
             report() {
-                if (taken == 1)
-                    DMsg(taken, "Taking {the obj}, {I} notice that it is still hot.")
+                if (taken == 1) {
+                    // Double-quote strings are a
+                    // shorthand for say(), while
+                    // single-quote strings simply
+                    // hold data.
+
+                    // We can also use
+                    // {token statements}, which
+                    // dynamically change the output,
+                    // based on the action's context.
+
+                    "Taking {the dobj},
+                    {I} notice{s/d} that it is still hot. ";
+                }
             }
         }
     ;
 
     // On a room
-
     room: Room 'room'
-        roomAfterAction() {
-            if (gActionIs(Jump))
-                "You try to jump, but the roof is too low and you end up bumping your head without going much of anywhere.";
+        roomBeforeAction() {
+            // Instead of jumping in this room...
+            if (gActionIs(Jump)) {
+                // We can use triple-quotes to dedicate an
+                // entire block of text for output.
+                """
+                You try to jump, but the roof is
+                too low and you end up bumping your head
+                without going much of anywhere.
+                """;
+            }
+            // Cancel the action:
+            exit;
         }
     ;
 - title: Modifying and replacing objects and classes
   code: |
     modify Jump
-    execAction(cmd) {
-            if(gActor.bulk > 1500)
+        execAction(cmd) {
+            if (gActor.bulk > 1500) {
                 "You're too big to jump. ";
-            else
+            }
+            else {
+                // Otherwise, do what was defined
+                // before our modification.
                 inherited();
+            }
         }
     ;
 
@@ -133,26 +200,27 @@ code-example:
         ('repair' | 'mend' | 'fix') singleDobj
         : VerbProduction
         action = Repair
-        verbPhrase = 'repair/ repairing (what)'
+        verbPhrase = 'repair/repairing (what)'
         missingQ = 'what do you want to repair'
-      ;
+    ;
 
-      DefineTAction(Repair) ;
+    DefineTAction(Repair) ;
 
-      modify Thing
-          isRepairable = nil
+    modify Thing
+        isRepairable = nil
 
-          dobjFor(Repair) {
-              preCond = [touchObj]
+        dobjFor(Repair) {
+            preCond = [touchObj]
 
-              verify() {
-                  if(!isRepairable)
-                      illogical(cannotRepairMsg);
-              }
-          }
+            verify() {
+                if (!isRepairable) {
+                    illogical(cannotRepairMsg);
+                }
+            }
+        }
 
-          cannotRepairMsg = '{The subj dobj} {doesn\'t need mending. '
-      ;
+        cannotRepairMsg = '{The subj dobj} {doesn\'t} need mending. '
+    ;
 
 learnmore:
   blurb: |
