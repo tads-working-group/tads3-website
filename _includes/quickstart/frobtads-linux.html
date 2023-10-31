@@ -24,6 +24,66 @@
     </li>
     <li>
         Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br>
-        <i>(It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)</i>
+        (It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/frobtads-2.0</code>
+    </li>
+    <li>
+        Make sure you are actually in the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">CMakeLists.txt</code>
+            </li>
+            <li>
+                <code class="terminal-command">CMCommon.cmake</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">frobtads-2.0</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd frobtads-2.0 && ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir build</code>
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cd build</code>
+    </li>
+    <li>
+        Next, we will prepare the compiler by choosing where the resulting binaries will go.
+        By default, the installation prefix is <code class="terminal-command">/usr/local</code>,
+        which places the binaries into <code class="terminal-command">/usr/local/bin/</code>,
+        making them available as terminal commands.
+        <ol type="A">
+            <li>
+                <em>Default installation path</em><br>
+                Simply run <code class="terminal-command"><span class="terminal-prompt">$</span>cmake ..</code>
+            </li>
+            <li>
+                <em>Custom installation path</em><br>
+                You can choose which directory the binaries will be installed to by changing the
+                <code class="terminal-command">-DCMAKE_INSTALL_PREFIX=&lt;path-prefix&gt;</code> option.<br>
+                <b>Notice that this prefix is set in two places in this command:</b><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>CFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local" CXXFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local" cmake ..</code>
+            </li>
+        </ol>
+    </li>
+    <li>
+        Finally, run the compile process with this command:<br>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cmake --build . --target install</code>
+    </li>
+    <li>
+        Assuming the compile process is successful, you will have two new binaries, which will become particularly useful:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>frob MyNewGame.t3</code> for playing TADS game files in the terminal, and
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code> in a project directory for compiling TADS 3 games.
+            </li>
+        </ul>
+        <i>At this point, we are not done, but we have successfully finished a major series of steps!</i>
     </li>
 </ol>

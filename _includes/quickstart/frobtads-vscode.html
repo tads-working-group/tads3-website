@@ -1,0 +1,91 @@
+<ol start="13">
+    <li>
+        Assuming you already have VSCode installed, start it up.
+    </li>
+    <li>
+        Install these extensions:
+        <ol>
+            <li>
+                <em>vscode-tads3tools</em> by Tomas Öberg, and
+            </li>
+            <li>
+                <em>Code Spell Checker</em> by Street Side Software
+            </li>
+        </ol>
+    </li>
+    <li>
+        Go to <i>File&nbsp;&gt;&nbsp;Preferences&nbsp;&gt;&nbsp;Settings</i>.
+    </li>
+    <li>
+        Enter <code class="terminal-command">tads</code> into the settings search bar,
+        and click on the <i>Tads</i> category, under <i>Extensions</i>.
+    </li>
+    <li>
+        Verify that <i>Tads&nbsp;&gt;&nbsp;Preprocessor:&nbsp;Path</i> and <i>Tads3&nbsp;&gt;&nbsp;Compiler:&nbsp;Path</i>
+        are both set to run the <code class="terminal-command">t3make</code> binary.
+    </li>
+    <li>
+        Verify that you have the Adv3 and Adv3Lite libraries installed.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3/</code> and
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3Lite/</code>, respectively.<br>
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Include</i> points to your TADS 3 include files.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/include/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Lib</i> points to your TADS 3 library files.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3&nbsp;&gt;&nbsp;Adv3:&nbsp;Library</i> points to your TADS 3 Adv3 directory.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3&nbsp;&gt;&nbsp;Adv3&nbsp;Lite:&nbsp;Library</i> points to your TADS 3 Adv3Lite directory.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3Lite/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Game&nbsp;Runner&nbsp;Interpreter</i> is set to run your preferred TADS 3 interpreter.
+        For example, if you are using QTADS to play games, you might have this set to something like
+        {% if selected_os == "MacOS" %}
+        <code class="terminal-command">/Users/username-here/Desktop/QTads/QTads.app</code>.
+        {% else %}
+        <code class="terminal-command">/home/username-here/Desktop/QTads/QTads.AppImage</code>.
+        {% endif %}
+    </li>
+    <li>
+        Close the <i>Settings</i> tab.
+    </li>
+    <li>
+        Press
+        {% if selected_os == "MacOS" %}
+        <span class="keypress-wrapper"><span class="keypress-icon">CMD</span> + <span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">P</span></span>
+        {% else %}
+        <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">P</span></span>
+        {% endif %}
+        to open your command search bar, and type in
+        <code class="terminal-command">create a new Tads3 template project</code>.
+        Select the top result to run it.
+    </li>
+    <li>
+        A dialog window will open, where you must select your game's project directory.
+    </li>
+    <li>
+        Once the project directory is set, you will asked to choose either an Adv3 project template, or an Adv3Lite project template.
+    </li>
+    <li>
+        A basic template will be generated in the project directory. Each time you save a file in your project, <code class="terminal-command">t3make</code>
+        will be run automatically. It will use the compile options specified in <code class="terminal-command">Makefile.t3m</code>, and the game file
+        will usually be named <code class="terminal-command">gameMain.t3</code>, unless you specify otherwise in the makefile. The source file, by default,
+        will be named <code class="terminal-command">gameMain.t</code>.
+    </li>
+    <li>
+        Open <code class="terminal-command">gameMain.t</code>, if it's not open already.
+    </li>
+</ol>
