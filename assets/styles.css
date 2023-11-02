@@ -991,3 +991,11 @@ em > a {
     border-radius: 0.5em;
     font-size: 14pt;
 }
+
+.user-quote {
+    padding: 0.5em 1em;
+    border-color: #C0C0C0;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.5em;
+}

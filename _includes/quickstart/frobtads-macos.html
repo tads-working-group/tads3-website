@@ -1,12 +1,224 @@
+<b>
+    (These instructions are partially based on a text file written by <a href="mailto:regan.toews@mail.mcgill.ca">Reg</a>, which was included in the FrobTADS download.
+    None of the creators of this site have access to a Mac, so a lot of research was done to write this, without any direct testing or experience.)
+</b>
 <ol>
     <li>
-        Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br>
-        (It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)
+        Open Finder, and navigate to Applications.
     </li>
     <li>
-        Open a terminal from <code class="terminal-command">/Applications/Utilities/Terminal.app</code>.
+        Open the Utilities folder.
     </li>
     <li>
-        Find God. (Just kidding; still need to write this bit, based on the MacOS install docs)
+        Run Terminal.app, and also drag it to the dock for easier access in the future.
+    </li>
+    <li>
+        For those unaccustomed to the Terminal, <em>Reg</em> provides the following message:
+        <blockquote class="user-quote">
+            <p>
+                Using terminal, you are always located somewhere inside your computer.
+                For instance, you could be inside your applications folder, or perhaps your itunes folder...
+                but it's important to know where you are because this affects how commands could be interpreted.
+            </p>
+
+            <b>Some common commands:</b><br>
+            <em>CHANGING DIRECTORY</em>
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd</code><br>
+                    Change directory (This is how you navigate around in your computer).
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>/Applications</code><br>
+                    The slash refers to a folder, the name after the slash is the name of a folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /Applications</code><br>
+                    This is how you would enter the Applications folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /Applications/Utilities</code><br>
+                    This is how you would enter the utilities folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>.</code><br>
+                    A dot means "current folder".
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>..</code><br>
+                    Two dots mean "one folder before".
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd ../</code><br>
+                    Means move to the previous folder.
+                </li>
+            </ul>
+
+            <p>
+                Try the <code class="terminal-command">cd</code> command with different folders to get a feel for navigating.
+            </p>
+            <p>
+                <i>If any folders have spaces in them, things are a little more complicated. You
+                can drag a file or folder into the "terminal" window and it will show how you would type the location of the file or folder.</i>
+            </p>
+        
+            <em>FINDING A FILE</em> ( Includes hidden files which spotlight won't show you )
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /</code><br>
+                    Changes directories so you're located in the top-most directory.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>find . -name adv3.h</code><br>
+                    Searches for a file called "adv3.h".
+                </li>
+            </ul>
+        
+            <em>OTHER COMMANDS</em>
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>tar -xzf</code><br>
+                    Expand a *.tar.gz compressed archive.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code><br>
+                    List all files in a folder, except hidden files.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>ls -a</code><br>
+                    List everything in a folder, including hidden files.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>sudo</code><br>
+                    This command is added to the beginning of a command if it's something where you need to have administrative (root) access.
+                </li>
+            </ul>
+
+            <p>
+                <a href="http://www.ss64.com/bash" target="_blank" rel="noopener noreferrer">A list of more commands</a><br>
+                <a href="http://forums.macosxhints.com/showthread.php?t=40648" target="_blank" rel="noopener noreferrer">A very good unix beginner page is here</a>
+            </p>
+            <p>
+                <b>By the way:</b><br>
+                The word <q>binary</q> generally means <q>compiled file</q> as opposed to the <q>source code</q> which is the building blocks of a file.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        Install Xcode Tools.
+        <br><br>
+        <em>Reg</em> says:
+        <blockquote class="user-quote">
+            <p>
+                This is on your install DVD that came with your mac but
+                it's better to <a href="http://developer.apple.com/tools/xcode/" target="_blank" rel="noopener noreferrer">download the newest version via the internet</a>.
+            </p>
+            <p>
+                This is free when you make an ADC <i>[or <q>Apple Developer</q>]</i> account (account is also free).
+            </p>
+            <p>
+                Follow the installation instructions that come with it.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        Head to the download site for <a href="https://github.com/Homebrew/brew/releases" target="_blank" rel="noopener noreferrer">Homebrew</a>,
+        and download the pkg installer.
+    </li>
+    <li>
+        Double-click on the Homebrew pkg file to install it.
+    </li>
+    <li>
+        If you have Terminal open, close it and open a new one. Otherwise, open Terminal.app now.
+    </li>
+    <li>
+        Enter this command: <code class="terminal-command"><span class="terminal-prompt">$</span>echo $PATH</code>
+    </li>
+    <li>
+        What will appear is a list of folder paths, where each step in the path is separated by a <code class="terminal-command">/</code> (slash),
+        and each path is separated by a <code class="terminal-command">:</code> (colon). Search through the paths, and make sure you find
+        one that says <code class="terminal-command">/usr/local/bin</code>.<br><br>
+        <b>If you <i>do</i> find this, skip to step 15.</b>
+    </li>
+    <li>
+        Open your home folder in Finder.
+    </li>
+    <li>
+        Look for a file called <code class="terminal-command">.bashrc</code>. If you do not see it in your home folder,
+        press <span class="keypress-wrapper"><span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">CMD</span> + <span class="keypress-icon">.</span></span>.<br><br>
+        Open <code class="terminal-command">.bashrc</code> with TextEdit.<br><br>
+        <b>Make sure TextEdit is using plain text by pressing</b>
+        <span class="keypress-wrapper"><span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">CMD</span> + <span class="keypress-icon">T</span></span>!
+    </li>
+    <li>
+        Scroll to the bottom of the file, and add the following line:
+        {% highlight bash %}
+        export PATH="/usr/local/bin:$PATH"
+        {% endhighlight %}
+    </li>
+    <li>
+        Save and close the text file.
+    </li>
+    <li>
+        Close the terminal.
+    </li>
+    <li>
+        Open a <i>new</i> terminal, and run <code class="terminal-command"><span class="terminal-prompt">$</span>brew install cmake</code>.
+    </li>
+    <li>
+        Run <code class="terminal-command"><span class="terminal-prompt">$</span>brew install ncurses</code>.
+    </li>
+    <li>
+        Close the terminal.
+    </li>
+    <li>
+        Download the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.
+    </li>
+    <li>
+        <em>Reg</em> says:
+        <blockquote class="user-quote">
+            Your computer will probably automatically decompress these items.
+            If it hasn't done so for the frobtads folder, double-click on the disk image so it decompresses.
+        </blockquote>
+    </li>
+    <li>
+        Move the decompressed frobtads-2.0 folder to your home folder.
+    </li>
+    <li>
+        Start Terminal.app, and run <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/frobtads-2.0</code>.
+    </li>
+    <li>
+        Make sure you are actually in the folder. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">CMakeLists.txt</code>
+            </li>
+            <li>
+                <code class="terminal-command">CMCommon.cmake</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">frobtads-2.0</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd frobtads-2.0 && ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir build</code>
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cd build</code>
+    </li>
+    <li>
+        Simply run <code class="terminal-command"><span class="terminal-prompt">$</span>cmake ..</code>
+    </li>
+    <li>
+        Finally, run the compile process with this command:<br>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo cmake --build . --target install</code>
+    </li>
+    <li>
+        If the research and efforts of the writer of this guide have paid off, then the compilation process should be successful,
+        and you will have a new Terminal.app command at your disposal: <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code>,
+        which is used to compile new TADS 3 games from your game project folders.
     </li>
 </ol>
