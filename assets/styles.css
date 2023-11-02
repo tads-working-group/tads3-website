@@ -999,3 +999,12 @@ em > a {
     border-style: solid;
     border-radius: 0.5em;
 }
+
+a {
+    target-name:new;
+    target-new:tab;
+}
+
+.highlight {
+    color: white !important;
+}
