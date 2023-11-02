@@ -3,24 +3,85 @@
         Open a terminal with <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">ALT</span> + <span class="keypress-icon">T</span></span>.
     </li>
     <li>
+        Make sure to update your system before beginning this process.
+        <ul>
+            <li>
+                <em>(Ubuntu/Debian)</em><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt update</code><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt upgrade</code>
+            </li>
+            <li>
+                <em>(Fedora/CentOS)</em><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf check-update</code><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf update</code>
+            </li>
+        </ul>
+    </li>
+    <li>
         Check to verify <code class="terminal-command">cmake</code> is installed.
         This can be done with
         <code class="terminal-command"><span class="terminal-prompt">$</span>which cmake</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or
+        or<br>
         <code class="terminal-command"><span class="terminal-prompt">$</span>rpm -ql cmake</code>&nbsp;<b>(Fedora/CentOS)</b>.
     </li>
     <li>
         If you are missing this package (indicated by a blank response),
         then you are likely missing the required dependencies as well. These can be installed with
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install cmake g++ make</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or
+        or<br>
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install cmake gcc-c++ make</code>&nbsp;<b>(Fedora/CentOS)</b>.
     </li>
     <li>
         Verify/install your <code class="terminal-command">ncurses</code> package with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt-get install libncurses5-dev libncursesw5-dev</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libncurses5-dev libncursesw5-dev</code>&nbsp;<b>(Ubuntu/Debian)</b>
+        or<br>
         <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install ncurses-devel</code>&nbsp;<b>(Fedora/CentOS)</b>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br>
+        Check to verify <code class="terminal-command">curl</code> is installed.
+        This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>which curl</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br>
+        If the package is missing, you can install it with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install curl</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br>
+        Check to verify <code class="terminal-command">libcurl</code> is installed.
+        This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>curl-config --version</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br>
+        If the package is missing, or verification returned some kind of error, then the package needs to be installed.
+        Ubuntu/Debian distros have a choice between three alternative versions of this library.
+        <b>If the choice does not matter to you, then go with the openssl version.</b> For those who might have a preference,
+        the choices are the following:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-openssl-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-nss-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-gnutls-dev</code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em>CentOS only:</em><br>
+        CentOS comes with a minimal version of curl installed. If there are errors related to curl later (during compilation),
+        then you might need to install the full versions with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install curl-full libcurl-full</code>
+    </li>
+    <li>
+        <em>Fedora only:</em><br>
+        Fedora users will need to verify curl and its dev libraries, but the latter can be installed by running
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo yum install libcurl-devel</code>
     </li>
     <li>
         Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br>
@@ -66,13 +127,18 @@
                 You can choose which directory the binaries will be installed to by changing the
                 <code class="terminal-command">-DCMAKE_INSTALL_PREFIX=&lt;path-prefix&gt;</code> option.<br>
                 <b>Notice that this prefix is set in two places in this command:</b><br>
-                <code class="terminal-command"><span class="terminal-prompt">$</span>CFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local" CXXFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local" cmake ..</code>
+                <code class="terminal-command" style="display:block;overflow-x:scroll;"><span class="terminal-prompt">$</span>
+                    CFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    CXXFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    cmake ..
+                </code>
             </li>
         </ol>
     </li>
     <li>
         Finally, run the compile process with this command:<br>
-        <code class="terminal-command"><span class="terminal-prompt">$</span>cmake --build . --target install</code>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo cmake --build . --target install</code><br>
+        <b>If your custom installation prefix does not require root privileges for write operations, then sudo is unnecessary for this command.</b>
     </li>
     <li>
         Assuming the compile process is successful, you will have two new binaries, which will become particularly useful:
@@ -84,6 +150,34 @@
                 <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code> in a project directory for compiling TADS 3 games.
             </li>
         </ul>
-        <i>At this point, we are not done, but we have successfully finished a major series of steps!</i>
+    </li>
+    <li>
+        Download and extract the latest version of <a href="https://github.com/EricEve/adv3lite/releases" target="_blank" rel="noopener noreferrer">Adv3Lite</a> from Eric Eve's GitHub.
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/adv3Lite</code>
+    </li>
+    <li>
+        Make sure you are actually <i>in</i> the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">action.t</code>
+            </li>
+            <li>
+                <code class="terminal-command">actions.t</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">adv3Lite</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd adv3Lite && ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        Once we are certain we are at the correct directory depth, run <code class="terminal-command"><span class="terminal-prompt">$</span>cd ..</code>,
+        followed by <code class="terminal-command"><span class="terminal-prompt">$</span>sudo mv ./adv3Lite /usr/local/share/frobtads/tads3/lib/adv3Lite</code>,
+        which will move <code class="terminal-command">adv3Lite</code> into your TADS library directory.<br>
+        <b>The destination path may vary if you used a custom installation prefix</b>; these instructions assume you have used
+        a prefix of <code class="terminal-command">/usr/local</code>.
     </li>
 </ol>

@@ -1,4 +1,4 @@
-<ol start="13">
+<ol start="24">
     <li>
         Assuming you already have VSCode installed, start it up.
     </li>
@@ -60,6 +60,11 @@
         {% endif %}
     </li>
     <li>
+        <em>Optional</em><br>
+        Enable <i>Tads3:&nbsp;Restart&nbsp;Game&nbsp;Runner&nbsp;On&nbsp;T3&nbsp;Image&nbsp;Changes</i> if
+        you would like your specified interpreter to re-open your game each time changes are made to your project.
+    </li>
+    <li>
         Close the <i>Settings</i> tab.
     </li>
     <li>
@@ -86,6 +91,28 @@
         will be named <code class="terminal-command">gameMain.t</code>.
     </li>
     <li>
-        Open <code class="terminal-command">gameMain.t</code>, if it's not open already.
+        <em>Optional</em><br>
+        Create a bash script named <code class="terminal-command">run.sh</code> and give it the following code:
+        {% include quickstart/run-script-code.md %}
+        Then, do <code class="terminal-command"><span class="terminal-prompt">$</span>chmod +x run.sh</code>.
+        You can run this script to re-open your game, if you did not choose to automatically perform this with every saved change:
+        <code class="terminal-command"><span class="terminal-prompt">$</span>./run.sh</code>
+    </li>
+    <li>
+        Open <code class="terminal-command">gameMain.t</code>, if it's not open already. It's contents should resemble the following:<br>
+        <em>For an Adv3 template</em>
+        {% include quickstart/adv3/gameMain.md %}
+        <em>For an Adv3Lite template</em>
+        {% include quickstart/adv3lite/gameMain.md %}
+    </li>
+    <li>
+        Open <code class="terminal-command">Makefile.t3m</code>. It's contents should resemble the following:<br>
+        <em>For an Adv3 template</em>
+        {% include quickstart/adv3/makefile.md %}
+        <em>For an Adv3Lite template</em>
+        {% include quickstart/adv3lite/makefile.md %}
+    </li>
+    <li>
+        {% include quickstart/happy-coding.html %}
     </li>
 </ol>

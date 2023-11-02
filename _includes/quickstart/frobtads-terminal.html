@@ -1,0 +1,43 @@
+<ol start="24">
+    <li>
+        For the rest of this guide, there will no specific instructions
+        for your editor of choice, so it is assumed you are using something
+        with capabilities equal to&mdash;or <i>surpassing</i>&mdash;the <b>nano</b> terminal-based text editor.<br><br>
+        At this point, create a new project directory for your game, and navigate into it.
+    </li>
+    <li>
+        Decide at this time if you are using either the <b>Adv3</b> or <b>Adv3Lite</b> library for your game.
+    </li>
+    <li>
+        Create your first source file: <code class="terminal-command">gameMain.t</code>.<br>
+        <em>For an Adv3 template</em>
+        {% include quickstart/adv3/gameMain.md %}
+        <em>For an Adv3Lite template</em>
+        {% include quickstart/adv3lite/gameMain.md %}
+    </li>
+    <li>
+        Create your project makefile: <code class="terminal-command">Makefile.t3m</code>.<br>
+        <em>For an Adv3 template</em>
+        {% include quickstart/adv3/makefile.md %}
+        <em>For an Adv3Lite template</em>
+        {% include quickstart/adv3lite/makefile.md %}
+    </li>
+    <li>
+        Create a directory named <code class="terminal-command">obj</code> in your game project directory.
+        This can be done with <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir obj</code>.
+    </li>
+    <li>
+        To compile your game, run <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code>.
+    </li>
+    <li>
+        Create a bash script named <code class="terminal-command">run.sh</code> and give it the following code:
+        {% include quickstart/shorter-run-script-code.md %}
+        Then, do <code class="terminal-command"><span class="terminal-prompt">$</span>chmod +x run.sh</code>.
+    </li>
+    <li>
+        {% include quickstart/happy-coding.html %}
+    </li>
+    <li>
+        To test your game, execute <code class="terminal-command"><span class="terminal-prompt">$</span>./run.sh</code>.
+    </li>
+</ol>
