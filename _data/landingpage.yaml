@@ -484,7 +484,7 @@ learn:
       If you decide to use adv3Lite, you can *[download the latest version of the adv3Lite library from GitHub](https://github.com/EricEve/adv3lite/releases)*. Please ignore the other download locations mentioned in the adv3Lite documentation, things have changed since then. Other than that, the documentation below is adequately up to date.
 
       <a class="download-button" href="https://github.com/EricEve/adv3lite/releases">
-          <img class="icon" src="assets/github-svgrepo-com.svg"/>
+          <img class="icon" src="assets/images/github-svgrepo-com.svg"/>
           Download
           Adv3Lite
       </a>
