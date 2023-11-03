@@ -6,42 +6,33 @@
         Make sure to update your system before beginning this process.
         <ul>
             <li>
-                <em>(Ubuntu/Debian)</em><br>
+                <em>Ubuntu/Debian</em><br>
                 <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt update</code><br>
                 <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt upgrade</code>
             </li>
             <li>
-                <em>(Fedora/CentOS)</em><br>
+                <em>Fedora/CentOS</em><br>
                 <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf check-update</code><br>
                 <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf update</code>
             </li>
         </ul>
     </li>
     <li>
-        Check to verify <code class="terminal-command">cmake</code> is installed.
-        This can be done with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>which cmake</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or<br>
-        <code class="terminal-command"><span class="terminal-prompt">$</span>rpm -ql cmake</code>&nbsp;<b>(Fedora/CentOS)</b>.
-    </li>
-    <li>
-        If you are missing this package (indicated by a blank response),
-        then you are likely missing the required dependencies as well. These can be installed with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install cmake g++ make</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or<br>
-        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install cmake gcc-c++ make</code>&nbsp;<b>(Fedora/CentOS)</b>.
-    </li>
-    <li>
-        Verify/install your <code class="terminal-command">ncurses</code> package with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libncurses5-dev libncursesw5-dev</code>&nbsp;<b>(Ubuntu/Debian)</b>
-        or<br>
-        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install ncurses-devel</code>&nbsp;<b>(Fedora/CentOS)</b>.
-    </li>
-    <li>
-        <em>Ubuntu/Debian only:</em><br>
-        Check to verify <code class="terminal-command">curl</code> is installed.
-        This can be done with
-        <code class="terminal-command"><span class="terminal-prompt">$</span>which curl</code>.
+        Install the necessary packages.
+        <ul>
+            <li>
+                <em>Ubuntu/Debian</em><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo apt install cmake g++ make libncurses5-dev libncursesw5-dev
+                </code>
+            </li>
+            <li>
+                <em>Fedora/CentOS</em><br>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo dnf install cmake gcc-c++ make ncurses-devel
+                </code>
+            </li>
+        </ul>
     </li>
     <li>
         <em>Ubuntu/Debian only:</em><br>
@@ -181,3 +172,4 @@
         a prefix of <code class="terminal-command">/usr/local</code>.
     </li>
 </ol>
+{% assign lastStepNumber=21 %}

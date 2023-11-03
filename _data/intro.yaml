@@ -381,7 +381,7 @@ install: |
   There is also the self-titled "HTML TADS" interpreter for Windows (named after the language that it handles), available on the [official TADS website](https://www.tads.org/t3dl/pksetup.exe), which was the reference implementation for TADS interpreters but which has not been updated since at best 2013.
 
   #### Web UI
-  If you want to run a Web UI TADS game, we recommend using an interpreter based of the original, complete, official TADS 3 runner and virtual machine written by Michael J. Roberts, which implemented the full capabilities of TADS 3. To get this, you can use *FrobTADS for Linux, BSD, and macOS*, and *the `t3run` program provided with the TADS Author's Kit for Windows* (see in the "compilers" section below), as these have the most complete implementation of the TADS virtual machine/runtime (since they're both based on TADS 3's actual official implementation code) and can run in the headless networked server mode needed for Web Play.
+  If you want to run a Web UI TADS game, we recommend using an interpreter based off of the original, complete, official TADS 3 runner and virtual machine written by Michael J. Roberts, which implemented the full capabilities of TADS 3. To get this, you can use *FrobTADS for Linux, BSD, and macOS*, and *the `t3run` program provided with the TADS Author's Kit for Windows* (see in the "compilers" section below), as these have the most complete implementation of the TADS virtual machine/runtime (since they're both based on TADS 3's actual official implementation code) and can run in the headless networked server mode needed for Web Play.
 
   To run a Web UI TADS 3 game with FrobTADS, just run this command after installing FrobTADS:
 
@@ -395,7 +395,7 @@ install: |
   t3run.exe -plain -ns0 -webhost localhost your-t3-file.t3
   ```
 
-  Note: *we plan to release a cross-platform self-contained GUI program for running TADS 3 Web UI <i>and</i> HTML TADS games in the same program, on your local computer, eventually*. There is a *working prototype [here](https://github.com/alexispurslane/tads3-runner)*. Currently it relies on frobTADS and QTADS already being in your path and you having Qt6.6 and PySide6.6 installed, but when we package it up (as an AppImage on Linux, an installer wizard on Windows, and a .app on macOS) that won't be the case.
+  Note: *we plan to release a cross-platform self-contained GUI program for running TADS 3 Web UI <i>and</i> HTML TADS games in the same program, on your local computer, eventually*. There is a *working prototype [here](https://github.com/alexispurslane/tads3-runner)*. Currently it relies on FrobTADS and QTADS already being in your path and you having Qt6.6 and PySide6.6 installed, but when we package it up (as an AppImage on Linux, an installer wizard on Windows, and a .app on macOS) that won't be the case.
 
   #### Text-only
   If you just want to play a TADS 3 game in text-only mode, we recommend going with a general purpose multi-format interpreter. Just keep in mind that playing TADS 3 games in text-only mode will cause you to miss out on a lot of the experience, so we don't recommend it. The most popular multi-format interpreter, *[Gargoyle](http://ccxvii.net/gargoyle/)*, is a good choice, since it can run TADS games. *[FrobTADS](https://github.com/realnc/frobtads/releases)* does also come with a command line text-only interpreter as well.
@@ -417,12 +417,12 @@ install: |
       Download Author's Kit
   </a>
 
-  For Mac and BSD, as well as for Linux users who prefer to build from source, *you can also get the frobTADS source code [here](https://github.com/realnc/frobtads)*, which will provide the *TADS 3 libraries, frob, t3make, and adv3 but requires being built from source*. We have instructions on how to install, set up, and use all of these installation methods in our Quick Start Guides (see the [learning](#learn) section below) if you need more help.
+  For Mac and BSD, as well as for Linux users who prefer to build from source, *you can also get the FrobTADS source code [here](https://github.com/realnc/frobtads)*, which will provide the *TADS 3 libraries, frob, t3make, and adv3 but requires being built from source*. We have instructions on how to install, set up, and use all of these installation methods in our Quick Start Guides (see the [learning](#learn) section below) if you need more help.
 
    <a class="download-button" href="https://github.com/realnc/frobtads/releases">
        <img class="icon" src="assets/github-svgrepo-com.svg"/>
        Download
-       frobTADS
+       FrobTADS
    </a>
 
   ### Setting up your *development environment*
@@ -439,9 +439,9 @@ learn:
     - image: ./assets/beard-svgrepo-com.svg
       title: "The big, complex, full-featured graybeard: *adv3*"
       description: |
-        *[Adv3](https://www.tads.org/ov_lib.htm)* is the *default standard library* distributed with TADS 3. It is quite old, having been created along with TADS in 2006 and last having been updated in 2013, but that comes along with some benefits as well as some downsides. The main benefit of using adv3 is that it is a coherent, integrated whole, one single *<i>incredibly</i> complete and complex world model* where everything integrates with everything else. It comes packed with every concievable object type, class, or feature you could possibly need, and an *incredibly complex world model* already wired up and integrated into the whole, so that any game you create with it will automatically be running with a world model more complex than almost any parser interactive fiction game.
+        *[Adv3](https://www.tads.org/ov_lib.htm)* is the *default standard library* distributed with TADS 3. It is quite old, having been created along with TADS in 2006 and last having been updated in 2013, but that comes along with some benefits as well as some downsides. The main benefit of using adv3 is that it is a coherent, integrated whole, one single *<i>incredibly</i> complete and complex world model* where everything integrates with everything else. It comes packed with every conceivable object type, class, or feature you could possibly need, and an *incredibly complex world model* already wired up and integrated into the whole, so that any game you create with it will automatically be running with a world model more complex than almost any parser interactive fiction game.
 
-        The downside, however, is that adv3 relies on an incredibly *deep and complex multiple inheritence class hierarchy* and a *huge number of highly specific classes,* which it relies heavily on as mix-ins to customize the behavior of objects. Moreover, it is not particularly modular, so every game you write with it will have to bring in that whole gigantic world model. Furthermore, it is *not as explicitly designed for extensibility or customizability* as adv3Lite is. Thus, if you want a very complex and simulation-heavy parser game, and what you want to do fits with the existing carefully crafted complex world model of adv3, then it might be for you. If not, you might want to look at adv3Lite.
+        The downside, however, is that adv3 relies on an incredibly *deep and complex multiple inheritance class hierarchy* and a *huge number of highly specific classes,* which it relies heavily on as mix-ins to customize the behavior of objects. Moreover, it is not particularly modular, so every game you write with it will have to bring in that whole gigantic world model. Furthermore, it is *not as explicitly designed for extensibility or customizability* as adv3Lite is. Thus, if you want a very complex and simulation-heavy parser game, and what you want to do fits with the existing carefully crafted complex world model of adv3, then it might be for you. If not, you might want to look at adv3Lite.
 
         Another downside is that adv3 lacks many of the features popular in modern interactive fiction authoring systems, such as scenes, regions, rules, relations, and more. What it does have, however, is:
 
@@ -459,7 +459,7 @@ learn:
       description: |
         *[Adv3Lite](https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm)* is a newer standard library created by Eric Eve, and has been updated as recently as 2023. Although the main benefit of adv3Lite is that *the class hierarchy is much simpler*, since most customization for objects has been relocated to properties on a single class representing the object's general kind, instead of in a main base class and several mix-in classes, *the "lite" in the name is somewhat of a misnomer*. This restructuring allows much *greater flexibility in creating custom objects and makes the library easier to learn*, but *only a few features have been streamlined out in the process*, and many of the common ones &mdash; such as room parts, postures, and library classes as a shorthand for properties &mdash; *can be added back via extensions*.
 
-        Instead, *the library is "lite" because it has been specifically designed with modularity and extensiblility in mind*. Adv3Lite makes customizing game mechanics, changing the world model, or creating extensions in ways that wouldn't slot neatly into adv3's existing world model easier and more powerful, and if you're not using specific game mechanics, your game doesn't have to import them and your code doesn't have to deal with them, unlike with adv3 where the whole complex world model is turned on at all times.
+        Instead, *the library is "lite" because it has been specifically designed with modularity and extensibility in mind*. Adv3Lite makes customizing game mechanics, changing the world model, or creating extensions in ways that wouldn't slot neatly into adv3's existing world model easier and more powerful, and if you're not using specific game mechanics, your game doesn't have to import them and your code doesn't have to deal with them, unlike with adv3 where the whole complex world model is turned on at all times.
 
         However, as the adv3Lite website says, you get several crucial new features with adv3Lite that have become popular in the modern interactive fiction authoring space and which adv3 does not offer:
 
@@ -477,7 +477,7 @@ learn:
   learning: |
       There is also an *[extensive list](https://www.ifarchive.org/indexes/if-archiveXprogrammingXtads3XlibraryXcontributions)* of other community-contributed extensions and libraries on the IF Archive, should you need features not available even in the existing standard libraries. All of these are compatible with adv3 and most can probably be trivially made compatible with adv3Lite, in our experience. Just a few of the delightful things you'll find there include qtalk, an impressively feature-complete plugin for Fallout-style menu based conversation, Relations and Rulebooks, which allow you to specify relations and use rulebooks just like in Inform, and ConSpace, an extension that enhances the modelling of spatial relations and allows several rooms to act as one large subdivided location!
 
-      We also highly recommend, especially if you're using Adv3, checking out the excellent work done by *[diegesisandmimesis on GitHub](https://github.com/diegesisandmimesis?tab=repositories)*. They are regularly turning out simply incredible (and regularly updated and maintained!) modules for TADS 3 focused on powerful declarative semantic simulation capabilities like rule engines, state machines, integer approximiation, undirected graphs, and more.
+      We also highly recommend, especially if you're using Adv3, checking out the excellent work done by *[diegesisandmimesis on GitHub](https://github.com/diegesisandmimesis?tab=repositories)*. They are regularly turning out simply incredible (and regularly updated and maintained!) modules for TADS 3 focused on powerful declarative semantic simulation capabilities like rule engines, state machines, integer approximation, undirected graphs, and more.
 
       ## Learning resources for *adv3Lite*
 
@@ -491,7 +491,7 @@ learn:
 
       The main hub for adv3Lite documentation is the *[Adv3Lite Bookshelf](./docs/adv3lite/index.htm)*. The resources found there will teach you both the TADS 3 language and the Adv3Lite library. The bookshelf contains:
 
-      1. the *[Adv3Lite Quick Start Quide](./docs/adv3lite/t3QuickStart.htm)*, demonstrating how to install the Adv3Lite library and set up a project,
+      1. the *[Adv3Lite Quick Start Guide](./docs/adv3lite/t3QuickStart.htm)*, demonstrating how to install the Adv3Lite library and set up a project,
       2. a gentle but fairly wide-ranging *[Adv3Lite Tutorial](./docs/adv3lite/tutorial/index.htm)* aimed at beginners who are new to both programming and TADS 3,
       3. a very thorough yet readable guide *[Learning TADS 3 With Adv3Lite](./docs/adv3lite/learning/LearningT3Lite.pdf)*, which assumes general programming knowledge but teaches you the TADS 3 language and adv3Lite at the same time organized by topic, with detailed technical information as well as tutorial-like instruction and examples, so that it functions very well as both a guide and reference manual,
       4. the impressive *[Adv3Lite Library Manual](./docs/adv3lite/manual/index.htm)*, which is a comprehensive reference manual for adv3Lite that covers almost every significant aspect of the library (think of it like the [OpenGL Programming Guide](https://www.oreilly.com/library/view/opengl-programming-guide/9780321669292/), but for adv3Lite),
@@ -499,12 +499,12 @@ learn:
 
       There are other resources not found in the Bookshelf, however, including:
 
-      * the *[Adv3Lite Periplus](https://jimbonator.github.io/tads-cookbook/adv3Lite/)*, which is a general reference for various TADS 3 and Adv3Lite features, organized by subject matter and collected from the various other documentation, and containing links to the relevant documentation should you want to expore further, and
+      * the *[Adv3Lite Periplus](https://jimbonator.github.io/tads-cookbook/adv3Lite/)*, which is a general reference for various TADS 3 and Adv3Lite features, organized by subject matter and collected from the various other documentation, and containing links to the relevant documentation should you want to explore further, and
       * the *[TADS 3 Cookbook](https://github.com/jimbonator/tads-cookbook)*, which is very sparse, but which contains snippets on how to perform various tasks you might want to perform.
 
       ## Learning resources for *adv3*
 
-      **Warning**: Adv3 is much older than adv3Lite, and as such has not been updated in roughly a decade, unlike the adv3Lite documenation, so the state of the documentation is going to be a bit worse. Be prepared to deal with outdated download and compilation instructions, as well as occasionally wonky/strange formatting. We do have a long term project to fix this, but it will take some time given the grand size of adv3's documentation.
+      **Warning**: Adv3 is much older than adv3Lite, and as such has not been updated in roughly a decade, unlike the adv3Lite documentation, so the state of the documentation is going to be a bit worse. Be prepared to deal with outdated download and compilation instructions, as well as occasionally wonky/strange formatting. We do have a long term project to fix this, but it will take some time given the grand size of adv3's documentation.
 
       Adv3 itself also has a bookshelf, called the *[TADS 3 Bookshelf](./docs/adv3/index.htm)* containing much of its relevant documentation, containing:
 
@@ -554,7 +554,7 @@ faq:
 
       The next most important thing, of course, are interpreters. Here again, the dominant interpreters, FrobTADS and QTADS, are both free and open source software, and are also relatively regularly updated (2021 and 2023 respectively). Thus, if you're worried about not being able to play games, or the interpreters all being old and strange, fear not!
 
-      As you can see then, <em>while TADS 3 the langauge/VM might be "stagnant," that doesn't mean it's dead. Just complete. And everything else around it is free and open source software that continues to carry on at a steady pace to this day.</em>
+      As you can see then, <em>while TADS 3 the language/VM might be "stagnant," that doesn't mean it's dead. Just complete. And everything else around it is free and open source software that continues to carry on at a steady pace to this day.</em>
   - q: 3. Does TADS 3 <em>work in Parchment?</em>
     description: |
       Because Parchment is a Glk-based interpreter, it runs TADS games from an internal sub-interpreter&mdash;or *"runner"*&mdash;shared by all Glk-based interpreters (like Gargoyle, Lectrote, and Spatterlight).
