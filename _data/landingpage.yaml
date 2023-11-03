@@ -15,16 +15,16 @@ jumbo:
 
 benefit:
 - title: Powerful
-  image: assets/rocket-rocket-launch-svgrepo-com.svg
+  image: assets/images/rocket-rocket-launch-svgrepo-com.svg
   description: Want to write a story with sophisticated world simulation, dynamic runtime capabilities, advanced programming constructs, wild new game mechanics, and more? TADS can accomplish feats that are currently impossible for other interactive fiction authoring systems. Authors switching to TADS will see their playground for creativity and innovation open up immensely!
 - title: Simulation-Oriented
-  image: assets/mechanical-arm-svgrepo-com.svg
+  image: assets/images/mechanical-arm-svgrepo-com.svg
   description: Interested in simulation? Both of TADS 3's standard libraries, adv3 and adv3lite, come with rich and well-implemented world models with all of the features you could possibly need for even the most complex and simulation-heavy parser game. And, if you don't need these features, they cleanly fade into the background.
 - title: Flexible
-  image: assets/cloud-computing-ai-svgrepo-com.svg
+  image: assets/images/cloud-computing-ai-svgrepo-com.svg
   description: Want to use new senses, or navigate in non-Euclidean directions? Although TADS 3's standard libraries come with highly complex world models already, those assumptions are just your starting point! TADS 3 is designed to make your own code, the standard library code, and even the language itself, flexible and extensible in a way that makes games fun to write and easy to iterate on.
 - title: Power-User Friendly
-  image: assets/power-user-svgrepo-com.svg
+  image: assets/images/power-user-svgrepo-com.svg
   description: Already comfortable with programming? Want to be able to straightforwardly write algorithms and use general programming constructs, instead of being limited to simple scripting? TADS 3 is designed for advanced interactive fiction authors, offering the clarity, conciseness, and capability of a robust programming language enhanced with [features](https://www.tads.org/ov_lang.htm) designed for text-based simulation of any kind.
 
 code-example:
@@ -363,17 +363,17 @@ install: |
   If you want to play or develop regular TADS 3 games the simplest and most supported way, we recommend going with an HTML TADS interpreter. Currently, the best one is <em><a href="https://realnc.github.io/qtads/">QTADS</a></em>, both because it is the most feature-complete and bug free, and because it is still being regularly updated and improved (at least as of May 17, 2023). It has versions available for Linux, Windows, and macOS. If the links below don't suit your needs, more architectures and OS versions are listed on the qTADS downloads page.
 
   <a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Linux-x86_64-AppImage.tar.gz">
-      <img class="icon" src="assets/linux-svgrepo-com.svg"/>
+      <img class="icon" src="assets/images/linux-svgrepo-com.svg"/>
       Download
       QTADS
   </a>
   <a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-Windows-x64.zip">
-      <img class="icon" src="assets/windows-svgrepo-com.svg"/>
+      <img class="icon" src="assets/images/windows-svgrepo-com.svg"/>
       Download
       QTADS
   </a>
   <a class="download-button" href="https://github.com/realnc/qtads/releases/download/v3.4.0/QTads-3.4-macOS.zip">
-      <img class="icon" src="assets/macos-svgrepo-com.svg"/>
+      <img class="icon" src="assets/images/macos-svgrepo-com.svg"/>
       Download
       QTADS
   </a>
@@ -406,21 +406,21 @@ install: |
   On Windows, you can use *[the official Author's Kit for Windows](./assets/t3setup.exe)*, which provides executables for `t3run` (a fully featured runner and terminal interpreter) and `t3make` (the compiler), as well as the Workbench and all of the basic TADS 3 library files, including adv3, although it *does not include adv3lite.*
 
   <a class="download-button" href="./assets/t3setup.exe">
-      <img class="icon" src="assets/windows-svgrepo-com.svg"/>
+      <img class="icon" src="assets/images/windows-svgrepo-com.svg"/>
       Download Author's Kit
   </a>
 
   On Linux, we have an unofficial *[Author's Kit for Linux](https://github.com/alexispurslane/frobtads-appimage/tree/main)* which you can download, which also provides self-contained, distro-independent AppImages for `frob` (the fully featured runner and terminal interpreter) and `t3make` (the TADS 3 compiler) as well as all of its library files *including both adv3 and adv3lite*, which should greatly smoothen the installation process.
 
   <a class="download-button" href="https://github.com/alexispurslane/frobtads-appimage/releases/">
-      <img class="icon" src="assets/linux-svgrepo-com.svg"/>
+      <img class="icon" src="assets/images/linux-svgrepo-com.svg"/>
       Download Author's Kit
   </a>
 
   For Mac and BSD, as well as for Linux users who prefer to build from source, *you can also get the FrobTADS source code [here](https://github.com/realnc/frobtads)*, which will provide the *TADS 3 libraries, frob, t3make, and adv3 but requires being built from source*. We have instructions on how to install, set up, and use all of these installation methods in our Quick Start Guides (see the [learning](#learn) section below) if you need more help.
 
    <a class="download-button" href="https://github.com/realnc/frobtads/releases">
-       <img class="icon" src="assets/github-svgrepo-com.svg"/>
+       <img class="icon" src="assets/images/github-svgrepo-com.svg"/>
        Download
        FrobTADS
    </a>
@@ -436,12 +436,12 @@ install: |
 
 learn:
   comparison:
-    - image: ./assets/beard-svgrepo-com.svg
+    - image: ./assets/images/beard-svgrepo-com.svg
       title: "The big, complex, full-featured graybeard: *adv3*"
       description: |
         *[Adv3](https://www.tads.org/ov_lib.htm)* is the *default standard library* distributed with TADS 3. It is quite old, having been created along with TADS in 2006 and last having been updated in 2013, but that comes along with some benefits as well as some downsides. The main benefit of using adv3 is that it is a coherent, integrated whole, one single *<i>incredibly</i> complete and complex world model* where everything integrates with everything else. It comes packed with every conceivable object type, class, or feature you could possibly need, and an *incredibly complex world model* already wired up and integrated into the whole, so that any game you create with it will automatically be running with a world model more complex than almost any parser interactive fiction game.
 
-        The downside, however, is that adv3 relies on an incredibly *deep and complex multiple inheritance class hierarchy* and a *huge number of highly specific classes,* which it relies heavily on as mix-ins to customize the behavior of objects. Moreover, it is not particularly modular, so every game you write with it will have to bring in that whole gigantic world model. Furthermore, it is *not as explicitly designed for extensibility or customizability* as adv3Lite is. Thus, if you want a very complex and simulation-heavy parser game, and what you want to do fits with the existing carefully crafted complex world model of adv3, then it might be for you. If not, you might want to look at adv3Lite.
+        The downside, however, is that adv3 relies on an incredibly *deep and complex multiple inheritance class hierarchy* and a *huge number of highly specific classes,* which it relies heavily on as mix-ins to customize the behavior of objects. Moreover, it is not particularly modular, so every game you write with it will have to bring in that whole gigantic world model. Furthermore, it is *not as explicitly designed for extensibility or customization* as adv3Lite is. Thus, if you want a very complex and simulation-heavy parser game, and what you want to do fits with the existing carefully crafted complex world model of adv3, then it might be for you. If not, you might want to look at adv3Lite.
 
         Another downside is that adv3 lacks many of the features popular in modern interactive fiction authoring systems, such as scenes, regions, rules, relations, and more. What it does have, however, is:
 
@@ -454,7 +454,7 @@ learn:
         * Different *sensory media*
         * Built-in provisions for *entirely new senses*
         * Several different scoring systems
-    - image: ./assets/feather-svgrepo-com.svg
+    - image: ./assets/images/feather-svgrepo-com.svg
       title: "The lightweight, modular, and modern newcomer: *adv3Lite*"
       description: |
         *[Adv3Lite](https://users.ox.ac.uk/~manc0049/TADSGuide/adv3Lite.htm)* is a newer standard library created by Eric Eve, and has been updated as recently as 2023. Although the main benefit of adv3Lite is that *the class hierarchy is much simpler*, since most customization for objects has been relocated to properties on a single class representing the object's general kind, instead of in a main base class and several mix-in classes, *the "lite" in the name is somewhat of a misnomer*. This restructuring allows much *greater flexibility in creating custom objects and makes the library easier to learn*, but *only a few features have been streamlined out in the process*, and many of the common ones &mdash; such as room parts, postures, and library classes as a shorthand for properties &mdash; *can be added back via extensions*.
@@ -700,4 +700,4 @@ timeline:
       Inform 7 is made open-source after sixteen years.
   - title: adv3Lite 1.6 is released (2022)
     description: |
-      After a long haitus, Eric Eve returned to updating adv3Lite with version 1.6 in December of 2022, soon followed by 1.6.1 in March of 2023. 1.6 introduced a very large number of small, but surprisingly important features and made a number of bugfixes and overhauls of small subsystems. 1.6.1 introduced lots more small features, and introduced the EventListItem extension.
+      After a long hiatus, Eric Eve returned to updating adv3Lite with version 1.6 in December of 2022, soon followed by 1.6.1 in March of 2023. 1.6 introduced a very large number of small, but surprisingly important features and made a number of bugfixes and overhauls of small subsystems. 1.6.1 introduced lots more small features, and introduced the EventListItem extension.

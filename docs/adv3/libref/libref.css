@@ -74,7 +74,7 @@ table.hdr {
     height: 30pt;
     padding: 10pt 15px;
     background: rgb(var(--purple));
-    background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(assets/map.jpg);
+    background-image: linear-gradient(112deg, rgba(var(--purple), 0.8) 0%, rgba(82,16,66,0.8) 52%, rgba(var(--orange), 0.8) 100%), url(../../../assets/images/map.jpg);
     background-attachment: fixed;
     background-position: 0% 0%;
     background-size: cover;
