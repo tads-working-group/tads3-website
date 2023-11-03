@@ -3,7 +3,7 @@
 <p>Yes, that's right, TADS 3 has <i>two</i> standard libraries! Here's the breakdown:</p>
 
 <div class="side-by-side">
-{% for item in site.data.intro.learn.comparison %}
+{% for item in site.data.landingpage.learn.comparison %}
     <div>
         <img class="marketing-icon" src="{{ item.image }}">
         <h3>{{ item.title }}</h3>
@@ -14,4 +14,4 @@
 {% endfor %}
 </div>
 
-{{ site.data.intro.learn.learning | markdownify }}
+{{ site.data.landingpage.learn.learning | markdownify }}

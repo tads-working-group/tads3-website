@@ -1,22 +1,22 @@
 <h2>Some <em>noteworthy games</em> made with TADS 3</h2>
 
-<p>{{ site.data.intro.showcase.blurb | markdownify }}</p>
+<p>{{ site.data.landingpage.showcase.blurb | markdownify }}</p>
 
 <section class="carousel" aria-label="Gallery">
     <ol class="carousel__viewport">
-        {% for item in site.data.intro.showcase.showcases %}
+        {% for item in site.data.landingpage.showcase.showcases %}
             <li id="carousel__slide{{ forloop.index }}"
                 tabindex="0"
                 class="carousel__slide">
                 <div class="carousel__snapper">
 
-                    <img loading="lazy" class="gamescreenshot" src="assets/htmltadsdemo1.png">
+                    <img loading="lazy" class="gamescreenshot" src="assets/images/htmltadsdemo1.png">
 
                     {% if forloop.index > 1 %}
                         <a href="#carousel__slide{{ forloop.index | minus: 1 }}"
                            class="carousel__prev">Go to last slide</a>
                     {% elsif forloop.index == 1 %}
-                        <a href="#carousel__slide{{ site.data.intro.showcase.showcases.size }}"
+                        <a href="#carousel__slide{{ site.data.landingpage.showcase.showcases.size }}"
                            class="carousel__prev">Go to last slide</a>
                     {% endif %}
 
@@ -41,10 +41,10 @@
                         <div class="gameblurb">{{ item.blurb | markdownify }}</div>
                     </div>
 
-                    {% if forloop.index < site.data.intro.showcase.showcases.size %}
+                    {% if forloop.index < site.data.landingpage.showcase.showcases.size %}
                         <a href="#carousel__slide{{ forloop.index | plus: 1 }}"
                            class="carousel__next">Go to next slide</a>
-                    {% elsif forloop.index == site.data.intro.showcase.showcases.size %}
+                    {% elsif forloop.index == site.data.landingpage.showcase.showcases.size %}
                         <a href="#carousel__slide1"
                            class="carousel__next">Go to next slide</a>
                     {% endif %}
@@ -54,7 +54,7 @@
     </ol>
     <aside class="carousel__navigation">
         <ol class="carousel__navigation-list">
-            {% for item in site.data.intro.showcase.showcases %}
+            {% for item in site.data.landingpage.showcase.showcases %}
                 <li class="carousel__navigation-item">
                     <a href="#carousel__slide{{ forloop.index }}"
                        class="carousel__navigation-button">Go to slide {{ forloop.index }}</a>
