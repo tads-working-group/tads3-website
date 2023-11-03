@@ -7,11 +7,9 @@ styleType: article
 
 # 20. Where To Go From Here
 
-If you've followed *Learning TADS 3 with adv3Lite* this far, you're well on your way to knowing all you need to know to write your own games in TADS 3 using the adv3Lite library. "Knowing all you need to know" is not, however, the same thing as committing the entire contents of this manual to memory, let alone knowing all the ins and outs of every nook and cranny of the TADS 3 language and adv3Lite library;
- there's probably no one in the known universe who has *that *kind of knowledge in their head. Knowing what you need to know is rather knowing enough to carry out the tasks you commonly carry out in TADS 3/adv3Lite with ease, gradually becoming familiar with the not-quite-so common features as you get to use them more, and knowing where to look up the rest as and when you need it.
+If you've followed *Learning TADS 3 with adv3Lite* this far, you're well on your way to knowing all you need to know to write your own games in TADS 3 using the adv3Lite library. "Knowing all you need to know" is not, however, the same thing as committing the entire contents of this manual to memory, let alone knowing all the ins and outs of every nook and cranny of the TADS 3 language and adv3Lite library;  there's probably no one in the known universe who has *that *kind of knowledge in their head. Knowing what you need to know is rather knowing enough to carry out the tasks you commonly carry out in TADS 3/adv3Lite with ease, gradually becoming familiar with the not-quite-so common features as you get to use them more, and knowing where to look up the rest as and when you need it.
 
-Even if you've managed to master the contents of this manual pretty thoroughly, sooner rather than later you'll come up against something you want to do that it doesn't cover. Just what this is will be different for every reader;
- it's what your game does that *isn't* typical that's likely to make it interesting, and no manual can hope to cover all the *atypical* things game authors might like to do with TADS 3/adv3Lite.
+Even if you've managed to master the contents of this manual pretty thoroughly, sooner rather than later you'll come up against something you want to do that it doesn't cover. Just what this is will be different for every reader;  it's what your game does that *isn't* typical that's likely to make it interesting, and no manual can hope to cover all the *atypical* things game authors might like to do with TADS 3/adv3Lite.
 
 The next step (which you needn't take straight away) is probably to read through the *adv3Lite Library Manual* and the *TADS 3 System Manual*, or at least to skim them so you get a rough idea of what they contain so you can find it when you need it.
 
@@ -22,8 +20,6 @@ If you have a multi-tabbed web browser, it's a good idea to have the main parts 
 Another technique you can use if you're using Workbench is to set break-points in the debugger and step through the code to see what's happening, though at some points this may well feel more confusing than helpful, especially at first!
 
 One final piece of advice: if you come up against something that you're absolutely
-
-
 
 stuck on, go away and try something else. Whether you're still learning TADS 3 or reasonably adept at it, you'll occasionally come up against things that seem just too hard or too complicated, but which later yield to renewed efforts once you come back to them in the light of greater experience.
 
@@ -39,3 +35,4 @@ This manual has taken about you as far as an introductory manual can. From now o
 
 *February 2014*
 
+[&laquo; Go to previous chapter](19-beyond-the-basics.html)&nbsp;&nbsp;&nbsp;&nbsp;[Return to table of contents](LearningT3Lite.html)&nbsp;&nbsp;&nbsp;&nbsp;[Go to next chapter &raquo;](21-alphabetical-index.html)

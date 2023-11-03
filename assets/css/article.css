@@ -360,4 +360,12 @@ pre {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     padding: 5px 0px;
+    background-color:
+}
+.highlight pre {
+  background-color: #272822;
+  padding: 2em;
+  border-radius: 10px;
+  margin: auto;
+  color: white !important;
 }
