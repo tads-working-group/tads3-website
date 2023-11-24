@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="TADS 3.org">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="tads3.org">
+    <meta property="og:image" content="assets/images/topbarl.jpg">
+    <link rel="icon" href="assets/images/tads-favicon.png" type="image/png">
+    <link rel="stylesheet" type="text/css"
+                           href="..//assets/css/article.css">
+    <title>TADS 3 - Quickstart</title>
+    <meta property="og:title" content=
+    "TADS 3 | Quickstart">
+    <meta name="description" content="A guide for quickly starting a new TADS 3 project.">
+    <meta property="og:description" content="A guide for quickly starting a new TADS 3 project.">
+</head>
+
+<body>
+<section class="jumbotron">
+    <header>
+        <span><a href="../index.html">TADS 3</a></span>
+<input id="menu-toggle" type="checkbox" />
+<label class="menu-button-container" for="menu-toggle">
+    <div class="menu-button"></div>
+</label>
+
+        <nav class="menu">
+            <a class="nav-element" href="../docs/adv3lite/index.htm">Adv3Lite Bookshelf</a>
+            <a class="nav-element" href="../docs/adv3/index.htm">Adv3 Bookshelf</a>
+            <!-- TODO: When we make cheat sheets, make sure to encapsulate this with the above prepend page.toroot step -->
+            <a class="nav-element" href="#">Cheat Sheets</a>
+        </nav>
+        <div id="spacer"></div>
+    </header>
+</section>
+<div class="main">
+    <h1 id="landing-with-a-running-start">Landing with a Running Start!</h1>
+<h2 id="a-quickstart-guide-for-tads-3">A quickstart guide for TADS 3</h2>
+<p>Please choose your operating system and preferred software:</p>
+
+<p><img class="text-os-icon" src="../assets/windows-svgrepo-com.svg" /><em style="margin-left:1em;">WINDOWS</em><br />
+<a href="#workbench-windows" style="margin-left:4em;">Workbench</a><br />
+<a href="#vscode-windows" style="margin-left:4em;">VSCode</a><br />
+<br />
+<img class="text-os-icon" src="../assets/macos-svgrepo-com.svg" /><em style="margin-left:1em;">MAC</em><br />
+<a href="#vscode-macos" style="margin-left:4em;">VSCode</a><br />
+<br />
+<img class="text-os-icon" src="../assets/linux-svgrepo-com.svg" /><em style="margin-left:1em;">LINUX</em><br />
+<a href="#vscode-linux" style="margin-left:4em;">VSCode</a><br />
+<a href="#terminal-linux" style="margin-left:4em;">Terminal</a>  ( vim / emacs / etc )</p>
+
+<hr />
+
+<h1 id="windows">Windows</h1>
+
+<h2 id="workbench-windows">Install for Workbench</h2>
+
+<p>Text here.</p>
+
+<h2 id="vscode-windows">Install for VSCode</h2>
+
+<p>Text here.</p>
+
+<h1 id="macos">MacOS</h1>
+
+<h2 id="vscode-macos">Install for VSCode</h2>
+
+<p>For MacOS, you will need to install FrobTADS,
+which provides you with many of the crucial tools necessary for
+creating TADS games outside of Windows.</p>
+
+<p><b>
+    (These instructions are partially based on a text file written by <a href="mailto:regan.toews@mail.mcgill.ca">Reg</a>, which was included in the FrobTADS download.
+    None of the creators of this site have access to a Mac, so a lot of research was done to write this, without any direct testing or experience.)
+</b></p>
+<ol>
+    <li>
+        Open Finder, and navigate to Applications.
+    </li>
+    <li>
+        Open the Utilities folder.
+    </li>
+    <li>
+        Run Terminal.app, and also drag it to the dock for easier access in the future.
+    </li>
+    <li>
+        For those unaccustomed to the Terminal, <em>Reg</em> provides the following message:
+        <blockquote class="user-quote">
+            <p>
+                Using terminal, you are always located somewhere inside your computer.
+                For instance, you could be inside your applications folder, or perhaps your itunes folder...
+                but it's important to know where you are because this affects how commands could be interpreted.
+            </p>
+
+            <b>Some common commands:</b><br />
+            <em>CHANGING DIRECTORY</em>
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd</code><br />
+                    Change directory (This is how you navigate around in your computer).
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>/Applications</code><br />
+                    The slash refers to a folder, the name after the slash is the name of a folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /Applications</code><br />
+                    This is how you would enter the Applications folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /Applications/Utilities</code><br />
+                    This is how you would enter the utilities folder.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>.</code><br />
+                    A dot means "current folder".
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>..</code><br />
+                    Two dots mean "one folder before".
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd ../</code><br />
+                    Means move to the previous folder.
+                </li>
+            </ul>
+
+            <p>
+                Try the <code class="terminal-command">cd</code> command with different folders to get a feel for navigating.
+            </p>
+            <p>
+                <i>If any folders have spaces in them, things are a little more complicated. You
+                can drag a file or folder into the "terminal" window and it will show how you would type the location of the file or folder.</i>
+            </p>
+        
+            <em>FINDING A FILE</em> ( Includes hidden files which spotlight won't show you )
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>cd /</code><br />
+                    Changes directories so you're located in the top-most directory.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>find . -name adv3.h</code><br />
+                    Searches for a file called "adv3.h".
+                </li>
+            </ul>
+        
+            <em>OTHER COMMANDS</em>
+            <ul>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>tar -xzf</code><br />
+                    Expand a *.tar.gz compressed archive.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code><br />
+                    List all files in a folder, except hidden files.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>ls -a</code><br />
+                    List everything in a folder, including hidden files.
+                </li>
+                <li>
+                    <code class="terminal-command"><span class="terminal-prompt">$</span>sudo</code><br />
+                    This command is added to the beginning of a command if it's something where you need to have administrative (root) access.
+                </li>
+            </ul>
+
+            <p>
+                <a href="http://www.ss64.com/bash" target="_blank" rel="noopener noreferrer">A list of more commands</a><br />
+                <a href="http://forums.macosxhints.com/showthread.php?t=40648" target="_blank" rel="noopener noreferrer">A very good unix beginner page is here</a>
+            </p>
+            <p>
+                <b>By the way:</b><br />
+                The word <q>binary</q> generally means <q>compiled file</q> as opposed to the <q>source code</q> which is the building blocks of a file.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        Install Xcode Tools.
+        <br /><br />
+        <em>Reg</em> says:
+        <blockquote class="user-quote">
+            <p>
+                This is on your install DVD that came with your mac but
+                it's better to <a href="http://developer.apple.com/tools/xcode/" target="_blank" rel="noopener noreferrer">download the newest version via the internet</a>.
+            </p>
+            <p>
+                This is free when you make an ADC <i>[or <q>Apple Developer</q>]</i> account (account is also free).
+            </p>
+            <p>
+                Follow the installation instructions that come with it.
+            </p>
+        </blockquote>
+    </li>
+    <li>
+        Head to the download site for <a href="https://github.com/Homebrew/brew/releases" target="_blank" rel="noopener noreferrer">Homebrew</a>,
+        and download the pkg installer.
+    </li>
+    <li>
+        Double-click on the Homebrew pkg file to install it.
+    </li>
+    <li>
+        If you have Terminal open, close it and open a new one. Otherwise, open Terminal.app now.
+    </li>
+    <li>
+        Enter this command: <code class="terminal-command"><span class="terminal-prompt">$</span>echo $PATH</code>
+    </li>
+    <li>
+        What will appear is a list of folder paths, where each step in the path is separated by a <code class="terminal-command">/</code> (slash),
+        and each path is separated by a <code class="terminal-command">:</code> (colon). Search through the paths, and make sure you find
+        one that says <code class="terminal-command">/usr/local/bin</code>.<br /><br />
+        <b>If you <i>do</i> find this, skip to step 15.</b>
+    </li>
+    <li>
+        Open your home folder in Finder.
+    </li>
+    <li>
+        Look for a file called <code class="terminal-command">.bashrc</code>. If you do not see it in your home folder,
+        press <span class="keypress-wrapper"><span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">CMD</span> + <span class="keypress-icon">.</span></span>.<br /><br />
+        Open <code class="terminal-command">.bashrc</code> with TextEdit.<br /><br />
+        <b>Make sure TextEdit is using plain text by pressing</b>
+        <span class="keypress-wrapper"><span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">CMD</span> + <span class="keypress-icon">T</span></span>!
+    </li>
+    <li>
+        Scroll to the bottom of the file, and add the following line:
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash">        <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"/usr/local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+        </code></pre></figure>
+    </li>
+    <li>
+        Save and close the text file.
+    </li>
+    <li>
+        Close the terminal.
+    </li>
+    <li>
+        Open a <i>new</i> terminal, and run <code class="terminal-command"><span class="terminal-prompt">$</span>brew install cmake ncurses</code>.
+    </li>
+    <li>
+        Close the terminal.
+    </li>
+    <li>
+        Download the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.
+    </li>
+    <li>
+        <em>Reg</em> says:
+        <blockquote class="user-quote">
+            Your computer will probably automatically decompress these items.
+            If it hasn't done so for the frobtads folder, double-click on the disk image so it decompresses.
+        </blockquote>
+    </li>
+    <li>
+        Move the decompressed frobtads-2.0 folder to your home folder.
+    </li>
+    <li>
+        Start Terminal.app, and run <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/frobtads-2.0</code>.
+    </li>
+    <li>
+        Make sure you are actually in the folder. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">CMakeLists.txt</code>
+            </li>
+            <li>
+                <code class="terminal-command">CMCommon.cmake</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">frobtads-2.0</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd frobtads-2.0 &amp;&amp; ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir build</code>
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cd build</code>
+    </li>
+    <li>
+        Simply run <code class="terminal-command"><span class="terminal-prompt">$</span>cmake ..</code>
+    </li>
+    <li>
+        Finally, run the compile process with this command:<br />
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo cmake --build . --target install</code>
+    </li>
+    <li>
+        If the research and efforts of the writer of this guide have paid off, then the compilation process should be successful,
+        and you will have a new Terminal.app command at your disposal: <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code>,
+        which is used to compile new TADS 3 games from your game project folders.
+    </li>
+</ol>
+
+<h1 id="linux">Linux</h1>
+
+<h2 id="vscode-linux">Install for VSCode</h2>
+
+<p>For Linux, you will need to install FrobTADS,
+which provides you with many of the crucial tools necessary for
+creating TADS games outside of Windows.</p>
+
+<ol>
+    <li>
+        Open a terminal with <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">ALT</span> + <span class="keypress-icon">T</span></span>.
+    </li>
+    <li>
+        Make sure to update your system before beginning this process.
+        <ul>
+            <li>
+                <em>Ubuntu/Debian</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt update</code><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt upgrade</code>
+            </li>
+            <li>
+                <em>Fedora/CentOS</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf check-update</code><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf update</code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        Install the necessary packages.
+        <ul>
+            <li>
+                <em>Ubuntu/Debian</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo apt install cmake g++ make libncurses5-dev libncursesw5-dev
+                </code>
+            </li>
+            <li>
+                <em>Fedora/CentOS</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo dnf install cmake gcc-c++ make ncurses-devel
+                </code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        If the package is missing, you can install it with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install curl</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        Check to verify <code class="terminal-command">libcurl</code> is installed.
+        This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>curl-config --version</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        If the package is missing, or verification returned some kind of error, then the package needs to be installed.
+        Ubuntu/Debian distros have a choice between three alternative versions of this library.
+        <b>If the choice does not matter to you, then go with the openssl version.</b> For those who might have a preference,
+        the choices are the following:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-openssl-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-nss-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-gnutls-dev</code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em>CentOS only:</em><br />
+        CentOS comes with a minimal version of curl installed. If there are errors related to curl later (during compilation),
+        then you might need to install the full versions with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install curl-full libcurl-full</code>
+    </li>
+    <li>
+        <em>Fedora only:</em><br />
+        Fedora users will need to verify curl and its dev libraries, but the latter can be installed by running
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo yum install libcurl-devel</code>
+    </li>
+    <li>
+        Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br />
+        (It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/frobtads-2.0</code>
+    </li>
+    <li>
+        Make sure you are actually in the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">CMakeLists.txt</code>
+            </li>
+            <li>
+                <code class="terminal-command">CMCommon.cmake</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">frobtads-2.0</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd frobtads-2.0 &amp;&amp; ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir build</code>
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cd build</code>
+    </li>
+    <li>
+        Next, we will prepare the compiler by choosing where the resulting binaries will go.
+        By default, the installation prefix is <code class="terminal-command">/usr/local</code>,
+        which places the binaries into <code class="terminal-command">/usr/local/bin/</code>,
+        making them available as terminal commands.
+        <ol type="A">
+            <li>
+                <em>Default installation path</em><br />
+                Simply run <code class="terminal-command"><span class="terminal-prompt">$</span>cmake ..</code>
+            </li>
+            <li>
+                <em>Custom installation path</em><br />
+                You can choose which directory the binaries will be installed to by changing the
+                <code class="terminal-command">-DCMAKE_INSTALL_PREFIX=&lt;path-prefix&gt;</code> option.<br />
+                <b>Notice that this prefix is set in two places in this command:</b><br />
+                <code class="terminal-command" style="display:block;overflow-x:scroll;"><span class="terminal-prompt">$</span>
+                    CFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    CXXFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    cmake ..
+                </code>
+            </li>
+        </ol>
+    </li>
+    <li>
+        Finally, run the compile process with this command:<br />
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo cmake --build . --target install</code><br />
+        <b>If your custom installation prefix does not require root privileges for write operations, then sudo is unnecessary for this command.</b>
+    </li>
+    <li>
+        Assuming the compile process is successful, you will have two new binaries, which will become particularly useful:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>frob MyNewGame.t3</code> for playing TADS game files in the terminal, and
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code> in a project directory for compiling TADS 3 games.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Download and extract the latest version of <a href="https://github.com/EricEve/adv3lite/releases" target="_blank" rel="noopener noreferrer">Adv3Lite</a> from Eric Eve's GitHub.
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/adv3Lite</code>
+    </li>
+    <li>
+        Make sure you are actually <i>in</i> the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">action.t</code>
+            </li>
+            <li>
+                <code class="terminal-command">actions.t</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">adv3Lite</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd adv3Lite &amp;&amp; ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        Once we are certain we are at the correct directory depth, run <code class="terminal-command"><span class="terminal-prompt">$</span>cd ..</code>,
+        followed by <code class="terminal-command"><span class="terminal-prompt">$</span>sudo mv ./adv3Lite /usr/local/share/frobtads/tads3/lib/adv3Lite</code>,
+        which will move <code class="terminal-command">adv3Lite</code> into your TADS library directory.<br />
+        <b>The destination path may vary if you used a custom installation prefix</b>; these instructions assume you have used
+        a prefix of <code class="terminal-command">/usr/local</code>.
+    </li>
+</ol>
+
+<ol start="21">
+    <li>
+        Assuming you already have VSCode installed, start it up.
+    </li>
+    <li>
+        Install these extensions:
+        <ol>
+            <li>
+                <em>vscode-tads3tools</em> by Tomas Öberg, and
+            </li>
+            <li>
+                <em>Code Spell Checker</em> by Street Side Software
+            </li>
+        </ol>
+    </li>
+    <li>
+        Go to <i>File&nbsp;&gt;&nbsp;Preferences&nbsp;&gt;&nbsp;Settings</i>.
+    </li>
+    <li>
+        Enter <code class="terminal-command">tads</code> into the settings search bar,
+        and click on the <i>Tads</i> category, under <i>Extensions</i>.
+    </li>
+    <li>
+        Verify that <i>Tads&nbsp;&gt;&nbsp;Preprocessor:&nbsp;Path</i> and <i>Tads3&nbsp;&gt;&nbsp;Compiler:&nbsp;Path</i>
+        are both set to run the <code class="terminal-command">t3make</code> binary.
+    </li>
+    <li>
+        Verify that you have the Adv3 and Adv3Lite libraries installed.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3/</code> and
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3Lite/</code>, respectively.<br />
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Include</i> points to your TADS 3 include files.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/include/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Lib</i> points to your TADS 3 library files.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3&nbsp;&gt;&nbsp;Adv3:&nbsp;Library</i> points to your TADS 3 Adv3 directory.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3&nbsp;&gt;&nbsp;Adv3&nbsp;Lite:&nbsp;Library</i> points to your TADS 3 Adv3Lite directory.
+        If you had compiled with the <code class="terminal-command">/usr/local</code> prefix, then they should be under
+        <code class="terminal-command">/usr/local/share/frobtads/tads3/lib/adv3Lite/</code>.
+    </li>
+    <li>
+        Verify that <i>Tads3:&nbsp;Game&nbsp;Runner&nbsp;Interpreter</i> is set to run your preferred TADS 3 interpreter.
+        For example, if you are using QTADS to play games, you might have this set to something like
+        
+        <code class="terminal-command">/home/username-here/Desktop/QTads/QTads.AppImage</code>.
+        
+    </li>
+    <li>
+        <em>Optional</em><br />
+        Enable <i>Tads3:&nbsp;Restart&nbsp;Game&nbsp;Runner&nbsp;On&nbsp;T3&nbsp;Image&nbsp;Changes</i> if
+        you would like your specified interpreter to re-open your game each time changes are made to your project.
+    </li>
+    <li>
+        Close the <i>Settings</i> tab.
+    </li>
+    <li>
+        Press
+        
+        <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">SHIFT</span> + <span class="keypress-icon">P</span></span>
+        
+        to open your command search bar, and type in
+        <code class="terminal-command">create a new Tads3 template project</code>.
+        Select the top result to run it.
+    </li>
+    <li>
+        A dialog window will open, where you must select your game's project directory.
+    </li>
+    <li>
+        Once the project directory is set, you will asked to choose either an Adv3 project template, or an Adv3Lite project template.
+    </li>
+    <li>
+        A basic template will be generated in the project directory. Each time you save a file in your project, <code class="terminal-command">t3make</code>
+        will be run automatically. It will use the compile options specified in <code class="terminal-command">Makefile.t3m</code>, and the game file
+        will usually be named <code class="terminal-command">gameMain.t3</code>, unless you specify otherwise in the makefile. The source file, by default,
+        will be named <code class="terminal-command">gameMain.t</code>.
+    </li>
+    <li>
+        <em>Optional</em><br />
+        Create a bash script named <code class="terminal-command">run.sh</code> and give it the following code:
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Below is just the path to your chosen interpreter, followed by gameMain.t:</span>
+
+/home/username-here/Desktop/QTads/QTads.AppImage gameMain.t3</code></pre></figure>
+        Then, do <code class="terminal-command"><span class="terminal-prompt">$</span>chmod +x run.sh</code>.
+        You can run this script to re-open your game, if you did not choose to automatically perform this with every saved change:
+        <code class="terminal-command"><span class="terminal-prompt">$</span>./run.sh</code>
+    </li>
+    <li>
+        Open <code class="terminal-command">gameMain.t</code>, if it's not open already. It's contents should resemble the following:<br />
+        <em>For an Adv3 template</em>
+        <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">charset</span> <span class="dl">"</span><span class="s2">us-ascii</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">adv3</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">en_us</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span> 
+
+<span class="nx">gameMain</span><span class="p">:</span> <span class="nx">GameMainDef</span>
+    <span class="nx">initialPlayerChar</span> <span class="o">=</span> <span class="nx">me</span>
+<span class="p">;</span>
+
+<span class="nl">versionInfo</span><span class="p">:</span> <span class="nx">GameID</span>
+    <span class="c1">// This will vary per game, and</span>
+    <span class="c1">// is automatically generated.</span>
+    <span class="c1">// For more info: https://www.tads.org/ifidgen/ifidgen</span>
+    <span class="nx">IFID</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6ea612f2-758e-46d3-a8b5-5b7c21089b5d</span><span class="dl">'</span>
+
+    <span class="c1">// Your game name goes here.</span>
+    <span class="c1">//     e.g. 'Mary Smith'</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// Your name goes here.</span>
+    <span class="c1">//     e.g. 'by Mary Smith'</span>
+    <span class="nx">byline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by </span><span class="dl">'</span>
+
+    <span class="c1">// Your email name goes here.</span>
+    <span class="c1">//     e.g. 'by &lt;a href="mailto:marysmith@address.com"&gt;</span>
+    <span class="c1">//                  Mary Smith</span>
+    <span class="c1">//              &lt;/a&gt;'</span>
+    <span class="nx">htmlByline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by &lt;a href="mailto:yourmail@address.com"&gt;&lt;/a&gt;</span><span class="dl">'</span>
+
+    <span class="c1">// Your game version number goes here.</span>
+    <span class="nx">version</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span>
+
+    <span class="c1">// Your email address goes here.</span>
+    <span class="c1">//     e.g. ' marysmith@address.com'</span>
+    <span class="nx">authorEmail</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> yourmail@address.com</span><span class="dl">'</span>
+
+    <span class="c1">// A plain-text description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A quickstart game. '</span>
+    <span class="nx">desc</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// An html-styled description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A &lt;b&gt;quickstart&lt;/b&gt; game. '</span>
+    <span class="nx">htmlDesc</span> <span class="o">=</span> <span class="dl">''</span>
+<span class="p">;</span>
+
+<span class="nl">startRoom</span><span class="p">:</span> <span class="nx">Room</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span>
+    <span class="dl">""</span>
+<span class="p">;</span>
+
+<span class="o">+</span><span class="nx">me</span><span class="p">:</span> <span class="nx">Actor</span>
+<span class="p">;</span></code></pre></figure>
+        <em>For an Adv3Lite template</em>
+        <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">charset</span> <span class="dl">"</span><span class="s2">us-ascii</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">tads</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">advlite.h</span><span class="dl">"</span>
+
+<span class="nx">gameMain</span><span class="p">:</span> <span class="nx">GameMainDef</span>
+    <span class="nx">initialPlayerChar</span> <span class="o">=</span> <span class="nx">me</span>
+<span class="p">;</span>
+
+<span class="nl">versionInfo</span><span class="p">:</span> <span class="nx">GameID</span>
+    <span class="c1">// This will vary per game, and</span>
+    <span class="c1">// is automatically generated.</span>
+    <span class="c1">// For more info: https://www.tads.org/ifidgen/ifidgen</span>
+    <span class="nx">IFID</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6ea612f2-758e-46d3-a8b5-5b7c21089b5d</span><span class="dl">'</span>
+
+    <span class="c1">// Your game name goes here.</span>
+    <span class="c1">//     e.g. 'Mary Smith'</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// Your name goes here.</span>
+    <span class="c1">//     e.g. 'by Mary Smith'</span>
+    <span class="nx">byline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by </span><span class="dl">'</span>
+
+    <span class="c1">// Your email name goes here.</span>
+    <span class="c1">//     e.g. 'by &lt;a href="mailto:marysmith@address.com"&gt;</span>
+    <span class="c1">//                  Mary Smith</span>
+    <span class="c1">//              &lt;/a&gt;'</span>
+    <span class="nx">htmlByline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by &lt;a href="mailto:yourmail@address.com"&gt;&lt;/a&gt;</span><span class="dl">'</span>
+
+    <span class="c1">// Your game version number goes here.</span>
+    <span class="nx">version</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span>
+
+    <span class="c1">// Your email address goes here.</span>
+    <span class="c1">//     e.g. ' marysmith@address.com'</span>
+    <span class="nx">authorEmail</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> yourmail@address.com</span><span class="dl">'</span>
+
+    <span class="c1">// A plain-text description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A quickstart game. '</span>
+    <span class="nx">desc</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// An html-styled description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A &lt;b&gt;quickstart&lt;/b&gt; game. '</span>
+    <span class="nx">htmlDesc</span> <span class="o">=</span> <span class="dl">''</span>
+<span class="p">;</span>
+
+<span class="nl">startRoom</span><span class="p">:</span> <span class="nx">Room</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span>
+    <span class="dl">""</span>
+<span class="p">;</span>
+
+<span class="o">+</span><span class="nx">me</span><span class="p">:</span> <span class="nx">Actor</span>
+    <span class="nx">person</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">;</span></code></pre></figure>
+    </li>
+    <li>
+        Open <code class="terminal-command">Makefile.t3m</code>. It's contents should resemble the following:<br />
+        <em>For an Adv3 template</em>
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">## Makefile for an adv3 standard library game</span>
+
+<span class="nt">-D</span> <span class="nv">LANGUAGE</span><span class="o">=</span>en_us
+<span class="nt">-D</span> <span class="nv">MESSAGESTYLE</span><span class="o">=</span>neu
+<span class="nt">-Fy</span> obj
+<span class="nt">-Fo</span> obj
+<span class="c">## These paths will vary,</span>
+<span class="c">## based on your frobtads installation prefix:</span>
+<span class="c">## This template assumes the prefix was /usr/local</span>
+<span class="nt">-FI</span> /usr/local/share/frobtads/tads3/include
+<span class="nt">-FL</span> /usr/local/share/frobtads/tads3/lib
+<span class="nt">-we</span>
+<span class="nt">-v</span>
+<span class="nt">-d</span>
+
+<span class="c">##sources</span>
+<span class="nt">-lib</span> system
+<span class="nt">-lib</span> adv3/adv3
+<span class="nt">-source</span> gameMain.t
+
+<span class="nt">-res</span>
+GameInfo.txt</code></pre></figure>
+        <em>For an Adv3Lite template</em>
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">## Makefile for an adv3Lite library game</span>
+
+<span class="nt">-I</span> liblite
+<span class="nt">-D</span> <span class="nv">LANGUAGE</span><span class="o">=</span>english
+<span class="nt">-Fy</span> obj
+<span class="nt">-Fo</span> obj
+<span class="c">## These paths will vary,</span>
+<span class="c">## based on your frobtads installation prefix.</span>
+<span class="c">## This template assumes the prefix was /usr/local</span>
+<span class="nt">-FI</span> /usr/local/share/frobtads/tads3/include
+<span class="nt">-FL</span> /usr/local/share/frobtads/tads3/lib
+<span class="nt">-we</span>
+<span class="nt">-v</span>
+<span class="nt">-d</span>
+
+<span class="c">##sources</span>
+<span class="nt">-lib</span> system
+<span class="nt">-lib</span> adv3Lite/adv3Lite
+<span class="nt">-source</span> gameMain.t
+
+<span class="nt">-res</span>
+GameInfo.txt</code></pre></figure>
+    </li>
+    <li>
+        <b>At this point, your game should be ready to run!</b>
+Read the documentation for the library you chose for your game, and create the rest of your project.
+<i>Happy coding!</i>
+    </li>
+</ol>
+
+<h2 id="terminal-linux">Install for Terminal</h2>
+
+<p>For Linux, you will need to install FrobTADS,
+which provides you with many of the crucial tools necessary for
+creating TADS games outside of Windows.</p>
+
+<ol>
+    <li>
+        Open a terminal with <span class="keypress-wrapper"><span class="keypress-icon">CTRL</span> + <span class="keypress-icon">ALT</span> + <span class="keypress-icon">T</span></span>.
+    </li>
+    <li>
+        Make sure to update your system before beginning this process.
+        <ul>
+            <li>
+                <em>Ubuntu/Debian</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt update</code><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt upgrade</code>
+            </li>
+            <li>
+                <em>Fedora/CentOS</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf check-update</code><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf update</code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        Install the necessary packages.
+        <ul>
+            <li>
+                <em>Ubuntu/Debian</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo apt install cmake g++ make libncurses5-dev libncursesw5-dev
+                </code>
+            </li>
+            <li>
+                <em>Fedora/CentOS</em><br />
+                <code class="terminal-command"><span class="terminal-prompt">$</span>
+                    sudo dnf install cmake gcc-c++ make ncurses-devel
+                </code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        If the package is missing, you can install it with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install curl</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        Check to verify <code class="terminal-command">libcurl</code> is installed.
+        This can be done with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>curl-config --version</code>.
+    </li>
+    <li>
+        <em>Ubuntu/Debian only:</em><br />
+        If the package is missing, or verification returned some kind of error, then the package needs to be installed.
+        Ubuntu/Debian distros have a choice between three alternative versions of this library.
+        <b>If the choice does not matter to you, then go with the openssl version.</b> For those who might have a preference,
+        the choices are the following:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-openssl-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-nss-dev</code>
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>sudo apt install libcurl4-gnutls-dev</code>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <em>CentOS only:</em><br />
+        CentOS comes with a minimal version of curl installed. If there are errors related to curl later (during compilation),
+        then you might need to install the full versions with
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo dnf install curl-full libcurl-full</code>
+    </li>
+    <li>
+        <em>Fedora only:</em><br />
+        Fedora users will need to verify curl and its dev libraries, but the latter can be installed by running
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo yum install libcurl-devel</code>
+    </li>
+    <li>
+        Download and extract a copy of the <a href="https://github.com/realnc/frobtads/releases" target="_blank" rel="noopener noreferrer">latest FrobTADS source code</a>.<br />
+        (It is recommended to move the extracted <code class="terminal-command">frobtads-2.0</code>&nbsp;directory to your home <code class="terminal-command">~</code>&nbsp;directory.)
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/frobtads-2.0</code>
+    </li>
+    <li>
+        Make sure you are actually in the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">CMakeLists.txt</code>
+            </li>
+            <li>
+                <code class="terminal-command">CMCommon.cmake</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">frobtads-2.0</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd frobtads-2.0 &amp;&amp; ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir build</code>
+    </li>
+    <li>
+        <code class="terminal-command"><span class="terminal-prompt">$</span>cd build</code>
+    </li>
+    <li>
+        Next, we will prepare the compiler by choosing where the resulting binaries will go.
+        By default, the installation prefix is <code class="terminal-command">/usr/local</code>,
+        which places the binaries into <code class="terminal-command">/usr/local/bin/</code>,
+        making them available as terminal commands.
+        <ol type="A">
+            <li>
+                <em>Default installation path</em><br />
+                Simply run <code class="terminal-command"><span class="terminal-prompt">$</span>cmake ..</code>
+            </li>
+            <li>
+                <em>Custom installation path</em><br />
+                You can choose which directory the binaries will be installed to by changing the
+                <code class="terminal-command">-DCMAKE_INSTALL_PREFIX=&lt;path-prefix&gt;</code> option.<br />
+                <b>Notice that this prefix is set in two places in this command:</b><br />
+                <code class="terminal-command" style="display:block;overflow-x:scroll;"><span class="terminal-prompt">$</span>
+                    CFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    CXXFLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local"
+                    cmake ..
+                </code>
+            </li>
+        </ol>
+    </li>
+    <li>
+        Finally, run the compile process with this command:<br />
+        <code class="terminal-command"><span class="terminal-prompt">$</span>sudo cmake --build . --target install</code><br />
+        <b>If your custom installation prefix does not require root privileges for write operations, then sudo is unnecessary for this command.</b>
+    </li>
+    <li>
+        Assuming the compile process is successful, you will have two new binaries, which will become particularly useful:
+        <ul>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>frob MyNewGame.t3</code> for playing TADS game files in the terminal, and
+            </li>
+            <li>
+                <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code> in a project directory for compiling TADS 3 games.
+            </li>
+        </ul>
+    </li>
+    <li>
+        Download and extract the latest version of <a href="https://github.com/EricEve/adv3lite/releases" target="_blank" rel="noopener noreferrer">Adv3Lite</a> from Eric Eve's GitHub.
+    </li>
+    <li>
+        Navigate to the extracted directory through your terminal. For example: <code class="terminal-command"><span class="terminal-prompt">$</span>cd ~/adv3Lite</code>
+    </li>
+    <li>
+        Make sure you are actually <i>in</i> the directory. <code class="terminal-command"><span class="terminal-prompt">$</span>ls</code> should list filenames such as:
+        <ul>
+            <li>
+                <code class="terminal-command">action.t</code>
+            </li>
+            <li>
+                <code class="terminal-command">actions.t</code>
+            </li>
+            <li>
+                <i>etc...</i>
+            </li>
+        </ul>
+        If you only see <code class="terminal-command">adv3Lite</code>, then try <code class="terminal-command"><span class="terminal-prompt">$</span>cd adv3Lite &amp;&amp; ls</code>
+        to repeat this verification step.
+    </li>
+    <li>
+        Once we are certain we are at the correct directory depth, run <code class="terminal-command"><span class="terminal-prompt">$</span>cd ..</code>,
+        followed by <code class="terminal-command"><span class="terminal-prompt">$</span>sudo mv ./adv3Lite /usr/local/share/frobtads/tads3/lib/adv3Lite</code>,
+        which will move <code class="terminal-command">adv3Lite</code> into your TADS library directory.<br />
+        <b>The destination path may vary if you used a custom installation prefix</b>; these instructions assume you have used
+        a prefix of <code class="terminal-command">/usr/local</code>.
+    </li>
+</ol>
+
+<ol start="21">
+    <li>
+        For the rest of this guide, there will no specific instructions
+        for your editor of choice, so it is assumed you are using something
+        with capabilities equal to&mdash;or <i>surpassing</i>&mdash;the <b>nano</b> terminal-based text editor.<br /><br />
+        At this point, create a new project directory for your game, and navigate into it.
+    </li>
+    <li>
+        Decide at this time if you are using either the <b>Adv3</b> or <b>Adv3Lite</b> library for your game.
+    </li>
+    <li>
+        Create your first source file: <code class="terminal-command">gameMain.t</code>.<br />
+        <em>For an Adv3 template</em>
+        <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">charset</span> <span class="dl">"</span><span class="s2">us-ascii</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">adv3</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">en_us</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span> 
+
+<span class="nx">gameMain</span><span class="p">:</span> <span class="nx">GameMainDef</span>
+    <span class="nx">initialPlayerChar</span> <span class="o">=</span> <span class="nx">me</span>
+<span class="p">;</span>
+
+<span class="nl">versionInfo</span><span class="p">:</span> <span class="nx">GameID</span>
+    <span class="c1">// This will vary per game, and</span>
+    <span class="c1">// is automatically generated.</span>
+    <span class="c1">// For more info: https://www.tads.org/ifidgen/ifidgen</span>
+    <span class="nx">IFID</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6ea612f2-758e-46d3-a8b5-5b7c21089b5d</span><span class="dl">'</span>
+
+    <span class="c1">// Your game name goes here.</span>
+    <span class="c1">//     e.g. 'Mary Smith'</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// Your name goes here.</span>
+    <span class="c1">//     e.g. 'by Mary Smith'</span>
+    <span class="nx">byline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by </span><span class="dl">'</span>
+
+    <span class="c1">// Your email name goes here.</span>
+    <span class="c1">//     e.g. 'by &lt;a href="mailto:marysmith@address.com"&gt;</span>
+    <span class="c1">//                  Mary Smith</span>
+    <span class="c1">//              &lt;/a&gt;'</span>
+    <span class="nx">htmlByline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by &lt;a href="mailto:yourmail@address.com"&gt;&lt;/a&gt;</span><span class="dl">'</span>
+
+    <span class="c1">// Your game version number goes here.</span>
+    <span class="nx">version</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span>
+
+    <span class="c1">// Your email address goes here.</span>
+    <span class="c1">//     e.g. ' marysmith@address.com'</span>
+    <span class="nx">authorEmail</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> yourmail@address.com</span><span class="dl">'</span>
+
+    <span class="c1">// A plain-text description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A quickstart game. '</span>
+    <span class="nx">desc</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// An html-styled description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A &lt;b&gt;quickstart&lt;/b&gt; game. '</span>
+    <span class="nx">htmlDesc</span> <span class="o">=</span> <span class="dl">''</span>
+<span class="p">;</span>
+
+<span class="nl">startRoom</span><span class="p">:</span> <span class="nx">Room</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span>
+    <span class="dl">""</span>
+<span class="p">;</span>
+
+<span class="o">+</span><span class="nx">me</span><span class="p">:</span> <span class="nx">Actor</span>
+<span class="p">;</span></code></pre></figure>
+        <em>For an Adv3Lite template</em>
+        <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">charset</span> <span class="dl">"</span><span class="s2">us-ascii</span><span class="dl">"</span>
+<span class="err">#</span><span class="nx">include</span> <span class="o">&lt;</span><span class="nx">tads</span><span class="p">.</span><span class="nx">h</span><span class="o">&gt;</span>
+<span class="err">#</span><span class="nx">include</span> <span class="dl">"</span><span class="s2">advlite.h</span><span class="dl">"</span>
+
+<span class="nx">gameMain</span><span class="p">:</span> <span class="nx">GameMainDef</span>
+    <span class="nx">initialPlayerChar</span> <span class="o">=</span> <span class="nx">me</span>
+<span class="p">;</span>
+
+<span class="nl">versionInfo</span><span class="p">:</span> <span class="nx">GameID</span>
+    <span class="c1">// This will vary per game, and</span>
+    <span class="c1">// is automatically generated.</span>
+    <span class="c1">// For more info: https://www.tads.org/ifidgen/ifidgen</span>
+    <span class="nx">IFID</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">6ea612f2-758e-46d3-a8b5-5b7c21089b5d</span><span class="dl">'</span>
+
+    <span class="c1">// Your game name goes here.</span>
+    <span class="c1">//     e.g. 'Mary Smith'</span>
+    <span class="nx">name</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// Your name goes here.</span>
+    <span class="c1">//     e.g. 'by Mary Smith'</span>
+    <span class="nx">byline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by </span><span class="dl">'</span>
+
+    <span class="c1">// Your email name goes here.</span>
+    <span class="c1">//     e.g. 'by &lt;a href="mailto:marysmith@address.com"&gt;</span>
+    <span class="c1">//                  Mary Smith</span>
+    <span class="c1">//              &lt;/a&gt;'</span>
+    <span class="nx">htmlByline</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">by &lt;a href="mailto:yourmail@address.com"&gt;&lt;/a&gt;</span><span class="dl">'</span>
+
+    <span class="c1">// Your game version number goes here.</span>
+    <span class="nx">version</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">1</span><span class="dl">'</span>
+
+    <span class="c1">// Your email address goes here.</span>
+    <span class="c1">//     e.g. ' marysmith@address.com'</span>
+    <span class="nx">authorEmail</span> <span class="o">=</span> <span class="dl">'</span><span class="s1"> yourmail@address.com</span><span class="dl">'</span>
+
+    <span class="c1">// A plain-text description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A quickstart game. '</span>
+    <span class="nx">desc</span> <span class="o">=</span> <span class="dl">''</span>
+
+    <span class="c1">// An html-styled description of your game goes here.</span>
+    <span class="c1">//     e.g. 'A &lt;b&gt;quickstart&lt;/b&gt; game. '</span>
+    <span class="nx">htmlDesc</span> <span class="o">=</span> <span class="dl">''</span>
+<span class="p">;</span>
+
+<span class="nl">startRoom</span><span class="p">:</span> <span class="nx">Room</span> <span class="dl">'</span><span class="s1">startRoom</span><span class="dl">'</span>
+    <span class="dl">""</span>
+<span class="p">;</span>
+
+<span class="o">+</span><span class="nx">me</span><span class="p">:</span> <span class="nx">Actor</span>
+    <span class="nx">person</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">;</span></code></pre></figure>
+    </li>
+    <li>
+        Create your project makefile: <code class="terminal-command">Makefile.t3m</code>.<br />
+        <em>For an Adv3 template</em>
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">## Makefile for an adv3 standard library game</span>
+
+<span class="nt">-D</span> <span class="nv">LANGUAGE</span><span class="o">=</span>en_us
+<span class="nt">-D</span> <span class="nv">MESSAGESTYLE</span><span class="o">=</span>neu
+<span class="nt">-Fy</span> obj
+<span class="nt">-Fo</span> obj
+<span class="c">## These paths will vary,</span>
+<span class="c">## based on your frobtads installation prefix:</span>
+<span class="c">## This template assumes the prefix was /usr/local</span>
+<span class="nt">-FI</span> /usr/local/share/frobtads/tads3/include
+<span class="nt">-FL</span> /usr/local/share/frobtads/tads3/lib
+<span class="nt">-we</span>
+<span class="nt">-v</span>
+<span class="nt">-d</span>
+
+<span class="c">##sources</span>
+<span class="nt">-lib</span> system
+<span class="nt">-lib</span> adv3/adv3
+<span class="nt">-source</span> gameMain.t
+
+<span class="nt">-res</span>
+GameInfo.txt</code></pre></figure>
+        <em>For an Adv3Lite template</em>
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">## Makefile for an adv3Lite library game</span>
+
+<span class="nt">-I</span> liblite
+<span class="nt">-D</span> <span class="nv">LANGUAGE</span><span class="o">=</span>english
+<span class="nt">-Fy</span> obj
+<span class="nt">-Fo</span> obj
+<span class="c">## These paths will vary,</span>
+<span class="c">## based on your frobtads installation prefix.</span>
+<span class="c">## This template assumes the prefix was /usr/local</span>
+<span class="nt">-FI</span> /usr/local/share/frobtads/tads3/include
+<span class="nt">-FL</span> /usr/local/share/frobtads/tads3/lib
+<span class="nt">-we</span>
+<span class="nt">-v</span>
+<span class="nt">-d</span>
+
+<span class="c">##sources</span>
+<span class="nt">-lib</span> system
+<span class="nt">-lib</span> adv3Lite/adv3Lite
+<span class="nt">-source</span> gameMain.t
+
+<span class="nt">-res</span>
+GameInfo.txt</code></pre></figure>
+    </li>
+    <li>
+        Create a directory named <code class="terminal-command">obj</code> in your game project directory.
+        This can be done with <code class="terminal-command"><span class="terminal-prompt">$</span>mkdir obj</code>.
+    </li>
+    <li>
+        To compile your game, run <code class="terminal-command"><span class="terminal-prompt">$</span>t3make</code>.
+    </li>
+    <li>
+        Create a bash script named <code class="terminal-command">run.sh</code> and give it the following code:
+        <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># Below is just the command to run your chosen interpreter, followed by gameMain.t:</span>
+frob gameMain.t3</code></pre></figure>
+        Then, do <code class="terminal-command"><span class="terminal-prompt">$</span>chmod +x run.sh</code>.
+    </li>
+    <li>
+        <b>At this point, your game should be ready to run!</b>
+Read the documentation for the library you chose for your game, and create the rest of your project.
+<i>Happy coding!</i>
+    </li>
+    <li>
+        To test your game, execute <code class="terminal-command"><span class="terminal-prompt">$</span>./run.sh</code>.
+    </li>
+</ol>
+
+</div>
+<footer>
+    <p>TADS is <a href="https://www.tads.org/copyright.htm">Copyright ©2001-2013 Michael J. Roberts</a>.  We
+    do not claim authorship over, or any rights to, TADS 3 itself.
+    </p>
+    <p>This is an unofficial informational website made by fans of the TADS 3
+    authoring system in an attempt to spread the word about what we believe
+    to be an underappreciated system, and provide a repository for more up
+    to date information than is contained on the original <a href="https://tads.org">tads.org</a> website,
+    which hasn't been updated since roughly 2013. For more information,
+    however, definitely go check out that website too, as there is a lot of
+    content there that we haven't covered here, just as there is content
+    here not covered there.</p>
+</footer>
+<script>
+window.onscrollend = () => {
+    if ( window.scrollY == 0 ) {
+        window.history.pushState(null, null, window.location.pathname);
+    }
+}
+</script>
+</body>
+</html>
