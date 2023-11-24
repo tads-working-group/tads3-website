@@ -359,7 +359,7 @@ pre {
     white-space: pre-wrap;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    padding: 5px 0px;
+    padding: 5px 0;
     background-color:
 }
 .highlight pre {
@@ -368,4 +368,18 @@ pre {
   border-radius: 10px;
   margin: auto;
   color: white !important;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book {
+    flex-basis: 30%;
+}
+
+.blurb {
+    flex-basis: 70%;
 }
