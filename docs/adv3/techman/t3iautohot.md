@@ -64,8 +64,8 @@ adding the following to the file and then saving it:
     #i::Send <i></i>{Left 4}
     #r::Send <.reveal >{Left}
     #c::Send <.convnode >{Left}
-    #[::Send {{}{}}{Left}
-    }  
+    #[::Send \{\{}{}}{Left}
+    }  ]
      
 
     The first line #ifWinActive ahk_class TADS_MDIFrame_Window ensures that the hotkeys you have just defined are only operative when Windows Workbench is the active window. This means you can define TADS-specific hotkeys here and not have them get in the way of any other program; indeed by using multiple #ifWinActive statements you could include hotkey definitions for some of your other favourite programs as well, which will only work when those particular programs are running in the active window. (To find out what identifier to put after #ifWinActive, bring whichever program you’re interested in to the front and then select the Window Spy option from the context menu that appears when you right-click on the AutoHotKey icon in the System Tray). The braces { } then indicate which elements of the script are subject to the #ifWinActive condition, much as braces denote the extent of an if-statement in TADS 3 code.
@@ -75,7 +75,7 @@ adding the following to the file and then saving it:
     The fourth line, #q::Send <q></q>{Left 4}, is probably even more useful. This not only outputs the code for opening and closing smart quotes, but then moves the cursor back four spaces so that it ends up between the opening and closing quote markers, like this <q>|</q>, ready for you to type what you want to go between the quotes. Not only does this save quite a bit of typing, it also makes sure that the opening and closing smart quote tags end up matched, something it can be surprisingly easy to fail to do when typing them manually. Note that we use {Left 4} at the end of the line here to move the cursor four spaces to the left, so that it ends up where we want it.
     The fifth line, #i::Send <i></i>{Left 4} uses exactly the same principle to give us a matched pair of opening and closing italicizing tags with the cursor placed between them, so that Win+i give us <i>|</i> (where | marks the position of the cursor). 
     The sixth and seventh lines make it a bit easier to enter reveal and convnode tags, converting Win+r into <.reveal |> and Win+c into <.convnode |> (where | once again denotes the position where the cursor ends up, not a literal vertical bar).
-    The final line, #[::Send {{}{}}{Left} causes Win+[ to output a matched pair of braces with the cursor placed between them, like this: {|}. We might use this to enter a parameter substitution string in our TADS source code. Note a small complication here. Since opening and closing braces (along with one or two other characters, such as +,^,!, and #) have a special meaning in a Send statement, we need to escape them by surrounding them with braces.
+    The final line, #[::Send \{\{}{}}{Left} causes Win+[ to output a matched pair of braces with the cursor placed between them, like this: {|}. We might use this to enter a parameter substitution string in our TADS source code. Note a small complication here. Since opening and closing braces (along with one or two other characters, such as +,^,!, and #) have a special meaning in a Send statement, we need to escape them by surrounding them with braces.
     The above examples all used the Win key as an element of the hotkey combination, but plenty of other keys can be defined for the purpose. For the full list consult the AutoHotKey help file or visit http://www.autohotkey.com/docs/Hotkeys.htm
 
     Hotstrings
@@ -126,7 +126,7 @@ adding the following to the file and then saving it:
 
     :*:age#::
     Send {+} : AgendaItem{enter}isReady = true{enter}{enter}
-    Send invokeItem(){enter}{{}{enter}
+    Send invokeItem(){enter}\{\{}{enter}
     Send isDone = true;{enter}{}}{enter};{enter}{Up 8}{Home}{Right 2}
     return
      
