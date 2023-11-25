@@ -33,7 +33,6 @@ they may be used and distributed without charge, subject to certain
 restrictions. Please see the individual books for full copyright and
 licensing information.
 
-[![](getacro.gif)](http://www.adobe.com/products/acrobat/readstep.html)
 Some of these books are offered in the "PDF" format. To view PDF files,
 you need the Acrobat Reader software, which is available as a [free
 download from

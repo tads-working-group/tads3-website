@@ -1,14 +1,16 @@
-[TADS 3](../../index.html)
-
-[Adv3Lite Bookshelf](#) [Adv3 Bookshelf](../adv3/index.htm) [Cheat
-Sheets](#)
-
+---
+title: Adv3Lite Landing page
+description: Landing page for Adv3Lite library
+layout: article
+toroot: ../../
+styleType: article
+---
 # Where do I start with all these manuals?
 
 At first sight, there's a lot of documentation here. If you want some
 guidance on where to start, try following the decision tree below (for
 each question you reply NO to, go to the next item in the list).
-[index.htm](index.htm)
+
 1.  Do you need help installing and setting up TADS 3 and/or adv3Lite?
     IF YES -\> [Quick Start Guide](t3QuickStart.htm)
 2.  Are you already familiar with TADS 3? IF YES -\> [Adv3Lite Library

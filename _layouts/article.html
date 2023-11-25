@@ -3,12 +3,12 @@
 <section class="jumbotron">
     <header>
         {% include headercore.html %}
-
         <nav class="menu">
-            <a class="nav-element" href="{{"docs/adv3lite/index.htm" | prepend: page.toroot}}">Adv3Lite Bookshelf</a>
-            <a class="nav-element" href="{{"docs/adv3/index.htm" | prepend: page.toroot}}">Adv3 Bookshelf</a>
-            <!-- TODO: When we make cheat sheets, make sure to encapsulate this with the above prepend page.toroot step -->
-            <a class="nav-element" href="#">Cheat Sheets</a>
+            {% for item in site.data.docs.toc %}
+                item: {{item.url}}
+                page: {{page.url }}index.html
+                <a  class="nav-element {% if item.url == page.url %}current{% endif %}" href="{{ item.url | prepend: page.toroot}}">{{ item.title }}</a>
+            {% endfor %}
         </nav>
         <div id="spacer"></div>
     </header>

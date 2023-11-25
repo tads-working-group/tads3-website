@@ -15,7 +15,7 @@ degrees of attenuation of light either as a result of distance or
 through a semi-transparent medium (specifically an otherwise transparent
 close container which can be given a user-defined quantity of
 **opacity**. It thus aims to replicate (albeit in a slightly different
-formn) much of the adv3 light levels functionality that is absent from
+form) much of the adv3 light levels functionality that is absent from
 the adv3Lite main library.
 
   

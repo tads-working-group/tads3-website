@@ -1,7 +1,10 @@
-[TADS 3](../../index.html)
-
-[Adv3Lite Bookshelf](index.htm) [Adv3 Bookshelf](../adv3/index.htm)
-[Cheat Sheets](#)
+---
+title: TADS 3 - Quickstart
+description: A guide for quickly starting a new TADS 3 project.
+layout: article
+toroot: ../../
+styleType: article
+---
 
 # Adv3Lite Quick Start Guide
 
