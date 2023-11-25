@@ -33,10 +33,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
+          bundler-cache: true
 
       - name: Install dependencies
         run: |
           gem install bundler
+          gem install jekyll-pandoc
           bundle add jekyll-pandoc
           bundle install
 
