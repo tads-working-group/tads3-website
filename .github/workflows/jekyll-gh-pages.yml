@@ -37,7 +37,8 @@ jobs:
       - name: Install dependencies
         run: |
           gem install bundler
-          gem install jekyll-pandoc
+          bundle init
+          bundle add jekyll-pandoc
           bundle install
 
       - name: Setup Pages
