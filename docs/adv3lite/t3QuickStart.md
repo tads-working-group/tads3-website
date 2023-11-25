@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 
 
 ::: main
+=======
+---
+title: TADS 3 - Quickstart
+description: A guide for quickly starting a new TADS 3 project.
+layout: article
+toroot: ../../
+styleType: article
+---
+
+>>>>>>> parent of 6b2cc6b (better md)
 # Adv3Lite Quick Start Guide
 
 Welcome to Adv3Lite! This Quick Start Guide is designed to get you up
@@ -17,9 +28,7 @@ and running as quickly as possible. It contains three sections:
 
 Enjoy!
 
-[]{#installing}
-
-## 1. Installing Adv3Lite and Creating a Project {#installing}
+## 1. Installing Adv3Lite and Creating a Project
 
 ### 1a. Windows Users: Installing and Creating a Project in Windows Workbench
 
@@ -28,100 +37,98 @@ Enjoy!
     this into is the extensions folder/directory under the
     folder/directory in which you keep, or plan to keep, your TADS 3
     game source code. On a Windows system this will typically be under
-    My Documents\\TADS 3; the TADS 3 author\'s kit setup program should
+    My Documents\TADS 3; the TADS 3 author's kit setup program should
     create both this folder and the extensions folder under it. On a
     non-Windows system you may need to create these directories manually
     yourself. You should therefore end up with all the adv3Lite material
-    in a folder somewhere like \...\\My Documents\\extensions\\adv3Lite
-    (where \... is the path to your My Documents folder or its
-    equivalent on a non-Windows system). If you need to reinstall
-    adv3Lite (for example, because you want to update to a newer
-    version) I recommend that you first delete the existing
-    extensions\\adv3Lite folder/directory before unzipping the new
-    adv3Lite folder to the same location; this should avoid any problems
-    that might arise from remnants of an older version interfering with
-    the newer version..
-2.  If you\'re using Windows, run TADS 3 Workbench (by selecting it from
-    the \"Start\" menu group you selected during the installation
+    in a folder somewhere like ...\My Documents\extensions\adv3Lite
+    (where ... is the path to your My Documents folder or its equivalent
+    on a non-Windows system). If you need to reinstall adv3Lite (for
+    example, because you want to update to a newer version) I recommend
+    that you first delete the existing extensions\adv3Lite
+    folder/directory before unzipping the new adv3Lite folder to the
+    same location; this should avoid any problems that might arise from
+    remnants of an older version interfering with the newer version..
+2.  If you're using Windows, run TADS 3 Workbench (by selecting it from
+    the "Start" menu group you selected during the installation
     process).
 3.  The first time you use adv3Lite, select Tools -\> Options from the
     Workbench menu. Scroll down to the System -\> Library Paths section
     of the dialog box that should then appear. Add the full path to the
     directory where you installed adv3Lite (e.g.
-    C:\\Users\\Eric\\Documents\\TADS 3\\extensions\\adv3Lite) to the
-    list (click the Add Folder button and navigate to the folder you
-    want and then select it). You may need to close Workbench and reopen
-    it for the change to take effect, but once you\'ve followed this
-    step once you shouldn\'t ever need to do it again (at least, not on
-    the same machine, assuming you don\'t move things around).
-4.  By default, Workbench will show you a \"welcome\" dialog asking you
-    if you want to open an existing game or create a new one. Click on
-    the button for creating a new game.
-5.  If you\'ve turned off the \"welcome\" dialog, then select \"New
-    Project\" from the Workbench \"File\" menu.
+    C:\Users\Eric\Documents\TADS 3\extensions\adv3Lite) to the list
+    (click the Add Folder button and navigate to the folder you want and
+    then select it). You may need to close Workbench and reopen it for
+    the change to take effect, but once you've followed this step once
+    you shouldn't ever need to do it again (at least, not on the same
+    machine, assuming you don't move things around).
+4.  By default, Workbench will show you a "welcome" dialog asking you if
+    you want to open an existing game or create a new one. Click on the
+    button for creating a new game.
+5.  If you've turned off the "welcome" dialog, then select "New Project"
+    from the Workbench "File" menu.
 6.  In either case, this will display the New Project Wizard. Just step
     through the wizard screens to tell Workbench the name and location
     for your new project files. Workbench will automatically create all
-    of the necessary files for your project, and it\'ll even compile it
+    of the necessary files for your project, and it'll even compile it
     for you right away.
 
 The steps you�d typically follow once the wizard is launched would be:
 
 1.  In the dialog that should then appear, simply click **Next** to
     continue to the second page of the Wizard.
-2.  In the second page of the Dialog, type \"Burglar\" (without the
+2.  In the second page of the Dialog, type "Burglar" (without the
     quotation marks, and using a name appropriate for your own game if
-    it\'s not \"Burglar\") in the upper (**Project Name**) box, then
-    click in the lower(**Folder location**) box. From there you can
-    select an existing folder, but for a new project you should create a
-    new one, so click the **Make New Folder** button and then enter a
-    name for your new folder, such as burglar (making sure you create it
-    under the ..\\My Documents\\TADS 3\\ folder). Then click **OK**
-    followed by **Next**.
+    it's not "Burglar") in the upper (**Project Name**) box, then click
+    in the lower(**Folder location**) box. From there you can select an
+    existing folder, but for a new project you should create a new one,
+    so click the **Make New Folder** button and then enter a name for
+    your new folder, such as burglar (making sure you create it under
+    the ..\My Documents\TADS 3\\ folder). Then click **OK** followed by
+    **Next**.
 3.  In the third page of the Dialog, scroll down the list of Project
     Types until you get to **Adv3Lite**. Click on Adv3Lite to select it
     and then click **Next**.
 4.  Fill in the information on the final (Bibliography) page of the
     wizard (e.g. with the name Burglar, your own name and email address,
-    and a brief description like \"A small tutorial game\") and then
-    click **Next** to complete the wizard. Your new adv3Lite game (or at
-    least the beginnings of it) will then be created for you.
+    and a brief description like "A small tutorial game") and then click
+    **Next** to complete the wizard. Your new adv3Lite game (or at least
+    the beginnings of it) will then be created for you.
 5.  Wait until TADS 3 Workbench has finished created and compiling the
     new skeleton game (you should see a message saying �Build
-    successfully completed\' followed by the date and time). In the
+    successfully completed' followed by the date and time). In the
     left-hand pane of Workbench (headed �Project�) look for the section
     (near the top) that says �Source Files� and double-click on the icon
     representing the file you asked the Wizard to create at Step 3 above
     (e.g. �MyNewGame.t�); it should be the third one down. You will then
     see your new game source file open in the Workbench editing window.
 6.  To compile the project again when you�ve made changes to it, just
-    press the F7 key. (You can also select the \"Compile for Debugging\"
-    command on the \"Build\" menu, or click the equivalent toolbar
+    press the F7 key. (You can also select the "Compile for Debugging"
+    command on the "Build" menu, or click the equivalent toolbar
     button.)
 
 1b. Installing Adv3Lite and Creating a Project Manually (for non-Windows
 Users)
 
-If you\'re *not* using Workbench (which at this stage should only be
-because you\'re not using Windows), you\'ll have to create your project
-files manually. Fortunately, this isn\'t very hard - you just need to
+If you're *not* using Workbench (which at this stage should only be
+because you're not using Windows), you'll have to create your project
+files manually. Fortunately, this isn't very hard - you just need to
 create two files and one subdirectory.
 
-To set everything up to create a new game (which we\'re calling
-\"Burglar\" in preparation for the next section, although the same
-principles apply whatever you\'re calling it) carry out the following
-steps:
+To set everything up to create a new game (which we're calling "Burglar"
+in preparation for the next section, although the same principles apply
+whatever you're calling it) carry out the following steps:
 
-1.  This assumes you\'ve placed the adv3Lite directory under an
-    extensions directory under your TADS directory, and that you\'ll
+1.  This assumes you've placed the adv3Lite directory under an
+    extensions directory under your TADS directory, and that you'll
     create your Burglar directory in the next step under the same TADS
     directory.
 
-2.  Under the directory you\'ve created to hold your TADS 3 source code
+2.  Under the directory you've created to hold your TADS 3 source code
     (you might have called it TADS 3) create a new directory called
     Burglar.
 
-3.  Locate adv3Lite/template directory and copy (don\'t move) its entire
+3.  Locate adv3Lite/template directory and copy (don't move) its entire
     contents (but not the directory itself) into your newly-created
     Burglar directory.
 
@@ -131,13 +138,14 @@ steps:
     **burglar.t3m**.
 
 6.  In the Burglar directory, delete the file
-    **adv3Ltemplate.tdbconfig** (if you\'re not using Workbench, you
-    don\'t need it).
+    **adv3Ltemplate.tdbconfig** (if you're not using Workbench, you
+    don't need it).
 
 7.  In the Burglar directory, create a subdirectory called obj (if it
-    isn\'t there already).
+    isn't there already).
 
-8.  Now open the burglar.t3m file in a text editor and edit it to read:\
+8.  Now open the burglar.t3m file in a text editor and edit it to
+    read:  
 
              -D LANGUAGE=english     
              -Fy obj -Fo obj
@@ -151,7 +159,7 @@ steps:
     file was mechanically generated� paragraph you find in the t3m file,
     together with any bits of executable code you find there. You can
     also delete the line -pre. You may need to change the penultimate
-    line if the path to where you\'ve stored the adv3Lite directory is
+    line if the path to where you've stored the adv3Lite directory is
     different from that assumed here.
 
 9.  Open a Terminal window. The Terminal program is located in
@@ -160,7 +168,7 @@ steps:
 
 10. In the Terminal, use the cd (change directory) command to navigate
     to the folder where your game files are stored. For instance, you
-    might type \'cd Documents/TADS/Burglar\' and then hit Return.
+    might type 'cd Documents/TADS/Burglar' and then hit Return.
 
 11. While the Terminal is logged into this directory, you can compile
     your game using this command:
@@ -170,12 +178,12 @@ steps:
 
     If all goes well, you should see a string of messages in the
     Terminal window, and a new file (heidi.t3) will appear in the
-    Burglar directory. This is your compiled game file. If you\'ve
-    installed an interpreter program that can run TADS games, you\'ll be
+    Burglar directory. This is your compiled game file. If you've
+    installed an interpreter program that can run TADS games, you'll be
     able to double-click the .t3 file and launch the game to test your
-    work.\
+    work.  
     Alternatively, you can run the game directly in the Terminal by
-    typing \'frob buglar.t3\' and hitting Return.
+    typing 'frob buglar.t3' and hitting Return.
 
 12. Keep the Terminal window open and press the Up arrow on the keyboard
     each time you want to do a compile, as this will reload the last
@@ -183,21 +191,19 @@ steps:
 
 ### 1c. Running Your Game
 
-If you\'re running Workbench, once again, this is easy - press the F5
-key (or select the \"Go\" command on the \"Debug\" menu, or click the
-equivalent toolbar button).
+If you're running Workbench, once again, this is easy - press the F5 key
+(or select the "Go" command on the "Debug" menu, or click the equivalent
+toolbar button).
 
-If you\'re not running Workbench, at your system command prompt, type
+If you're not running Workbench, at your system command prompt, type
 
        t3run mygame
                         
 
-But you should check the README file that came with your system\'s
+But you should check the README file that came with your system's
 download package - the program name might not be the same everywhere,
-and of course you should replace \"mygame\" with the name you actually
-gave your game, such as \"burglar\".
-
-[]{#documentation}
+and of course you should replace "mygame" with the name you actually
+gave your game, such as "burglar".
 
 ## 2. Where to Go Next: Navigating the Documentation
 
@@ -207,64 +213,61 @@ them should you start with?
 The first thing to be aware of is that two of the manuals are intended
 as *tutorials* (for use when learning TADS 3/adv3Lite) and three are
 intended for *reference* (for use when writing your own games once
-you\'ve mastered the most common features of Adv3Lite). There is overlap
+you've mastered the most common features of Adv3Lite). There is overlap
 between the contents of these two groups of manuals, since you may well
 want to use the reference material to remind you of material you first
 encountered in a tutorial, but they have quite different functions.
 
 The two *tutorial* manuals are the [Adv3Lite
-Tutorial](tutorial/index.htm){.title target="_blank"} and [Learning TADS
-3 With Adv3Lite](learning/LearningT3Lite.pdf){.title target="_blank"}.
-If you\'re already reasonably familiar with TADS 3 (but want to find out
-about Adv3Lite), you could probably skip these tutorials and go straight
-to the [Adv3Lite Manual](manual/index.htm){target="_blank"}. Otherwise,
-you should probably start with one of the introductory tutorials. So why
-are there two introductory tutorials and which of them should you
-choose?
+Tutorial](tutorial/index.htm) and [Learning TADS 3 With
+Adv3Lite](learning/LearningT3Lite.pdf). If you're already reasonably
+familiar with TADS 3 (but want to find out about Adv3Lite), you could
+probably skip these tutorials and go straight to the [Adv3Lite
+Manual](manual/index.htm). Otherwise, you should probably start with one
+of the introductory tutorials. So why are there two introductory
+tutorials and which of them should you choose?
 
 There are two because people have different learning styles and
 different needs and come to a system like TADS 3 from different
 backgrounds and with different previous knowledge and experience.
 Different people will therefore benefit from different approaches.
 
-For most new users the answer to the question \"Where do I go next?\" is
-either the [Adv3Lite Tutorial](tutorial/index.htm){.title
-target="_blank"} or [Learning TADS 3 With
-Adv3Lite](learning/LearningT3Lite.pdf){.title target="_blank"}. If
-you\'re still unsure which to start off with, take a quick look (by
-skimming) through the first couple of chapters of each and then choose
-the one you feel more comfortable with.
+For most new users the answer to the question "Where do I go next?" is
+either the [Adv3Lite Tutorial](tutorial/index.htm) or [Learning TADS 3
+With Adv3Lite](learning/LearningT3Lite.pdf). If you're still unsure
+which to start off with, take a quick look (by skimming) through the
+first couple of chapters of each and then choose the one you feel more
+comfortable with.
 
 ### 2a. The Adv3Lite Tutorial
 
-The [Adv3Lite Tutorial](tutorial/index.htm){.title target="_blank"}
-walks you through the creation of three adv3Lite games (two very short,
-one quite a bit bigger), explaining features of the system as it goes
-along but not presenting them in a particularly systematic fashion (the
-order of presentation is dictated by the order in which the games are
-developed). Completing the tutorial will introduce you to the process of
-writing Interactive Fiction in TADS 3/adv3Lite and in doing so will
-introduce you to many of the features of the system. It is the manual
-you should begin with if you prefer a hands-on, inductive learning style
-or if you feel more comfortable being walked through the creation of a
-couple of games before trying to branch out on your own.
+The [Adv3Lite Tutorial](tutorial/index.htm) walks you through the
+creation of three adv3Lite games (two very short, one quite a bit
+bigger), explaining features of the system as it goes along but not
+presenting them in a particularly systematic fashion (the order of
+presentation is dictated by the order in which the games are developed).
+Completing the tutorial will introduce you to the process of writing
+Interactive Fiction in TADS 3/adv3Lite and in doing so will introduce
+you to many of the features of the system. It is the manual you should
+begin with if you prefer a hands-on, inductive learning style or if you
+feel more comfortable being walked through the creation of a couple of
+games before trying to branch out on your own.
 
 ### 2b. Learning TADS 3 With Adv3Lite
 
-[Learning TADS 3 With Adv3Lite](learning/LearningT3Lite.pdf){.title
-target="_blank"}, on the other hand, takes a far more systematic
-approach, and aims to introduce you to all the most commonly-used
-features of TADS 3 and adv3Lite. It makes no attempt to walk you through
-the creation of a game, although it does provide a number of exercises
-you can try out for yourself (in the form of descriptions of mini-games
-you can try to write together with heavily-commented sample code you can
-download to compare with your efforts). This might be the tutorial
-manual you would choose to begin with if you\'re reasonably confident
-about programming or writing Interactive Fiction in another system and
-you want to see how it\'s done in TADS 3, or if you prefer to be
-introduced to the material in an orderly, systematic fashion and you
-don\'t particularly need or want to be hand-held through the creation of
-a couple of tutorial games.
+[Learning TADS 3 With Adv3Lite](learning/LearningT3Lite.pdf), on the
+other hand, takes a far more systematic approach, and aims to introduce
+you to all the most commonly-used features of TADS 3 and adv3Lite. It
+makes no attempt to walk you through the creation of a game, although it
+does provide a number of exercises you can try out for yourself (in the
+form of descriptions of mini-games you can try to write together with
+heavily-commented sample code you can download to compare with your
+efforts). This might be the tutorial manual you would choose to begin
+with if you're reasonably confident about programming or writing
+Interactive Fiction in another system and you want to see how it's done
+in TADS 3, or if you prefer to be introduced to the material in an
+orderly, systematic fashion and you don't particularly need or want to
+be hand-held through the creation of a couple of tutorial games.
 
 ### 2c. The Reference Manuals
 
@@ -275,124 +278,118 @@ frequently once you have mastered the basics of TADS 3/adv3Lite from one
 or more of the tutorial manuals and are writing your own game(s), but
 for most people, they are not the best place to start.
 
-That said, the [TADS 3 System Manual](sysman.htm){.title
-target="_blank"} does contain a lot of material that might be of
-interest to confident beginners with a strong programming background
-(whether professional, amateur or hobbyist) who want to see how things
-are done in TADS 3, and the [adv3Lite
-Manual](manual/index.htm){target="_blank"} does contain a fairly
-complete and systematic account of the features of the adv3Lite library,
-which could be a useful place to start for people who know TADS 3 but
-what to find out about adv3Lite. Nevertheless, for most new users of
-TADS 3 these two reference manuals will not be the best place to start;
-for one thing in addition to the more basic information they cover, they
-both contain quite a bit of more advanced and complex information that
-is likely to be not only unnecessary but also potentially quite
-confusing to new users of TADS 3/adv3Lite. You will also find the
-[Adv3Lite Library Reference Manual](libref/index.html){.title
-target="_blank"} an absolutely essential tool once you start working on
-your own games, and *Learning TADS 3 With Adv3Lite* will introduce you
-to its use, but it\'s certainly not the place to begin. Please be
-assured that you absolutely do *not* have to master the material in
-these three reference manuals in order to start using (or even continue
-using) TADS 3/adv3Lite, although you will eventually find them helpful
-when you want to achieve something beyond the basics.
+That said, the [TADS 3 System Manual](sysman.htm) does contain a lot of
+material that might be of interest to confident beginners with a strong
+programming background (whether professional, amateur or hobbyist) who
+want to see how things are done in TADS 3, and the [adv3Lite
+Manual](manual/index.htm) does contain a fairly complete and systematic
+account of the features of the adv3Lite library, which could be a useful
+place to start for people who know TADS 3 but what to find out about
+adv3Lite. Nevertheless, for most new users of TADS 3 these two reference
+manuals will not be the best place to start; for one thing in addition
+to the more basic information they cover, they both contain quite a bit
+of more advanced and complex information that is likely to be not only
+unnecessary but also potentially quite confusing to new users of TADS
+3/adv3Lite. You will also find the [Adv3Lite Library Reference
+Manual](libref/index.html) an absolutely essential tool once you start
+working on your own games, and *Learning TADS 3 With Adv3Lite* will
+introduce you to its use, but it's certainly not the place to begin.
+Please be assured that you absolutely do *not* have to master the
+material in these three reference manuals in order to start using (or
+even continue using) TADS 3/adv3Lite, although you will eventually find
+them helpful when you want to achieve something beyond the basics.
 
 ### 2d. Using the Library Reference Manual
 
 When you first gaze upon the [Adv3Lite Library Reference
-Manual](libref/index.html){.title target="_blank"} (LRM), it may appear
-to be an impenetrable tangle, but in fact it\'s an extremely useful
-resource. To use it, you need to be aware of the following basic ideas:
+Manual](libref/index.html) (LRM), it may appear to be an impenetrable
+tangle, but in fact it's an extremely useful resource. To use it, you
+need to be aware of the following basic ideas:
 
--   The introductory page, which opens up when you click on the LRM in
-    the Bookshelf page, contains a good description of how to use it.
--   The links across the top change the contents of the index pane on
-    the lower left. The most useful links may be \"Classes\" and \"all
-    symbols.\"
--   Most Adv3Lite classes are derived from other classes, and inherit
-    the properties and methods of those classes. For instance, in-game
-    objects ultimately inherit from the Thing class. To see how the LRM
-    works, choose the Classes pane (by clicking it in the top menu bar)
-    and scroll down to the Door class in the lower left pane. Click on
-    the word Door. You\'ll see a Superclass List, which shows which
-    classes Door inherits from. A little lower down is an enormous list
-    of Properties and Methods. All of these items are links. Clicking on
-    any of them will take you to the place in the LRM where the property
-    or method is shown.
--   At the bottom of the page for a given class are the properties and
-    methods that are unique to that class (and its subclasses). These
-    descriptions are drawn directly from the comments in the Adv3Lite
-    library source code.
--   To the right of each property or method are two links: to the file
-    in which the property or method is defined, and to the specific line
-    on which it is defined. You will usually want to click on the line
-    number, not on the filename.
--   When you click on the line number, you\'ll be taken to the spot in
-    the library source where that property or method is defined. By
-    inspecting the code, you can often learn a great deal about how the
-    property or method works.
-
-[]{#sample}
+- The introductory page, which opens up when you click on the LRM in the
+  Bookshelf page, contains a good description of how to use it.
+- The links across the top change the contents of the index pane on the
+  lower left. The most useful links may be "Classes" and "all symbols."
+- Most Adv3Lite classes are derived from other classes, and inherit the
+  properties and methods of those classes. For instance, in-game objects
+  ultimately inherit from the Thing class. To see how the LRM works,
+  choose the Classes pane (by clicking it in the top menu bar) and
+  scroll down to the Door class in the lower left pane. Click on the
+  word Door. You'll see a Superclass List, which shows which classes
+  Door inherits from. A little lower down is an enormous list of
+  Properties and Methods. All of these items are links. Clicking on any
+  of them will take you to the place in the LRM where the property or
+  method is shown.
+- At the bottom of the page for a given class are the properties and
+  methods that are unique to that class (and its subclasses). These
+  descriptions are drawn directly from the comments in the Adv3Lite
+  library source code.
+- To the right of each property or method are two links: to the file in
+  which the property or method is defined, and to the specific line on
+  which it is defined. You will usually want to click on the line
+  number, not on the filename.
+- When you click on the line number, you'll be taken to the spot in the
+  library source where that property or method is defined. By inspecting
+  the code, you can often learn a great deal about how the property or
+  method works.
 
 ## 3. Jumping Right In: A Sample Game
 
 The sensible and logical thing to do at this point would be to start
 reading one of the manuals suggested immediately above and, frankly,
-that\'s what we recommend. But maybe you\'re thinking that having got as
+that's what we recommend. But maybe you're thinking that having got as
 far as installing adv3Lite and being shown how to compile a minimal
-game, you\'d like to actually try *doing* something with the system
-before reading a whole lot of text. So, if you\'re the sort of person
+game, you'd like to actually try *doing* something with the system
+before reading a whole lot of text. So, if you're the sort of person
 that wants to jump right in, you might want to try entering and
-compiling the sample game shown below. Few explanations are given ---
-that\'s what the manuals are for, after all --- mainly just the source
-code which you can either copy and paste into the Workbench editor (if
-you\'re using Windows) or whatever other text editor/programming editor
-you\'re using (if you\'re not on Windows) and then try compiling and
-running it.
+compiling the sample game shown below. Few explanations are given —
+that's what the manuals are for, after all — mainly just the source code
+which you can either copy and paste into the Workbench editor (if you're
+using Windows) or whatever other text editor/programming editor you're
+using (if you're not on Windows) and then try compiling and running it.
 
 If you do decide to type the code rather than copying and pasting, be
 very careful to copy it *exactly*. (However, feel free to ignore the
 comments in the code when retyping it. The comments are bracketed by the
 symbols /\* and \*/, and are included here to give you a better idea
-what you\'re seeing.) TADS 3 isn\'t too fussy about the amount of white
+what you're seeing.) TADS 3 isn't too fussy about the amount of white
 space you use or where you put line breaks, but it can be very fussy
 about other things, and even the tiniest error can confuse it. In
 particular:
 
--   TADS 3 is *case sensitive*. That means that orb, ORB, Orb and oRb
-    will all be taken to mean something different. You need to be
-    absolutely sure to copy the precise case (upper or lower) of all the
-    letters and words you type.
--   Even the tiniest punctuation mark such as a bracket or a semicolon
-    can be vital to how TADS 3 understands your source code. A single
-    missing semicolon, for example, can confuse the compiler in ways
-    that can be quite baffling to a new user. If you can\'t get your
-    version to compile, check very closely for things like braces,
-    commas, brackets and semicolons.
+- TADS 3 is *case sensitive*. That means that orb, ORB, Orb and oRb will
+  all be taken to mean something different. You need to be absolutely
+  sure to copy the precise case (upper or lower) of all the letters and
+  words you type.
+- Even the tiniest punctuation mark such as a bracket or a semicolon can
+  be vital to how TADS 3 understands your source code. A single missing
+  semicolon, for example, can confuse the compiler in ways that can be
+  quite baffling to a new user. If you can't get your version to
+  compile, check very closely for things like braces, commas, brackets
+  and semicolons.
 
 The sample game given below is given in three versions, each fuller and
 more sophisticated than the last, so you can start from something very
 simple and see how it might be built up into something more complex.
-Don\'t worry if you don\'t understand too much of what\'s going on ---
-at this point you can hardly expect to, after all --- just try copying
-and compiling the code and then playing the resulting game to see what
+Don't worry if you don't understand too much of what's going on — at
+this point you can hardly expect to, after all — just try copying and
+compiling the code and then playing the resulting game to see what
 happens. You may learn something from this approach, and you should at
 least start to get some kind of feel for what writing a TADS 3 game
 looks like. If you find at any stage that this approach is simply
 confusing and frustrating, then give it up and go and start reading the
-[Adv3Lite Tutorial](tutorial/index.htm){.title target="_blank"} or
-[Learning TADS 3 With Adv3Lite](learning/LearningT3Lite.pdf){.title
-target="_blank"} instead. But if you feel you\'re beginning to deduce
-how at least some of it works, then feel free to experiment (but don\'t
-try anything too ambitious, you\'re probably not ready for it yet).
+[Adv3Lite Tutorial](tutorial/index.htm) or [Learning TADS 3 With
+Adv3Lite](learning/LearningT3Lite.pdf) instead. But if you feel you're
+beginning to deduce how at least some of it works, then feel free to
+experiment (but don't try anything too ambitious, you're probably not
+ready for it yet).
 
 I repeat, there is absolutely no need to carry out any of this exercise
-at all; it\'s simply provided for people who are anxious to dive
-straight in and try something practical before turning to the manuals.
-For some people this approach may be helpful (as a kind of inductive
-learning which will then help make the manuals make more sense); for
-many others it probably won\'t help at all.
+at all; it's simply provided for people who are anxious to dive straight
+in and try something practical before turning to the manuals. For some
+people this approach may be helpful (as a kind of inductive learning
+which will then help make the manuals make more sense); for many others
+it probably won't help at all.
 
 ### Version 1
 
@@ -498,34 +495,34 @@ The particular points to note here are the way rooms and other objects
 are defined, and the way the + sign is used to locate some objects
 inside others (such as rooms). Note also how the direction properties of
 rooms (north, south, east, west) are used to provide the
-interconnections between rooms. If you feel you can deduce how it\'s
+interconnections between rooms. If you feel you can deduce how it's
 done, you could try adding other basic objects and more rooms, with
-connections between them, but if you don\'t feel confident about
+connections between them, but if you don't feel confident about
 experimenting, then by all means leave it and go on to the next version.
 
 ### Version 2
 
-The first version wasn\'t much of a game. In the second we\'ll
-complicate things a little by putting the orb in a locked safe to which
-the player has to find the combination, and we\'ll provide the house
-with a locked front door. While we\'re at it, we\'ll also define an
-object to represent the house from the outside. We\'ll put the
-combination in a notebook in a locked desk drawer, which means adding a
-drawer to the desk and providing a key for it somewhere; we\'ll hide it
-in a vase in the hall. We\'ll also make the hall look a bit more like it
-belongs in a big house by adding a couple of fake exits that don\'t go
-anywhere but look as if they do. And, of course, we need a key to the
-front door which for now we\'ll just leave lying around in the drive.
-Finally, we\'ll provide a proper introduction to the game and make it so
-that the game ends (either in success or failure) when the player tries
-to return to the road.
+The first version wasn't much of a game. In the second we'll complicate
+things a little by putting the orb in a locked safe to which the player
+has to find the combination, and we'll provide the house with a locked
+front door. While we're at it, we'll also define an object to represent
+the house from the outside. We'll put the combination in a notebook in a
+locked desk drawer, which means adding a drawer to the desk and
+providing a key for it somewhere; we'll hide it in a vase in the hall.
+We'll also make the hall look a bit more like it belongs in a big house
+by adding a couple of fake exits that don't go anywhere but look as if
+they do. And, of course, we need a key to the front door which for now
+we'll just leave lying around in the drive. Finally, we'll provide a
+proper introduction to the game and make it so that the game ends
+(either in success or failure) when the player tries to return to the
+road.
 
 Once again, if you want to try this version out be very careful to copy
-everything exactly, or it probably won\'t work. If you already have some
+everything exactly, or it probably won't work. If you already have some
 experienced with programming, especially in another IF authoring system,
-you may be able to work out at least some of what\'s going on in the
-code below, but if it totally baffles you it may be time to start
-reaching for the manuals!
+you may be able to work out at least some of what's going on in the code
+below, but if it totally baffles you it may be time to start reaching
+for the manuals!
 
     #charset "us-ascii"
     #include <tads.h>
@@ -812,35 +809,35 @@ properties of the driveway and the hall now point to one or other side
 of the door. You may also have noticed how objects can be defined as
 belonging to more than one class (e.g. the safeDial immediately above is
 both a NumberedDial so we can turn it to a particular number and a
-Fixture so we can\'t pick it up and walk away with it). You\'ll probably
+Fixture so we can't pick it up and walk away with it). You'll probably
 have worked out that a Surface is something you can put things on and a
 Container is something you can put things inside. A Platform is
 something you can stand, sit or lie on as well (we make the desk a
-Platform because it\'s presumably big enough and sturdy enough to get
+Platform because it's presumably big enough and sturdy enough to get
 on).
 
 At this point you may want to experiment with adding or changing a few
-things to see how they work, or you may think you\'ve had enough of
-copying code you don\'t understand (in which case it\'s probably time to
+things to see how they work, or you may think you've had enough of
+copying code you don't understand (in which case it's probably time to
 head for the manuals) or you may want to go on and try out the third and
-final version of \"The Best Burglar\".
+final version of "The Best Burglar".
 
 ### Version 3
 
-We\'ll make the third and final version of "The Best Burglar" just a
+We'll make the third and final version of “The Best Burglar” just a
 *little* more challenging by hiding the front door key under a
 flowerpot, hiding the safe behind a picture, and making the clue to the
-combination in the notebook a bit more cryptic. We\'ll also make the Orb
+combination in the notebook a bit more cryptic. We'll also make the Orb
 of Ulimate Satisfaction a tad more interesting by making it do something
-(albeit not that much) when it\'s rubbed, which means we\'ll also need
-to define a new RUB verb. We\'ll add a few decoration objects to field
+(albeit not that much) when it's rubbed, which means we'll also need to
+define a new RUB verb. We'll add a few decoration objects to field
 commands directed at things mentioned in room descriptions and the like,
-and we\'ll tidy up a couple of things, by, for example, defining the
-bulk and bulk capacity of various objects so the player can\'t put
-something obviously bigger inside something obviously smaller, and, for
-example, by preventing the player picking up the hall table when
-there\'s something still on it. Finally, we\'ll add some scoring and
-hints to the game.
+and we'll tidy up a couple of things, by, for example, defining the bulk
+and bulk capacity of various objects so the player can't put something
+obviously bigger inside something obviously smaller, and, for example,
+by preventing the player picking up the hall table when there's
+something still on it. Finally, we'll add some scoring and hints to the
+game.
 
     #charset "us-ascii"
     #include <tads.h>
@@ -1417,26 +1414,25 @@ have now made the safe door a Component of the safe and the combination
 dial a Component of the safe door. If we had left the safe as an
 OpenableContainer (as in version 2), the safe door and the combination
 dial would have been locked inside the safe along with the orb, and the
-safe would have been impossible to open (a mistake it\'s very easy to
+safe would have been impossible to open (a mistake it's very easy to
 make, so this is worth noting). Another thing worth noting is the use of
 `remapIn` to redirect certain actions that the player might reasonably
-try on the desk to its drawer. Finally it\'s worth pointing out that
-there\'s more than one way we could have implemented many of the things
+try on the desk to its drawer. Finally it's worth pointing out that
+there's more than one way we could have implemented many of the things
 shown above.
 
-There are plenty of other feature of adv3Lite that haven\'t been
-introduced yet. In particular this example doesn\'t even begin to touch
-on the creation of NPCs (other characters in your game --- the fleeting
-appearance of Jeannie the Genie doesn\'t really count). But the three
+There are plenty of other feature of adv3Lite that haven't been
+introduced yet. In particular this example doesn't even begin to touch
+on the creation of NPCs (other characters in your game — the fleeting
+appearance of Jeannie the Genie doesn't really count). But the three
 versions of the game shown above should have illustrated quite a few of
 the most common features of adv3Lite and TADS 3 used in developing
 adv3Lite games, and depending on your background and inclinations you
 may have learned something by studying the sample code and trying it
 out. If you feel confident enough to experiment a little more on your
-own, by all means do so, but at this stage it\'s getting pretty near the
+own, by all means do so, but at this stage it's getting pretty near the
 point when you will need to move on to the [Adv3Lite
-Tutorial](tutorial/index.htm){.title target="_blank"} or [Learning TADS
-3 With Adv3Lite](learning/LearningT3Lite.pdf){.title target="_blank"}.
+Tutorial](tutorial/index.htm) or [Learning TADS 3 With
+Adv3Lite](learning/LearningT3Lite.pdf).
 
-*Eric Eve --- October 2022*
-:::
+*Eric Eve — October 2022*
