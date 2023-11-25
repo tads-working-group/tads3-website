@@ -23,28 +23,15 @@ each question you reply NO to, go to the next item in the list).
 
 # The Books
 
-<<<<<<< HEAD
 {% include docs/adv3lite/adv3lite_index.md %}
 
 # Change Logs
 
 ::: indent
-[**Adv3Lite Library Change
-History**](manual/changelog.htm). A chronological log
+**[Adv3Lite Library Change History](manual/changelog.htm)**. A chronological log
 of changes to Adv3Lite, the alternative TADS 3 Adventure Framework
 Library.
 :::
-=======
-[TABLE]
-
-------------------------------------------------------------------------
-
-# Change Logs
-
-[**Adv3Lite Library Change History**](manual/changelog.htm). A
-chronological log of changes to Adv3Lite, the alternative TADS 3
-Adventure Framework Library.
->>>>>>> parent of 6b2cc6b (better md)
 
 ------------------------------------------------------------------------
 
