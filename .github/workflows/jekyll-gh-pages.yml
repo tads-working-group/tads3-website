@@ -32,7 +32,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-        ruby-version: 2.7
+          ruby-version: 2.7
 
       - name: Install dependencies
         run: |
@@ -48,6 +48,7 @@ jobs:
         with:
           source: ./
           destination: ./_site
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
