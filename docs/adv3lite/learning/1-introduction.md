@@ -1,6 +1,6 @@
 ---
-layout: article
 title: Learning TADS 3 with adv3Lite by Eric Eve
+layout: article
 toroot: ../../../
 styleType: article
 ---
