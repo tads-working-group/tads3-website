@@ -5,8 +5,6 @@
         {% include headercore.html %}
         <nav class="menu">
             {% for item in site.data.docs.toc %}
-                item: {{item.url}}
-                page: {{page.url }}index.html
                 <a  class="nav-element {% if item.url == page.url %}current{% endif %}" href="{{ item.url | prepend: page.toroot}}">{{ item.title }}</a>
             {% endfor %}
         </nav>

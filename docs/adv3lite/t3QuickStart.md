@@ -1,18 +1,4 @@
-<div>
 
-[TADS 3](../../index.html)
-
-::: menu-button
-:::
-
-[Adv3Lite Bookshelf](index.htm){.nav-element} [Adv3
-Bookshelf](../adv3/index.htm){.nav-element} [Cheat
-Sheets](#){.nav-element}
-
-::: {#spacer}
-:::
-
-</div>
 
 ::: main
 # Adv3Lite Quick Start Guide

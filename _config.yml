@@ -2,3 +2,6 @@ title: TADS 3 | The Text Adventure Development System
 url: tads3.org
 description: The most powerful and flexible interactive fiction authoring tool, built for programmers.
 incremental: true
+markdown: Pandoc
+plugins:
+  - jekyll-pandoc
