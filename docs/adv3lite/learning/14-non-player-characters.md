@@ -1467,7 +1467,7 @@ Finally, you can make a QueryTopic match more than one qType word by separating 
  this is most useful with 'if' and 'whether', for example:
 
  
-    + QueryTopic 'if|whether' 'he saw the troubles for himself;  you
+    + QueryTopic 'if\|whether' 'he saw the troubles for himself;  you
 see'
 
     
