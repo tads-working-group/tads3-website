@@ -13,21 +13,17 @@ styleType: article
 
 As we've already seen, we can locate objects (and the player) in rooms by setting their location property, initially in one of three (functionally equivalent ways):
 
- 
+``` javascript
     redBall: Thing 'red ball'
-    location = hall
- 
+        location = hall
     ;
-
  
-    redBall: Thing 'red ball' @hall; 
+    redBall: Thing 'red ball' @hall  ;
  
-    hall: Room 'Hall'
+    hall: Room 'Hall' ;
  
-    ;
-
- 
-    + redBall: Thing 'red ball'; 
+    + redBall: Thing 'red ball'  ;
+```
 
 Things can also be picked up and moved to other rooms, or moved by authorial fiat using the `moveInto(newLoc)` method. But there's more to containment than this;  both in the real world and in Interactive Fiction objects can be in, on, under or behind other objects, not just in rooms. For now we'll concentrate on objects being inside other objects;  we'll expand this to on, under and behind in the next section.
 
@@ -37,7 +33,7 @@ Concretely, objects can be inside certain kinds of other object such as boxes, p
 
 Slightly more abstractly, every physical object (i.e. a `Thing` or something derived from `Thing`) in an adv3Lite game has a location property (at least as a first approximation;
  
-    MultiLocs` can be in several places at once, but we'll meet them in a later chapter) which defines where it is. This location property will hold either another object or `nil`. If it's nil then either the object is a top-level room, or the object is off the map (we can, for example, use `moveInto(nil)` to move an object out of play). If it's another object then that second object will be a room, an actor (if the actor is carrying or wearing the object) or a `Container` (or one of the other classes we'll meet in the next section).
+`MultiLocs` can be in several places at once, but we'll meet them in a later chapter) which defines where it is. This location property will hold either another object or `nil`. If it's nil then either the object is a top-level room, or the object is off the map (we can, for example, use `moveInto(nil)` to move an object out of play). If it's another object then that second object will be a room, an actor (if the actor is carrying or wearing the object) or a `Container` (or one of the other classes we'll meet in the next section).
 
 ### 5.1.2. Moving Objects Around the Hierarchy
 
@@ -49,71 +45,75 @@ In some cases you might want to move objects around using the more elaborate `ac
 
 We can use one of three methods to define the initial location of objects that are inside `Containers`. Suppose that a small red pen is in a small yellow box which is inside a large blue box which is in the hall. We can first of all set this up by explicitly defining the location property of each of the objects:
 
- 
+```javascript 
     hall: Room 'Hall'
  
     ;
 
  
     blueBox: Container 'large blue box'
-    location = hall
- 
+        location = hall
     ;
 
  
     yellowBox: Container 'small yellow box'
-    location = blue box
- 
+        location = blue box
     ;
 
  
     redPen: Thing 'small red pen'
-    location = yellowBox
- 
+        location = yellowBox
     ;
+```
 
 Or we can do the same thing more compactly using the @ notation in the template:
 
+```javascript
+    hall: Room 'Hall' ;
  
-    hall: Room 'Hall'; 
+    blueBox: Container 'large blue box' @hall ;
  
-    blueBox: Container 'large blue box' @hall; 
+    yellowBox: Container 'small yellow box' @blueBox ;
  
-    yellowBox: Container 'small yellow box' @blueBox; 
- 
-    redPen: Thing 'small red pen' @yellowBox; 
+    redPen: Thing 'small red pen' @yellowBox ;
+```
+
 Or we can do it, slightly more compactly still, using an extension of the + notation:
 
+```javascript
+    hall: Room 'Hall' ;
  
-    hall: Room 'Hall'; 
+    + blueBox: Container 'large blue box' ;
  
-    + blueBox: Container 'large blue box'; 
+    ++ yellowBox: Container 'small yellow box' ;
  
-    ++ yellowBox: Container 'small yellow box'; 
- 
-    +++ redPen: Thing 'small red pen'; 
+    +++ redPen: Thing 'small red pen' ;
+``` 
+
 This last notation is particularly convenient, and also gives quite a good visual representation of what's inside what;  it is therefore the containment notation that will be most commonly used in this manual. Another minor advantage of this notation is that if you decide to change the name of an object, you don't need to change the reference to it on all the objects it contains.
 
 Since we'll be seeing a lot of this notation from now on, it's worth explaining it a bit more fully. In general, an object preceded by *n* plus signs is contained within the nearest object above it in the same source file preceded by *n-1* plus signs. The example above is fairly straightforward, since each object has more one plus sign than the object before it, so that each object contains the next. A slightly more complicated example might be this:
 
+```javascript
+    hall: Room 'Hall' ;
  
-    hall: Room 'Hall'; 
+    + blueBox: Container 'large blue box' ;
  
-    + blueBox: Container 'large blue box'; 
+    ++ yellowBox: Container 'small yellow box' ;
  
-    ++ yellowBox: Container 'small yellow box'; 
+    +++ redPen: Thing 'small red pen' ;
  
-    +++ redPen: Thing 'small red pen'; 
+    ++ greenBox: Container 'green box' ;
  
-    ++ greenBox: Container 'green box'; 
+    +++ blackPencil: Thing 'black pencil' ;
  
-    +++ blackPencil: Thing 'black pencil'; 
+    +++ whiteFeather: Thing 'white feather' ;
  
-    +++ whiteFeather: Thing 'white feather'; 
+    ++ orangeBall: Thing 'orange ball' ;
  
-    ++ orangeBall: Thing 'orange ball'; 
- 
-    + oldHat: Wearable 'old hat'; 
+    + oldHat: Wearable 'old hat' ;
+```
+
 In this example, the blue box and the old hat are both directly in the hall. The yellow box, the green box and the orange ball are all directly in the blue box. The red pen is directly in the yellow box, and the black pencil and white feather are directly in the green box.
 
 While the + notation is very useful for setting up the containment hierarchy, it needs to be used with some care. For example, if we move an object from one place to another in our source code (using cut and paste), we need to make very sure that any + signs still mean what we intend them to mean. Also, it can become tricky to ensure that a containment hierarchy defined with + signs is actually the one we want once it includes long and complex objects, or once we start adding other objects in between the existing ones in our source. While it's generally safe to use the + notation for doors, passages, decorations and simple fixtures in a location, some authors may
@@ -140,17 +140,13 @@ We often want to test for containment, and there are six methods (defined on `Th
 
 We'd typically use these methods in conditional statements, such as:
 
- 
+```javascript
     if(!orangeBall.isDirectlyHeldBy(me))
-
- 
         "You need to be holding the orange ball before you can throw itanywhere. ";
 
- 
     if(whiteFeather.isIn(hall))
-
- 
         "The white feather must be around here somewhere. ";
+```
 
 Just as we can test whether one object is inside another, we can also test what other objects an object directly or indirectly contains. For this we use four properties/methods:
 
@@ -171,20 +167,21 @@ Conversely, we may want to know which room an object is in, even though it may b
 
 There's just one more thing to note about the plus notation before we move on to a slightly different topic, and that is how it interacts with class definitions. The short answer is that class definitions are ignored for purposes of the object containment hierarchy, so if we were to write:
 
+```javascript 
+
+    hall: Room 'Hall' ;
  
-    hall: Room 'Hall'; 
+    + blueBox: Container 'large blue box' ;
  
-    + blueBox: Container 'large blue box'; 
- 
-    ++ yellowBox: Container 'small yellow box'; 
+    ++ yellowBox: Container 'small yellow box' ;
  
     class Pen: Thing
-     bulk = 2
- 
+        bulk = 2
     ;
-
  
-    +++ redPen: Pen 'small red pen'; 
+    +++ redPen: Pen 'small red pen' ;
+```
+
 The red pen would still end up inside the yellow box, and the Pen class would be
 
 nowhere (it can't be anywhere, since it's not a physical object;  it's more akin to the Platonic idea of a Pen, or an abstract specification of what we want all Pens to have in common).
@@ -203,39 +200,32 @@ There's a further couple of points to note about bulk. To get the total bulk of 
 Sometimes an object inside a container may not be visible until we look inside the container (e.g. a small pin inside a large jar). One way we could represent this might be to define `isHidden =true` on the pin and then make looking inside the jar call the pin's `discover()` method. But adv3Lite offers an easier way of dealing with this kind of situation by using the `hiddenIn` property. To hide one object in another, just list the hidden object in the `hiddenIn` list of the concealing object, while making the hidden object start out located nowhere (i.e. in nil, off-stage).
 For example, suppose we decided that the player shouldn't notice the red pen till s/he explicitly looked in the yellow box;  we could handle that by defining:
 
- 
+```javascript 
     ++ yellowBox: Container 'small yellow box'
- 
-        hiddenIn = [redPen];
+        hiddenIn = [redPen]
+    ;
 
- 
-    redPen: Thing 'small red pen'; 
+    redPen: Thing 'small red pen' ;
+```
+
 The containing object doesn't even have to be a container for this to work. For example, if we want to allow the player to find a gold coin hidden in a pile of junk we could just do this:
 
- 
+```javascript 
     cellar: Room 'Cellar'
- 
         "There's not much here but a pile of junk. "
- 
     ;
 
- 
     + junk: Fixture 'pile of junk[n];  rusty;  bits metal;
  it them'
- 
-        "Rusty old bits of metal, mostly, but you never know what may lieconcealed
+        "Rusty old bits of metal, mostly, but you never know what may lieconcealed within. "
 
- 
-        within. "
-     cannotTakeMsg =' You certainly don\'t want to carry all thatstuff around! '
+        cannotTakeMsg =' You certainly don\'t want to carry all thatstuff around! '
 
- 
-        hiddenIn = [goldCoin];
-
- 
-    goldCoin: Thing 'gold coin'
- 
+        hiddenIn = [goldCoin]
     ;
+ 
+    goldCoin: Thing 'gold coin' ;
+```
 
 There is a slight difference in the way these two cases will behave, however. The command `look in yellow box `will result in the pen's being discovered and moved into the yellow box, while the command `look in junk`, or `search junk`, will result in the gold coin's being discovered and taken by the player character, since there's nowhere for it to go inside the junk. This behaviour can be controlled by two further properties, `findHiddenDest` and `autoTakeOnFindHidden`. If something isn't a Container but has a `hiddenIn` list, then the objects in the `hiddenIn` list are moved to `findHiddenDest` when they are discovered. By default, `findHiddenDest` is the actor doing the searching if `autoTakeOnFindHidden` is `true`, and the location of the concealing object otherwise, while `autoTakeOnFindHidden` is `true` if the concealing object is fixed in place and `nil` otherwise.
 
@@ -245,139 +235,96 @@ There are two further methods of `Thing `it's useful to be aware of at this stag
 
 Of these, `notifyRemove()` is the simpler, so we'll deal with it first. Whenever an object is about to be removed from inside another object , `notifyRemove(obj)` is called on the containing object with the object about to be removed from it as the *obj* parameter. By default this does nothing, but a trivial example will help make it clear how it can be used:
 
- 
+```javascript 
     blackBox: Container 'black box' @hall
-     notifyRemove(obj)
-    
- 
-    {    
- 
-        "Removing <<obj.theName>> from<<obj.location.theName>>! ";
-    
-
- 
+        notifyRemove(obj)
+        {    
+            "Removing <<obj.theName>> from<<obj.location.theName>>! ";
         }
-;
-
- 
-    + greenBox: Container 'green box'
- 
     ;
-
  
-    ++ pebble: Thing 'pebble'; 
+    + greenBox: Container 'green box' ;
+
+    ++ pebble: Thing 'pebble' ;
+```
+
 If the player were to issue the command `take green box` the game would respond with "Removing the green box from the black box." Note then, that this method is called just before the movement is carried out. This means that we could, if we wished, use `notifyRemove()` to stop an object being removed from a container:
 
- 
+```javascript 
     modify Container
- 
         notifyRemove(obj)
-     {
- 
-        
-        if(obj == pebble)    
- 
-    {
- 
-        
-        
- 
-        "The pebble refuses to leave<<obj.location.theName>>! ";
- 
-        
-        exit;
-    
- 
-        
+        {
+            if(obj == pebble)    
+            {
+                "The pebble refuses to leave <<obj.location.theName>>! ";
+                exit;
+            }
+            else
+                "Removing <<obj.theName>> from <<obj.location.theName>>! ";
         }
- 
-        else
- 
-        
-        
- 
-        "Removing <<obj.theName>> from<<obj.location.theName>>! ";
- 
-    }
-    
- 
     ;
 
+    blackBox: Container 'black box' @hall ;
  
-    blackBox: Container 'black box' @hall
+    + greenBox: Container 'green box' ;
  
-    ;
-
- 
-    + greenBox: Container 'green box'; 
- 
-    ++ pebble: Thing 'pebble; ;  stone'
- 
-    ;
+    ++ pebble: Thing 'pebble; ; stone' ;
+```
 
 This could result in the following transcript:
 
  
-    >take pebble`The pebble refuses to leave the green box!
-
- 
-    >take green box`Removing the green box from the black box!
+> TAKE PEBBLE
+>
+> The pebble refuses to leave the green box!
+>
+> TAKE GREEN BOX
+>
+> Removing the green box from the black box!
 
 One new feature we've just introduced here is `exit`. Technically speaking this is a *macro*, but we haven't met macros yet, so for now we can just think of it as a special statement that stops an action in its tracks.
 
 The other method, `notifyInsert()`, works in much the same way.  This can be illustrated via an extension to our previous example:
 
- 
+```javascript 
     modify Container
- 
         notifyInsert(obj)
-     {
- 
-        
- 
-        "Putting <<obj.theName>> in <<theName>>. ";
- 
-    }
-
+        {
+            "Putting <<obj.theName>> in <<theName>>. ";
+        }
  
         notifyRemove(obj)
-    
- 
-    {    
- 
-        "Removing <<obj.theName>> from <<theName>>. ";
-
- 
+        {
+            "Removing <<obj.theName>> from <<theName>>. ";
         }
-
- 
-    blackBox: Container 'black box' @hall
- 
-        ;
-
- 
-    + greenBox: Container 'green box'
- 
     ;
-
  
-    ++ pebble: Thing 'pebble; ;  stone'; 
+    blackBox: Container 'black box' @hall ;
+ 
+    + greenBox: Container 'green box' ;
+
+    ++ pebble: Thing 'pebble; ;  stone' ;
+```
+
 Which could give us a transcript like:
 
 You see a black box (which contains a green box (which
 contains a pebble)) here.
 
- 
-    >take pebble`Removing the pebble from the green box.
+>TAKE PEBBLE
+>
+>Removing the pebble from the green box.
+>
+>TAKE GREEN BOX
+>
+>Removing the green box from the black box.
+>
+>PUT GREEN BOX IN BLACK BOX
+>
+>Putting the green box in the black box.
+>
+>put pebble in green box
 
- 
-    >take green box`Removing the green box from the black box.
-
- 
-    >put green box in black box`Putting the green box in the black box.
-
- 
-    >put pebble in green box
 Putting the pebble in the green box.
 
 This notification occurs just before the object being moved is inserted into its new container, so once again it could be used to prevent the insertion from going ahead.
@@ -388,14 +335,12 @@ We briefly introduced the concept of inheritance in Coding Excursus 2. The time 
 
 As we have seen, an object can inherit from one or more classes. If we define a new class, that too can inherit from one or more classes. In the TADS 3 inheritance model, it's even possible for an object to inherit from another object, or for a class to inherit from an object. The following are all perfectly legal definitions:
 
- 
+```javascript 
     myObj: PresentLater, Thing
  
     ;
 
- 
-    mySecondObj: myObj;
-
+    mySecondObj: myObj ;
  
     class myClass: Container, Fixture
  
@@ -403,6 +348,7 @@ As we have seen, an object can inherit from one or more classes. If we define a 
 
  
     class mySecondClass: myObj;
+```
 
 There is, indeed, very little difference between objects and classes in TADS 3, except that:
 
@@ -423,117 +369,94 @@ The basic procedure for overriding a property or method is straightforward;
 redefine the property or method on the inheriting object. We effectively do this every time we define a standard property on an object;
  for example, when we define the `desc` property of a `Thing` we're overriding the library default that would otherwise say "You see nothing unusual about the whatsit." More generally, suppose we define (or use) `MyClass` and then derive `myObj` from it, overriding its `name` and `bulk` properties and its `makeBigger()` method:
 
- 
+```javascript
     class Blob: Thing
- 
-    bulk = 2weight = 2
- 
-    makeBigger(inc)  { bulk += inc;
- }
-makeLighter()
- 
-    {
- 
-    if(weight > 0)
- 
-    weight-- ;
+        bulk = 2
+        weight = 2
+        makeBigger(inc)
+        {
+            bulk += inc;
+        }
 
+        makeLighter()
+        {
+            if(weight > 0)
+                weight-- ;
+        }
  
-    }
-
- 
-    name = 'blob'
- 
+        name = 'blob'
     ;
-
  
     greenBlob: Blob
- 
-    bulk = 3name = 'green blob'
- 
-    makeBigger(inc){
-    
- 
-        "\^<<theName>> just got bigger! ";
-}
-
- 
+        bulk = 3
+        name = 'green blob'
+        makeBigger(inc)
+        {
+            "\^<<theName>> just got bigger! ";
+        }
     ;
+```
 
 With this definition, `greenBlob.bulk` is 3, `greenBlob.weight` is 2, and `greenBlob.name` is 'green blob'. After executing `greenBlob.makeLighter()` once, `greenBlob.weight` will be 1. When we call `greenBlob.makeBigger(2)`, however, the bulk of `greenBlob `won't change, even though we'll see the message "The green blob just got bigger!".
 
-This probably wasn't what we wanted;  we probably wanted the message to display *and* the bulk of `greenBlob` to grow by 2. We could, of course, just repeat the statement `bulk +=inc` in our overridden `makeBigger()` method, but this negates much of the point of inheritance, and could become very tedious and potentially error-prone if we were overriding a more complicated method comprising many statements. A better way to handle it is to use the `inherited` keyword;  
-    inherited` does whatever the method (or property) we're overriding would have done if we hadn't just overridden it. So, using `inherited`, a better way to define `greenBlob` would be:
- 
+This probably wasn't what we wanted;  we probably wanted the message to display *and* the bulk of `greenBlob` to grow by 2. We could, of course, just repeat the statement `bulk +=inc` in our overridden `makeBigger()` method, but this negates much of the point of inheritance, and could become very tedious and potentially error-prone if we were overriding a more complicated method comprising many statements. A better way to handle it is to use the `inherited` keyword; `inherited` does whatever the method (or property) we're overriding would have done if we hadn't just overridden it. So, using `inherited`, a better way to define `greenBlob` would be:
+
+```javascript
     greenBlob: Blob
- 
-    bulk = 3name = ('green ' + inherited)
- 
-    makeBigger(inc){
- 
-        inherited(inc);
+        bulk = 3
+        name = ('green ' + inherited)
 
- 
-        "\^<<theName>> just got bigger! ";
-
- 
-    }
-
- 
+        makeBigger(inc)
+        {
+            inherited(inc);
+            "\^<<theName>> just got bigger! ";
+        }
     ;
+```
 
 There are a couple of things to note here. The first (to reiterate a point made previously) is that when we use the `inherited` keyword in a method, we must use it with the same argument list as the method we're overriding;  though not necessarily with the same argument list as the method we're defining: the following would be legal:
 
- 
+```javascript 
     makeBigger()
- 
-    {    inherited(2);
-
-    
- 
+    {
+        inherited(2);
         "\^<<theName>> just got bigger! ";
-}
+    }
+```
 
 The other thing to note is that we can also use the `inherited` keyword to retrieve the value of an inherited property (in this case the name 'blob' from `Blob`). Note also the syntax we employed here, setting the name property of `greenBlob` to an expression in brackets. This is *exactly* equivalent to writing:
 
- 
-    name  { return 'green ' + inherited;  }
+```javascript
+    name { return 'green ' + inherited;  }
+```
 
 A further advantage of using the `inherited` keyword in situations like these is that if we subsequently realize we want to make changes to the base class (in this case Blob), the changes will then automatically be carried through to all the classes and objects that inherit from it. Suppose, for example, that we later decide that all the Blobs in our game should be called gooey blobs, and that no Blob should be allowed to grow beyond a certain maximum bulk. We might then rewrite our definition of the Blob class thus:
 
- 
+```javascript
     class Blob: Thing
- 
-    bulk = 2weight = 2
- 
-    maxBulk = 10makeBigger(inc)
- 
-    {
- 
-    if(bulk + inc <= maxBulk)
- 
-    bulk += inc;
+        bulk = 2
+        weight = 2
 
- 
-    else
- 
-    bulk = maxBulk;
+        maxBulk = 10
+        
+        makeBigger(inc)
+        {
+            if(bulk + inc <= maxBulk)
+                bulk += inc;
+            else
+                bulk = maxBulk;
+        }
 
- 
-    }
+        makeLighter()
+        {
+            if(weight > 0)
+                weight-- ;
+        }
 
- 
-    makeLighter(){
- 
-    if(weight > 0)
- 
-    weight-- ;
+        name = 'gooey blob'
 
- 
-    }
-name = 'gooey blob'
- 
     ;
+``` 
 
 Then the enforcement of a maximum bulk will now also apply to the `greenBlob` object, whose name will now automatically become 'green gooey blob'. Furthermore, when we spot the obvious bug (namely that we hadn't allowed for the possibility that the *inc* parameter to `makeBigger(inc)` might be a negative number), whatever fix we apply to the `Blob` class will automatically apply to the `greenBlob` object and to any
 
@@ -541,122 +464,87 @@ other class or object derived from the `Blob` class -- provided we've used the `
 
 In addition to overriding methods and properties, we can also modify classes (and objects). Suppose that instead of defining a new `Blob` class, what we really wanted to do was to add the `makeBigger() `functionality to the library's `Thing` class. We could do this quite straightforwardly by modifying `Thing`:
 
- 
+```javascript 
     modify Thing
-     maxBulk = 10
- 
+        maxBulk = 10
         minBulk = 0
-     makeBigger(inc)
-    
- 
-    { 
-        bulk += inc;
 
- 
-    if(bulk > maxBulk)
- 
-    bulk = maxBulk;
-
- 
-    if(bulk < minBulk)
- 
-    bulk = minBulk;
-
- 
+        makeBigger(inc)
+        { 
+            bulk += inc;
+            if(bulk > maxBulk)
+                bulk = maxBulk;
+            if(bulk < minBulk)
+                bulk = minBulk;
         }
-;
+    ;
+```
 
 What this actually does is rename the existing `Thing` class to some strange internal name like `ae45` and then create a new `Thing` class which inherits everything from it apart from the bits we've changed or overridden. Anything defined to be of class `Thing` or as inheriting from `Thing` now uses our new `Thing` class.
 
 Note that we can also use the `inherited` keyword in a modified class, and that it works just the same way as it does in a class or object definition;
  that is it does whatever the method we're inheriting from would have done if we hadn't overridden it. For example, suppose the `makeBigger()` method were defined on a modification of `Thing` in some extension we were using, and we wanted to make a further modification to make the `makeBigger()` method display a message. We could then do this:
 
- 
+```javascript
     modify Thing
- 
-    makeBigger(inc)
- 
-    {
- 
-    inherited(inc);
-
- 
-    if(inc != 0)
- 
-    "\^<<theName>> just got <<inc > 0 ? 'bigger' :
-'smaller'>>! ";     
-
- 
-    }
-
- 
+        makeBigger(inc)
+        {
+            inherited(inc);
+            if(inc != 0)
+                "\^<<theName>> just got <<inc > 0 ? 'bigger' : 'smaller'>>! ";     
+        }
     ;
+```
 
 This shows that we can modify the same class (or object) as many times as we like, in which case the modifications take effect in the same order as they appear in the source code (which is one major reason why the library files always need to come first in our build: we can't modify a library class before the library defines it!). It should
 
 also be noted that we can, of course, equally well use `inherited` to inherit the behaviour of a method (or property) defined in the library, e.g., to make every `Openable` object remember if it has ever been opened:
 
- 
+```javascript 
     modify Openable
- 
-    hasBeenOpened = nilmakeOpen(stat)
- 
-    {
- 
-    inherited(stat);
-
- 
-    if(stat)
- 
-    hasBeenOpened = true;
-
- 
-    }
-
- 
+        hasBeenOpened = nil
+        
+        makeOpen(stat)
+        {
+            inherited(stat);
+            if(stat)
+                hasBeenOpened = true;
+        }
     ;
+```
 
 We wouldn't have to make this particular modification in practice since Thing already defines an `opened` property that does it for us, but it serves to illustrate the principle.
 
 We sometimes need more control over where we inherit from. For example, suppose we want to define an object that behaves like a `Door `in just about every respect, except that we don't want opening one side to open the other side (perhaps because it's some special kind of double door). In that case we may want our custom door to used Thing's makeOpen method instead of Door's. We can do that by specifying which class we want to inherit from:
 
- 
+```javascript 
     class CustomDoor: Door
-     makeOpen(stat) {  inherited Thing(stat);
- }
-
- 
+        makeOpen(stat) { inherited Thing(stat); }
     ;
+```
 
 Without that `Thing` following inherited we'd just inherit Door's `makeOpen()` method, which is precisely what we're trying to circumvent here.
 
 Note, however, that we can only do this with a class that the object (or class) we're defining actually inherits from at some point (however indirectly). If we want to borrow a method (or property) from some class that's nowhere in the inheritance tree of the class or object we're defining, we can use the `delegated` keyword instead, for example:
 
- 
+```javascript 
     modify Topic
- 
         owner = []
-     nominalOwner() { return delegated Thing;
- }
 
- 
-        ownedBy(obj) { return delegated Thing(obj);
- }
- ;
+        nominalOwner() { return delegated Thing; }
+        ownedBy(obj) { return delegated Thing(obj); }
+    ;
+```
 
 The `Topic` class (which we'll encounter again later) inherits from the `Mentionable` class, but not from the `Thing` class, which defines `nominalOwner` and `ownedBy()`. So if (for whatever obscure reason) we wanted to `Topic` to be able to use the `nominalOwner()` and `ownedBy()` methods defined on Thing, we should need to borrow both these methods from `Thing`. The above example illustrates how we can do this using the `delegated` keyword.
 
 The `modify` keyword lets us change an object or class definition, but only within certain limits. In particular it doesn't let us change the superclass list of the object or class we're modifying. For example, if we use `modify` to change the behaviour of the `OpenableContainer` class the one thing we can't modify is the fact that it inherits from the  `Container `class. If we want to start completely from scratch with the definition of an object that's been previously defined, we can do so using the `replace` keyword. For example, the following would be possible (though not particularly useful):
 
- 
+```javascript
     replace OpenableContainer: Thing
- 
-        verifyDobjOpen() { illogical('Just because this looks openable
-doesn\'t mean
-        I'm going to let you open it! ');  }
-    
- 
+        verifyDobjOpen() { illogical('Just because this looks openable doesn\'t mean I\'m going to let you open it! '); }
     ;
+```
 
 Following the `replace` keyword we go on to define the class (or object) just as if we were defining it completely from scratch. The `replace` keyword can also be use to replace functions that have been previously defined.
 
@@ -683,53 +571,23 @@ After that somewhat lengthy (but nevertheless important) excursus, we can return
 
 The use of these various classes shouldn't present any particular problems, but an example may be helpful here:
 
- 
+```javascript 
     + briefcase: LockableContainer 'briefcase;  large leather;  case'
- 
         "It's quite large, and made of leather. "
- 
     ;
-
  
     ++ document: Thing 'document'
-    
- 
-        "It's marked <FONT COLOR=RED>TOP SECRET</FONT> at the top.The 
+        "It's marked <FONT COLOR=RED>TOP SECRET</FONT> at the top. The rest seems to be in code. "
 
- 
-        rest seems to be in code. "
-     readDesc()
-    
- 
-    { 
-        if(codeBook.seen)
-    
- 
-        "It looks like the secret plans for a new IF language thatwill 
-
- 
-        
-        
-        
-    revolutionize the production of Interactive Fiction!";
-    
-
- 
-        
-        else
-        
- 
-        "It's in code;  you won't be able to decipher it until youfind 
-
- 
-        
-        
-     the key. ";
- 
-    }
-
- 
+        readDesc()
+        { 
+            if(codeBook.seen)
+                "It looks like the secret plans for a new IF language that will revolutionize the production of Interactive Fiction!";
+            else
+                "It's in code;  you won't be able to decipher it until youfind the key. ";
+        }
     ;
+```
 
 Here the briefcase is portable, and has a lock, but the lock is a simple catch that can be unlocked without a key. Inside the briefcase is a document that will be found once the briefcase is open, but which won't be visible while the briefcase is closed.
 
@@ -737,25 +595,20 @@ Here the briefcase is portable, and has a lock, but the lock is a simple catch t
 
 So far we've concentrated on containers we can put things *in. *But it's also common in Interactive Fiction to have things we can put things *on*: tables, desks, trays and things like that. For this we use the `Surface` class. As with containers, Surfaces are portable unless we make them otherwise by mixing them in with a `Fixture` class. So, for example, we might have:
 
- 
-    + table: Surface, Heavy 'table'
- 
-    ;
+```javascript
+    + table: Surface, Heavy 'table' ;
 
  
-    ++ tray: Surface 'tray'; 
+    ++ tray: Surface 'tray' ;
  
-    +++ mat: Surface 'mat'
- 
-    ;
+    +++ mat: Surface 'mat' ;
 
  
-    ++++ bowl: Container 'bowl'
+    ++++ bowl: Container 'bowl' ;
  
-    ;
+    +++++ grape: Food 'grape; ;  fruit'  ;
+```
 
- 
-    +++++ grape: Food 'grape; ;  fruit' ; 
 In this example the grape is in a bowl which is resting on a mat which is resting on a tray which is resting on the table. The table can't be moved (because it's too heavy), but the tray and the mat can both be taken (as, of course, can the bowl and the grape).
 
 Just as there's a `Booth` class corresponding to the `Container` class, so there's a `Platform` class corresponding to the `Surface` class;  a `Platform` is a `Surface` that actors can get on and off.
@@ -770,30 +623,21 @@ To hide things under or behind other things we can use the `hiddenUnder` and `hi
 
 For example, we might have silver coin hidden under a rug. Ideally we'd like to make the rug a `Platform`, since it's clearly something the player could stand on, but it can't be both a `Platform` and an `Underside` at the same time. Fortunately, since we can use the `hiddenUnder` property, that's no problem:
 
- 
-    + rug: Platform 'rug;  small dark'
-     initSpecialDesc = "A small dark rug lies on the floor. "
- 
-        
+```javascript
+    + rug: Platform 'rug; small dark'
+        initSpecialDesc = "A small dark rug lies on the floor. "
         hiddenUnder = [silverCoin]
- 
     ;
 
- 
     + mirror: Thing 'mirror'
-     initSpecialDesc = "A square mirror is hanging on the wall. "
- 
-        
-    hiddenBehind = [bankNote]
- 
+        initSpecialDesc = "A square mirror is hanging on the wall. "
+        hiddenBehind = [bankNote]
     ;
 
+    silverCoin: Thing 'silver coin' ;
  
-    silverCoin: Thing 'silver coin'; 
- 
-    bankNote: Thing 'banknote;  bank;  note'
- 
-    ;
+    bankNote: Thing 'banknote; bank; note' ;
+``` 
 
 There's a further point to note about this example. If the player takes the rug, the silver coin will be revealed in any case (because it's assumed to have been left lying on the floor). If the player takes the mirror, the banknote is likewise revealed.
 
@@ -805,47 +649,37 @@ Finally, although we have now seen four types of containment (in, on, under and 
 
 Hitherto, we've given virtually every object a name when we've defined it (here 'name' refers to the object identifier that comes before the class list, not to the `name` property). For example, suppose the room description mentioned faded pink wallpaper, so we decided to implement the wallpaper as a `Decoration`:
 
- 
+```javascript
     + wallPaper: Decoration 'wallpaper;  faded pink'
-    
- 
-        "It looks like the kind of thing you'd associate with aVictorian nursery;  
-     it's almost faded enough to be that old. "
- 
+        "It looks like the kind of thing you'd associate with aVictorian nursery; it's almost faded enough to be that old. "
     ;
+```
 
 The only real function of this object is to provide a response to `examine wallpaper `that doesn't deny the wallpaper's existence. We'll never need to refer to the wallpaper object in any other piece of code. In such an instance there's actually no need to give
 
 the wallpaper object an identifying name, we can instead declare it as an *anonymous* object:
 
- 
+```javascript 
     + Decoration 'wallpaper;  faded pink'
-    
- 
-        "It looks like the kind of thing you'd associate with aVictorian nursery;  
-     it's almost faded enough to be that old. "
-;
+        "It looks like the kind of thing you'd associate with aVictorian nursery; it's almost faded enough to be that old. "
+    ;
+```
+
 Although this kind of anonymous object declaration is particularly useful with decoration-type objects, it's by no means restricted to them;  we can use it for absolutely any object that we don't need to refer to by its identifier elsewhere. This can make our code a bit more compact, and also spares us the trouble of having to think up lots of identifying names for unimportant objects. In any case, if we declare an anonymous object and later find that we do need to refer to it in some other part of code, we can always go back and give it an identifying name.
 
 Another use of anonymous objects is as *nested* objects. A nested object (which is necessarily anonymous) is one that is defined directly on the property of another object. We have already seen examples of this in defining various kinds of `TravelConnector` on the directional properties of rooms, e.g.:
 
- 
+```javascript 
     meadow: Room 'meadow'
-    
- 
         "The ground becomes distinctly marshier to the north. "
-     north: TravelConnector
-    
- 
-    { 
-        destination = marsh
- 
-        
-        travelDesc = "You step cautiously into the marsh. "
-        }
 
- 
+        north: TravelConnector
+        { 
+            destination = marsh
+            travelDesc = "You step cautiously into the marsh. "
+        }
     ;
+```
 
 We should note several points about this kind of definition.
 
@@ -861,64 +695,33 @@ A nested object can be defined with properties and methods just like any ordinar
 
 object, for example:
 
- 
+```javascript 
     desk: Surface, Heavy 'desk; ; furniture'
- 
-        
-    underDesk: Underside
- 
-    {
- 
-        
-        
-    name = 'desk'
-        
-        bulkCapacity = 5
- 
-        
-        
-    notifyRemove(obj)
-        
- 
-    {
- 
-        
-        
-     
- 
-        "You pull <<obj.theName>> out from under the desk.";
- 
-        
-     }
-    
- 
-        
-    }
-;
+        underDesk: Underside
+        {
+            name = 'desk'
+            bulkCapacity = 5
+
+            notifyRemove(obj)
+            {
+                "You pull <<obj.theName>> out from under the desk.";
+            }
+        }
+    ;
+```
 
 It's often useful for a nested object's methods and properties to refer to its enclosing object. For this purpose we can use the special property `lexicalParent`. For example, we could slightly amend our first example to:
 
- 
+```javascript
     meadow: Room 'meadow' 
- 
         "The ground becomes distinctly marshier to the north. "
- 
         north: TravelConnector
- 
-    {
- 
-        
-        destination = marsh
-        travelDesc ="You step cautiously from<<lexicalParent.theName>> 
-
- 
-        
-        
-    into the marsh. "
+        {
+            destination = marsh
+            travelDesc = "You step cautiously from<<lexicalParent.theName>> into the marsh. "
         }
-
- 
     ;
+``` 
 
 Going north from the meadow to the marsh would then result in the display of the message "You step cautiously from the meadow into the marsh."
 
@@ -932,174 +735,115 @@ We left our discussion of containers at the point of talking about how to implem
 
 This could be used to set up a desk with a drawer, for example:
 
- 
+```javascript 
     desk: Heavy, Surface 'desk' @study
-    
- 
         "It has a single drawer. "
         remapIn = drawer
- 
     ;
 
- 
     + drawer: Fixture, OpenableContainer 'drawer'
- 
-        cannotTakeMsg = 'You can't take the drawer;  it\'s part of the
-desk. ';     
+        cannotTakeMsg = 'You can't take the drawer;  it\'s part of the desk. '
+    ;
+```
 
 With this set-up you can put things on the desk, but any attempt to put something in the desk, look in the desk, open the desk or close the desk will result in the corresponding action being remapped to the drawer.
 
 This is all very well for the situation of the desk with a semi-separate drawer, but what happens if we want to be able to put things in, on, under and behind the same object, such as a low free-standing cabinet? In this case we can define some or all of the remapXXX properties as nested anonymous objects of the `SubComponent` class, like this:
 
- 
+```javascript 
     + cabinet: Heavy 'cabinet'
-     remapOn: SubComponent { }
-
- 
+        remapOn: SubComponent { }
         remapIn: SubComponent
-     {
- 
-        
-        bulkCapacity = 10
-        
-    isOpenable = true
- 
+        {
+            bulkCapacity = 10
+            isOpenable = true
         }
- 
-    remapBehind: SubComponent { }
-
- 
+        remapBehind: SubComponent { }
         remapUnder: SubComponent { bulkCapacity = 10 }
-;
+    ;
+```
 
-From the player's point of view, this will appear to be a cabinet that the player can put things in, on, under or behind. What actually happens is that there are five objects: the cabinet itself, and four `SubComponents` representing the spaces in, on, under and behind the cabinet. Each of these `SubComponents` automatically takes its name from its `lexicalParent`, the cabinet, so that objects within these `SubComponents` are described as being in, on, under or behind the cabinet. None of these `SubComponents` has any `vocab`, so any commands targeted at the cabinet will be fielded by the `cabinet` object;  but since the cabinet has a the appropriate `remapXXX` properties, it automatically redirects certain actions to the objects defined on its `remapXXX` properties, provided they're present. For example, `open, close, lock, unlock, put in `and `look in` are all directed to the `remapIn `object;  
-    put on` is redirected to the `remapOn`;
- 
-    put under` and `look under` are redirected to the `remapUnder`;
- and `look behind` and `put behind` to the `remapUnder` (provided objects have been defined on the relevant properties). Note also that we don't have to specify that these four objects are respectively a `Surface`, `Container`, `Underside` and `RearContainer`;  the library can work that out for itself from the properties to which our nested anonymous objects are attached. If we want the container to be openable, however, we do have to specify that (as in the example above);  note that it would have been a mistake to make the `cabinet` object itself an `OpenableContainer` in this situation.
+From the player's point of view, this will appear to be a cabinet that the player can put things in, on, under or behind. What actually happens is that there are five objects: the cabinet itself, and four `SubComponents` representing the spaces in, on, under and behind the cabinet. Each of these `SubComponents` automatically takes its name from its `lexicalParent`, the cabinet, so that objects within these `SubComponents` are described as being in, on, under or behind the cabinet. None of these `SubComponents` has any `vocab`, so any commands targeted at the cabinet will be fielded by the `cabinet` object;  but since the cabinet has a the appropriate `remapXXX` properties, it automatically redirects certain actions to the objects defined on its `remapXXX` properties, provided they're present. For example, `open, close, lock, unlock, put in `and `look in` are all directed to the `remapIn` object; `put on` is redirected to the `remapOn`; `put under` and `look under` are redirected to the `remapUnder`; and `look behind` and `put behind` to the `remapUnder` (provided objects have been defined on the relevant properties). Note also that we don't have to specify that these four objects are respectively a `Surface`, `Container`, `Underside` and `RearContainer`;  the library can work that out for itself from the properties to which our nested anonymous objects are attached. If we want the container to be openable, however, we do have to specify that (as in the example above);  note that it would have been a mistake to make the `cabinet` object itself an `OpenableContainer` in this situation.
 
 We may often want some objects to start out in one or other part of a multiply-containing object of this sort. For example we might want a piece of paper to have slipped down behind the cabinet, an ornamental vase to be on top of the cabinet, a mat to be inside the cabinet, and a coin to be on the floor under the cabinet. One way of doing this would be to define the location property of each of these explicitly:
 
- 
+```javascript 
     vase: Container 'vase'
- 
-        location = cabinet.remapOn;
-
+        location = cabinet.remapOn
+    ;
  
     paper: Thing 'piece of paper'
- 
-        location = cabinet.remapBehind;
+        location = cabinet.remapBehind
+    ;
 
- 
     mat: Surface 'mat'
- 
-        location = cabinet.remapIn;
-
+        location = cabinet.remapIn
+    ;
  
     coin: Thing 'coin'
- 
-        location = cabinet.remapUnder;
+        location = cabinet.remapUnder
+    ;
+```
 
 But there is another way of doing this, which may often be more convenient. We can instead use the + notation in the normal way, and use a special notation involving the `subLocation` property and a property pointer, which (as we have seen before) is a property name preceded by an ampersand (&);
  this gives a reference to the property rather than the value of the property, a way of saying "we want to note that we want to do something with this property but we don't want to evaluate it just yet". The above example would then become:
 
- 
+```javascript
     + cabinet: Heavy 'cabinet'
-     remapOn: SubComponent { }
-
- 
+        remapOn: SubComponent { }
         remapIn: SubComponent
-     {
- 
-        
-        bulkCapacity = 10
-        
-    isOpenable = true
- 
+        {
+            bulkCapacity = 10
+            isOpenable = true
         }
  
-    remapBehind: SubComponent { }
-
- 
+        remapBehind: SubComponent { }
         remapUnder: SubComponent { bulkCapacity = 10 }
- 
     ;
 
- 
     ++ vase: Container 'vase'
- 
-        subLocation = &remapOn;
+        subLocation = &remapOn
+    ;
 
- 
     ++ paper: Thing 'piece of paper'
- 
-        subLocation = &remapBehind;
-
+        subLocation = &remapBehind
+    ;
  
     ++ mat: Surface 'mat'
- 
-        subLocation = &remapIn;
-
+        subLocation = &remapIn
+    ;
  
     ++ coin: Thing 'coin'
- 
-        subLocation = &remapUnder;
+        subLocation = &remapUnder
+    ;
+```
 
 While this doesn't save a huge amount of typing, it does make it easier to associate objects contained in a multiply-containing object with that object in the way we lay out the code.
 
 Note that we don't need to define all four `remapXXX` properties on any given object;  we simply define whatever combination we want. So if all we want is a table we can put things on and under and a washing machine we can put things on and in, we'd define:
 
- 
+```javascript 
     + table: Heavy 'table;  kitchen'
         remapOn: SubComponent { }
-
- 
-        
-    remapUnder: SubComponent { }
-;
-
+        remapUnder: SubComponent { }
+    ;
  
     + washingMachine: Heavy 'washing machine'
- 
         remapOn: SubComponent { }
- 
-    remapIn: SubComponent
-    
- 
-    { 
-        notifyInsert(obj)
- 
-        
- 
-    { 
-        
-        if(!obj.ofKind(Wearable))
- 
-        
-     
- 
-    { 
-        
-        
- 
-        "You're only meant to put clothes in there! "; 
- 
-        
-        
-        
-     exit;
- 
-        
-        }
-
- 
-        
-        }
- 
-        bulkCapacity = 15
- 
+        remapIn: SubComponent
+        { 
+            notifyInsert(obj)
+            { 
+                if(!obj.ofKind(Wearable))
+                { 
+                    "You're only meant to put clothes in there! " ;
+                    exit;
+                }
+            }
+            bulkCapacity = 15
         }
     ;
+```
 
 Note too that it's sometimes necessary to use multiple containment when at first sight it looks as if an `OpenableContainer` should do the job. This is normally the case whenever we want to give a container any components, since its components are considered to be *inside* the container, and so will disappear from scope when the container is closed. For example, suppose we wanted a briefcase with a handle and a combination lock;  we might (erroneously) try something like this:
 
@@ -1131,23 +875,16 @@ become impossible to unlock it, since the combination lock will be locked inside
 The way round this kind of situation is to use `remapIn` to represent the inside of the briefcase;
  we should start out with something like this:
 
- 
+```javascript 
     briefcase: Thing 'briefcase;  light brown'
- 
-     
- 
         "It's a light brown case with a handle and combination lock."
         remapIn: SubComponent, LockableContainer { }
-    
- 
     ;
+ 
+    + Fixture 'handle'  ;
 
- 
-    + Fixture 'handle' ; 
- 
-    + Fixture 'lock;  combination'
- 
-    ;
+    + Fixture 'lock;  combination' ;
+```
 
 This will then work as intended, since the handle and the lock aren't in the `remapIn LockableContainer`;  they'll now appear effectively on the outside of the briefcase.
 

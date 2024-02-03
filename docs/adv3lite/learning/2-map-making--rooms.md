@@ -11,21 +11,24 @@ styleType: article
 
 No game can take place without a room, so the very first thing we have to learn to define is precisely that -- a room. Let's suppose our game starts in a bedroom, so that this is the room we want to define. It might look something like this:
 
- 
+```javascript 
     bedroom: Room
         roomTitle = 'Bedroom'
         desc = "Your bed lurks in one corner, the clothes a heap from a restless night. The only way out is to the east. "
     ;
+```
+
 Note that we have defined two properties of the bedroom object: roomTitle (what the room is called) and desc (its description). These two properties are so common that we can define a room without stipulating them explicitly, by means of what's known as a *template*. A template is simply a convenience feature of TADS 3 that lets us define commonly-used properties without explicitly stating which properties we're defining;  this works by defining these common properties in a particular order (sometimes with additional symbols like + or @ or -> to identify parts of the template). The Room template is a very straightforward one;  using the room template our room definition becomes:
 
- 
+```javascript
     bedroom: Room 'Bedroom'
         "Your bed lurks in one corner, the clothes a heap from a restless night. The only way out is to the east. "
     ;
+``` 
 
 We've mentioned a way out to the east, so presumably that must go somewhere. Let's suppose is goes out to the landing. To allow movement between rooms we can define the `east` property of the bedroom to point to the landing, then define a new room, the landing, with its `west` property pointing back to the bedroom.
 
- 
+```javascript 
     bedroom: Room 'Bedroom'  
         "Your bed lurks in one corner, the clothes a heap from a restless night. The only way out is to the east. "
         
@@ -37,6 +40,7 @@ We've mentioned a way out to the east, so presumably that must go somewhere. Let
         "The landing runs from west to east; your bedroom lies west. "
         west = bedroom
     ;
+```
 
 If you compiled this game, it wouldn't be terribly exciting, but it would at least let you move backwards and forwards (or rather east and west) between the two rooms.
 
@@ -50,11 +54,12 @@ Exercise 1:  See if you can create a larger map, using the tools we have seen so
 
 The rooms we have been creating are examples of *objects*. A great deal of programming in TADS 3 consists in defining objects. A typical object definition in TADS 3 looks something like:
 
- 
+```javascript 
     objectName: ClassList
         property1 = 'some text'
         property2 = somethingElse
     ;
+```
 
 The *objectName* is simply a name we give to the object so that we can identify it elsewhere in our code (for example we used the name `landing` which enable us to attach the `landing` to the `east` property of the `bedroom`).
 
@@ -65,12 +70,13 @@ Each object (and class) can have a number of *properties*. These are pieces of d
 In the example above the object definition is terminated with a semicolon (;
 ). An alternative form of object definition uses braces, like this:
 
- 
+```javascript 
     objectName: ClassList
     {
         property1 = 'some text'
         property2 = somethingElse
     }
+```
 
 Some kinds of object have properties we use so often that there's a short-cut method of defining them, using what TADS 3 calls a *template*. The only template we've met so far is that for the `Room` class, which defines a short-cut means of defining the `roomTitle` and `desc` properties.
 
@@ -82,19 +88,21 @@ Open the *Adv3Lite Library Reference Manual*  (it's best if you can open it in a
 
 Click on the *Templates* link near the right hand end. The bottom left-hand frame of the *LRM* should then change to a list headed with the title Templates. Scroll down the list till you find *Room*, and then click on the *Room* link. A definition of the Room template should then appear near the top of the main frame, looking like this:
 
- 
+```
     Room 'roomTitle' 'vocab' "desc"? ;
 
     Room 'roomTitle' "desc"? ;
+```
 
 Anything followed by a question-mark is an optional part of the template. This tells us that when we define a room with a template, the item in single-quote marks will be the `roomTitle` property. If there's a second item in single-quote marks it will be the `vocab.` Whether we define the Room with one or two items in single-quoted strings, the item that appears between double-quotes will be the `desc` property.
 
 So, for example, if we defined:
 
- 
+```javascript 
     auditorium: Room 'Auditorium of Albert Hall' 'auditorium'
         "The auditorium is thronged with a great press of people. "
     ;
+```
 
 Then 'Auditorium of Albert Hall' would the `roomTitle`, 'auditorium' would be the `vocab`, and "The auditorium is thronged with a great press of people. " would be the `desc`.
 
@@ -110,23 +118,26 @@ So far we've only met one kind of room, defined with the `Room` class. In adv3Li
 
 We can, however, do several things to customize a room. For example, by default rooms all start out lit, but it we want a dark room we can simply define it isLit property as nil:
 
- 
+```javascript 
     cellar: Room 'Cellar'
         "If you could see anything in here it would all look rather dusty."
         isLit = nil
     ;
+```
 
 But in fact, unless the player character has a light source, you won't see anything in there, so you'll just get a message saying it's too dark to see anything. We'll return to that in Chapter 10 when we come to consider Darkness and Light.
 
 If you had a whole lot of dark rooms in your game you might want to define a DarkRoom class like so:
- 
+
+```javascript 
     class DarkRoom: Room
         isLit = nil
     ;
+```
 
 Then you could make definitions like:
 
- 
+```javascript 
     cellar: DarkRoom 'Cellar'
         "A dusty passage leads off to the east. "
         east = dustyPassage
@@ -137,6 +148,7 @@ Then you could make definitions like:
         west = cellar
         east = self
     ;
+```
 
 This is known as making use of *inheritance* which we'll talk about in more detail below.
 
@@ -144,7 +156,7 @@ Something else we can do with a room is to put it in a *Region*. A Region is a s
 
 have a hall that's in the downstairs region of a myHome region, thus:
 
- 
+ ```javascript
     downstairs: Region
         regions = [myHome]
     ;
@@ -156,6 +168,7 @@ have a hall that's in the downstairs region of a myHome region, thus:
  
         regions = [downstairs]
     ;
+```
 
 This puts the hall in both the downstairs region and the myHome region. Notice how we define what regions a room or region is in: we list those regions in the `regions` property. Anything in square brackets [] denotes a *list*, the elements of which must be separated by commas. Don't worry about that too much for the moment, however;  we'll talk about lists in more detail in a later chapter.
 
@@ -165,7 +178,7 @@ You may be wondering what Regions are actually good for. They can in fact be use
 
 At this point, we'll introduce another property you can use with rooms:  `cannotGoThatWayMsg.` This is the message that would be displayed if the player tried to go in any direction we haven't explicitly defined an exit for. For example, we might expand our definition of the hall a bit like this:
 
- 
+```javascript
     hall: Room 'Hall'
         "The front door lies just to the north. Other exits lead east and west, while a flight of stairs runs up to the south. "
         
@@ -179,11 +192,13 @@ At this point, we'll introduce another property you can use with rooms:  `cannot
  
         cannotGoThatWayMsg = 'You\'d just end up in a corner! '
     ;
+```
 
 Note how we use the backslash (\) immediately before single-quote marks that we want to appear within a single-quoted string property. An alternative would have been to use three single-quote marks to start and end the string value:
 
- 
+``` javascript
      cannotGoThatWayMsg = '''You'd just end up in a corner! '''
+```
 
 This avoids the need to type the awkward backslash (\) character before the single
 
@@ -205,24 +220,27 @@ Classes are extremely useful when we want to define several objects (or maybe a 
 
 But as we've also seen, we might want to make another kind of room (although this may not often be necessary with adv3Lite). An example we gave before was that of defining a `DarkRoom` class for a room without any light:
 
- 
+ ```javascript
     class DarkRoom: Room
         isLit = nil
     ;
+```
 
 Note the use of the `class` keyword here when we're defining a new class instead of a new object. TADS 3 treats classes and objects in fairly similar ways, but there are differences, so if we mean something to be used as a class, we should define it as a class.
 
 Since Rooms aren't the only kind of object that have the `isLit` property, we could have gone about this a different way by defining a `Dark` class, like this:
 
- 
+ ```javascript
     Dark: object
         isLit = nil
     ;
+```
 
 We could then have defined our DarkRoom class using multiple inheritance, like this:
 
- 
+ ```
     class DarkRoom: Dark, Room` ;
+```
 
 To be sure this is such a trivial example that it's unlikely that anyone would ever define this particular set of classes in practice, but it serves to illustrate the principle, and the principle is this: Where we want to combine the functionality of more than one class, we simply include all the classes we want to inherit from in our class list (whether we're defining an object or a new class). For the most part we can simply define our object as inheriting from multiple classes and leave TADS 3 to work out how all the classes will actually work together, and 99 times out of 100 we'll get the behaviour we expect, provided we observe the one golden rule of multiple inheritance: *mix-in classes must always come first*.
 
